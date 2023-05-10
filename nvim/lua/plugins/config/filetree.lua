@@ -8,15 +8,16 @@ M = function()
         end
 
         -- open pdf with xdg-open
-        local function NvimTreeXdgOpen()
-            local lib = require 'nvim-tree.lib'
-            local node = lib.get_node_at_cursor()
-            if node.extension == "pdf" then
-                vim.fn.jobstart("xdg-open '" .. node.absolute_path .. "' &", { detach = true })
-            else
-                api.node.open.edit(node)
-            end
-        end
+        -- local function NvimTreeXdgOpen()
+        --     local lib = require 'nvim-tree.lib'
+        --     local node = lib.get_node_at_cursor()
+        --     if node.extension == "pdf" then
+        --         vim.fn.jobstart("xdg-open '" .. node.absolute_path .. "' &", { detach = true })
+        --     else
+        --         api.node.open.edit(node)
+        --     end
+        -- end
+        --
         -- vsplit and close filetree
         local function custom_vsplit()
             local node = require('nvim-tree.lib').get_node_at_cursor()
@@ -39,8 +40,8 @@ M = function()
         vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
         vim.keymap.set('n', 'F', api.live_filter.clear, opts('Clean Filter'))
         vim.keymap.set('n', 'f', api.live_filter.start, opts('Filter'))
-        vim.keymap.set('n', '<CR>', NvimTreeXdgOpen, opts('Open'))
-        vim.keymap.set('n', '<2-LeftMouse>', NvimTreeXdgOpen, opts('Open'))
+        vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+        vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
         vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
     end
 
@@ -59,7 +60,7 @@ M = function()
         },
         filters             = { custom = { "^\\." } },
         update_focused_file = { enable = true, },
-        renderer            = { highlight_opened_files = "all" },
+        renderer            = { highlight_opened_files = "all", indent_markers = { enable = true } },
         diagnostics         = {
             enable = true,
             show_on_dirs = true,

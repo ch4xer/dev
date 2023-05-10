@@ -30,6 +30,16 @@ local plugins = {
         config = true,
         event = { 'InsertEnter' }
     },
+    -- how to mark sure tabout load before luasnip
+    -- {
+    --     'abecodes/tabout.nvim',
+    --     dependencies = {
+    --         'nvim-cmp',
+    --         'nvim-treesitter/nvim-treesitter'
+    --     },
+    --     config = config.tabout,
+    -- },
+    -- { 'chentoast/marks.nvim', config = config.marks },
     {
         'folke/todo-comments.nvim',
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -37,6 +47,7 @@ local plugins = {
     },
     {
         'glepnir/dashboard-nvim',
+        -- event = 'VimEnter',
         lazy = true,
         config = config.dashboard,
         dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -59,17 +70,18 @@ local plugins = {
     -- highlight current word
     {
         'RRethy/vim-illuminate',
+        event = 'BufRead',
     },
     {
         'hoob3rt/lualine.nvim',
         event = 'BufRead',
         config = config.lualine
     },
-    {
-        'akinsho/toggleterm.nvim',
-        config = config.toggleterm,
-        cmd = { 'ToggleTerm' }
-    },
+    -- {
+    --     'akinsho/toggleterm.nvim',
+    --     config = config.toggleterm,
+    --     cmd = { 'ToggleTerm' }
+    -- },
     { 'famiu/bufdelete.nvim' },
     {
         'kyazdani42/nvim-tree.lua',

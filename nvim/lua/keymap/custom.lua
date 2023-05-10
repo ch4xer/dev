@@ -45,6 +45,17 @@ M.DeleteWinOrBuf = function()
     vim.cmd(exit)
 end
 
+M.EnterInsert = function ()
+    local current_bufnr = vim.api.nvim_win_get_buf(0)
+    local is_valid = function(bufnr)
+        if not bufnr or bufnr < 1 then return false end
+        local exists = vim.api.nvim_buf_is_valid(bufnr)
+        return vim.bo[bufnr].buflisted and exists
+    end
+    if is_valid(current_bufnr) then
+        vim.cmd('insert')
+    end
+end
 
 M.FormatCode = function()
     if vim.bo.filetype == "norg" then

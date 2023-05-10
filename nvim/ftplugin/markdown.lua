@@ -18,16 +18,14 @@ vim.api.nvim_set_hl(0, "@text.todo.checked", { fg = "#73daca", bold = true, stri
 vim.api.nvim_set_hl(0, "@text.todo.unchecked", { fg = "#73daca", bold = true, strikethrough=false})
 
 local mark_item_done = function()
-    if vim.bo.filetype == "markdown" then
-        local current_line = vim.api.nvim_get_current_line()
-        local new_line
-        if string.match(current_line, "- %[ %] ") then
-            new_line = string.gsub(current_line, "- %[ %] ", "- %[x%] ");
-            vim.api.nvim_set_current_line(new_line)
-        elseif string.match(current_line, "- %[x%] ") then
-            new_line = string.gsub(current_line, "- %[x%] ", "- %[ %] ")
-            vim.api.nvim_set_current_line(new_line)
-        end
+    local current_line = vim.api.nvim_get_current_line()
+    local new_line
+    if string.match(current_line, "- %[ %] ") then
+        new_line = string.gsub(current_line, "- %[ %] ", "- %[x%] ");
+        vim.api.nvim_set_current_line(new_line)
+    elseif string.match(current_line, "- %[x%] ") then
+        new_line = string.gsub(current_line, "- %[x%] ", "- %[ %] ")
+        vim.api.nvim_set_current_line(new_line)
     end
 end
 

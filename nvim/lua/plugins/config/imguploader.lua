@@ -1,6 +1,6 @@
 M = function ()
     require'nvim-github-uploader'.setup({
-    token = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    token = "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",
     repo = "ch3n9w/note-image",
     path = "note",
     img_name = function()

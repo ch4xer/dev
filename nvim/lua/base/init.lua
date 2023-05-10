@@ -32,7 +32,9 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.o.scrolloff = 5
+vim.o.scrolloff = 0
+-- wait PR to be merged, then all things will be better
+vim.o.smoothscroll = true
 
 -- indent setting
 vim.o.autoindent = true
@@ -62,7 +64,7 @@ vim.o.signcolumn = 'yes'
 vim.o.wrap = true
 
 -- key mappings
-vim.g.mapleader = ' '
+vim.g.mapleader = ','
 
 -- load preview view
 vim.o.viewoptions = 'folds,cursor,curdir'

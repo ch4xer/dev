@@ -3,6 +3,9 @@ M = function()
     local compare = require('cmp.config.compare')
     local lspkind = require('lspkind')
     local luasnip = require 'luasnip'
+    local s = luasnip.snippet
+    local t = luasnip.text_node
+    local i = luasnip.insert_node
     local border = {
         { "┌", "FloatBorder" },
         { "─", "FloatBorder" },
@@ -15,8 +18,11 @@ M = function()
     }
 
     luasnip.add_snippets("markdown", {
-        luasnip.snippet("todo", {
-            luasnip.text_node("- [ ] "), luasnip.insert_node(1, "todo")
+        s("todo", {
+            t("- [ ] "), i(1, "todo")
+        }),
+        s("link", {
+            t("["), i(1, ""), t("]("), i(2, ""), t(")")
         })
     })
 
@@ -132,18 +138,6 @@ M = function()
         },
         single_file_mode = true
     }
-    lspconfig.pyright.setup {
-        capabilities = capabilities,
-        settings = {
-            python = {
-                analysis = {
-                    autoSearchPaths = true,
-                    useLibraryCodeForTypes = true,
-                    diagnosticMode = 'workspace',
-                },
-            },
-        },
-    }
     lspconfig.gopls.setup {
         capabilities = capabilities,
         single_file_mode = true,
@@ -161,7 +155,7 @@ M = function()
             usePlaceholders = true,
         }
     }
-    local other_servers = { "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
+    local other_servers = { "pyright", "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
@@ -173,6 +167,12 @@ M = function()
     lspconfig.clangd.setup {
         capabilities = capabilities
     }
+    -- for python virtual projects, create pyrightconfig.json file at the root of folder, contains something like:
+    -- {
+      -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
+      -- "venv": "simple-monitor-hgrutBFy"
+    -- }
+
 end
 
 return M
