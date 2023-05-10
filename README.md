@@ -22,7 +22,6 @@ This repo contains my neovim Configuration, including some popular plugins and m
 |   code indent   | lukas-reineke/indent-blankline.nvim |
 | highlight word  |        RRethy/vim-illuminate        |
 |    top line     |        hoob3rt/lualine.nvim         |
-|    terminal     |       akinsho/toggleterm.nvim       |
 |    filetree     |      kyazdani42/nvim-tree.lua       |
 |  code outline   |        stevearc/aerial.nvim         |
 | code highlight  |   nvim-treesitter/nvim-treesitter   |
