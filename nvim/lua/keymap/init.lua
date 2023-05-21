@@ -1,60 +1,56 @@
 local vim = vim
 local Movement = {
     -- move cursor in wrapline paragraph
-    { 'n',          'j',         "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
-    { 'n',          'k',         "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true } },
+    { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
+    { 'n',          'k',          "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true } },
     -- move cursor to the start and the end of paragraph
-    { 'i',          '<C-h>',     '<ESC>I' },
-    { 'i',          '<C-l>',     '<ESC>A' },
-    { 'n',          '<C-h>',     '<ESC>^' },
-    { 'n',          '<C-l>',     '<ESC>$' },
-    { 'n',          '(',         '<ESC>^' },
-    { 'n',          ')',         '<ESC>$' },
-    { 'v',          '<C-l>',     '$' },
-    { 'v',          '<C-h>',     '^' },
+    { 'i',          '<C-j>',      '<ESC>o', },
+    { 'i',          '<C-k>',      '<ESC>O', },
+    { 'i',          '<C-h>',      '<ESC>I' },
+    { 'i',          '<C-l>',      '<ESC>A' },
+
+    { 'n',          '<C-h>',      '<ESC>^' },
+    { 'n',          '<C-l>',      '<ESC>$' },
+    { 'n',          '(',          '<ESC>^' },
+    { 'n',          ')',          '<ESC>$' },
+    { 'v',          '<C-l>',      '$' },
+    { 'v',          '<C-h>',      '^' },
 
     -- other
-    { 'i',          '<C-Down>',  '<C-O><C-E>' },
-    { 'i',          '<C-Up>',    '<C-O><C-Y>' },
+    { 'i',          '<C-Down>',   '<C-O><C-E>' },
+    { 'i',          '<C-Up>',     '<C-O><C-Y>' },
     -- { 'n',          'gd',       vim.lsp.buf.definition,                         { desc = 'go to definition of object' } },
 
     -- move cursor between window
-    { 'n',          'H',         '<C-w>h' },
-    { 'n',          'J',         '<C-w>j' },
-    { 'n',          'K',         '<C-w>k' },
-    { 'n',          'L',         '<C-w>l' },
+    { 'n',          '<leader>h',  '<C-w>h' },
+    { 'n',          '<leader>j',  '<C-w>j' },
+    { 'n',          '<leader>k',  '<C-w>k' },
+    { 'n',          '<leader>l',  '<C-w>l' },
 
     -- tab switch
-    { 'n',          '<Tab>',     '<CMD>bnext!<CR>' },
-    { 'n',          '<S-Tab>',   '<CMD>bprevious!<CR>' },
+    { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
+    { 'n',          '<S-Tab>',    '<CMD>bprevious!<CR>' },
     -- page scroll
-    { { 'n', 'v' }, '<C-k>',     math.floor(vim.fn.winheight(0) / 3) .. '<C-u>', { desc = 'scroll 1/3 size of page' } },
-    { { 'n', 'v' }, '<C-j>',     math.floor(vim.fn.winheight(0) / 3) .. '<C-d>', { desc = 'scroll 1/3 size of page' } },
-    { { 'n', 'v' }, '<Space>',   math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll 1/3 size of page' } },
-    { { 'n', 'v' }, '<C-Space>', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll 1/3 size of page' } },
-
+    { { 'n', 'v' }, '<PageUp>',   math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll 1/3 size of page' } },
+    { { 'n', 'v' }, '<PageDown>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll 1/3 size of page' } },
 }
 
 local Edit = {
-    { 'i',                    '<C-BS>', '<C-W>',        { desc = 'delete word forward' } },
+    { 'i', '<C-BS>', '<C-W>',        { desc = 'delete word forward' } },
     -- remember to configure alacritty with:
     -- { key: Back, mods: Control, chars: "\x17"}
     -- and configure Ctrl+/-Backspace's output as \x17
     -- { 'i',                    '\x17',   '<C-W>' },
 
-    { 'i', '<C-j>', '<ESC>o', {
-        desc =
-        'enter new line below without leaving insert mode'
-    } },
-    { 'i',                    '<C-k>',  '<ESC>O',       { desc = 'enter new line up without leaving insert mode' } },
     -- { 'n', '<LeftRelease>', '<LeftRelease><cmd>startinsert<CR>'},
-    { 'i',                    '<C-z>',  '<cmd>undo<CR>' },
-    -- { 'n', '<C-v>',  '<C-R>+' },
-    { 'v',                    '<C-c>',  '"*ygvy' },
-    { 'v',                    'y',      '"*ygvy' },
-    { { 'i', 'v', 'c', 't' }, '<C-v>',  '<C-R>+' },
-    { 'v',                    '>',      '>gv',          { desc = 'keep virtual mode after indent' } },
-    { 'v',                    '<',      '<gv',          { desc = 'keep virtual mode after indent' } },
+    { 'i', '<C-z>',  '<cmd>undo<CR>' },
+    { 'v', '<C-c>',  '"*ygvy' },
+    { 'v', 'y',      '"*ygvy' },
+    -- useless, use kitty buildin paste instead.
+    -- { { 'i', 'v', 'c', 't' }, '<C-v>',  '<C-R>+' },
+    { 'i', '<C-v>',  '<C-R>+' },
+    { 'v', '>',      '>gv',          { desc = 'keep virtual mode after indent' } },
+    { 'v', '<',      '<gv',          { desc = 'keep virtual mode after indent' } },
 }
 
 local Cmd = {
@@ -107,15 +103,16 @@ local Plugins = {
         { 'n', 'm', '<CMD>HopWord<CR>' },
     },
     lspsaga = {
-        { 'n',        'ga', '<CMD>Lspsaga code_action<CR>',          { silent = true } },
-        { 'n',        'ge', '<CMD>Lspsaga show_line_diagnostics<CR>' },
-        { 'n',        'gh', '<CMD>Lspsaga hover_doc<CR>' },
+        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
+        { 'n',          'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
+        { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
         -- { 'n', 'gs', '<CMD>Lspsaga signature_help<CR>' },
-        { 'n',        'gn', '<CMD>Lspsaga rename<CR>' },
-        { 'n',        'gd', '<CMD>Lspsaga goto_definition<CR>' },
-        { 'n',        'gp', '<CMD>Lspsaga peek_definition<CR>' },
-        { 'n',        'gr', '<CMD>Lspsaga lsp_finder<CR>', },
-        { { 'n', 't' }, 'ss', '<CMD>Lspsaga term_toggle<CR>' },
+        { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
+        { 'n',          'gd',    '<CMD>Lspsaga goto_definition<CR>' },
+        { 'n',          'gp',    '<CMD>Lspsaga peek_definition<CR>' },
+        { 'n',          'gr',    '<CMD>Lspsaga lsp_finder<CR>', },
+        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
+        { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     -- bottom terminal
     -- toggleterm = {

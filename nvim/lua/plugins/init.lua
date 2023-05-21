@@ -31,15 +31,13 @@ local plugins = {
         event = { 'InsertEnter' }
     },
     -- how to mark sure tabout load before luasnip
-    -- {
-    --     'abecodes/tabout.nvim',
-    --     dependencies = {
-    --         'nvim-cmp',
-    --         'nvim-treesitter/nvim-treesitter'
-    --     },
-    --     config = config.tabout,
-    -- },
-    -- { 'chentoast/marks.nvim', config = config.marks },
+    {
+        'abecodes/tabout.nvim',
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter'
+        },
+        config = config.tabout,
+    },
     {
         'folke/todo-comments.nvim',
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -56,7 +54,7 @@ local plugins = {
         'nvim-telescope/telescope.nvim',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-project.nvim'
+            'nvim-telescope/telescope-project.nvim',
         },
         cmd = { 'Telescope' },
         config = config.telescope,
@@ -77,11 +75,6 @@ local plugins = {
         event = 'BufRead',
         config = config.lualine
     },
-    -- {
-    --     'akinsho/toggleterm.nvim',
-    --     config = config.toggleterm,
-    --     cmd = { 'ToggleTerm' }
-    -- },
     { 'famiu/bufdelete.nvim' },
     {
         'kyazdani42/nvim-tree.lua',
@@ -98,6 +91,7 @@ local plugins = {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
+        dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
         event = 'BufRead',
         config = config.treesitter
     },
@@ -137,20 +131,22 @@ local plugins = {
         config = config.fold,
         dependencies = { 'kevinhwang91/promise-async' }
     },
-    -- orgmode !!!
     -- {
     --     'nvim-neorg/neorg',
+    --     build = ":Neorg sync-parsers",
     --     config = config.neorg,
-    --     ft = 'norg'
+    --     ft = 'norg',
+    --     dependencies = { 'nvim-lua/plenary.nvim' }
     -- },
     {
         'mfussenegger/nvim-dap',
         lazy = true,
         dependencies = {
             'rcarriga/nvim-dap-ui',
-            'theHamsta/nvim-dap-virtual-text' },
+            'theHamsta/nvim-dap-virtual-text'
+        },
         config = config.dap,
-        ft = { 'go', 'c' }
+        ft = { 'go', 'c', 'rust' }
     },
     {
         'glepnir/lspsaga.nvim',

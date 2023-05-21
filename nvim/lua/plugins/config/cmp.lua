@@ -30,6 +30,7 @@ M = function()
     luasnip.setup({
         update_events = { "TextChanged", "TextChangedI" },
         region_check_events = { "CursorMoved", "CursorHold", "InsertEnter", "CursorMovedI" },
+        history = true,
     })
     cmp.setup({
         completion = {
@@ -60,7 +61,7 @@ M = function()
             ['<C-q>'] = cmp.mapping.close(),
             -- ['<C-y>'] = cmp.config.disable,
             ['<CR>'] = cmp.mapping.confirm({ select = true }),
-            ['<Tab>'] = cmp.mapping(function(fallback)
+            ['<C-j>'] = cmp.mapping(function(fallback)
                 -- if cmp.visible() then
                 --     cmp.select_next_item()
                 if luasnip.expand_or_locally_jumpable() then
@@ -69,7 +70,7 @@ M = function()
                     fallback()
                 end
             end, { 'i', 's' }),
-            ['<S-Tab>'] = cmp.mapping(function(fallback)
+            ['<C-k>'] = cmp.mapping(function(fallback)
                 -- if cmp.visible() then
                 --     cmp.select_prev_item()
                 if luasnip.jumpable(-1) then

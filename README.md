@@ -18,10 +18,10 @@ This repo contains my neovim Configuration, including some popular plugins and m
 |  brackets pair  |        windwp/nvim-autopairs        |
 |    dashboard    |       glepnir/dashboard-nvim        |
 |  fuzzy finder   |    nvim-telescope/telescope.nvim    |
-|   bottom line   |       akinsho/bufferline.nvim       |
+|   status bar    |       akinsho/bufferline.nvim       |
 |   code indent   | lukas-reineke/indent-blankline.nvim |
 | highlight word  |        RRethy/vim-illuminate        |
-|    top line     |        hoob3rt/lualine.nvim         |
+|     tab bar     |        hoob3rt/lualine.nvim         |
 |    filetree     |      kyazdani42/nvim-tree.lua       |
 |  code outline   |        stevearc/aerial.nvim         |
 | code highlight  |   nvim-treesitter/nvim-treesitter   |

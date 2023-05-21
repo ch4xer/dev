@@ -14,6 +14,9 @@ vim.o.modifiable = true
 vim.o.autowriteall = true
 -- the refresh time will affect lspsaga's reaction time
 vim.o.updatetime = 300
+-- for which-key
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 -- case settintg
 vim.o.smartcase = true
 vim.o.ignorecase = true
@@ -55,7 +58,7 @@ vim.o.expandtab = true
 
 -- show numbers
 vim.o.number = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 
 -- save space for window
 vim.o.signcolumn = 'yes'
@@ -64,7 +67,7 @@ vim.o.signcolumn = 'yes'
 vim.o.wrap = true
 
 -- key mappings
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 -- load preview view
 vim.o.viewoptions = 'folds,cursor,curdir'

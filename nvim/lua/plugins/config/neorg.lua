@@ -1,17 +1,19 @@
 M = function ()
     require('neorg').setup {
         load = {
-            ["core.defaults"] = {},
-            ["core.norg.concealer"] = {},
-            ["core.norg.manoeuvre"] = {},
-            ["core.norg.completion"] = {
+            ["core.defaults"] = {}, -- default behavior
+            ["core.concealer"] = {}, -- add icon to documents
+            ["core.completion"] = {
                 config = {
                     engine = "nvim-cmp",
                 },
             },
-            ["core.export"] = {},
+            ["core.export"] = {}, -- export to markdown
             ["core.integrations.treesitter"] = {},
-            ["core.autocommands"] = {},
+            ["core.clipboard.code-blocks"] = {}, -- remove whitespace when copying code block
+            -- ["core.esupports.hop"] = {}, -- press <CR> to follow a link
+            ["core.esupports.indent"] = {}, -- auto indent based on treesitter
+
         }
     }
 end

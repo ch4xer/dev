@@ -9,7 +9,6 @@ config.indent = require('plugins.config.indent')
 config.lspsaga = require('plugins.config.lspsaga')
 config.lualine = require('plugins.config.lualine')
 config.mason = require('plugins.config.mason')
-config.marks = require('plugins.config.marks')
 config.neorg = require('plugins.config.neorg')
 config.nullls = require('plugins.config.nullls')
 config.tabout = require('plugins.config.tabout')
@@ -22,6 +21,7 @@ config.imguploader = require('plugins.config.imguploader')
 config.dashboard = require('plugins.config.dashboard')
 config.outline = require('plugins.config.outline')
 config.fold = require('plugins.config.fold')
+config.session = require('plugins.config.session')
 
 
 return config

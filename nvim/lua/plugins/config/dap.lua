@@ -15,7 +15,6 @@ M = function()
         }
     })
     dap.listeners.after.event_initialized["dapui_config"] = function()
-        vim.cmd("NvimTreeClose")
         dapui.open({})
     end
     dap.listeners.before.event_terminated["dapui_config"] = function()
@@ -25,8 +24,6 @@ M = function()
         dapui.close({})
     end
 
-    -- require("dap-go").setup()
-    -- require("rust-tools").setup()
     dap.adapters.lldb = {
         type = "executable",
         command = "/usr/bin/lldb-vscode", -- adjust as needed
@@ -72,14 +69,6 @@ M = function()
             mode = "test",
             program = "${file}"
         },
-        -- works with go.mod packages and sub packages
-        {
-            type = "delve",
-            name = "Debug test (go.mod)",
-            request = "launch",
-            mode = "test",
-            program = "./${relativeFileDirname}"
-        }
     }
     require("nvim-dap-virtual-text").setup({
         show_stop_reason = false,
