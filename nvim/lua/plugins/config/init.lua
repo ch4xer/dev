@@ -2,6 +2,8 @@ config = {}
 
 config.bufferline = require('plugins.config.bufferline')
 config.cmp = require('plugins.config.cmp')
+config.cmp_copilot = require('plugins.config.cmp-copilot')
+config.cmp_tabnine = require('plugins.config.cmp-tabnine')
 config.comment = require('plugins.config.comment')
 config.dap = require('plugins.config.dap')
 config.hop = require('plugins.config.hop')
@@ -14,14 +16,11 @@ config.nullls = require('plugins.config.nullls')
 config.tabout = require('plugins.config.tabout')
 config.telescope = require('plugins.config.telescope')
 config.theme = require('plugins.config.theme')
-config.toggleterm = require('plugins.config.toggleterm')
 config.filetree = require('plugins.config.filetree')
 config.treesitter = require('plugins.config.treesitter')
 config.imguploader = require('plugins.config.imguploader')
 config.dashboard = require('plugins.config.dashboard')
 config.outline = require('plugins.config.outline')
 config.fold = require('plugins.config.fold')
-config.session = require('plugins.config.session')
-
 
 return config

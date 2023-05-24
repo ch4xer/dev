@@ -110,14 +110,21 @@ local plugins = {
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
-            'windwp/nvim-autopairs'
         },
         config = config.cmp,
     },
     -- {
+    --     'zbirenbaum/copilot-cmp',
+    --     dependencies = {
+    --         'zbirenbaum/copilot.lua',
+    --     },
+    --     event = "InsertEnter"
+    -- },
+    -- {
     --     'tzachar/cmp-tabnine',
     --     build = './install.sh',
     --     dependencies = 'hrsh7th/nvim-cmp',
+    --     ft = {'go', 'rust', 'c', 'python'},
     -- },
     -- format
     {
@@ -146,7 +153,7 @@ local plugins = {
             'theHamsta/nvim-dap-virtual-text'
         },
         config = config.dap,
-        ft = { 'go', 'c', 'rust' }
+        ft = { 'go', 'c', 'rust', 'python' }
     },
     {
         'glepnir/lspsaga.nvim',

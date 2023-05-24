@@ -1,7 +1,7 @@
 M = function ()
     require'nvim-github-uploader'.setup({
-    token = "xxxxxxxxx",
-    repo = "your/repo",
+    token = "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",
+    repo = "ch3n9w/note-image",
     path = "note",
     img_name = function()
         return os.date "%Y-%m-%d-%H-%M-%S.png"

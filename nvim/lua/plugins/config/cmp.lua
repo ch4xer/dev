@@ -60,7 +60,10 @@ M = function()
         mapping = {
             ['<C-q>'] = cmp.mapping.close(),
             -- ['<C-y>'] = cmp.config.disable,
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
+            ['<CR>'] = cmp.mapping.confirm({
+                behavior = cmp.ConfirmBehavior.Replace,
+                select = true,
+            }),
             ['<C-j>'] = cmp.mapping(function(fallback)
                 -- if cmp.visible() then
                 --     cmp.select_next_item()
@@ -170,10 +173,9 @@ M = function()
     }
     -- for python virtual projects, create pyrightconfig.json file at the root of folder, contains something like:
     -- {
-      -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
-      -- "venv": "simple-monitor-hgrutBFy"
+    -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
+    -- "venv": "simple-monitor-hgrutBFy"
     -- }
-
 end
 
 return M

@@ -3,6 +3,14 @@ M = function()
     local compare = require('cmp.config.compare')
     local lspkind = require('lspkind')
     local luasnip = require 'luasnip'
+    require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+    })
+    require("copilot_cmp").setup()
+    local s = luasnip.snippet
+    local t = luasnip.text_node
+    local i = luasnip.insert_node
     local border = {
         { "┌", "FloatBorder" },
         { "─", "FloatBorder" },
@@ -13,32 +21,21 @@ M = function()
         { "└", "FloatBorder" },
         { "│", "FloatBorder" },
     }
-    local source_mapping = {
-        buffer = "[Buffer]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[Lua]",
-        cmp_tabnine = "[TN]",
-        path = "[Path]",
-    }
-    local tabnine = require('cmp_tabnine.config')
 
-    tabnine:setup({
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = '..',
-        ignored_file_types = {
-            -- default is not to ignore
-            -- uncomment to ignore in lua:
-            -- lua = true
-        },
-        show_prediction_strength = false
+    luasnip.add_snippets("markdown", {
+        s("todo", {
+            t("- [ ] "), i(1, "todo")
+        }),
+        s("link", {
+            t("["), i(1, ""), t("]("), i(2, ""), t(")")
+        })
     })
+
     -- -- https://github.com/L3MON4D3/LuaSnip/issues/780
     luasnip.setup({
         update_events = { "TextChanged", "TextChangedI" },
         region_check_events = { "CursorMoved", "CursorHold", "InsertEnter", "CursorMovedI" },
+        history = true,
     })
     cmp.setup({
         completion = {
@@ -59,32 +56,17 @@ M = function()
             end,
         },
         formatting = {
-            format = function(entry, vim_item)
-                -- if you have lspkind installed, you can use it like
-                -- in the following line:
-                vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
-                vim_item.menu = source_mapping[entry.source.name]
-                if entry.source.name == "cmp_tabnine" then
-                    local detail = (entry.completion_item.data or {}).detail
-                    vim_item.kind = ""
-                    if detail and detail:find('.*%%.*') then
-                        vim_item.kind = vim_item.kind .. ' ' .. detail
-                    end
-
-                    if (entry.completion_item.data or {}).multiline then
-                        vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
-                    end
-                end
-                local maxwidth = 80
-                vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
-                return vim_item
-            end,
+            format = lspkind.cmp_format({
+                mode = 'symbol_text',
+                maxwidth = 50,
+                symbol_map = { Copilot = "" }
+            }),
         },
         mapping = {
             ['<C-q>'] = cmp.mapping.close(),
             ['<CR>'] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Replace,
-                select = true
+                select = false
             }),
             ['<C-j>'] = cmp.mapping(function(fallback)
                 if luasnip.expand_or_locally_jumpable() then
@@ -117,17 +99,17 @@ M = function()
         },
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
-            { name = 'cmp_tabnine' },
             { name = 'luasnip' },
+            { name = 'copilot' },
         }, {
             { name = 'buffer' },
         }),
         sorting = {
             priority_weight = 1.0,
             comparators = {
+                require("copilot_cmp.comparators").prioritize,
                 compare.offset,
                 compare.exact,
-                require('cmp_tabnine.compare'),
                 -- compare.scopes,
                 compare.score,
                 compare.recently_used,
@@ -140,6 +122,12 @@ M = function()
         }
     })
 
+    -- auto insert `(` after select function or method item
+    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+    cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+    )
 
     local lspconfig = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -182,6 +170,11 @@ M = function()
     lspconfig.clangd.setup {
         capabilities = capabilities
     }
+    -- for python virtual projects, create pyrightconfig.json file at the root of folder, contains something like:
+    -- {
+    -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
+    -- "venv": "simple-monitor-hgrutBFy"
+    -- }
 end
 
 return M
