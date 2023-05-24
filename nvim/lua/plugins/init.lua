@@ -98,7 +98,7 @@ local plugins = {
     {
         'williamboman/mason.nvim',
         dependencies = { 'williamboman/mason-lspconfig.nvim', },
-        cmd = { 'Mason', 'MasonInstall' },
+        build = ":MasonUpdate",
         config = config.mason,
     },
     {
