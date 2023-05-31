@@ -1,8 +1,16 @@
 M = function()
+    local function ts_disable(_, bufnr)
+        return vim.api.nvim_buf_line_count(bufnr) > 2000
+    end
     require('nvim-treesitter.configs').setup {
         ensure_installed = "all",
+        -- switch to buildin syntax highlighting
         highlight = {
             enable = true,
+            disable = function(lang, bufnr)
+                return lang == "" or ts_disable(lang, bufnr)
+            end,
+            -- additional_vim_regex_highlighting = {"yaml"},
         },
         indent = {
             enable = true,
@@ -31,11 +39,12 @@ M = function()
                 enable = true,
                 lookahead = true,
                 keymaps = {
-                    ["of"] = "@function.outer",
+                    ["af"] = "@function.outer",
                     ["if"] = "@function.inner",
-                    ["oc"] = "@class.outer",
+                    ["ac"] = "@class.outer",
                     ["ic"] = "@class.inner",
-                    ["p"] = "@parameter.outer"
+                    ["ap"] = "@parameter.outer",
+                    ["ip"] = "@parameter.inner"
                 },
                 -- You can choose the select mode (default is charwise 'v')
                 --

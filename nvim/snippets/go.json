@@ -1,0 +1,7 @@
+{
+  "if err != nil": {
+    "prefix": "ife",
+    "body": "if err != nil {\n\tlog.Fatal(err)\n}\n\n",
+    "description": "Snippet for if err != nil"
+  }
+}

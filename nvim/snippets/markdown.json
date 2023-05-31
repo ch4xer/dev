@@ -1,0 +1,12 @@
+{
+  "todo": {
+    "prefix": "to",
+    "body": "- [ ] ${1:todo}",
+    "description": "todo"
+  },
+  "link": {
+    "prefix": "ln",
+    "body": "[$1](${2:url})",
+    "description": "link"
+  }
+}

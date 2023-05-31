@@ -45,8 +45,9 @@ This repo contains my neovim Configuration, including some popular plugins and m
 │   ├── keymap <-- keymap for almost all part
 │   └── plugins
 │       └── config <-- plugin configurations
-└── queries
-    └── markdown <-- custom markdown parser for better expierence
+├── queries
+│   └── markdown <-- custom markdown parser for better expierence
+└── snippets <-- custom code snippets
 ```
 
 ## Todo

@@ -3,9 +3,6 @@ M = function()
     local compare = require('cmp.config.compare')
     local lspkind = require('lspkind')
     local luasnip = require 'luasnip'
-    local s = luasnip.snippet
-    local t = luasnip.text_node
-    local i = luasnip.insert_node
     local border = {
         { "┌", "FloatBorder" },
         { "─", "FloatBorder" },
@@ -17,14 +14,7 @@ M = function()
         { "│", "FloatBorder" },
     }
 
-    luasnip.add_snippets("markdown", {
-        s("todo", {
-            t("- [ ] "), i(1, "todo")
-        }),
-        s("link", {
-            t("["), i(1, ""), t("]("), i(2, ""), t(")")
-        })
-    })
+    require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
 
     -- -- https://github.com/L3MON4D3/LuaSnip/issues/780
     luasnip.setup({
@@ -97,6 +87,7 @@ M = function()
                 end
             end, { 'i', 's' }),
         },
+        preselect = cmp.PreselectMode.None,
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
