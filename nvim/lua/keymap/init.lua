@@ -106,7 +106,6 @@ local Plugins = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
         { 'n',          'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
         { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
-        -- { 'n', 'gs', '<CMD>Lspsaga signature_help<CR>' },
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga goto_definition<CR>' },
         { 'n',          'gp',    '<CMD>Lspsaga peek_definition<CR>' },
@@ -114,12 +113,6 @@ local Plugins = {
         { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
-    -- bottom terminal
-    -- toggleterm = {
-    --     { 'n', 'ss',    '<CMD>ToggleTerm size=8 direction=horizontal<CR>' },
-    --     { 't', 'ss',    '<C-\\><C-n><CMD>ToggleTerm size=8 direction=horizontal<CR>' },
-    --     { 't', '<esc>', '<C-\\><C-n><CMD>wincmd p<CR>' },
-    -- },
     -- debug
     dap = {
         { 'n', '<F1>', '<CMD>lua require"dap".toggle_breakpoint()<CR>' },
@@ -127,6 +120,11 @@ local Plugins = {
         { 'n', '<F3>', '<CMD>lua require"dap".step_into()<CR>' },
         { 'n', '<F4>', '<CMD>lua require"dap".step_over()<CR>' },
         { 'n', '<F5>', '<CMD>lua require"dapui".toggle()<CR>' },
+    },
+    zen = {
+        { 'n', '<leader>f', '<CMD>lua require("zen-mode").toggle({window = {width = 1}})<CR>',
+            { desc = 'toggle window fullscreen' },
+        }
     },
     github_upload = {
         { 'n', '<C-p>', "<CMD>lua require('nvim-github-uploader').upload_img()<CR>" }

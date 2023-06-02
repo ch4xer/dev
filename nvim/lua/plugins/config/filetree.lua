@@ -18,21 +18,10 @@ M = function()
         --     end
         -- end
         --
-        -- vsplit and close filetree
-        local function custom_vsplit()
-            local node = require('nvim-tree.lib').get_node_at_cursor()
-            api.node.open.vertical(node)
-            api.tree.toggle()
-        end
-        -- split
-        local function custom_split()
-            local node = require('nvim-tree.lib').get_node_at_cursor()
-            api.node.open.horizontal(node)
-        end
         api.config.mappings.default_on_attach(bufnr)
         vim.keymap.set('n', '<BS>', api.node.navigate.parent_close, opts('Close Directory'))
-        vim.keymap.set('n', 'v', custom_vsplit, opts('Open: Vertical Split'))
-        vim.keymap.set('n', 's', custom_split, opts('Open: Horizontal Split'))
+        vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
+        vim.keymap.set('n', 's', api.node.open.horizontal, opts('Open: Horizontal Split'))
         vim.keymap.set('n', 'r', api.fs.rename_sub, opts('Rename: Omit Filename'))
         vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
         vim.keymap.set('n', 'c', api.fs.copy.node, opts('Copy'))

@@ -23,17 +23,17 @@ This repo contains my neovim Configuration, including some popular plugins and m
 | highlight word  |        RRethy/vim-illuminate        |
 |     tab bar     |        hoob3rt/lualine.nvim         |
 |    filetree     |      kyazdani42/nvim-tree.lua       |
-|  code outline   |        stevearc/aerial.nvim         |
+| symbol outline  |        stevearc/aerial.nvim         |
 | code highlight  |   nvim-treesitter/nvim-treesitter   |
 |   lsp manager   |       williamboman/mason.nvim       |
 | code completion |          hrsh7th/nvim-cmp           |
 |  code snippet   |          L3MON4D3/LuaSnip           |
 |    code fold    |        kevinhwang91/nvim-ufo        |
 |  code debugger  |        mfussenegger/nvim-dap        |
-|  better lsp ui  |        glepnir/lspsaga.nvim         |
+| lsp enhancement |        glepnir/lspsaga.nvim         |
 |   git status    |       lewis6991/gitsigns.nvim       |
 |    movement     |          phaazon/hop.nvim           |
-|  image upload   |     ch3n9w/nvim-github-uploader     |
+|    zen mode     |         folke/zen-mode.nvim         |
 
 ## File Structure
 

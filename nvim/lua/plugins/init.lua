@@ -44,6 +44,10 @@ local plugins = {
         config = true
     },
     {
+        "folke/zen-mode.nvim",
+        config = true
+    },
+    {
         'glepnir/dashboard-nvim',
         -- event = 'VimEnter',
         lazy = true,
@@ -163,7 +167,6 @@ local plugins = {
     { 'onsails/lspkind-nvim' },
     { 'lewis6991/gitsigns.nvim',     config = true },
     { 'phaazon/hop.nvim',            config = config.hop,         cmd = { 'HopWord' } },
-    { 'ch3n9w/nvim-github-uploader', config = config.imguploader, cmd = { 'UploadClipboard' } }
 }
 
 require("lazy").setup(plugins)
