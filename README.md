@@ -2,6 +2,8 @@
 
 ![](screenshots/dashboard.png)
 ![](screenshots/edit.png)
+![](screenshots/debug.png)
+![](screenshots/fuzzy.png)
 
 ## Introduction
 
