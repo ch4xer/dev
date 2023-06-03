@@ -46,23 +46,6 @@ M = function()
                     ["ap"] = "@parameter.outer",
                     ["ip"] = "@parameter.inner"
                 },
-                -- You can choose the select mode (default is charwise 'v')
-                --
-                -- Can also be a function which gets passed a table with the keys
-                -- * query_string: eg '@function.inner'
-                -- * method: eg 'v' or 'o'
-                -- and should return the mode ('v', 'V', or '<c-v>') or a table
-                -- mapping query_strings to modes.
-                -- selection_modes = {
-                --     ['@parameter.inner'] = 'v', -- charwise
-                --     ['@function.outer'] = 'V', -- linewise
-                -- },
-                -- `ap`.
-                --
-                -- Can also be a function which gets passed a table with the keys
-                -- * query_string: eg '@function.inner'
-                -- * selection_mode: eg 'v'
-                -- and should return true of false
                 include_surrounding_whitespace = false,
             },
         }

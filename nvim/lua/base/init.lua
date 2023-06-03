@@ -35,7 +35,7 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.o.scrolloff = 0
+vim.o.scrolloff = 5
 -- wait PR to be merged, then all things will be better
 vim.o.smoothscroll = true
 

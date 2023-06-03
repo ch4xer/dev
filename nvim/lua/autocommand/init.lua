@@ -26,13 +26,17 @@ local toggle_tree = function()
     local open_tree_without_focus = function()
         require('nvim-tree.api').tree.toggle(false, true)
     end
+
     -- decide whether to open nvim-tree according to the window size
     if vim.api.nvim_list_uis()[1].width > vim.g.width_open_tree then
-        -- call open_tree_without_focus directly
-        -- will cause `vim xxx` unable to keep focus on buffer
+        if require('nvim-tree.view').is_visible() then
+            return
+        end
         vim.fn.timer_start(2, open_tree_without_focus)
     else
-        return
+        if require('nvim-tree.view').is_visible() then
+            require('nvim-tree.api').tree.close()
+        end
     end
 end
 
@@ -77,9 +81,7 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
         if package.loaded['nvim-tree'] == nil then
             return
         end
-        local nvim_tree_view = require('nvim-tree.view')
         -- decide whether to open nvim-tree according to the window size
-        vim.print(vim.fn.winwidth(0))
         if vim.api.nvim_list_uis()[1].width > vim.g.width_open_tree then
             -- if the number of valid window > 1, then dont start tree
             local is_valid_window = function(winnr)
@@ -91,17 +93,13 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
             if #vim.tbl_filter(is_valid_window, vim.api.nvim_list_wins()) > 1 then
                 return
             end
-            -- if #vim.api.nvim_list_wins() > 1 then
-            --     return
-            -- end
-            -- if vim.fn.winwidth(0) > vim.g.width_open_tree then
-            if nvim_tree_view.is_visible() then
+            if require('nvim-tree.view').is_visible() then
                 return
             else
                 require('nvim-tree.api').tree.toggle(false, true)
             end
         else
-            if nvim_tree_view.is_visible() then
+            if require('nvim-tree.view').is_visible() then
                 require('nvim-tree.api').tree.close()
             end
             -- if outline is open, close it

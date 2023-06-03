@@ -69,7 +69,6 @@ local plugins = {
         event = 'BufRead',
         config = config.indent
     },
-    -- highlight current word
     {
         'RRethy/vim-illuminate',
         event = 'BufRead',
@@ -165,8 +164,8 @@ local plugins = {
         config = config.lspsaga,
     },
     { 'onsails/lspkind-nvim' },
-    { 'lewis6991/gitsigns.nvim',     config = true },
-    { 'phaazon/hop.nvim',            config = config.hop,         cmd = { 'HopWord' } },
+    { 'lewis6991/gitsigns.nvim', config = true },
+    { 'phaazon/hop.nvim',        config = config.hop, },
 }
 
 require("lazy").setup(plugins)

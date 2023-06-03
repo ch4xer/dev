@@ -19,7 +19,6 @@ local Movement = {
     -- other
     { 'i',          '<C-Down>',   '<C-O><C-E>' },
     { 'i',          '<C-Up>',     '<C-O><C-Y>' },
-    -- { 'n',          'gd',       vim.lsp.buf.definition,                         { desc = 'go to definition of object' } },
 
     -- move cursor between window
     { 'n',          '<leader>h',  '<C-w>h' },
@@ -58,19 +57,17 @@ local Cmd = {
     { 'v',               ';',     ':',                                 { nowait = true } },
     { { 'n', 'i', 'v' }, '<C-s>', '<CMD>w<CR>',                        { desc = 'save' } },
     { 'n',               'Q',     'q',                                 { desc = 'macro record' } },
-    { 'n',               'g=',    require("keymap.custom").FormatCode },
+    { 'n',               'g=',    vim.lsp.buf.format },
     { 'c',               'w!',    require('keymap.custom').sudo_write, { desc = 'save file as root' } },
 }
 
 local Fold = {
     { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
-    { 'n', 'zz',            'za', { desc = 'toggle fold' } },
     { 'n', '<2-LeftMouse>', 'za' },
 }
 
 local ModeSwitch = {
     { 'n', '<RightMouse>', 'a' },
-
     { 'i', '<ESC>', '<C-O>:stopinsert<CR>', {
         desc =
         'back to normal mode without moving cursor'
@@ -100,7 +97,13 @@ local Plugins = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     hop = {
-        { 'n', 'm', '<CMD>HopWord<CR>' },
+        -- { 'n', 'm', '<CMD>HopWord<CR>' },
+        { 'n', 'm', function ()
+            require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })
+        end},
+        { 'n', 'M', function ()
+            require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })
+        end},
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
@@ -113,7 +116,6 @@ local Plugins = {
         { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
-    -- debug
     dap = {
         { 'n', '<F1>', '<CMD>lua require"dap".toggle_breakpoint()<CR>' },
         { 'n', '<F2>', '<CMD>lua require"dap".continue()<CR>' },
@@ -131,7 +133,6 @@ local Plugins = {
     }
 }
 
--- key map function
 local key_mapper = function(mode, key, result, config)
     if nil == config then
         config = { noremap = true, silent = true }
