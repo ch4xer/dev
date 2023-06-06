@@ -8,8 +8,8 @@ vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.api.nvim_set_hl(0, "@text.title1", { fg = "#7aa2f7", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.title2", { fg = "#ff9e64", bold = true, italic = true })
-vim.api.nvim_set_hl(0, "@text.title3", { fg = "#9ece6a", bold = true, italic = true })
-vim.api.nvim_set_hl(0, "@text.title4", { fg = "#7dcfff", bold = true, italic = true })
+vim.api.nvim_set_hl(0, "@text.title3", { fg = "#7dcfff", bold = true, italic = true })
+vim.api.nvim_set_hl(0, "@text.title4", { fg = "#9ece6a", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.title5", { fg = "#bb9af7", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.title6", { fg = "#cfc9c2", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.quote", { fg = "#bb9af7", bold = false, italic = true })

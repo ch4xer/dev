@@ -41,6 +41,7 @@ local toggle_tree = function()
 end
 
 vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
+-- vim.api.nvim_create_autocmd({ 'VimEnter' }, {
     callback = function()
         if vim.g.firstBufferOrDashboard ~= 1 then
             if vim.g.dashboard == 1 then

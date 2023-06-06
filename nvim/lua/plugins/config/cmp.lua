@@ -24,7 +24,6 @@ M = function()
     })
     cmp.setup({
         completion = {
-            -- highlight the first candidate
             completeopt = 'menu,menuone,noinsert',
         },
         window = {
@@ -49,7 +48,6 @@ M = function()
         },
         mapping = {
             ['<C-q>'] = cmp.mapping.close(),
-            -- ['<C-y>'] = cmp.config.disable,
             ['<CR>'] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Replace,
                 select = true,
@@ -114,7 +112,6 @@ M = function()
 
     -- auto insert `(` after select function or method item
     local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-    local cmp = require('cmp')
     cmp.event:on(
         'confirm_done',
         cmp_autopairs.on_confirm_done()

@@ -35,21 +35,22 @@ local Movement = {
 }
 
 local Edit = {
-    { 'i', '<C-BS>', '<C-W>',        { desc = 'delete word forward' } },
+    { 'i', '<C-BS>',          '<C-W>',        { desc = 'delete word forward' } },
     -- remember to configure alacritty with:
     -- { key: Back, mods: Control, chars: "\x17"}
     -- and configure Ctrl+/-Backspace's output as \x17
     -- { 'i',                    '\x17',   '<C-W>' },
 
     -- { 'n', '<LeftRelease>', '<LeftRelease><cmd>startinsert<CR>'},
-    { 'i', '<C-z>',  '<cmd>undo<CR>' },
-    { 'v', '<C-c>',  '"*ygvy' },
-    { 'v', 'y',      '"*ygvy' },
+    { 'i', '<C-z>',           '<cmd>undo<CR>' },
+    { 'v', '<C-c>',           '"*ygvy' },
+    { 'v', 'y',               '"*ygvy' },
     -- useless, use kitty buildin paste instead.
     -- { { 'i', 'v', 'c', 't' }, '<C-v>',  '<C-R>+' },
-    { 'i', '<C-v>',  '<C-R>+' },
-    { 'v', '>',      '>gv',          { desc = 'keep virtual mode after indent' } },
-    { 'v', '<',      '<gv',          { desc = 'keep virtual mode after indent' } },
+    { 'i', '<C-v>',           '<C-R>+' },
+    { 'v', '>',               '>gv',          { desc = 'keep virtual mode after indent' } },
+    { 'v', '<',               '<gv',          { desc = 'keep virtual mode after indent' } },
+    { 'n', '<leader><Space>', 'ciw' },
 }
 
 local Cmd = {
@@ -98,12 +99,12 @@ local Plugins = {
     },
     hop = {
         -- { 'n', 'm', '<CMD>HopWord<CR>' },
-        { 'n', 'm', function ()
-            require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })
-        end},
-        { 'n', 'M', function ()
-            require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })
-        end},
+        { 'n', 'm', function()
+            require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.AFTER_CURSOR })
+        end },
+        { 'n', 'M', function()
+            require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR })
+        end },
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },

@@ -114,15 +114,15 @@ local plugins = {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
         },
-        config = config.cmp,
+        config = config.cmp_copilot,
     },
-    -- {
-    --     'zbirenbaum/copilot-cmp',
-    --     dependencies = {
-    --         'zbirenbaum/copilot.lua',
-    --     },
-    --     event = "InsertEnter"
-    -- },
+    {
+        'zbirenbaum/copilot-cmp',
+        dependencies = {
+            'zbirenbaum/copilot.lua',
+        },
+        event = "InsertEnter"
+    },
     -- {
     --     'tzachar/cmp-tabnine',
     --     build = './install.sh',
