@@ -3,6 +3,7 @@ config = {}
 config.bufferline = require('plugins.config.bufferline')
 config.cmp = require('plugins.config.cmp')
 config.cmp_copilot = require('plugins.config.cmp-copilot')
+config.copilot = require('plugins.config.copilot')
 config.cmp_tabnine = require('plugins.config.cmp-tabnine')
 config.comment = require('plugins.config.comment')
 config.dap = require('plugins.config.dap')

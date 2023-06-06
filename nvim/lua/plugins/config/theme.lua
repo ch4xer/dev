@@ -26,6 +26,7 @@ M = function()
         theme = 'storm'
     end
 
+    
     require("tokyonight").setup({
         style = theme,
         transparent = trans,

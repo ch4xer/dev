@@ -86,7 +86,7 @@ M = function()
                 end
             end, { 'i', 's' }),
         },
-        preselect = cmp.PreselectMode.None,
+        -- preselect = cmp.PreselectMode.None,
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
@@ -97,12 +97,12 @@ M = function()
         sorting = {
             priority_weight = 1.0,
             comparators = {
-                require("copilot_cmp.comparators").prioritize,
                 compare.offset,
                 compare.exact,
+                compare.recently_used,
+                require("copilot_cmp.comparators").prioritize,
                 -- compare.scopes,
                 compare.score,
-                compare.recently_used,
                 compare.locality,
                 compare.kind,
                 compare.sort_text,

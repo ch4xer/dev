@@ -1,5 +1,4 @@
 local vim = vim
--- Install packer
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -7,15 +6,13 @@ if not vim.loop.fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local config = require('plugins.config.init')
-
 local plugins = {
     {
         'folke/tokyonight.nvim',
@@ -30,7 +27,6 @@ local plugins = {
         config = true,
         event = { 'InsertEnter' }
     },
-    -- how to mark sure tabout load before luasnip
     {
         'abecodes/tabout.nvim',
         dependencies = {
@@ -120,7 +116,6 @@ local plugins = {
         config = config.mason,
     },
     {
-        -- Autocompletion
         'hrsh7th/nvim-cmp',
         dependencies = {
             'neovim/nvim-lspconfig',
@@ -129,15 +124,20 @@ local plugins = {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
         },
-        config = config.cmp_copilot,
+        config = config.cmp,
     },
     {
-        'zbirenbaum/copilot-cmp',
-        dependencies = {
-            'zbirenbaum/copilot.lua',
-        },
-        event = "InsertEnter"
+        'zbirenbaum/copilot.lua',
+        event = "InsertEnter",
+        config = config.copilot,
     },
+    -- {
+    --     'zbirenbaum/copilot-cmp',
+    --     dependencies = {
+    --         'zbirenbaum/copilot.lua',
+    --     },
+    --     event = "InsertEnter"
+    -- },
     -- {
     --     'tzachar/cmp-tabnine',
     --     build = './install.sh',
