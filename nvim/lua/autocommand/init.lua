@@ -25,6 +25,7 @@ local toggle_tree = function()
     end
     local open_tree_without_focus = function()
         require('nvim-tree.api').tree.toggle(false, true)
+        -- require("neo-tree.command")._command("filesystem")
     end
 
     -- decide whether to open nvim-tree according to the window size

@@ -1,13 +1,19 @@
 M = function()
     local actions = require('telescope.actions')
-    local telescopeConfig = require("telescope.config")
-    local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
-    table.insert(vimgrep_arguments, "--hidden")
-    table.insert(vimgrep_arguments, "--glob")
-    table.insert(vimgrep_arguments, "!**/.git/*")
     require('telescope').setup {
         defaults = {
-            vimgrep_arguments = vimgrep_arguments,
+            vimgrep_arguments = {
+                "rg",
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--smart-case",
+                "--hidden",
+                "--glob",
+                "!**/.git/*",
+            },
             mappings = {
                 i = {
                     ["<esc>"] = actions.close,

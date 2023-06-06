@@ -117,7 +117,6 @@ M = function()
         cmp_autopairs.on_confirm_done()
     )
 
-
     local lspconfig = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

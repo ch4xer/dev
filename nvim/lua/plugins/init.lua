@@ -86,6 +86,21 @@ local plugins = {
         },
         config = config.filetree,
     },
+    -- {
+    --     'nvim-neo-tree/neo-tree.nvim',
+    --     branch = "v2.x",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-tree/nvim-web-devicons",
+    --         "MunifTanjim/nui.nvim",
+    --     },
+    --     config = config.neotree,
+    -- },
+    -- {
+    --     'folke/edgy.nvim',
+    --     event = "VeryLazy",
+    --     config = config.edgy,
+    -- },
     {
         'stevearc/aerial.nvim',
         config = config.outline,

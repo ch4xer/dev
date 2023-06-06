@@ -17,9 +17,11 @@ config.tabout = require('plugins.config.tabout')
 config.telescope = require('plugins.config.telescope')
 config.theme = require('plugins.config.theme')
 config.filetree = require('plugins.config.filetree')
+config.neotree = require('plugins.config.neotree')
 config.treesitter = require('plugins.config.treesitter')
 config.dashboard = require('plugins.config.dashboard')
 config.outline = require('plugins.config.outline')
 config.fold = require('plugins.config.fold')
+config.edgy = require('plugins.config.edgy')
 
 return config
