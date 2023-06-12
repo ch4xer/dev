@@ -131,7 +131,10 @@ local Plugins = {
     },
     github_upload = {
         { 'n', '<C-p>', "<CMD>lua require('nvim-github-uploader').upload_img()<CR>" }
-    }
+    },
+    copilot = {
+        { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
+    },
 }
 
 local key_mapper = function(mode, key, result, config)

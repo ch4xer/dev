@@ -8,12 +8,7 @@ M = function()
             auto_trigger = true,
             debounce = 75,
             keymap = {
-                accept = "<Right>",
-                accept_word = false,
-                accept_line = false,
-                next = "<M-]>",
-                prev = "<M-[>",
-                dismiss = "<C-]>",
+                accept = false,
             },
         },
         filetypes = {
