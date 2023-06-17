@@ -21,7 +21,11 @@ local plugins = {
         config = config.theme
     },
     { "dstein64/vim-startuptime", cmd = "StartupTime" },
-    { 'numToStr/Comment.nvim',    config = config.comment },
+    {
+        'numToStr/Comment.nvim',
+        config = config.comment,
+        event = { 'BufRead' }
+    },
     {
         'windwp/nvim-autopairs',
         config = true,
@@ -33,15 +37,18 @@ local plugins = {
             'nvim-treesitter/nvim-treesitter'
         },
         config = config.tabout,
+        event = { 'InsertEnter' }
     },
     {
         'folke/todo-comments.nvim',
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = true
+        config = true,
+        event = { 'InsertEnter' }
     },
     {
         "folke/zen-mode.nvim",
-        config = true
+        config = true,
+        event = { 'BufRead' }
     },
     {
         'glepnir/dashboard-nvim',
@@ -59,7 +66,7 @@ local plugins = {
         cmd = { 'Telescope' },
         config = config.telescope,
     },
-    { 'akinsho/bufferline.nvim', config = config.bufferline },
+    { 'akinsho/bufferline.nvim',  config = config.bufferline },
     {
         'lukas-reineke/indent-blankline.nvim',
         event = 'BufRead',
@@ -117,6 +124,7 @@ local plugins = {
         },
         build = ":MasonUpdate",
         config = config.mason,
+        event = 'BufRead'
     },
     {
         'hrsh7th/nvim-cmp',
@@ -128,6 +136,7 @@ local plugins = {
             'hrsh7th/cmp-buffer',
         },
         config = config.cmp,
+        event = "InsertEnter",
     },
     {
         'zbirenbaum/copilot.lua',
@@ -157,7 +166,8 @@ local plugins = {
     {
         'kevinhwang91/nvim-ufo',
         config = config.fold,
-        dependencies = { 'kevinhwang91/promise-async' }
+        dependencies = { 'kevinhwang91/promise-async' },
+        event = 'BufRead'
     },
     -- {
     --     'nvim-neorg/neorg',
@@ -180,10 +190,11 @@ local plugins = {
         'glepnir/lspsaga.nvim',
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = config.lspsaga,
+        event = 'BufRead'
     },
     { 'onsails/lspkind-nvim' },
-    { 'lewis6991/gitsigns.nvim', config = true },
-    { 'smoka7/hop.nvim',        config = config.hop, },
+    { 'lewis6991/gitsigns.nvim', config = true, event = 'BufRead'},
+    { 'smoka7/hop.nvim',         config = config.hop, event = 'BufRead'},
 }
 
 require("lazy").setup(plugins)
