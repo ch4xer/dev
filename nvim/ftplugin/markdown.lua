@@ -13,7 +13,7 @@ vim.api.nvim_set_hl(0, "@text.title4", { fg = "#9ece6a", bold = true, italic = t
 vim.api.nvim_set_hl(0, "@text.title5", { fg = "#bb9af7", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.title6", { fg = "#cfc9c2", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.quote", { fg = "#bb9af7", bold = false, italic = true })
-vim.api.nvim_set_hl(0, "@punctuation.special2", { fg = "#73daca", bold = true, italic = false })
+vim.api.nvim_set_hl(0, "@punctuation.special2", { fg = "#73daca", bold = false, italic = false })
 vim.api.nvim_set_hl(0, "@text.todo.checked", { fg = "#73daca", bold = true, strikethrough=true})
 vim.api.nvim_set_hl(0, "@text.todo.unchecked", { fg = "#73daca", bold = true, strikethrough=false})
 

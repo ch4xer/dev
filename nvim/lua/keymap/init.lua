@@ -50,7 +50,8 @@ local Edit = {
     { 'i', '<C-v>',           '<C-R>+' },
     { 'v', '>',               '>gv',          { desc = 'keep virtual mode after indent' } },
     { 'v', '<',               '<gv',          { desc = 'keep virtual mode after indent' } },
-    { 'n', '<leader><Space>', 'ciw' },
+    { 'n', '<Backspace>', 'ciw' },
+    { 'v', '<Backspace>', 'c' },
 }
 
 local Cmd = {
@@ -98,13 +99,13 @@ local Plugins = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     hop = {
-        -- { 'n', 'm', '<CMD>HopWord<CR>' },
-        { 'n', 'm', function()
-            require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.AFTER_CURSOR })
-        end },
-        { 'n', 'M', function()
-            require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR })
-        end },
+        { 'n', 'm', '<CMD>HopWord<CR>' },
+        -- { 'n', 'm', function()
+        --     require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.AFTER_CURSOR })
+        -- end },
+        -- { 'n', 'M', function()
+        --     require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR })
+        -- end },
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
