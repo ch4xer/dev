@@ -183,7 +183,7 @@ local plugins = {
     },
     { 'onsails/lspkind-nvim' },
     { 'lewis6991/gitsigns.nvim', config = true },
-    { 'phaazon/hop.nvim',        config = config.hop, },
+    { 'smoka7/hop.nvim',        config = config.hop, },
 }
 
 require("lazy").setup(plugins)
