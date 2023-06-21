@@ -14,7 +14,6 @@ M = function()
         },
     })
     require('mason-tool-installer').setup {
-
         ensure_installed = {
             'bash-language-server',
             'clangd',
@@ -23,7 +22,7 @@ M = function()
             'intelephense',
             'lua-language-server',
             'marksman',
-            'pylsp',
+            'python-lsp-server',
             'black',
             'isort',
             'rome',

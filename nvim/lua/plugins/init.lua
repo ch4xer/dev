@@ -43,7 +43,7 @@ local plugins = {
         'folke/todo-comments.nvim',
         dependencies = { "nvim-lua/plenary.nvim" },
         config = true,
-        event = { 'InsertEnter' }
+        event = { 'BufRead' }
     },
     {
         "folke/zen-mode.nvim",
@@ -127,6 +127,7 @@ local plugins = {
         event = 'BufRead'
     },
     {
+        -- dont use any event, which will cause bugs
         'hrsh7th/nvim-cmp',
         dependencies = {
             'neovim/nvim-lspconfig',
@@ -136,7 +137,6 @@ local plugins = {
             'hrsh7th/cmp-buffer',
         },
         config = config.cmp,
-        event = "InsertEnter",
     },
     {
         'zbirenbaum/copilot.lua',

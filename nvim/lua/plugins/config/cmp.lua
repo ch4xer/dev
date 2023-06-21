@@ -158,13 +158,15 @@ M = function()
     lspconfig.pylsp.setup {
         settings = {
             pylsp = {
-                pycodestyle = {
-                    ignore = {'E501'}
+                plugins = {
+                    pycodestyle = {
+                        ignore = { 'E501' }
+                    }
                 }
             }
         }
     }
-    local other_servers = { "pylsp", "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
+    local other_servers = { "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
@@ -176,7 +178,7 @@ M = function()
     lspconfig.clangd.setup {
         capabilities = capabilities
     }
-    -- for python virtual projects, create pyrightconfig.json file at the root of folder, contains something like:
+    -- for python virtual projects, if using pyright, create pyrightconfig.json file at the root of folder, contains something like:
     -- {
     -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
     -- "venv": "simple-monitor-hgrutBFy"

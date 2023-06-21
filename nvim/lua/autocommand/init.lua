@@ -110,7 +110,7 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
     end
 })
 
--- becase neovim bevious changed in nightly
+-- becase neovim behaviors changed in nightly
 vim.api.nvim_create_autocmd("WinLeave", {
   callback = function()
     if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
@@ -125,19 +125,21 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-vim.api.nvim_create_autocmd("InsertEnter", {
-  callback = function()
-        if vim.lsp.buf.inlay_hint ~= nil then
-            vim.cmd.highlight('default link LspInlayHint Comment')
-            vim.lsp.buf.inlay_hint(0, true)
-        end
-  end,
-})
-
-vim.api.nvim_create_autocmd("InsertLeave", {
-  callback = function()
-        if vim.lsp.buf.inlay_hint ~= nil then
-            vim.lsp.buf.inlay_hint(0, false)
-        end
-  end,
-})
+-- inlay hint support
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+--   pattern = {"*.go"},
+--   callback = function()
+--         if vim.lsp.buf.inlay_hint ~= nil and vim.bo.ft ~= "TelescopePrompt" then
+--             vim.cmd.highlight('default link LspInlayHint Comment')
+--             vim.lsp.buf.inlay_hint(0, true)
+--         end
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+--   callback = function()
+--         if vim.lsp.buf.inlay_hint ~= nil then
+--             vim.lsp.buf.inlay_hint(0, false)
+--         end
+--   end,
+-- })
