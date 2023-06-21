@@ -155,18 +155,7 @@ M = function()
             usePlaceholders = true,
         }
     }
-    lspconfig.pylsp.setup {
-        settings = {
-            pylsp = {
-                plugins = {
-                    pycodestyle = {
-                        ignore = { 'E501' }
-                    }
-                }
-            }
-        }
-    }
-    local other_servers = { "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
+    local other_servers = {"pyright", "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
@@ -182,6 +171,24 @@ M = function()
     -- {
     -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
     -- "venv": "simple-monitor-hgrutBFy"
+    -- }
+    -- pylsp is unable to find virtualenvs according to single config file in project
+    -- lspconfig.pylsp.setup {
+    --     settings = {
+    --         pylsp = {
+    --             plugins = {
+    --                 pycodestyle = {
+    --                     ignore = { 'E501' }
+    --                 },
+    --                 pylint = {
+    --                     enabled = true
+    --                 },
+    --                 flake8 = {
+    --                     enabled = true
+    --                 }
+    --             }
+    --         }
+    --     }
     -- }
 end
 

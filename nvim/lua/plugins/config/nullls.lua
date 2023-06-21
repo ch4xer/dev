@@ -10,10 +10,8 @@ M = function()
             }),
             null_ls.builtins.formatting.markdown_toc,
             null_ls.builtins.formatting.prettier,
-            null_ls.builtins.formatting.black.with({
-                extra_args = { "--line-length=100" }
-            }),
-            null_ls.builtins.formatting.isort,
+            -- python formatting
+            null_ls.builtins.formatting.black,
         }
     })
 end
