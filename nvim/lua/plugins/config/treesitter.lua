@@ -3,7 +3,24 @@ M = function()
         return vim.api.nvim_buf_line_count(bufnr) > 2000
     end
     require('nvim-treesitter.configs').setup {
-        ensure_installed = {"c", "lua", "vim", "vimdoc", "query", "go", "rust", "java", "json", "python", "php", "cpp", "bash", "yaml"},
+        ensure_installed = {
+            "c", 
+            "lua", 
+            "vim", 
+            "vimdoc", 
+            "query", 
+            "go", 
+            "rust", 
+            "java", 
+            "json", 
+            "python", 
+            "php", 
+            "cpp", 
+            "bash", 
+            "yaml", 
+            "markdown", 
+            "markdown_inline"
+        },
         -- switch to buildin syntax highlighting
         highlight = {
             enable = true,

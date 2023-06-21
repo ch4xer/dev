@@ -124,3 +124,20 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+        if vim.lsp.buf.inlay_hint ~= nil then
+            vim.cmd.highlight('default link LspInlayHint Comment')
+            vim.lsp.buf.inlay_hint(0, true)
+        end
+  end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  callback = function()
+        if vim.lsp.buf.inlay_hint ~= nil then
+            vim.lsp.buf.inlay_hint(0, false)
+        end
+  end,
+})

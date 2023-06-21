@@ -140,13 +140,31 @@ M = function()
                     shadow = true,
                 },
                 staticcheck = true,
+                hints = {
+                    assignVariableTypes = true,
+                    compositeLiteralFields = true,
+                    compositeLiteralType = true,
+                    constantValues = true,
+                    functionTypeParameters = true,
+                    parameterNames = true,
+                    rangeVariableTypes = false,
+                }
             },
         },
         init_options = {
             usePlaceholders = true,
         }
     }
-    local other_servers = { "pyright", "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
+    lspconfig.pylsp.setup {
+        settings = {
+            pylsp = {
+                pycodestyle = {
+                    ignore = {'E501'}
+                }
+            }
+        }
+    }
+    local other_servers = { "pylsp", "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,

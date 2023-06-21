@@ -8,7 +8,7 @@ M = function()
             "clangd",
             "dockerls",
             "rust_analyzer",
-            "pyright",
+            "pylsp",
             "intelephense",
             "marksman",
         },
@@ -16,7 +16,6 @@ M = function()
     require('mason-tool-installer').setup {
 
         ensure_installed = {
-
             'bash-language-server',
             'clangd',
             'gopls',
@@ -24,12 +23,15 @@ M = function()
             'intelephense',
             'lua-language-server',
             'marksman',
-            'pyright',
+            'pylsp',
+            'black',
+            'isort',
             'rome',
             'rust-analyzer',
             'rustfmt',
             'yaml-language-server',
             'yamlfmt',
+            'dockerls'
         },
 
         auto_update = true,

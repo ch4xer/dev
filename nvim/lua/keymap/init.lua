@@ -35,21 +35,21 @@ local Movement = {
 }
 
 local Edit = {
-    { 'i', '<C-BS>',          '<C-W>',        { desc = 'delete word forward' } },
+    { 'i', '<C-BS>',      '<C-W>',        { desc = 'delete word forward' } },
     -- remember to configure alacritty with:
     -- { key: Back, mods: Control, chars: "\x17"}
     -- and configure Ctrl+/-Backspace's output as \x17
     -- { 'i',                    '\x17',   '<C-W>' },
 
     -- { 'n', '<LeftRelease>', '<LeftRelease><cmd>startinsert<CR>'},
-    { 'i', '<C-z>',           '<cmd>undo<CR>' },
-    { 'v', '<C-c>',           '"*ygvy' },
-    { 'v', 'y',               '"*ygvy' },
+    { 'i', '<C-z>',       '<cmd>undo<CR>' },
+    { 'v', '<C-c>',       '"*ygvy' },
+    { 'v', 'y',           '"*ygvy' },
     -- useless, use kitty buildin paste instead.
     -- { { 'i', 'v', 'c', 't' }, '<C-v>',  '<C-R>+' },
-    { 'i', '<C-v>',           '<C-R>+' },
-    { 'v', '>',               '>gv',          { desc = 'keep virtual mode after indent' } },
-    { 'v', '<',               '<gv',          { desc = 'keep virtual mode after indent' } },
+    { 'i', '<C-v>',       '<C-R>+' },
+    { 'v', '>',           '>gv',          { desc = 'keep virtual mode after indent' } },
+    { 'v', '<',           '<gv',          { desc = 'keep virtual mode after indent' } },
     { 'n', '<Backspace>', 'ciw' },
     { 'v', '<Backspace>', 'c' },
 }
@@ -151,22 +151,13 @@ end
 
 for _, keymap_class in ipairs({ Movement, Edit, Cmd, Fold, ModeSwitch }) do
     for _, keymap in ipairs(keymap_class) do
-        if keymap[4] ~= nil then
-            key_mapper(keymap[1], keymap[2], keymap[3], keymap[4])
-        else
-            key_mapper(keymap[1], keymap[2], keymap[3])
-        end
+        key_mapper(keymap[1], keymap[2], keymap[3], keymap[4])
     end
 end
 
-
 for _, plugin_keymap in pairs(Plugins) do
     for _, keymap in ipairs(plugin_keymap) do
-        if keymap[4] ~= nil then
-            key_mapper(keymap[1], keymap[2], keymap[3], keymap[4])
-        else
-            key_mapper(keymap[1], keymap[2], keymap[3])
-        end
+        key_mapper(keymap[1], keymap[2], keymap[3], keymap[4])
     end
 end
 
