@@ -126,20 +126,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- inlay hint support
--- vim.api.nvim_create_autocmd("InsertEnter", {
---   pattern = {"*.go"},
---   callback = function()
---         if vim.lsp.buf.inlay_hint ~= nil and vim.bo.ft ~= "TelescopePrompt" then
---             vim.cmd.highlight('default link LspInlayHint Comment')
---             vim.lsp.buf.inlay_hint(0, true)
---         end
---   end,
--- })
---
--- vim.api.nvim_create_autocmd("InsertLeave", {
---   callback = function()
---         if vim.lsp.buf.inlay_hint ~= nil then
---             vim.lsp.buf.inlay_hint(0, false)
---         end
---   end,
--- })
+vim.api.nvim_create_autocmd("LspAttach", {
+  pattern = {"*.go"},
+  callback = function()
+        if vim.lsp.buf.inlay_hint ~= nil and vim.bo.ft ~= "TelescopePrompt" then
+            vim.cmd.highlight('default link LspInlayHint Comment')
+            vim.lsp.buf.inlay_hint(0, true)
+        end
+  end,
+})
