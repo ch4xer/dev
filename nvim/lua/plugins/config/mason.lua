@@ -2,6 +2,7 @@ M = function()
     require('mason').setup()
     require('mason-lspconfig').setup({
         ensure_installed = {
+            "bashls",
             "rome",
             "gopls",
             "lua_ls",
@@ -24,12 +25,13 @@ M = function()
             'marksman',
             'pyright',
             'black',
+            'isort',
             'rome',
             'rust-analyzer',
             'rustfmt',
             'yaml-language-server',
             'yamlfmt',
-            'dockerls'
+            'dockerfile-language-server'
         },
 
         auto_update = true,

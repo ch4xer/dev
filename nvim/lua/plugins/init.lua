@@ -89,21 +89,6 @@ local plugins = {
         },
         config = config.filetree,
     },
-    -- {
-    --     'nvim-neo-tree/neo-tree.nvim',
-    --     branch = "v2.x",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-tree/nvim-web-devicons",
-    --         "MunifTanjim/nui.nvim",
-    --     },
-    --     config = config.neotree,
-    -- },
-    -- {
-    --     'folke/edgy.nvim',
-    --     event = "VeryLazy",
-    --     config = config.edgy,
-    -- },
     {
         'stevearc/aerial.nvim',
         config = config.outline,
@@ -139,23 +124,15 @@ local plugins = {
         config = config.cmp,
     },
     {
+        'j-hui/fidget.nvim',
+        tag = 'legacy',
+        config = true,
+    },
+    {
         'zbirenbaum/copilot.lua',
         event = "InsertEnter",
         config = config.copilot,
     },
-    -- {
-    --     'zbirenbaum/copilot-cmp',
-    --     dependencies = {
-    --         'zbirenbaum/copilot.lua',
-    --     },
-    --     event = "InsertEnter"
-    -- },
-    -- {
-    --     'tzachar/cmp-tabnine',
-    --     build = './install.sh',
-    --     dependencies = 'hrsh7th/nvim-cmp',
-    --     ft = {'go', 'rust', 'c', 'python'},
-    -- },
     -- format
     {
         'jose-elias-alvarez/null-ls.nvim',
@@ -169,13 +146,6 @@ local plugins = {
         dependencies = { 'kevinhwang91/promise-async' },
         event = 'BufRead'
     },
-    -- {
-    --     'nvim-neorg/neorg',
-    --     build = ":Neorg sync-parsers",
-    --     config = config.neorg,
-    --     ft = 'norg',
-    --     dependencies = { 'nvim-lua/plenary.nvim' }
-    -- },
     {
         'mfussenegger/nvim-dap',
         lazy = true,
@@ -193,8 +163,8 @@ local plugins = {
         event = 'BufRead'
     },
     { 'onsails/lspkind-nvim' },
-    { 'lewis6991/gitsigns.nvim', config = true, event = 'BufRead'},
-    { 'smoka7/hop.nvim',         config = config.hop, event = 'BufRead'},
+    { 'lewis6991/gitsigns.nvim', config = true,       event = 'BufRead' },
+    { 'smoka7/hop.nvim',         config = config.hop, event = 'BufRead' },
 }
 
 require("lazy").setup(plugins)

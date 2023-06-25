@@ -70,7 +70,7 @@ M = function()
             action = "exit",
         },
     }
-    local custom_footer = { "The quieter you become, the more you are able to hear." }
+    local custom_footer = { "The quieter you become", "The more you are able to hear" }
     vim.api.nvim_create_autocmd("Filetype", {
         pattern = "dashboard",
         group = vim.api.nvim_create_augroup("Dashboard_au", { clear = true }),

@@ -12,6 +12,9 @@ M = function()
             null_ls.builtins.formatting.prettier,
             -- python formatting
             null_ls.builtins.formatting.black,
+            -- I dont know how to point to the virtual environment
+            -- null_ls.builtins.diagnostics.pylint,
+
         }
     })
 end
