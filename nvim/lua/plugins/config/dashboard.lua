@@ -17,13 +17,6 @@ M = function()
         "",
     }
     local center = {
-        -- {
-        --     desc = "Restore Session Of CWD",
-        --     keymap = "",
-        --     key = "s",
-        --     icon = " ",
-        --     action = "lua require('persistence').load()",
-        -- },
         {
             desc = "Find File                     ",
             keymap = "",
@@ -46,6 +39,13 @@ M = function()
             key = "n",
             icon = " ",
             action = "enew",
+        },
+        {
+            desc = "Restore Session Of CWD",
+            keymap = "",
+            key = "s",
+            icon = "󰚰 ",
+            action = "lua require('persistence').load()",
         },
         -- { shortcut = "<leader>fm", icon = " ", desc = "Bookmark", action = "Telescope marks" },
         {

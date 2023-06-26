@@ -85,6 +85,13 @@ M = function()
                 end
             end, { 'i', 's' }),
         },
+        matching = {
+            disallow_fuzzy_matching = true,
+            disallow_fullfuzzy_matching = true,
+            disallow_partial_fuzzy_matching = false,
+            disallow_partial_matching = false,
+            disallow_prefix_unmatching = true,
+        },
         preselect = cmp.PreselectMode.None,
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
@@ -96,11 +103,12 @@ M = function()
         sorting = {
             priority_weight = 1.0,
             comparators = {
-                compare.offset,
-                compare.exact,
+                compare.sort_text,
                 -- compare.scopes,
                 compare.score,
+                compare.exact,
                 compare.recently_used,
+                compare.offset,
                 compare.locality,
                 compare.kind,
                 compare.sort_text,

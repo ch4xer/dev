@@ -55,12 +55,13 @@ local Edit = {
 }
 
 local Cmd = {
-    { 'n',               ';',     ':',                                 { nowait = true } },
-    { 'v',               ';',     ':',                                 { nowait = true } },
-    { { 'n', 'i', 'v' }, '<C-s>', '<CMD>w<CR>',                        { desc = 'save' } },
-    { 'n',               'Q',     'q',                                 { desc = 'macro record' } },
-    { 'n',               'g=',    vim.lsp.buf.format },
-    { 'c',               'w!',    require('keymap.custom').sudo_write, { desc = 'save file as root' } },
+    { 'n',               ';',         ':',                                 { nowait = true } },
+    { 'v',               ';',         ':',                                 { nowait = true } },
+    { { 'n', 'i', 'v' }, '<C-s>',     '<CMD>w<CR>',                        { desc = 'save' } },
+    { 'n',               '<leader>q', 'q1',                                 { desc = 'macro record' } },
+    { 'n',               'Q',         ':wqa<CR>',                               { desc = 'quit all' } },
+    { 'n',               'g=',        vim.lsp.buf.format },
+    { 'c',               'w!',        require('keymap.custom').sudo_write, { desc = 'save file as root' } },
 }
 
 local Fold = {
@@ -99,13 +100,10 @@ local Plugins = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     hop = {
-        { 'n', 'm', '<CMD>HopWord<CR>' },
-        -- { 'n', 'm', function()
-        --     require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.AFTER_CURSOR })
-        -- end },
-        -- { 'n', 'M', function()
-        --     require 'hop'.hint_words({ direction = require 'hop.hint'.HintDirection.BEFORE_CURSOR })
-        -- end },
+        { 'n', 'm', require 'hop'.hint_words },
+        { 'v', 'm', function()
+            require 'hop'.hint_words({ hint_position = require 'hop.hint'.HintPosition.END })
+        end },
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
