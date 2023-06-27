@@ -10,6 +10,7 @@ M = function()
                     'fileformat',
                     symbols = {
                         unix = '', -- e712
+                        -- unix = '', -- e712
                         dos = '', -- e70f
                         mac = '', -- e711
                     }

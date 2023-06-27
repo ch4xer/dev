@@ -1,12 +1,13 @@
 # Neovim Configuration
 
 <!--toc:start-->
+
 - [Neovim Configuration](#neovim-configuration)
   - [Introduction](#introduction)
   - [Plugin](#plugin)
   - [File Structure](#file-structure)
   - [Todo](#todo)
-<!--toc:end-->
+  <!--toc:end-->
 
 ![](screenshots/dashboard.png)
 ![](screenshots/edit.png)
@@ -37,7 +38,7 @@ This repo contains my neovim Configuration, including some popular plugins and m
 | code highlight  |   nvim-treesitter/nvim-treesitter   |
 |   lsp manager   |       williamboman/mason.nvim       |
 | code completion |          hrsh7th/nvim-cmp           |
-|    AI coding    |       zbirenbaum/copilot-cmp        |
+|    AI coding    |       zbirenbaum/copilot.lua        |
 |  code snippet   |          L3MON4D3/LuaSnip           |
 |    code fold    |        kevinhwang91/nvim-ufo        |
 |  code debugger  |        mfussenegger/nvim-dap        |
@@ -45,6 +46,8 @@ This repo contains my neovim Configuration, including some popular plugins and m
 |   git status    |       lewis6991/gitsigns.nvim       |
 |    movement     |          phaazon/hop.nvim           |
 |    zen mode     |         folke/zen-mode.nvim         |
+| session restore |       folke/persistence.nvim        |
+|   lsp status    |          j-hui/fidget.nvim          |
 
 ## File Structure
 
@@ -59,6 +62,15 @@ This repo contains my neovim Configuration, including some popular plugins and m
 ├── queries
 │   └── markdown <-- custom markdown parser for better expierence
 └── snippets <-- custom code snippets
+```
+
+## Install
+
+```bash
+git clone https://github.com/ch3n9w/neovim
+cd neovim
+mv ~/.config/nvim ~/.config/nvimbak
+cp -r nvim ~/.config/
 ```
 
 ## Todo

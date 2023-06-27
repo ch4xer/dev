@@ -164,8 +164,13 @@ local plugins = {
     },
     { 'onsails/lspkind-nvim' },
     { 'lewis6991/gitsigns.nvim', config = true,           event = 'BufRead' },
-    { 'smoka7/hop.nvim',         config = config.hop,     event = 'BufRead' },
     { 'folke/persistence.nvim',  config = config.session, event = 'BufReadPre' },
+    -- { 'smoka7/hop.nvim',         config = config.hop,     event = 'BufRead' },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        config = config.flash,
+    }
 }
 
 require("lazy").setup(plugins)

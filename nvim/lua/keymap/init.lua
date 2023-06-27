@@ -58,8 +58,8 @@ local Cmd = {
     { 'n',               ';',         ':',                                 { nowait = true } },
     { 'v',               ';',         ':',                                 { nowait = true } },
     { { 'n', 'i', 'v' }, '<C-s>',     '<CMD>w<CR>',                        { desc = 'save' } },
-    { 'n',               '<leader>q', 'q1',                                 { desc = 'macro record' } },
-    { 'n',               'Q',         ':wqa<CR>',                               { desc = 'quit all' } },
+    { 'n',               '<leader>q', 'q1',                                { desc = 'macro record' } },
+    { 'n',               'Q',         ':wqa<CR>',                          { desc = 'quit all' } },
     { 'n',               'g=',        vim.lsp.buf.format },
     { 'c',               'w!',        require('keymap.custom').sudo_write, { desc = 'save file as root' } },
 }
@@ -99,11 +99,43 @@ local Plugins = {
         { 'n', '<C-_>', '<Plug>(comment_toggle_linewise_current)' },
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
-    hop = {
-        { 'n', 'm', require 'hop'.hint_words },
-        { 'v', 'm', function()
-            require 'hop'.hint_words({ hint_position = require 'hop.hint'.HintPosition.END })
-        end },
+    -- hop = {
+    --     { 'n', 'm', function()
+    --         if package.loaded['hop'] == nil then
+    --             return
+    --         end
+    --         require 'hop'.hint_words()
+    --     end
+    --     },
+    --     { 'v', 'm', function()
+    --         if package.loaded['hop'] == nil then
+    --             return
+    --         end
+    --         require 'hop'.hint_words({ hint_position = require 'hop.hint'.HintPosition.END })
+    --     end
+    --     },
+    -- },
+    flash = {
+        {
+            { "n", "x", "o" },
+            'm',
+            function()
+                if package.loaded['flash'] == nil then
+                    return
+                end
+                require("flash").jump()
+            end
+        },
+        {
+            { "n", "x", "o" },
+            'M',
+            function()
+                if package.loaded['flash'] == nil then
+                    return
+                end
+                require("flash").treesitter()
+            end
+        }
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
@@ -112,7 +144,7 @@ local Plugins = {
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
         { 'n',          'gr',    '<CMD>Lspsaga lsp_finder<CR>', },
-        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
+        { { 'n', 't' }, 'gs',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     dap = {
@@ -135,6 +167,8 @@ local Plugins = {
     },
 }
 
+
+
 local key_mapper = function(mode, key, result, config)
     if nil == config then
         config = { noremap = true, silent = true }
@@ -146,6 +180,7 @@ local key_mapper = function(mode, key, result, config)
         config
     )
 end
+
 
 for _, keymap_class in ipairs({ Movement, Edit, Cmd, Fold, ModeSwitch }) do
     for _, keymap in ipairs(keymap_class) do
