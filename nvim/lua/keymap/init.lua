@@ -144,7 +144,7 @@ local Plugins = {
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
         { 'n',          'gr',    '<CMD>Lspsaga lsp_finder<CR>', },
-        { { 'n', 't' }, 'gs',    '<CMD>Lspsaga term_toggle<CR>' },
+        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     dap = {
