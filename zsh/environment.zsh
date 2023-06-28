@@ -8,7 +8,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 # export https_proxy=http://127.0.0.1:7890
 # export http_proxy=http://127.0.0.1:7890
 # export ALL_PROXY="socks5://127.0.0.1:7891"
-export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/lib:$GOPATH/bin:$JAVA_HOME/bin:$JRE_HOME/bin
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/lib:$GOPATH/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HOME/.local/bin
 
 export LC_ALL="en_US.UTF-8"
 export EDITOR=/usr/bin/nvim
