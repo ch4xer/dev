@@ -81,12 +81,3 @@ vim.env.GOPATH = "/home/ch4ser/Projects/go"
 vim.env.GOPROXY = "https://goproxy.cn"
 vim.env.GO111MODULE = "on"
 vim.env.CGO_ENABLED = "1"
-
--- neovide setting
-vim.o.guifont = 'Hack Nerd Font:h20'
--- vim.o.guifont = 'Hack:h20'
-vim.g.neovide_transparency = 1
-vim.g.neovide_cursor_vfx_mode = "wireframe"
--- adjust this to disable animation
-vim.g.neovide_cursor_animation_length = 0
-vim.g.neovide_cursor_trail_size = 0
