@@ -171,10 +171,6 @@ local plugins = {
         event = "VeryLazy",
         config = config.flash,
     },
-    {
-        'christoomey/vim-tmux-navigator',
-        lazy = false
-    },
 }
 
 require("lazy").setup(plugins)
