@@ -4,27 +4,18 @@ local Movement = {
     { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
     { 'n',          'k',          "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true } },
     -- move cursor to the start and the end of paragraph
-    -- { 'i',          '<C-j>',      '<ESC>o', },
-    -- { 'i',          '<C-k>',      '<ESC>O', },
-    -- { 'i',          '<C-h>',      '<ESC>I' },
-    -- { 'i',          '<C-l>',      '<ESC>A' },
-    --
-    -- { 'n',          '<C-h>',      '<ESC>^' },
-    -- { 'n',          '<C-l>',      '<ESC>$' },
+    { 'i',          '<C-j>',      '<ESC>o', },
+    { 'i',          '<C-k>',      '<ESC>O', },
+    { 'i',          '<C-h>',      '<ESC>I' },
+    { 'i',          '<C-l>',      '<ESC>A' },
     { 'n',          '(',          '<ESC>^' },
     { 'n',          ')',          '<ESC>$' },
-    -- { 'v',          '<C-l>',      '$' },
-    -- { 'v',          '<C-h>',      '^' },
+    { 'v',          '<C-l>',      '$' },
+    { 'v',          '<C-h>',      '^' },
 
     -- other
     { 'i',          '<C-Down>',   '<C-O><C-E>' },
     { 'i',          '<C-Up>',     '<C-O><C-Y>' },
-
-    -- move cursor between window
-    -- { 'n',          '<C-h>',  '<C-w>h' },
-    -- { 'n',          '<C-j>',  '<C-w>j' },
-    -- { 'n',          '<C-k>',  '<C-w>k' },
-    -- { 'n',          '<C-l>',  '<C-w>l' },
 
     -- tab switch
     { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
@@ -166,10 +157,10 @@ local Plugins = {
         { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
     },
     tmux = {
-        {{'n', 'i'}, '<C-j>', require("tmux").move_bottom},
-        {{'n', 'i'}, '<C-k>', require("tmux").move_top},
-        {{'n', 'i'}, '<C-h>', require("tmux").move_left},
-        {{'n', 'i'}, '<C-l>', require("tmux").move_right},
+        { 'n', '<C-j>', require("tmux").move_bottom },
+        { 'n', '<C-k>', require("tmux").move_top },
+        { 'n', '<C-h>', require("tmux").move_left },
+        { 'n', '<C-l>', require("tmux").move_right },
     }
 }
 
