@@ -63,40 +63,38 @@ M = function()
             -- 1: when pos == "end" and pos < current position
             offset = nil, ---@type number
         },
-        highlight = {
-            label = {
-                -- allow uppercase labels
-                uppercase = true,
-                -- add a label for the first match in the current window.
-                -- you can always jump to the first match with `<CR>`
-                current = true,
-                -- show the label after the match
-                after = true, ---@type boolean|number[]
-                -- show the label before the match
-                before = false, ---@type boolean|number[]
-                -- position of the label extmark
-                style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
-                -- flash tries to re-use labels that were already assigned to a position,
-                -- when typing more characters. By default only lower-case labels are re-used.
-                reuse = "lowercase", ---@type "lowercase" | "all"
-                -- for the current window, label targets closer to the cursor first
-                distance = true,
-                -- minimum pattern length to show labels
-                -- Ignored for custom labelers.
-                min_pattern_length = 0,
-            },
-            -- show a backdrop with hl FlashBackdrop
-            backdrop = true,
-            -- Highlight the search matches
-            matches = true,
-            -- extmark priority
-            priority = 5000,
-            groups = {
-                match = "FlashMatch",
-                current = "FlashCurrent",
-                backdrop = "FlashBackdrop",
-                label = "FlashLabel",
-            },
+        label = {
+            -- allow uppercase labels
+            uppercase = true,
+            -- add a label for the first match in the current window.
+            -- you can always jump to the first match with `<CR>`
+            current = true,
+            -- show the label after the match
+            after = true, ---@type boolean|number[]
+            -- show the label before the match
+            before = false, ---@type boolean|number[]
+            -- position of the label extmark
+            style = "overlay", ---@type "eol" | "overlay" | "right_align" | "inline"
+            -- flash tries to re-use labels that were already assigned to a position,
+            -- when typing more characters. By default only lower-case labels are re-used.
+            reuse = "lowercase", ---@type "lowercase" | "all"
+            -- for the current window, label targets closer to the cursor first
+            distance = true,
+            -- minimum pattern length to show labels
+            -- Ignored for custom labelers.
+            min_pattern_length = 0,
+        },
+        -- show a backdrop with hl FlashBackdrop
+        backdrop = true,
+        -- Highlight the search matches
+        matches = true,
+        -- extmark priority
+        priority = 5000,
+        groups = {
+            match = "FlashMatch",
+            current = "FlashCurrent",
+            backdrop = "FlashBackdrop",
+            label = "FlashLabel",
         },
         -- action to perform when picking a label.
         -- defaults to the jumping logic depending on the mode.
@@ -156,8 +154,8 @@ M = function()
                 relative = "editor",
                 width = 1, -- when <=1 it's a percentage of the editor width
                 height = 1,
-                row = -1, -- when negative it's an offset from the bottom
-                col = 0, -- when negative it's an offset from the right
+                row = -1,  -- when negative it's an offset from the bottom
+                col = 0,   -- when negative it's an offset from the right
                 zindex = 1000,
             },
         },

@@ -4,17 +4,17 @@ local Movement = {
     { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
     { 'n',          'k',          "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true } },
     -- move cursor to the start and the end of paragraph
-    { 'i',          '<C-j>',      '<ESC>o', },
-    { 'i',          '<C-k>',      '<ESC>O', },
-    { 'i',          '<C-h>',      '<ESC>I' },
-    { 'i',          '<C-l>',      '<ESC>A' },
-
-    { 'n',          '<C-h>',      '<ESC>^' },
-    { 'n',          '<C-l>',      '<ESC>$' },
+    -- { 'i',          '<C-j>',      '<ESC>o', },
+    -- { 'i',          '<C-k>',      '<ESC>O', },
+    -- { 'i',          '<C-h>',      '<ESC>I' },
+    -- { 'i',          '<C-l>',      '<ESC>A' },
+    --
+    -- { 'n',          '<C-h>',      '<ESC>^' },
+    -- { 'n',          '<C-l>',      '<ESC>$' },
     { 'n',          '(',          '<ESC>^' },
     { 'n',          ')',          '<ESC>$' },
-    { 'v',          '<C-l>',      '$' },
-    { 'v',          '<C-h>',      '^' },
+    -- { 'v',          '<C-l>',      '$' },
+    -- { 'v',          '<C-h>',      '^' },
 
     -- other
     { 'i',          '<C-Down>',   '<C-O><C-E>' },
@@ -35,6 +35,7 @@ local Movement = {
 }
 
 local Edit = {
+    -- use Ctrl w in tmux to delete a word
     { 'i', '<C-BS>',      '<C-W>',        { desc = 'delete word forward' } },
     -- remember to configure alacritty with:
     -- { key: Back, mods: Control, chars: "\x17"}
@@ -42,7 +43,7 @@ local Edit = {
     -- { 'i',                    '\x17',   '<C-W>' },
 
     -- { 'n', '<LeftRelease>', '<LeftRelease><cmd>startinsert<CR>'},
-    { 'i', '<C-z>',       '<cmd>undo<CR>' },
+    -- { 'i', '<C-z>',       '<cmd>undo<CR>' },
     { 'v', '<C-c>',       '"*ygvy' },
     { 'v', 'y',           '"*ygvy' },
     -- useless, use kitty buildin paste instead.
@@ -165,6 +166,12 @@ local Plugins = {
     copilot = {
         { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
     },
+    tmux = {
+        {'n', '<C-h>', "<CMD>TmuxNavigateLeft<CR>"},
+        {'n', '<C-l>', "<CMD>TmuxNavigateRight<CR>"},
+        {'n', '<C-j>', "<CMD>TmuxNavigateDown<CR>"},
+        {'n', '<C-k>', "<CMD>TmuxNavigateUp<CR>"},
+    }
 }
 
 
