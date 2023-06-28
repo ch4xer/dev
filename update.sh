@@ -1,2 +1,2 @@
-cp -r ~/.config/tmux ./
-cp -r ~/.config/nvim ./
+rsync -a -r ~/.config/tmux ./
+rsync -a -r ~/.config/nvim ./
