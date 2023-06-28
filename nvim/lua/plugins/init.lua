@@ -172,9 +172,14 @@ local plugins = {
         config = config.flash,
     },
     {
-        'christoomey/vim-tmux-navigator',
-        lazy = false
+        "aserowy/tmux.nvim",
+        config = config.tmux,
+        lazy = false,
     },
+    -- {
+    --     'christoomey/vim-tmux-navigator',
+    --     lazy = false
+    -- },
 }
 
 require("lazy").setup(plugins)

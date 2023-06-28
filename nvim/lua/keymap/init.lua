@@ -21,10 +21,10 @@ local Movement = {
     { 'i',          '<C-Up>',     '<C-O><C-Y>' },
 
     -- move cursor between window
-    -- { 'n',          '<leader>h',  '<C-w>h' },
-    -- { 'n',          '<leader>j',  '<C-w>j' },
-    -- { 'n',          '<leader>k',  '<C-w>k' },
-    -- { 'n',          '<leader>l',  '<C-w>l' },
+    -- { 'n',          '<C-h>',  '<C-w>h' },
+    -- { 'n',          '<C-j>',  '<C-w>j' },
+    -- { 'n',          '<C-k>',  '<C-w>k' },
+    -- { 'n',          '<C-l>',  '<C-w>l' },
 
     -- tab switch
     { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
@@ -166,10 +166,10 @@ local Plugins = {
         { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
     },
     tmux = {
-        { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
-        { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
-        { 'n', '<C-k>', '<CMD>TmuxNavigateUp<CR>' },
-        { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
+        {{'n', 'i'}, '<C-j>', require("tmux").move_bottom},
+        {{'n', 'i'}, '<C-k>', require("tmux").move_top},
+        {{'n', 'i'}, '<C-h>', require("tmux").move_left},
+        {{'n', 'i'}, '<C-l>', require("tmux").move_right},
     }
 }
 
