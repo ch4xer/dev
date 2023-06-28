@@ -4,13 +4,13 @@ local Movement = {
     { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
     { 'n',          'k',          "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true } },
     -- move cursor to the start and the end of paragraph
-    { 'i',          '<C-j>',      '<ESC>o', },
-    { 'i',          '<C-k>',      '<ESC>O', },
-    { 'i',          '<C-h>',      '<ESC>I' },
-    { 'i',          '<C-l>',      '<ESC>A' },
-
-    { 'n',          '<C-h>',      '<ESC>^' },
-    { 'n',          '<C-l>',      '<ESC>$' },
+    -- { 'i',          '<C-j>',      '<ESC>o', },
+    -- { 'i',          '<C-k>',      '<ESC>O', },
+    -- { 'i',          '<C-h>',      '<ESC>I' },
+    -- { 'i',          '<C-l>',      '<ESC>A' },
+    --
+    -- { 'n',          '<C-h>',      '<ESC>^' },
+    -- { 'n',          '<C-l>',      '<ESC>$' },
     { 'n',          '(',          '<ESC>^' },
     { 'n',          ')',          '<ESC>$' },
     -- { 'v',          '<C-l>',      '$' },
@@ -21,10 +21,10 @@ local Movement = {
     { 'i',          '<C-Up>',     '<C-O><C-Y>' },
 
     -- move cursor between window
-    { 'n',          '<leader>h',  '<C-w>h' },
-    { 'n',          '<leader>j',  '<C-w>j' },
-    { 'n',          '<leader>k',  '<C-w>k' },
-    { 'n',          '<leader>l',  '<C-w>l' },
+    -- { 'n',          '<leader>h',  '<C-w>h' },
+    -- { 'n',          '<leader>j',  '<C-w>j' },
+    -- { 'n',          '<leader>k',  '<C-w>k' },
+    -- { 'n',          '<leader>l',  '<C-w>l' },
 
     -- tab switch
     { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
@@ -36,7 +36,7 @@ local Movement = {
 
 local Edit = {
     -- use Ctrl w in tmux to delete a word
-    { 'i', '<C-BS>',      '<C-W>',        { desc = 'delete word forward' } },
+    { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
     -- remember to configure alacritty with:
     -- { key: Back, mods: Control, chars: "\x17"}
     -- and configure Ctrl+/-Backspace's output as \x17
@@ -49,20 +49,19 @@ local Edit = {
     -- useless, use kitty buildin paste instead.
     -- { { 'i', 'v', 'c', 't' }, '<C-v>',  '<C-R>+' },
     { 'i', '<C-v>',       '<C-R>+' },
-    { 'v', '>',           '>gv',          { desc = 'keep virtual mode after indent' } },
-    { 'v', '<',           '<gv',          { desc = 'keep virtual mode after indent' } },
+    { 'v', '>',           '>gv',   { desc = 'keep virtual mode after indent' } },
+    { 'v', '<',           '<gv',   { desc = 'keep virtual mode after indent' } },
     { 'n', '<Backspace>', 'ciw' },
     { 'v', '<Backspace>', 'c' },
 }
 
 local Cmd = {
-    { 'n',               ';',         ':',                                 { nowait = true } },
-    { 'v',               ';',         ':',                                 { nowait = true } },
-    { { 'n', 'i', 'v' }, '<C-s>',     '<CMD>w<CR>',                        { desc = 'save' } },
-    { 'n',               '<leader>q', 'q1',                                { desc = 'macro record' } },
-    { 'n',               'Q',         ':wqa<CR>',                          { desc = 'quit all' } },
-    { 'n',               'g=',        vim.lsp.buf.format },
-    { 'c',               'w!',        require('keymap.custom').sudo_write, { desc = 'save file as root' } },
+    { 'n', ';',         ':',                                 { nowait = true } },
+    { 'v', ';',         ':',                                 { nowait = true } },
+    { 'n', '<leader>q', 'q1',                                { desc = 'macro record' } },
+    { 'n', 'Q',         ':wqa<CR>',                          { desc = 'quit all' } },
+    { 'n', 'g=',        vim.lsp.buf.format },
+    { 'c', 'w!',        require('keymap.custom').sudo_write, { desc = 'save file as root' } },
 }
 
 local Fold = {
@@ -166,6 +165,12 @@ local Plugins = {
     copilot = {
         { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
     },
+    tmux = {
+        { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
+        { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
+        { 'n', '<C-k>', '<CMD>TmuxNavigateUp<CR>' },
+        { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
+    }
 }
 
 
