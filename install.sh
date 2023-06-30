@@ -1,5 +1,6 @@
 cp -r ./nvim ~/.config/
 cp -r ./tmux ~/.config/
+cp -r ./alacritty ~/.config/
 cp -r ./zsh ~/.config/
 cp -r ./zshrc ~/.zshrc
 

@@ -42,16 +42,16 @@ M = function()
             -- }
         },
         textobjects = {
-            move = {
-                enable = true,
-                set_jumps = true, -- whether to set jumps in the jumplist
-                -- goto_next_start = {
-                --     ["<C-j>"] = "@parameter.inner",
-                -- },
-                -- goto_previous_start = {
-                --     ["<C-k>"] = "@parameter.inner",
-                -- },
-            },
+            -- move = {
+            --     enable = true,
+            --     set_jumps = true, -- whether to set jumps in the jumplist
+            --     -- goto_next_start = {
+            --     --     ["<C-j>"] = "@parameter.inner",
+            --     -- },
+            --     -- goto_previous_start = {
+            --     --     ["<C-k>"] = "@parameter.inner",
+            --     -- },
+            -- },
             select = {
                 enable = true,
                 lookahead = true,

@@ -20,6 +20,5 @@ config.dashboard = require('plugins.config.dashboard')
 config.outline = require('plugins.config.outline')
 config.fold = require('plugins.config.fold')
 config.session = require('plugins.config.session')
-config.tmux = require('plugins.config.tmux')
 
 return config

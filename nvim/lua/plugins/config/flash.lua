@@ -1,4 +1,5 @@
 M = function()
+    vim.cmd("highlight FlashLabel guifg=#ffffff guibg=#24283b gui=bold")
     require('flash').setup {
         -- labels = "abcdefghijklmnopqrstuvwxyz",
         labels = "asdfghjklqwertyuiopzxcvbnm",

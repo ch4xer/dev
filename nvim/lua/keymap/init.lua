@@ -157,10 +157,10 @@ local Plugins = {
         { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
     },
     tmux = {
-        { 'n', '<C-j>', require("tmux").move_bottom },
-        { 'n', '<C-k>', require("tmux").move_top },
-        { 'n', '<C-h>', require("tmux").move_left },
-        { 'n', '<C-l>', require("tmux").move_right },
+        { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
+        { 'n', '<C-k>', '<CMD>TmuxNavigateUp<CR>' },
+        { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
+        { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
     }
 }
 
