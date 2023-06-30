@@ -1,0 +1,55 @@
+env:
+  TERM: xterm-256color
+  COLORTERM: truecolor
+  NVIM_GUI: "1"
+  GOPATH: /home/ch4ser/Projects/go
+  GOPROXY: https://goproxy.cn
+  GO111MODULE: on
+  CGO_ENABLED: "1"
+  
+# Window configurations
+window:
+  opacity: 1
+  dimensions:
+    columns: 0
+    lines: 0
+
+  padding:
+    x: 0
+    y: 0
+
+  decorations: full
+  dynamic_title: true
+
+
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+
+  italic:
+    family: FiraCode Nerd Font
+    style: Bold Italic
+
+  size: 20.0
+
+  scale_with_dpi: true
+  # AppleFontSmoothing: true
+
+import:
+  - ~/.config/alacritty/tokyonight.yaml
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+
+key_bindings:
+  - { key: V,              mods: Control, action: Paste                      }
+  - { key: C,              mods: Control|Shift, action: Copy                       }
+  - { key: C,mods: Control , chars: "\x03"}
+  - { key: Back,            mods: Control,   chars: "\x17"}
