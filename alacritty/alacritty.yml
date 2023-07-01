@@ -31,17 +31,19 @@ font:
 
   italic:
     family: FiraCode Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: FiraCode Nerd Font
     style: Bold Italic
 
   size: 20.0
 
   offset:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
 
-  glyph_offset:
-    x: 0
-    y: 0
+  dynamic_padding: true
 
   scale_with_dpi: true
   AppleFontSmoothing: true
