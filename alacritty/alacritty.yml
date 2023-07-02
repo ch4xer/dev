@@ -2,28 +2,23 @@ env:
   TERM: xterm-256color
   COLORTERM: truecolor
 
-# Window configurations
 window:
   opacity: 0.95
   dynamic_title: true
-  dimensions:
-    columns: 80
-    lines: 20
 
   padding:
     x: 0
     y: 0
-
+  dynamic_padding: true
   decorations: full
 
 scrolling:
   multiplier: 1
 
-# Font configurations
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Regular
+    style: Retina
 
   bold:
     family: FiraCode Nerd Font
@@ -31,38 +26,17 @@ font:
 
   italic:
     family: FiraCode Nerd Font
-    style: Italic
-
-  bold_italic:
-    family: FiraCode Nerd Font
     style: Bold Italic
 
   size: 20.0
 
   offset:
-    x: 1
-    y: 1
-
-  dynamic_padding: true
-
-  scale_with_dpi: true
-  AppleFontSmoothing: true
-
-import:
-  - ~/.config/alacritty/tokyonight.yaml
+    x: 0
+    y: 0
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
-
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
-
-mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-  faux_scrolling_lines: 1
-  hide_when_typing: false
 
 cursor:
   style: 
@@ -72,8 +46,19 @@ cursor:
 
 live_config_reload: true
 
-shell:
-  program: /bin/zsh
+# shell:
+#   program: /usr/bin/tmux
+#   args:
+#     - -u # force UTF-8 in tmux
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+  faux_scrolling_lines: 1
+  hide_when_typing: false
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
   - { key: V, mods: Control, action: Paste }
@@ -95,3 +80,36 @@ key_bindings:
 #   # - { key: L, mods: Control, chars: "\x0c" }
 #   # - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
 #   # - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
+
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black:   '0x1d202f'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
