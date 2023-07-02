@@ -8,8 +8,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/lib:$GOPATH/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HOME/.local/bin
 
 export LC_ALL="en_US.UTF-8"
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/games/vi
+export VISUAL=/usr/games/vi
 
 # for tomcat debug
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk

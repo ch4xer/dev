@@ -5,3 +5,6 @@ rsync -av --delete ~/.config/kitty/ ./kitty/
 rsync -av --delete ~/.config/zsh/ ./zsh/
 rsync -a ~/.zshrc ./zshrc
 
+yes | rm -r tmux/plugins/*
+yes | rm -r zsh/plugins/*
+
