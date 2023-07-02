@@ -1,4 +1,3 @@
-
 export WORKSPACE=$HOME/.local/workspace
 export CGO_ENABLED=1
 export GOPATH=$HOME/Projects/go
@@ -6,9 +5,6 @@ export GOPROXY=https://goproxy.cn
 export GO111MODULE=on
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
-# export https_proxy=http://127.0.0.1:7890
-# export http_proxy=http://127.0.0.1:7890
-# export ALL_PROXY="socks5://127.0.0.1:7891"
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/lib:$GOPATH/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HOME/.local/bin
 
 export LC_ALL="en_US.UTF-8"
@@ -21,8 +17,8 @@ export JRE_HOME=$JAVA_HOME/jre
 export CATALINA_HOME=/home/ch4ser/work/apache-tomcat-8.5.89
 export CLASSPATH=$HOME:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$CATALINA_HOME/lib
 #
-# export TERMCMD=alacritty
-export TERMCMD=kitty
+export TERMCMD=alacritty
+# export TERMCMD=kitty
 
 # let zsh-autosuggestions to work
 export SAVEHIST=100000
