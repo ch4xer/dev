@@ -1,5 +1,5 @@
 alias c="clear"
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 alias icat="kitten icat"
 alias msf="msfconsole"
 alias timeshift="sudo timeshift"

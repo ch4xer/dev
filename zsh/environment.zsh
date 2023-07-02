@@ -5,6 +5,7 @@ export GOPATH=$HOME/Projects/go
 export GOPROXY=https://goproxy.cn
 export GO111MODULE=on
 export XDG_CONFIG_HOME=$HOME/.config
+export XDG_DATA_HOME=$HOME/.local/share
 # export https_proxy=http://127.0.0.1:7890
 # export http_proxy=http://127.0.0.1:7890
 # export ALL_PROXY="socks5://127.0.0.1:7891"
