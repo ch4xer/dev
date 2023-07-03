@@ -1,4 +1,5 @@
 rsync -av --delete ~/.config/tmux/ ./tmux/
+rsync -av --delete ~/.config/zellij/ ./zellij/
 rsync -av --delete ~/.config/nvim/ ./nvim/
 rsync -av --delete ~/.config/alacritty/ ./alacritty/
 rsync -av --delete ~/.config/kitty/ ./kitty/
