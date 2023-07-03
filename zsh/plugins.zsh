@@ -1,16 +1,8 @@
-
-
-# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh/plugins/zsh-extract/extract.plugin.zsh
-# source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-# source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source /usr/share/zsh/plugins/zsh-autoswitch-virtualenv/zsh-autoswitch-virtualenv.plugin.zsh
-# source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-extract/extract.plugin.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-autoswitch-virtualenv/zsh-autoswitch-virtualenv.plugin.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 autoload -U compinit; compinit
@@ -29,4 +21,4 @@ HISTORY_SUBSTRING_SEARCH_PREFIXED=1
 setopt HIST_FIND_NO_DUPS
 
 # custom os_icon
-# typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
+typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
