@@ -3,37 +3,34 @@
 	url = ssh://git@github.com/romkatv/powerlevel10k.git
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	url = ssh://git@github.com/zsh-users/zsh-autosuggestions.git
 [submodule "zsh/plugins/zsh-autoswitch-virtualenv"]
 	path = zsh/plugins/zsh-autoswitch-virtualenv
-	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+	url = ssh://git@github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
 [submodule "zsh/plugins/zsh-extract"]
 	path = zsh/plugins/zsh-extract
-	url = https://github.com/le0me55i/zsh-extract.git
+	url = ssh://git@github.com/le0me55i/zsh-extract.git
 [submodule "zsh/plugins/zsh-history-substring-search"]
 	path = zsh/plugins/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search.git
+	url = ssh://git@github.com/zsh-users/zsh-history-substring-search.git
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = ssh://git@github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm.git
+	url = ssh://git@github.com/tmux-plugins/tpm.git
 [submodule "tmux/plugins/tmux-sensible"]
 	path = tmux/plugins/tmux-sensible
-	url = https://github.com/tmux-plugins/tmux-sensible.git
+	url = ssh://git@github.com/tmux-plugins/tmux-sensible.git
 [submodule "tmux/plugins/tmux-yank"]
 	path = tmux/plugins/tmux-yank
-	url = https://github.com/tmux-plugins/tmux-yank.git
+	url = ssh://git@github.com/tmux-plugins/tmux-yank.git
 [submodule "tmux/plugins/tmux-net-speed"]
 	path = tmux/plugins/tmux-net-speed
-	url = https://github.com/tmux-plugins/tmux-net-speed.git
+	url = ssh://git@github.com/tmux-plugins/tmux-net-speed.git
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule "sway"]
-	path = sway
-	url = ssh://git@github.com/ch3n9w/sway
+	url = ssh://git@github.com/tmux-plugins/tmux-resurrect.git
