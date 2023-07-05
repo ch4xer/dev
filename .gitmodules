@@ -1,6 +1,6 @@
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+	url = ssh://git@github.com/romkatv/powerlevel10k.git
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
