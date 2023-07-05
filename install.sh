@@ -1,15 +1,15 @@
-git submodule init zsh/plugins/powerlevel10k
-git submodule init zsh/plugins/zsh-autosuggestions
-git submodule init zsh/plugins/zsh-autoswitch-virtualenv
-git submodule init zsh/plugins/zsh-extract
-git submodule init zsh/plugins/zsh-history-substring-search
-git submodule init zsh/plugins/zsh-syntax-highlighting
-git submodule init tmux/plugins/tpm
-git submodule init tmux/plugins/tmux-sensible
-git submodule init tmux/plugins/tmux-yank
-git submodule init tmux/plugins/tmux-net-speed
-git submodule init tmux/plugins/tmux-resurrect
-git submodule init tmux/plugins/tmux-continuum
+# git submodule init zsh/plugins/powerlevel10k
+# git submodule init zsh/plugins/zsh-autosuggestions
+# git submodule init zsh/plugins/zsh-autoswitch-virtualenv
+# git submodule init zsh/plugins/zsh-extract
+# git submodule init zsh/plugins/zsh-history-substring-search
+# git submodule init zsh/plugins/zsh-syntax-highlighting
+# git submodule init tmux/plugins/tpm
+# git submodule init tmux/plugins/tmux-sensible
+# git submodule init tmux/plugins/tmux-yank
+# git submodule init tmux/plugins/tmux-net-speed
+# git submodule init tmux/plugins/tmux-resurrect
+# git submodule init tmux/plugins/tmux-continuum
 git submodule update
 
 BASEDIR=~/.config
