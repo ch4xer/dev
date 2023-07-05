@@ -16,7 +16,6 @@ git submodule add https://github.com/tmux-plugins/tpm tmux/plugins/tpm
 git submodule add https://github.com/tmux-plugins/tmux-sensible tmux/plugins/tmux-sensible
 git submodule add https://github.com/tmux-plugins/tmux-yank tmux/plugins/tmux-yank
 git submodule add https://github.com/tmux-plugins/tmux-net-speed tmux/plugins/tmux-net-speed
-git submodule add https://github.com/christoomey/vim-tmux-navigator tmux/plugins/vim-tmux-navigator
 git submodule add https://github.com/tmux-plugins/tmux-resurrect tmux/plugins/tmux-resurrect
 git submodule add https://github.com/tmux-plugins/tmux-continuum tmux/plugins/tmux-continuum
 

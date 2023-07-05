@@ -8,7 +8,6 @@ git submodule init tmux/plugins/tpm
 git submodule init tmux/plugins/tmux-sensible
 git submodule init tmux/plugins/tmux-yank
 git submodule init tmux/plugins/tmux-net-speed
-git submodule init tmux/plugins/vim-tmux-navigator
 git submodule init tmux/plugins/tmux-resurrect
 git submodule init tmux/plugins/tmux-continuum
 git submodule update
