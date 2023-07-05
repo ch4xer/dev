@@ -28,9 +28,6 @@
 [submodule "tmux/plugins/tmux-net-speed"]
 	path = tmux/plugins/tmux-net-speed
 	url = https://github.com/tmux-plugins/tmux-net-speed
-[submodule "tmux/plugins/resurrect"]
-	path = tmux/plugins/resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
