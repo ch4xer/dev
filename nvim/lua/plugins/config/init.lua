@@ -20,5 +20,6 @@ config.dashboard = require('plugins.config.dashboard')
 config.outline = require('plugins.config.outline')
 config.fold = require('plugins.config.fold')
 config.session = require('plugins.config.session')
+config.surround = require('plugins.config.surround')
 
 return config

@@ -174,6 +174,11 @@ local plugins = {
         'christoomey/vim-tmux-navigator',
         lazy = false,
     },
+    {
+        "kylechui/nvim-surround",
+        event = "VeryLazy",
+        config = config.surround
+    }
 }
 
 require("lazy").setup(plugins)

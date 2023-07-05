@@ -90,22 +90,6 @@ local Plugins = {
         { 'n', '<C-_>', '<Plug>(comment_toggle_linewise_current)' },
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
-    -- hop = {
-    --     { 'n', 'm', function()
-    --         if package.loaded['hop'] == nil then
-    --             return
-    --         end
-    --         require 'hop'.hint_words()
-    --     end
-    --     },
-    --     { 'v', 'm', function()
-    --         if package.loaded['hop'] == nil then
-    --             return
-    --         end
-    --         require 'hop'.hint_words({ hint_position = require 'hop.hint'.HintPosition.END })
-    --     end
-    --     },
-    -- },
     flash = {
         {
             { "n", "x", "o" },
@@ -163,8 +147,6 @@ local Plugins = {
         { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
     }
 }
-
-
 
 local key_mapper = function(mode, key, result, config)
     if nil == config then
