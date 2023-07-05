@@ -30,7 +30,7 @@
 	url = ssh://git@github.com/tmux-plugins/tmux-net-speed.git
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
-	url = https://github.com/tmux-plugins/tmux-continuum.git
+	url = ssh://git@github.com/tmux-plugins/tmux-continuum.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = ssh://git@github.com/tmux-plugins/tmux-resurrect.git
