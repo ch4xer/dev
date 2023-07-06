@@ -1,9 +1,9 @@
-rsync -av --delete ~/.config/tmux/ ./tmux/
-rsync -av --delete ~/.config/zellij/ ./zellij/
-rsync -av --delete ~/.config/nvim/ ./nvim/
-rsync -av --delete ~/.config/alacritty/ ./alacritty/
-rsync -av --delete ~/.config/kitty/ ./kitty/
-rsync -av --delete ~/.config/zsh/ ./zsh/
+rsync -a ~/.config/tmux/ ./tmux/
+rsync -a ~/.config/zellij/ ./zellij/
+rsync -a ~/.config/nvim/ ./nvim/
+rsync -a ~/.config/alacritty/ ./alacritty/
+rsync -a ~/.config/kitty/ ./kitty/
+rsync -a ~/.config/zsh/ ./zsh/
 rsync -a ~/.zshrc ./zshrc
 
 git submodule add ssh://git@github.com/romkatv/powerlevel10k.git zsh/plugins/powerlevel10k
