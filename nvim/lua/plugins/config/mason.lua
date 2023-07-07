@@ -1,19 +1,5 @@
 M = function()
     require('mason').setup()
-    require('mason-lspconfig').setup({
-        ensure_installed = {
-            "bashls",
-            "rome",
-            "gopls",
-            "lua_ls",
-            "clangd",
-            "dockerls",
-            "rust_analyzer",
-            "pyright",
-            "intelephense",
-            "marksman",
-        },
-    })
     require('mason-tool-installer').setup {
         ensure_installed = {
             'bash-language-server',
@@ -28,6 +14,8 @@ M = function()
             'prettier',
             'pyright',
             'black',
+            -- 'mypy',
+            'ruff',
             'isort',
             'rome',
             'rust-analyzer',

@@ -12,7 +12,6 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave'
     command = 'silent !fcitx5-remote -c'
 })
 
-
 vim.g.firstBufferOrDashboard = 1
 vim.g.dashboard = 0
 vim.g.width_open_tree = 100
@@ -42,7 +41,7 @@ local toggle_tree = function()
 end
 
 vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
--- vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+    -- vim.api.nvim_create_autocmd({ 'VimEnter' }, {
     callback = function()
         if vim.g.firstBufferOrDashboard ~= 1 then
             if vim.g.dashboard == 1 then
@@ -112,26 +111,26 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
 
 -- becase neovim behaviors changed in nightly
 vim.api.nvim_create_autocmd("WinLeave", {
-  callback = function()
-    if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
-      vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
-    end
-  end,
+    callback = function()
+        if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
+        end
+    end,
 })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- inlay hint support
 vim.api.nvim_create_autocmd("LspAttach", {
-  pattern = {"*.go"},
-  callback = function()
+    pattern = { "*.go" },
+    callback = function()
         if vim.lsp.buf.inlay_hint ~= nil and vim.bo.ft ~= "TelescopePrompt" then
             vim.cmd.highlight('default link LspInlayHint Comment')
             vim.lsp.buf.inlay_hint(0, true)
         end
-  end,
+    end,
 })
