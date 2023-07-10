@@ -20,7 +20,6 @@ local plugins = {
         priority = 1000,
         config = config.theme
     },
-    { "dstein64/vim-startuptime", cmd = "StartupTime" },
     {
         'numToStr/Comment.nvim',
         config = config.comment,
@@ -52,7 +51,6 @@ local plugins = {
     },
     {
         'glepnir/dashboard-nvim',
-        -- event = 'VimEnter',
         lazy = true,
         config = config.dashboard,
         dependencies = { 'nvim-tree/nvim-web-devicons' }
@@ -104,7 +102,6 @@ local plugins = {
     {
         'williamboman/mason.nvim',
         dependencies = {
-            'williamboman/mason-lspconfig.nvim',
             'WhoIsSethDaniel/mason-tool-installer.nvim'
         },
         build = ":MasonUpdate",
@@ -136,7 +133,7 @@ local plugins = {
     -- format
     {
         'jose-elias-alvarez/null-ls.nvim',
-        event = 'BufReadPre',
+        event = 'BufRead',
         dependencies = { 'williamboman/mason.nvim' },
         config = config.nullls
     },
