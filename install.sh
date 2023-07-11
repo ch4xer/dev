@@ -35,3 +35,20 @@ else
   cp -r ./nvim ~/.config/
 fi
 
+FONT_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
+FONT_FILE2=/usr/share/fonts/FiraCode/FiraCodeNerdFont-Regular.ttf
+FONT='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip'
+if [ -f "$FONT_FILE1" ]; then
+  echo "FiraCodeNerdFont-Regular.ttf already exists."
+elif [ -f "$FONT_FILE2" ]; then
+  echo "FiraCodeNerdFont-Regular.ttf already exists."
+else
+  echo "Downloading FiraCodeNerdFont-Regular.ttf..."
+  wget $FONT
+  unzip FiraCode.zip
+  mkdir -p /usr/share/fonts/FiraCode
+  cp ./FiraCode/*.ttf /usr/share/fonts/FiraCode
+  rm -r ./FiraCode
+  rm ./FiraCode.zip
+  fc-cache -fv
+fi
