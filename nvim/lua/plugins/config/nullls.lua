@@ -21,7 +21,6 @@ M = function()
                     "-style=" .. vim.fn.expand("{IndentWidth: 4}"),
                 }
             }),
-            null_ls.builtins.formatting.markdown_toc,
             null_ls.builtins.formatting.prettier,
             -- python formatting
             null_ls.builtins.formatting.black,

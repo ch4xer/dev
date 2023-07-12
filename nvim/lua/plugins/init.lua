@@ -127,7 +127,7 @@ local plugins = {
     },
     {
         'jose-elias-alvarez/null-ls.nvim',
-        event = 'VeryLazy',
+        event = 'bufRead',
         dependencies = { 'williamboman/mason.nvim' },
         config = config.nullls
     },
