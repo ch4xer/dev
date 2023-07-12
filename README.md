@@ -20,3 +20,7 @@ cd dev
 chmod 755 ./install.sh
 ./install.sh
 ```
+
+## TODO
+
+- [ ] add file manager config
