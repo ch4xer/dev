@@ -106,7 +106,7 @@ local plugins = {
         },
         build = ":MasonUpdate",
         config = config.mason,
-        event = 'VeryLazy'
+        event = 'BufRead'
     },
     {
         'hrsh7th/nvim-cmp',
