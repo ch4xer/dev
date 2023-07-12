@@ -123,16 +123,11 @@ local Plugins = {
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     dap = {
-        { 'n', '<F1>', '<CMD>lua require"dap".toggle_breakpoint()<CR>' },
-        { 'n', '<F2>', '<CMD>lua require"dap".continue()<CR>' },
-        { 'n', '<F3>', '<CMD>lua require"dap".step_into()<CR>' },
-        { 'n', '<F4>', '<CMD>lua require"dap".step_over()<CR>' },
-        { 'n', '<F5>', '<CMD>lua require"dapui".toggle()<CR>' },
-    },
-    zen = {
-        { 'n', '<leader>f', '<CMD>lua require("zen-mode").toggle({window = {width = 1}})<CR>',
-            { desc = 'toggle window fullscreen' },
-        }
+        { 'n', '<F1>', require "dap".toggle_breakpoint },
+        { 'n', '<F2>', require "dap".continue },
+        { 'n', '<F3>', require "dap".step_into },
+        { 'n', '<F4>', require "dap".step_over },
+        { 'n', '<F5>', require "dapui".toggle },
     },
     github_upload = {
         { 'n', '<C-p>', "<CMD>lua require('nvim-github-uploader').upload_img()<CR>" }

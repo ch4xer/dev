@@ -23,7 +23,7 @@ local plugins = {
     {
         'numToStr/Comment.nvim',
         config = config.comment,
-        event = { 'BufRead' }
+        event = { 'VeryLazy' }
     },
     {
         'windwp/nvim-autopairs',
@@ -42,12 +42,7 @@ local plugins = {
         'folke/todo-comments.nvim',
         dependencies = { "nvim-lua/plenary.nvim" },
         config = true,
-        event = { 'BufRead' }
-    },
-    {
-        "folke/zen-mode.nvim",
-        config = true,
-        event = { 'BufRead' }
+        event = { 'VeryLazy' }
     },
     {
         'glepnir/dashboard-nvim',
@@ -64,19 +59,23 @@ local plugins = {
         cmd = { 'Telescope' },
         config = config.telescope,
     },
-    { 'akinsho/bufferline.nvim',  config = config.bufferline },
+    {
+        -- dont lazy
+        'akinsho/bufferline.nvim',
+        config = config.bufferline,
+    },
     {
         'lukas-reineke/indent-blankline.nvim',
-        event = 'BufRead',
+        event = 'VeryLazy',
         config = config.indent
     },
     {
         'RRethy/vim-illuminate',
-        event = 'BufRead',
+        event = 'VeryLazy',
     },
     {
         'hoob3rt/lualine.nvim',
-        event = 'BufRead',
+        event = 'VeryLazy',
         config = config.lualine
     },
     { 'famiu/bufdelete.nvim' },
@@ -89,6 +88,7 @@ local plugins = {
     },
     {
         'stevearc/aerial.nvim',
+        lazy = true,
         config = config.outline,
         cmd = { 'AerialToggle' }
     },
@@ -96,7 +96,7 @@ local plugins = {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
-        event = 'BufRead',
+        event = 'VeryLazy',
         config = config.treesitter
     },
     {
@@ -106,10 +106,9 @@ local plugins = {
         },
         build = ":MasonUpdate",
         config = config.mason,
-        event = 'BufRead'
+        event = 'VeryLazy'
     },
     {
-        -- dont use any event, which will cause bugs
         'hrsh7th/nvim-cmp',
         dependencies = {
             'neovim/nvim-lspconfig',
@@ -118,22 +117,17 @@ local plugins = {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
         },
+        event = "BufRead",
         config = config.cmp,
-    },
-    {
-        'j-hui/fidget.nvim',
-        tag = 'legacy',
-        config = true,
     },
     {
         'zbirenbaum/copilot.lua',
         event = "InsertEnter",
         config = config.copilot,
     },
-    -- format
     {
         'jose-elias-alvarez/null-ls.nvim',
-        event = 'BufRead',
+        event = 'VeryLazy',
         dependencies = { 'williamboman/mason.nvim' },
         config = config.nullls
     },
@@ -141,7 +135,7 @@ local plugins = {
         'kevinhwang91/nvim-ufo',
         config = config.fold,
         dependencies = { 'kevinhwang91/promise-async' },
-        event = 'BufRead'
+        event = 'VeryLazy'
     },
     {
         'mfussenegger/nvim-dap',
@@ -151,17 +145,27 @@ local plugins = {
             'theHamsta/nvim-dap-virtual-text'
         },
         config = config.dap,
-        ft = { 'go', 'c', 'rust', 'python' }
     },
     {
         'glepnir/lspsaga.nvim',
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = config.lspsaga,
-        event = 'BufRead'
+        event = 'VeryLazy'
     },
-    { 'onsails/lspkind-nvim' },
-    { 'lewis6991/gitsigns.nvim', config = true,           event = 'BufRead' },
-    { 'folke/persistence.nvim',  config = config.session, event = 'BufReadPre' },
+    {
+        'onsails/lspkind-nvim',
+        event = 'VeryLazy'
+    },
+    {
+        'lewis6991/gitsigns.nvim',
+        config = true,
+        event = 'VeryLazy'
+    },
+    {
+        'folke/persistence.nvim',
+        config = config.session,
+        event = 'BufReadPre'
+    },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
