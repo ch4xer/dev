@@ -12,15 +12,14 @@ M = function()
             },
         },
         filetypes = {
-            yaml = false,
-            markdown = false,
+            yaml = true,
+            markdown = true,
             help = false,
             gitcommit = false,
             gitrebase = false,
             hgcommit = false,
-            svn = false,
-            cvs = false,
             ["."] = false,
+            ["Dockerfile"] = true,
         },
         copilot_node_command = 'node', -- Node.js version must be > 16.x
         server_opts_overrides = {},
