@@ -69,6 +69,7 @@ key_bindings:
   - { key: L, mods: Control|Shift, chars: "\x1b[108;6u" }
   - { key: T, mods: Control|Shift, chars: "\x1b[116;6u" }
   - { key: Q, mods: Control|Shift, chars: "\x1b[113;6u" }
+  - { key: S, mods: Control|Shift, chars: "\x1b[115;6u" }
   - { key: H, mods: Control|Shift|Alt, chars: "\x1b[104;8u" }
   - { key: J, mods: Control|Shift|Alt, chars: "\x1b[106;8u" }
   - { key: K, mods: Control|Shift|Alt, chars: "\x1b[107;8u" }
