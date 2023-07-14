@@ -155,6 +155,7 @@ local key_mapper = function(mode, key, result, config)
     )
 end
 
+-- TODO: add Nop for s
 
 for _, keymap_class in ipairs({ Movement, Edit, Cmd, Fold, ModeSwitch }) do
     for _, keymap in ipairs(keymap_class) do

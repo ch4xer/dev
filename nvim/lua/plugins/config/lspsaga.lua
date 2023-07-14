@@ -15,7 +15,8 @@ M = function()
                 vsplit = 'v',
                 split = 's',
                 tabe = 't',
-                quit = { 'q', '<ESC>' },
+                -- can only use string here
+                quit = '<ESC>',
             }
         },
         rename = {
