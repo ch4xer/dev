@@ -5,7 +5,7 @@ M = function()
         },
         code_action = {
             keys = {
-                quit = '<ESC>',
+                quit = { 'q', '<ESC>' },
                 exec = '<CR>',
             }
         },
@@ -15,7 +15,7 @@ M = function()
                 vsplit = 'v',
                 split = 's',
                 tabe = 't',
-                quit = '<ESC>',
+                quit = { 'q', '<ESC>' },
             }
         },
         rename = {
