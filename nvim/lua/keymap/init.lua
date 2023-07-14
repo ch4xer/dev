@@ -118,7 +118,7 @@ local Plugins = {
         { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
-        { 'n',          'gr',    '<CMD>Lspsaga lsp_finder<CR>', },
+        { 'n',          'gr',    '<CMD>Lspsaga finder<CR>', },
         { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },

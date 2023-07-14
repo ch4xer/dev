@@ -10,15 +10,19 @@ M = function()
             }
         },
         definition = {
-            edit = '<CR>',
-            vsplit = 'v',
-            split = 's',
-            tabe = 't',
-            quit = '<ESC>',
+            keys = {
+                edit = '<CR>',
+                vsplit = 'v',
+                split = 's',
+                tabe = 't',
+                quit = '<ESC>',
+            }
         },
         rename = {
-            quit = '<ESC>',
-            exec = '<CR>',
+            keys = {
+                quit = '<ESC>',
+                exec = '<CR>',
+            }
         },
         finder = {
             max_height = 0.5,
@@ -31,7 +35,6 @@ M = function()
                 split = 's',
                 tabe = 't',
                 quit = { 'q', '<ESC>' },
-                close_in_preview = '<ESC>',
             },
         },
     })

@@ -157,9 +157,10 @@ local plugins = {
         event = 'VeryLazy'
     },
     {
+        -- no lazy
         'lewis6991/gitsigns.nvim',
         config = true,
-        event = 'VeryLazy'
+        event = 'BufRead'
     },
     {
         'folke/persistence.nvim',
