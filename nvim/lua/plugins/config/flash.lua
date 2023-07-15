@@ -25,9 +25,9 @@ M = function()
             -- `require("flash").treesitter()`
             treesitter = {
                 labels = "abcdefghijklmnopqrstuvwxyz",
+                label = { before = true, after = true, style = "inline" },
                 jump = { pos = "range" },
                 highlight = {
-                    label = { before = true, after = true, style = "inline" },
                     backdrop = false,
                     matches = false,
                 },

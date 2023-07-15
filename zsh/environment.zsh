@@ -1,3 +1,8 @@
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export SDL_IM_MODULE=fcitx
+export GLFW_IM_MODULE=ibu
 export WORKSPACE=$HOME/.local/workspace
 export CGO_ENABLED=1
 export GOPATH=$HOME/Projects/go

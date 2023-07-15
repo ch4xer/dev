@@ -143,6 +143,10 @@ local Plugins = {
     }
 }
 
+local Nop = {
+    { { 'n', 'x' }, 's', 'Nop', { noremap = true, silent = true } },
+}
+
 local key_mapper = function(mode, key, result, config)
     if nil == config then
         config = { noremap = true, silent = true }
@@ -155,9 +159,7 @@ local key_mapper = function(mode, key, result, config)
     )
 end
 
--- TODO: add Nop for s
-
-for _, keymap_class in ipairs({ Movement, Edit, Cmd, Fold, ModeSwitch }) do
+for _, keymap_class in ipairs({ Movement, Edit, Cmd, Fold, ModeSwitch, Nop }) do
     for _, keymap in ipairs(keymap_class) do
         key_mapper(keymap[1], keymap[2], keymap[3], keymap[4])
     end
