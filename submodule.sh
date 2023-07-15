@@ -10,3 +10,5 @@ git submodule add --force ssh://git@github.com/tmux-plugins/tmux-yank.git tmux/p
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-net-speed.git tmux/plugins/tmux-net-speed
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-resurrect.git tmux/plugins/tmux-resurrect
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-continuum.git tmux/plugins/tmux-continuum
+git submodule add --force ssh://git@github.com/alexanderjeurissen/ranger_devicons.git ranger/plugins/ranger_devicons
+git submodule add --force ssh://git@github.com/SL-RU/ranger_udisk_menu.git ranger/plugins/ranger_udisk_menu

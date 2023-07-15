@@ -34,3 +34,9 @@
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = ssh://git@github.com/tmux-plugins/tmux-resurrect.git
+[submodule "ranger/plugins/ranger_devicons"]
+	path = ranger/plugins/ranger_devicons
+	url = ssh://git@github.com/alexanderjeurissen/ranger_devicons.git
+[submodule "ranger/plugins/ranger_udisk_menu"]
+	path = ranger/plugins/ranger_udisk_menu
+	url = ssh://git@github.com/SL-RU/ranger_udisk_menu.git
