@@ -5,12 +5,14 @@ BASEDIR=~/.config
 rm -r $BASEDIR/alacritty
 yes | rm -r $BASEDIR/tmux
 yes | rm -r $BASEDIR/zsh
+yes | rm -r $BASEDIR/ranger
 rm -r ~/.zshrc
 cp -r ./tmux ~/.config/
 cp -r ./alacritty ~/.config/
 cp -r ./kitty ~/.config/
 cp -r ./zsh ~/.config/
 cp -r ./zshrc ~/.zshrc
+cp -r ./ranger ~/.config/ranger
 
 license=$BASEDIR/nvim/intelephense_license_key
 if [ -e "$license" ]; then
