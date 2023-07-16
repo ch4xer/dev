@@ -1,76 +1,76 @@
 local vim = vim
 
 -- set title for alacritty
-vim.o.title = true
-vim.o.termguicolors = true
-vim.o.background = "dark"
-vim.o.errorbells = false
-vim.o.mouse = 'a'
-vim.o.mousemodel = 'extend'
-vim.o.shell = '/bin/zsh'
+vim.opt.title = true
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.errorbells = false
+vim.opt.mouse = 'a'
+vim.opt.mousemodel = 'extend'
+vim.opt.shell = '/bin/zsh'
 
-vim.o.modifiable = true
+vim.opt.modifiable = true
 -- auto save
-vim.o.autowriteall = true
+vim.opt.autowriteall = true
 -- the refresh time will affect lspsaga's reaction time
-vim.o.updatetime = 300
+vim.opt.updatetime = 300
 -- for which-key
-vim.o.timeout = true
-vim.o.timeoutlen = 300
+vim.opt.timeout = true
+vim.opt.timeoutlen = 300
 -- case settintg
-vim.o.smartcase = true
-vim.o.ignorecase = true
-vim.o.cursorline = true
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.cursorline = true
 
 -- clipboard
-vim.o.clipboard = 'unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 -- folder view setting
--- vim.o.foldmethod = 'expr'
--- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.o.foldlevel = 20
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldlevel = 20
 -- for ufo plugin
-vim.o.foldcolumn = '0' -- '0' is not bad
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
+vim.opt.foldcolumn = '0' -- '0' is not bad
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
-vim.o.scrolloff = 5
+vim.opt.scrolloff = 5
 -- wait PR to be merged, then all things will be better
-vim.o.smoothscroll = true
+vim.opt.smoothscroll = true
 
 -- indent setting
-vim.o.autoindent = true
-vim.o.smartindent = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- no additional files
-vim.o.swapfile = false
-vim.o.backup = false -- insert mode compeleting menu setting
-vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.opt.swapfile = false
+vim.opt.backup = false -- insert mode compeleting menu setting
+vim.opt.completeopt = 'menuone,noinsert,noselect'
 
 -- visual selection mode
-vim.o.sel = 'inclusive'
+vim.opt.sel = 'inclusive'
 
 -- set tab to 4 spaces, could be override by ftplugin
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 -- show numbers
-vim.o.number = true
-vim.o.relativenumber = false
+vim.opt.number = true
+vim.opt.relativenumber = false
 
 -- save space for window
-vim.o.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
 -- wrap line when too long to display
-vim.o.wrap = true
+vim.opt.wrap = true
 
 -- key mappings
 vim.g.mapleader = ' '
 
 -- load preview view
-vim.o.viewoptions = 'folds,cursor,curdir'
+vim.opt.viewoptions = 'folds,cursor,curdir'
 
 -- setting for nvim-tree
 vim.g.loaded_netrw = 1
