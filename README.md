@@ -14,7 +14,7 @@ This repo contains my configuration of alacritty, kitty, tmux, zsh and neovim.
 ## Install
 
 ```bash
-# make sure you have alacritty, kitty, tmux, neovim installed
+# make sure you have alacritty, kitty, tmux, neovim(nightly) installed
 git clone https://github.com/ch3n9w/dev
 cd dev
 chmod 755 ./install.sh
