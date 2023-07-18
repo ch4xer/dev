@@ -125,12 +125,12 @@ local plugins = {
         event = "InsertEnter",
         config = config.copilot,
     },
-    -- {
-    --     'jose-elias-alvarez/null-ls.nvim',
-    --     dependencies = { 'williamboman/mason.nvim' },
-    --     config = config.nullls,
-    --     event = 'BufRead',
-    -- },
+    {
+        'jose-elias-alvarez/null-ls.nvim',
+        dependencies = { 'williamboman/mason.nvim' },
+        config = config.nullls,
+        event = 'VeryLazy',
+    },
     {
         'kevinhwang91/nvim-ufo',
         config = config.fold,
