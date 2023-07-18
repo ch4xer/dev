@@ -106,7 +106,7 @@ local plugins = {
         },
         build = ":MasonUpdate",
         config = config.mason,
-        event = 'BufRead'
+        event = 'VeryLazy'
     },
     {
         'hrsh7th/nvim-cmp',
@@ -117,7 +117,7 @@ local plugins = {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
         },
-        event = "BufRead",
+        event = "VeryLazy",
         config = config.cmp,
     },
     {
@@ -125,12 +125,12 @@ local plugins = {
         event = "InsertEnter",
         config = config.copilot,
     },
-    {
-        'jose-elias-alvarez/null-ls.nvim',
-        dependencies = { 'williamboman/mason.nvim' },
-        config = config.nullls,
-        event = 'BufRead',
-    },
+    -- {
+    --     'jose-elias-alvarez/null-ls.nvim',
+    --     dependencies = { 'williamboman/mason.nvim' },
+    --     config = config.nullls,
+    --     event = 'BufRead',
+    -- },
     {
         'kevinhwang91/nvim-ufo',
         config = config.fold,
@@ -139,11 +139,11 @@ local plugins = {
     },
     {
         'mfussenegger/nvim-dap',
-        lazy = true,
         dependencies = {
             'rcarriga/nvim-dap-ui',
             'theHamsta/nvim-dap-virtual-text'
         },
+        lazy = true,
         config = config.dap,
     },
     {
@@ -157,10 +157,9 @@ local plugins = {
         event = 'VeryLazy'
     },
     {
-        -- no lazy
         'lewis6991/gitsigns.nvim',
         config = true,
-        event = 'BufRead'
+        event = 'VeryLazy'
     },
     {
         'folke/persistence.nvim',
@@ -169,8 +168,8 @@ local plugins = {
     },
     {
         "folke/flash.nvim",
-        event = "VeryLazy",
         config = config.flash,
+        event = "VeryLazy",
     },
     {
         'christoomey/vim-tmux-navigator',
@@ -178,8 +177,8 @@ local plugins = {
     },
     {
         "kylechui/nvim-surround",
+        config = config.surround,
         event = "VeryLazy",
-        config = config.surround
     }
 }
 

@@ -163,7 +163,20 @@ M = function()
             usePlaceholders = true,
         }
     }
-    local other_servers = { "pyright", "rome", "lua_ls", "rust_analyzer", "marksman", "dockerls", "bashls" }
+    lspconfig.rust_analyzer.setup {
+        capabilities = capabilities,
+        single_file_mode = false,
+        root_dir = lspconfig.util.root_pattern("Cargo.toml", "rust-project.json"),
+        settings = {
+            rust_analyzer = {
+                cargo = {
+                    fullFeatures = true,
+                },
+            }
+        }
+    }
+
+    local other_servers = { "pyright", "rome", "lua_ls", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
