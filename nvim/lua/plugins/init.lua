@@ -135,7 +135,7 @@ local plugins = {
         'kevinhwang91/nvim-ufo',
         config = config.fold,
         dependencies = { 'kevinhwang91/promise-async' },
-        event = 'VeryLazy'
+        event = 'BufRead'
     },
     {
         'mfussenegger/nvim-dap',
@@ -159,7 +159,7 @@ local plugins = {
     {
         'lewis6991/gitsigns.nvim',
         config = true,
-        event = 'VeryLazy'
+        event = 'BufRead'
     },
     {
         'folke/persistence.nvim',
