@@ -17,8 +17,7 @@ M = function()
                 },
                 'mode'
             },
-            -- lualine_b = {'branch', 'diff', 'diagnostics'},
-            lualine_b = { 'diff', 'diagnostics' },
+            lualine_b = {'branch', 'diff', 'diagnostics'},
             lualine_c = { 'filename' },
             lualine_x = { 'encoding', 'filetype' },
             lualine_y = { 'progress' },
