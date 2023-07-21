@@ -9,7 +9,6 @@ yes | rm -r $BASEDIR/ranger
 rm -r ~/.zshrc
 cp -r ./tmux ~/.config/
 cp -r ./alacritty ~/.config/
-cp -r ./kitty ~/.config/
 cp -r ./zsh ~/.config/
 cp -r ./zshrc ~/.zshrc
 cp -r ./ranger ~/.config/ranger
