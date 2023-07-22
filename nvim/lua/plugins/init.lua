@@ -179,7 +179,15 @@ local plugins = {
         "kylechui/nvim-surround",
         config = config.surround,
         event = "VeryLazy",
-    }
+    },
+    -- {
+    --     "nvim-neorg/neorg",
+    --     build = ":Neorg sync-parsers",
+    --     config = config.neorg,
+    --     ft = "norg",
+    --     event = "VeryLazy",
+    --     dependencies = { 'nvim-lua/plenary.nvim' }
+    -- },
 }
 
 require("lazy").setup(plugins)

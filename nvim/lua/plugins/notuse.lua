@@ -30,7 +30,6 @@ local plugins = {
         dependencies = 'hrsh7th/nvim-cmp',
         ft = { 'go', 'rust', 'c', 'python' },
     },
-
     {
         'nvim-neorg/neorg',
         build = ":Neorg sync-parsers",
