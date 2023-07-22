@@ -17,7 +17,8 @@ M = function()
                 },
             },
             lualine_b = {
-                'mode',
+                -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
+                { 'mode', icons_enabled = true, fmt = function(str) return str:sub(1, 3) end },
                 -- 'branch',
                 'diff',
                 'diagnostics'
