@@ -18,7 +18,7 @@ M = function()
             },
             lualine_b = {
                 'mode',
-                'branch',
+                -- 'branch',
                 'diff',
                 'diagnostics'
             },
