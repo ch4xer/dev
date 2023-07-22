@@ -103,13 +103,13 @@ M = function()
         sorting = {
             priority_weight = 1.0,
             comparators = {
-                compare.locality,
                 compare.sort_text,
                 -- compare.scopes,
                 compare.score,
                 compare.exact,
                 compare.recently_used,
                 compare.offset,
+                compare.locality,
                 compare.kind,
                 compare.sort_text,
                 compare.length,
