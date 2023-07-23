@@ -7,7 +7,6 @@ git submodule add --force ssh://git@github.com/zsh-users/zsh-syntax-highlighting
 git submodule add --force ssh://git@github.com/tmux-plugins/tpm.git tmux/plugins/tpm
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-sensible.git tmux/plugins/tmux-sensible
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-yank.git tmux/plugins/tmux-yank
-git submodule add --force ssh://git@github.com/tmux-plugins/tmux-net-speed.git tmux/plugins/tmux-net-speed
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-resurrect.git tmux/plugins/tmux-resurrect
 git submodule add --force ssh://git@github.com/tmux-plugins/tmux-continuum.git tmux/plugins/tmux-continuum
 git submodule add --force ssh://git@github.com/alexanderjeurissen/ranger_devicons.git ranger/plugins/ranger_devicons
