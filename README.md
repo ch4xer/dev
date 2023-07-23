@@ -9,7 +9,7 @@
 
 ## Introduction
 
-This repo contains my configuration of alacritty, tmux, zsh and neovim.
+This repo contains my configuration of kitty, tmux, zsh and neovim.
 
 ## Install
 

@@ -27,7 +27,7 @@ M = function()
             lualine_x = { 'encoding', 'filetype' },
             lualine_y = { 'progress', 'location' },
             lualine_z = {}
-        }
+        },
     }
 end
 

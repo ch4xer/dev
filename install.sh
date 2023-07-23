@@ -2,13 +2,13 @@ git submodule init
 git submodule update
 
 BASEDIR=~/.config
-rm -r $BASEDIR/alacritty
+rm -r $BASEDIR/kitty
 yes | rm -r $BASEDIR/tmux
 yes | rm -r $BASEDIR/zsh
 yes | rm -r $BASEDIR/ranger
 rm -r ~/.zshrc
 cp -r ./tmux ~/.config/
-cp -r ./alacritty ~/.config/
+cp -r ./kitty ~/.config/
 cp -r ./zsh ~/.config/
 cp -r ./zshrc ~/.zshrc
 cp -r ./ranger ~/.config/ranger
