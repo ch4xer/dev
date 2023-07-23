@@ -40,3 +40,21 @@
 [submodule "ranger/plugins/ranger_udisk_menu"]
 	path = ranger/plugins/ranger_udisk_menu
 	url = ssh://git@github.com/SL-RU/ranger_udisk_menu.git
+[submodule "zsh/zsh/plugins/powerlevel10k"]
+	path = zsh/zsh/plugins/powerlevel10k
+	url = ssh://git@github.com/romkatv/powerlevel10k.git
+[submodule "zsh/zsh/plugins/zsh-autosuggestions"]
+	path = zsh/zsh/plugins/zsh-autosuggestions
+	url = ssh://git@github.com/zsh-users/zsh-autosuggestions.git
+[submodule "zsh/zsh/plugins/zsh-autoswitch-virtualenv"]
+	path = zsh/zsh/plugins/zsh-autoswitch-virtualenv
+	url = ssh://git@github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+[submodule "zsh/zsh/plugins/zsh-extract"]
+	path = zsh/zsh/plugins/zsh-extract
+	url = ssh://git@github.com/le0me55i/zsh-extract.git
+[submodule "zsh/zsh/plugins/zsh-history-substring-search"]
+	path = zsh/zsh/plugins/zsh-history-substring-search
+	url = ssh://git@github.com/zsh-users/zsh-history-substring-search.git
+[submodule "zsh/zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/zsh/plugins/zsh-syntax-highlighting
+	url = ssh://git@github.com/zsh-users/zsh-syntax-highlighting.git
