@@ -6,11 +6,10 @@ rm -r $BASEDIR/kitty
 yes | rm -r $BASEDIR/tmux
 yes | rm -r $BASEDIR/zsh
 yes | rm -r $BASEDIR/ranger
-rm -r ~/.zshrc
 cp -r ./tmux ~/.config/
 cp -r ./kitty ~/.config/
-cp -r ./zsh ~/.config/
-cp -r ./zshrc ~/.zshrc
+cp -r ./zsh/zsh ~/.config/
+cp -r ./zsh/zshrc ~/.zshrc
 cp -r ./ranger ~/.config/ranger
 
 license=$BASEDIR/nvim/intelephense_license_key
