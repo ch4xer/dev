@@ -138,7 +138,8 @@ M = function()
     }
     lspconfig.gopls.setup {
         capabilities = capabilities,
-        single_file_mode = true,
+        single_file_mode = false,
+        root_dir = lspconfig.util.root_pattern("go.mod"),
         settings = {
             gopls = {
                 experimentalPostfixCompletions = true,

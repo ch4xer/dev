@@ -117,7 +117,9 @@ local plugins = {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
         },
-        event = "VeryLazy",
+        -- dont use VeryLazy, which will cause problem when open a single file 
+        -- instead of using telescope-project
+        event = "BufRead",
         config = config.cmp,
     },
     {
