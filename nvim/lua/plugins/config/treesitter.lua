@@ -19,7 +19,7 @@ M = function()
             "bash",
             "yaml",
             "markdown",
-            "markdown_inline"
+            "markdown_inline",
         },
         -- switch to buildin syntax highlighting
         highlight = {

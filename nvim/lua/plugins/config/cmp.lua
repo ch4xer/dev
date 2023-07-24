@@ -96,7 +96,6 @@ M = function()
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
-            -- { name = 'neorg' },
         }, {
             { name = 'buffer' },
         }),
@@ -211,6 +210,7 @@ M = function()
     --         }
     --     }
     -- }
+    -- marksman 's root directory is where .git folder exists
 end
 
 return M
