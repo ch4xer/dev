@@ -115,6 +115,7 @@ local plugins = {
             'hrsh7th/cmp-nvim-lsp',
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
+            'rafamadriz/friendly-snippets',
             'hrsh7th/cmp-buffer',
         },
         -- dont use VeryLazy, which will cause problem when open a single file 
@@ -131,6 +132,7 @@ local plugins = {
         'jose-elias-alvarez/null-ls.nvim',
         dependencies = { 'williamboman/mason.nvim' },
         config = config.nullls,
+        -- dont use VeryLazy, which will cause problem when open a single file 
         event = 'BufRead',
     },
     {
