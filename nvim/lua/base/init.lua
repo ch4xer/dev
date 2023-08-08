@@ -9,6 +9,8 @@ vim.opt.mouse = 'a'
 vim.opt.mousemodel = 'extend'
 vim.opt.shell = '/bin/zsh'
 
+vim.opt.conceallevel = 3
+
 vim.opt.modifiable = true
 -- auto save
 vim.opt.autowriteall = true

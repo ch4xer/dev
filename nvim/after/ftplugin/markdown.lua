@@ -14,8 +14,9 @@ vim.api.nvim_set_hl(0, "@text.title5", { fg = "#bb9af7", bold = true, italic = t
 vim.api.nvim_set_hl(0, "@text.title6", { fg = "#cfc9c2", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.quote", { fg = "#bb9af7", bold = false, italic = true })
 vim.api.nvim_set_hl(0, "@punctuation.special2", { fg = "#73daca", bold = false, italic = false })
-vim.api.nvim_set_hl(0, "@text.todo.checked", { fg = "#73daca", bold = true, strikethrough=true})
-vim.api.nvim_set_hl(0, "@text.todo.unchecked", { fg = "#73daca", bold = true, strikethrough=false})
+vim.api.nvim_set_hl(0, "@text.todo.checked", { fg = "#73daca", bold = false, strikethrough=true})
+vim.api.nvim_set_hl(0, "@text.todo.unchecked", { fg = "#73daca", bold = false, strikethrough=false})
+-- vim.api.nvim_set_hl(0, "@text.literal.block", { bg = "#000000", bold = false, strikethrough=false})
 
 local mark_item_done = function()
     local current_line = vim.api.nvim_get_current_line()
