@@ -122,6 +122,9 @@ local Plugins = {
         { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
+    neogen = {
+        { 'n', 'go', require('neogen').generate },
+    },
     dap = {
         { 'n', '<F1>', require "dap".toggle_breakpoint },
         { 'n', '<F2>', require "dap".continue },

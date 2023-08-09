@@ -118,7 +118,7 @@ local plugins = {
             'rafamadriz/friendly-snippets',
             'hrsh7th/cmp-buffer',
         },
-        -- dont use VeryLazy, which will cause problem when open a single file 
+        -- dont use VeryLazy, which will cause problem when open a single file
         -- instead of using telescope-project
         event = "BufRead",
         config = config.cmp,
@@ -129,10 +129,16 @@ local plugins = {
         config = config.copilot,
     },
     {
+        'danymat/neogen',
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true,
+        lazy = true,
+    },
+    {
         'jose-elias-alvarez/null-ls.nvim',
         dependencies = { 'williamboman/mason.nvim' },
         config = config.nullls,
-        -- dont use VeryLazy, which will cause problem when open a single file 
+        -- dont use VeryLazy, which will cause problem when open a single file
         event = 'BufRead',
     },
     {
