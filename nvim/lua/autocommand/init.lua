@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave'
 
 vim.g.firstBufferOrDashboard = 1
 vim.g.dashboard = 0
-vim.g.width_open_tree = 100
+vim.g.width_open_tree = 150
 
 
 local toggle_tree = function()
