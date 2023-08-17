@@ -195,6 +195,11 @@ M = function()
     -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
     -- "venv": "simple-monitor-hgrutBFy"
     -- }
+    -- for virtualenv, just need:
+    -- {
+    -- "venvPath": ".",
+    -- "venv": "."
+    -- }
     -- pylsp is unable to find virtualenvs according to single config file in project
     -- lspconfig.pylsp.setup {
     --     settings = {
