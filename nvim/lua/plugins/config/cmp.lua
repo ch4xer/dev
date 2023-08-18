@@ -50,7 +50,7 @@ M = function()
         mapping = {
             ['<CR>'] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Replace,
-                select = false,
+                select = true,
             }),
             ['<C-j>'] = cmp.mapping(function(fallback)
                 if luasnip.expand_or_locally_jumpable() then
@@ -189,6 +189,11 @@ M = function()
     -- {
     -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
     -- "venv": "simple-monitor-hgrutBFy"
+    -- }
+    -- for virtualenv, just need:
+    -- {
+    -- "venvPath": ".",
+    -- "venv": "."
     -- }
     -- pylsp is unable to find virtualenvs according to single config file in project
     -- lspconfig.pylsp.setup {
