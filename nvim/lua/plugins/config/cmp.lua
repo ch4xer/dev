@@ -20,7 +20,6 @@ M = function()
         region_check_events = { "CursorMoved", "CursorHold", "InsertEnter", "CursorMovedI" },
         history = true,
     })
-    require("luasnip.loaders.from_vscode").lazy_load()
     require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
     require('neogen').setup({ snippet_engine = "luasnip" })
 
@@ -51,11 +50,9 @@ M = function()
         mapping = {
             ['<CR>'] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Replace,
-                select = true,
+                select = false,
             }),
             ['<C-j>'] = cmp.mapping(function(fallback)
-                -- if cmp.visible() then
-                --     cmp.select_next_item()
                 if luasnip.expand_or_locally_jumpable() then
                     luasnip.expand_or_jump()
                 else
@@ -63,8 +60,6 @@ M = function()
                 end
             end, { 'i', 's' }),
             ['<C-k>'] = cmp.mapping(function(fallback)
-                -- if cmp.visible() then
-                --     cmp.select_prev_item()
                 if luasnip.jumpable(-1) then
                     luasnip.jump(-1)
                 else
@@ -194,11 +189,6 @@ M = function()
     -- {
     -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
     -- "venv": "simple-monitor-hgrutBFy"
-    -- }
-    -- for virtualenv, just need:
-    -- {
-    -- "venvPath": ".",
-    -- "venv": "."
     -- }
     -- pylsp is unable to find virtualenvs according to single config file in project
     -- lspconfig.pylsp.setup {

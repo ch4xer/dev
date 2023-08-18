@@ -115,7 +115,6 @@ local plugins = {
             'hrsh7th/cmp-nvim-lsp',
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets',
             'hrsh7th/cmp-buffer',
         },
         -- dont use VeryLazy, which will cause problem when open a single file
