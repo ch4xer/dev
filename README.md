@@ -18,9 +18,7 @@ cd dev
 ### Upgrade software
 
 ```bash
-# upgrade tmux and ranger by package manager
-# upgrade kitty
-./scripts/kitty-upgrade.sh
+# upgrade tmux, ranger and kitty by package manager
 # upgrade neovim
 ./scripts/neovim-upgrade.sh
 ```
