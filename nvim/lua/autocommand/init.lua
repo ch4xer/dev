@@ -139,6 +139,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+-- copy from remote TMUX to local clipboard
 if vim.env.TMUX ~= nil then
     vim.api.nvim_create_autocmd("TextYankPost", {
         callback = function()
@@ -155,8 +156,8 @@ if vim.env.TMUX ~= nil then
             -- this didnt work
             -- s = "\\\\e]52;c;" .. vim.trim(str64) .. "\\\\x07"
             local s = "\\ePtmux;\\e\\e]52;c;" .. vim.trim(str64) .. "\\x07\\e\\\\"
-            vim.cmd('silent! !echo "' .. s .. '"')
-            vim.cmd("redraw!")
+            vim.cmd("silent! !echo '" .. s .. "'")
+            -- vim.cmd("redraw!")
         end,
     })
 end
