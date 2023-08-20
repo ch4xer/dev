@@ -151,7 +151,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
             ['`'] = '\\`'
         })
         local str64 = vim.fn.systemlist('echo -n "' .. str .. '" | base64')[1]
-        vim.print(str64)
         local s
         if vim.env.TMUX ~= nil then
             s = "\\ePtmux;\\e\\e]52;c;" .. vim.trim(str64) .. "\\x07\\e\\\\"
