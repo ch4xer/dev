@@ -155,7 +155,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         if vim.env.TMUX ~= nil then
             s = "\\ePtmux;\\e\\e]52;c;" .. vim.trim(str64) .. "\\x07\\e\\\\"
         else
-            s = "\\x1b]52;c;" .. vim.trim(str64) .. "\\x07"
+            s = "\\e]52;c;" .. vim.trim(str64) .. "\\x07"
         end
         vim.cmd('silent! !echo "' .. s .. '"')
         vim.cmd("redraw!")
