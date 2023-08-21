@@ -1,4 +1,4 @@
-export WORKSPACE=$HOME/.local/workspace
+export TERM=xterm-256color
 export CGO_ENABLED=1
 export GOPATH=$HOME/Projects/go
 export GOPROXY=https://goproxy.cn
