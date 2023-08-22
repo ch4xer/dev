@@ -184,16 +184,10 @@ M = function()
     lspconfig.clangd.setup {
         capabilities = capabilities
     }
-    -- for python virtual projects, if using pyright or pylance(vscode only), create pyrightconfig.json file at the root of folder, contains something like:
-    -- {
-    -- "venvPath": "/home/ch4ser/.local/share/virtualenvs",
-    -- "venv": "simple-monitor-hgrutBFy"
-    -- }
-    -- for virtualenv, just need:
-    -- {
+    -- for virtualenv, just need pyproject.toml:
+    -- [tool.pyright]
     -- "venvPath": ".",
     -- "venv": "."
-    -- }
     -- pylsp is unable to find virtualenvs according to single config file in project
     -- lspconfig.pylsp.setup {
     --     settings = {

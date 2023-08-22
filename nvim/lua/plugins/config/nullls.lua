@@ -10,19 +10,16 @@ M = function()
             }),
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.black,
-            null_ls.builtins.diagnostics.pylint.with({
+            null_ls.builtins.diagnostics.ruff.with({
                 command = function ()
                     local cwd = vim.fn.getcwd()
-                    if vim.fn.executable(cwd .. '/.venv/bin/pylint') == 1 then
-                        return cwd .. '/.venv/bin/pylint'
+                    if vim.fn.executable(cwd .. '/.venv/bin/ruff') == 1 then
+                        return cwd .. '/.venv/bin/ruff'
                     else
-                        return 'pylint'
+                        return 'ruff'
                     end
                 end,
-                args = { "--from-stdin", "$FILENAME", "-f", "json", "--persistent=yes","--disable=C,R"},
-            }),
-            -- null_ls.builtins.formatting.isort,
-            -- null_ls.builtins.diagnostics.ruff
+            })
         },
     })
 end
