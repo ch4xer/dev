@@ -11,6 +11,7 @@ M = function()
             }),
             null_ls.builtins.formatting.prettier,
             null_ls.builtins.formatting.black,
+            -- dont install pylint with mason, install in virtualenv with pip
             null_ls.builtins.diagnostics.pylint,
             null_ls.builtins.formatting.isort,
         },
