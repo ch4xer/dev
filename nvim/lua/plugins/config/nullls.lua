@@ -21,7 +21,8 @@ M = function()
                 end,
                 args = { "--from-stdin", "$FILENAME", "-f", "json", "--persistent=yes","--disable=C,R"},
             }),
-            null_ls.builtins.formatting.isort,
+            -- null_ls.builtins.formatting.isort,
+            -- null_ls.builtins.diagnostics.ruff
         },
     })
 end
