@@ -172,7 +172,6 @@ M = function()
             }
         }
     }
-
     local other_servers = { "pyright", "rome", "lua_ls", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
