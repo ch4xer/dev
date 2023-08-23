@@ -3,6 +3,7 @@ if [ -f /etc/debian_version ]; then
   apt install -y tmux zsh ranger kitty rsync htop bat fzf python3 unzip fd-find exa wget
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   ln -s /usr/bin/batcat /usr/bin/bat
+  ln -s /usr/bin/fdfind /usr/bin/fd
   ln -s /usr/bin/python3 /usr/bin/python
   rm nvim.appimage.*
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
