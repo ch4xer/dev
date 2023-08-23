@@ -172,7 +172,7 @@ M = function()
             }
         }
     }
-    lspconfig.ruff_lsp.setup()
+    lspconfig.ruff_lsp.setup {}
     local other_servers = { "pyright", "lua_ls", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
