@@ -36,7 +36,7 @@ else
   cp -r ./nvim ~/.config/
 fi
 
-NEOVIM_BINARY = /usr/bin/nvim
+NEOVIM_BINARY=/usr/bin/nvim
 if [ -f "$NEOVIM_BINARY" ]; then
   echo "Neovim already exists."
 else
