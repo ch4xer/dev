@@ -1,6 +1,6 @@
 if [ -f /etc/debian_version ]; then
   apt update
-  apt install -y tmux zsh ranger kitty rsync htop bat fzf git python3 unzip fd-find exa
+  apt install -y tmux zsh ranger kitty rsync htop bat fzf python3 unzip fd-find exa wget
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   ln -s /usr/bin/batcat /usr/bin/bat
   ln -s /usr/bin/python3 /usr/bin/python
@@ -11,7 +11,7 @@ if [ -f /etc/debian_version ]; then
 fi
 
 if [ -f /etc/arch-release ]; then
-  pacman -S tmux zsh ranger kitty rsync htop bat git python fzf unzip zoxide exa fd
+  pacman -S tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide exa fd wget
   rm nvim.appimage.*
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
   chmod u+x nvim.appimage
@@ -54,11 +54,8 @@ else
   echo "Downloading FiraCodeNerdFont-Regular.ttf..."
   rm FiraCode.zip.*
   wget $FONT
-  unzip FiraCode.zip
   mkdir -p /usr/share/fonts/FiraCode
-  cp ./FiraCode/*.ttf /usr/share/fonts/FiraCode
-  rm -r ./FiraCode
-  rm ./FiraCode.zip
+  unzip FiraCode.zip -d /usr/share/fonts/FiraCode
+  rm FiraCode.zip
   fc-cache -fv
-  rm FiraCodeNerdFont*.ttf
 fi
