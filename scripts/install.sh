@@ -40,3 +40,19 @@ else
   rm ./FiraCode.zip
   fc-cache -fv
 fi
+
+# if the system is debian-based
+#
+if [ -f /etc/debian_version ]; then
+  apt update
+  apt install -y tmux zsh ranger kitty rsync htop bat fzf git python3 
+  mkdir -p ~/.local/bin
+  ln -s /usr/bin/batcat ~/.local/bin/bat
+fi
+
+# Check if Arch based
+if [ -f /etc/arch-release ]; then
+  pacman -S tmux zsh ranger kitty rsync htop bat git python fzf
+fi
+
+
