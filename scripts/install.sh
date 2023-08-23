@@ -1,15 +1,19 @@
-# if the system is debian-based
-#
 if [ -f /etc/debian_version ]; then
   apt update
-  apt install -y tmux zsh ranger kitty rsync htop bat fzf git python3 unzip
+  apt install -y tmux zsh ranger kitty rsync htop bat fzf git python3 unzip fd-finder exa
+  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   ln -s /usr/bin/batcat /usr/bin/bat
   ln -s /usr/bin/python3 /usr/bin/python
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  chmod u+x nvim.appimage
+  mv nvim.appimage /usr/bin/nvim
 fi
 
-# Check if Arch based
 if [ -f /etc/arch-release ]; then
-  pacman -S tmux zsh ranger kitty rsync htop bat git python fzf unzip
+  pacman -S tmux zsh ranger kitty rsync htop bat git python fzf unzip zoxide exa fd
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  chmod u+x nvim.appimage
+  mv nvim.appimage /usr/bin/nvim
 fi
 
 git submodule init
