@@ -57,4 +57,5 @@ else
   rm -r ./FiraCode
   rm ./FiraCode.zip
   fc-cache -fv
+  rm FiraCodeNerdFont*.ttf
 fi
