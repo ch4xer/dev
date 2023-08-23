@@ -5,18 +5,10 @@ if [ -f /etc/debian_version ]; then
   ln -s /usr/bin/batcat /usr/bin/bat
   ln -s /usr/bin/fdfind /usr/bin/fd
   ln -s /usr/bin/python3 /usr/bin/python
-  rm nvim.appimage.*
-  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-  chmod u+x nvim.appimage
-  mv nvim.appimage /usr/bin/nvim
 fi
 
 if [ -f /etc/arch-release ]; then
   pacman -S tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide exa fd wget
-  rm nvim.appimage.*
-  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-  chmod u+x nvim.appimage
-  mv nvim.appimage /usr/bin/nvim
 fi
 
 git submodule init
@@ -42,6 +34,17 @@ if [ -e "$license" ]; then
 else
   rm -r $BASEDIR/nvim
   cp -r ./nvim ~/.config/
+fi
+
+NEOVIM_BINARY = /usr/bin/nvim
+if [ -f "$NEOVIM_BINARY" ]; then
+  echo "Neovim already exists."
+else
+  echo "Downloading Neovim..."
+  rm nvim.appimage.*
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+  chmod u+x nvim.appimage
+  mv nvim.appimage /usr/bin/nvim
 fi
 
 FONT_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
