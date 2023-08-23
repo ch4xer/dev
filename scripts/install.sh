@@ -50,6 +50,7 @@ elif [ -f "$FONT_FILE2" ]; then
   echo "FiraCodeNerdFont-Regular.ttf already exists."
 else
   echo "Downloading FiraCodeNerdFont-Regular.ttf..."
+  rm FiraCode*.zip
   wget $FONT
   unzip FiraCode.zip
   mkdir -p /usr/share/fonts/FiraCode
