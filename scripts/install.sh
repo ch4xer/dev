@@ -1,6 +1,6 @@
 if [ -f /etc/debian_version ]; then
   apt update
-  apt install -y tmux zsh ranger kitty rsync htop bat fzf git python3 unzip fd-finder exa
+  apt install -y tmux zsh ranger kitty rsync htop bat fzf git python3 unzip fd-find exa
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   ln -s /usr/bin/batcat /usr/bin/bat
   ln -s /usr/bin/python3 /usr/bin/python
