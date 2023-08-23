@@ -3,8 +3,6 @@ M = function()
     require('mason-tool-installer').setup {
         ensure_installed = {
             'bash-language-server',
-            'clangd',
-            'clang-format',
             'gopls',
             'delve',
             'intelephense',
@@ -13,9 +11,8 @@ M = function()
             'markdown-toc',
             'prettier',
             'pyright',
+            'ruff-lsp',
             'black',
-            'ruff',
-            'rome',
             'rust-analyzer',
             'rustfmt',
             'yaml-language-server',
