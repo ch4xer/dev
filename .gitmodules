@@ -1,60 +1,80 @@
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
-	url = ssh://git@github.com/romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
+    branch = main
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
-	url = ssh://git@github.com/zsh-users/zsh-autosuggestions.git
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+    branch = main
 [submodule "zsh/plugins/zsh-autoswitch-virtualenv"]
 	path = zsh/plugins/zsh-autoswitch-virtualenv
-	url = ssh://git@github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+    branch = main
 [submodule "zsh/plugins/zsh-extract"]
 	path = zsh/plugins/zsh-extract
-	url = ssh://git@github.com/le0me55i/zsh-extract.git
+	url = https://github.com/le0me55i/zsh-extract.git
+    branch = main
 [submodule "zsh/plugins/zsh-history-substring-search"]
 	path = zsh/plugins/zsh-history-substring-search
-	url = ssh://git@github.com/zsh-users/zsh-history-substring-search.git
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+    branch = main
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
-	url = ssh://git@github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+    branch = main
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
-	url = ssh://git@github.com/tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm.git
+    branch = main
 [submodule "tmux/plugins/tmux-sensible"]
 	path = tmux/plugins/tmux-sensible
-	url = ssh://git@github.com/tmux-plugins/tmux-sensible.git
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+    branch = main
 [submodule "tmux/plugins/tmux-yank"]
 	path = tmux/plugins/tmux-yank
-	url = ssh://git@github.com/tmux-plugins/tmux-yank.git
+	url = https://github.com/tmux-plugins/tmux-yank.git
+    branch = main
 [submodule "tmux/plugins/tmux-net-speed"]
 	path = tmux/plugins/tmux-net-speed
-	url = ssh://git@github.com/tmux-plugins/tmux-net-speed.git
+	url = https://github.com/tmux-plugins/tmux-net-speed.git
+    branch = main
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
-	url = ssh://git@github.com/tmux-plugins/tmux-continuum.git
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+    branch = main
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
-	url = ssh://git@github.com/tmux-plugins/tmux-resurrect.git
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+    branch = main
 [submodule "ranger/plugins/ranger_devicons"]
 	path = ranger/plugins/ranger_devicons
-	url = ssh://git@github.com/alexanderjeurissen/ranger_devicons.git
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git
+    branch = main
 [submodule "ranger/plugins/ranger_udisk_menu"]
 	path = ranger/plugins/ranger_udisk_menu
-	url = ssh://git@github.com/SL-RU/ranger_udisk_menu.git
+	url = https://github.com/SL-RU/ranger_udisk_menu.git
+    branch = main
 [submodule "zsh/zsh/plugins/powerlevel10k"]
 	path = zsh/zsh/plugins/powerlevel10k
-	url = ssh://git@github.com/romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
+    branch = main
 [submodule "zsh/zsh/plugins/zsh-autosuggestions"]
 	path = zsh/zsh/plugins/zsh-autosuggestions
-	url = ssh://git@github.com/zsh-users/zsh-autosuggestions.git
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+    branch = main
 [submodule "zsh/zsh/plugins/zsh-autoswitch-virtualenv"]
 	path = zsh/zsh/plugins/zsh-autoswitch-virtualenv
-	url = ssh://git@github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
+    branch = main
 [submodule "zsh/zsh/plugins/zsh-extract"]
 	path = zsh/zsh/plugins/zsh-extract
-	url = ssh://git@github.com/le0me55i/zsh-extract.git
+	url = https://github.com/le0me55i/zsh-extract.git
+    branch = main
 [submodule "zsh/zsh/plugins/zsh-history-substring-search"]
 	path = zsh/zsh/plugins/zsh-history-substring-search
-	url = ssh://git@github.com/zsh-users/zsh-history-substring-search.git
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+    branch = main
 [submodule "zsh/zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/zsh/plugins/zsh-syntax-highlighting
-	url = ssh://git@github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+    branch = main
