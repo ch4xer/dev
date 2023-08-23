@@ -8,7 +8,7 @@ if [ -f /etc/debian_version ]; then
 fi
 
 if [ -f /etc/arch-release ]; then
-  pacman -S tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide exa fd wget
+  pacman -S --needed --noconfirm tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide exa fd wget
 fi
 
 git submodule init
