@@ -4,6 +4,7 @@ if [ -f /etc/debian_version ]; then
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   ln -s /usr/bin/batcat /usr/bin/bat
   ln -s /usr/bin/python3 /usr/bin/python
+  rm nvim.appimage.*
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
   chmod u+x nvim.appimage
   mv nvim.appimage /usr/bin/nvim
@@ -11,6 +12,7 @@ fi
 
 if [ -f /etc/arch-release ]; then
   pacman -S tmux zsh ranger kitty rsync htop bat git python fzf unzip zoxide exa fd
+  rm nvim.appimage.*
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
   chmod u+x nvim.appimage
   mv nvim.appimage /usr/bin/nvim
@@ -50,7 +52,7 @@ elif [ -f "$FONT_FILE2" ]; then
   echo "FiraCodeNerdFont-Regular.ttf already exists."
 else
   echo "Downloading FiraCodeNerdFont-Regular.ttf..."
-  rm FiraCode*.zip
+  rm FiraCode.zip.*
   wget $FONT
   unzip FiraCode.zip
   mkdir -p /usr/share/fonts/FiraCode
