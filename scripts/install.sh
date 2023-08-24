@@ -1,6 +1,6 @@
 if [ -f /etc/debian_version ]; then
   apt update
-  apt install -y tmux zsh ranger kitty rsync htop bat fzf python3 unzip fd-find exa wget
+  apt install -y tmux zsh ranger alacritty kitty rsync htop bat fzf python3 unzip fd-find exa wget
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   ln -s /usr/bin/batcat /usr/bin/bat
   ln -s /usr/bin/fdfind /usr/bin/fd
@@ -8,7 +8,7 @@ if [ -f /etc/debian_version ]; then
 fi
 
 if [ -f /etc/arch-release ]; then
-  pacman -S --needed --noconfirm tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide exa fd wget
+  pacman -S --needed --noconfirm tmux zsh ranger alacritty kitty rsync htop bat python fzf unzip zoxide exa fd wget
 fi
 
 git submodule init
@@ -16,11 +16,13 @@ git submodule update
 
 BASEDIR=~/.config
 rm -r $BASEDIR/kitty
+rm -r $BASEDIR/alacritty
 yes | rm -r $BASEDIR/tmux
 yes | rm -r $BASEDIR/zsh
 yes | rm -r $BASEDIR/ranger
 cp -r ./tmux ~/.config/
 cp -r ./kitty ~/.config/
+cp -r ./alacritty ~/.config/
 cp -r ./zsh/zsh ~/.config/
 cp -r ./zsh/zshrc ~/.zshrc
 cp -r ./ranger ~/.config/ranger

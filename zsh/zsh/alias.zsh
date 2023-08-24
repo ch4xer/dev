@@ -1,5 +1,5 @@
 alias c="clear"
-alias s="kitten ssh"
+alias s="ssh"
 alias g="git"
 alias l="exa --icons"
 alias ls="exa --icons"
