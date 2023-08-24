@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This repo contains my configuration of kitty, tmux, ranger, zsh and neovim.
+This repo contains my configuration of kitty, alacritty, tmux, ranger, zsh and neovim.
 
 ## Install
 
