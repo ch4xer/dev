@@ -43,19 +43,24 @@ M = function()
         update_cwd          = true,
         sync_root_with_cwd  = true,
         view                = {
+            adaptive_size = true,
             width = 20,
             side = 'left',
             preserve_window_proportions = true,
         },
         filters             = { custom = { "^\\." } },
         update_focused_file = { enable = true, },
-        renderer            = { highlight_opened_files = "all", indent_markers = { enable = true } },
+        renderer            = {
+            highlight_opened_files = "all",
+            indent_markers = { enable = true },
+            symlink_destination = false,
+        },
         diagnostics         = {
             enable = true,
             show_on_dirs = true,
             show_on_open_dirs = true,
         },
-        git = {
+        git                 = {
             show_on_dirs = false,
         }
     }
