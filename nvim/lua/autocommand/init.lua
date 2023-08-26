@@ -139,28 +139,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
-        local str = vim.fn.getreg('"')
-        if string.len(vim.trim(str)) == 0 then
+        if package.loaded['osc52'] == nil then
             return
         end
-        str = string.gsub(str, '[\\"\\`\\]', {
-            ['\\'] = '\\\\\\\\',
-            ['"'] = '\\"',
-            ['`'] = '\\`'
-        })
-        local str64 = vim.fn.systemlist('echo -n "' .. str .. '" | base64')[1]
-        local s
-        if vim.env.TMUX ~= nil then
-            s = "\\ePtmux;\\e\\e]52;c;" .. vim.trim(str64) .. "\\x07\\e\\\\"
-        else
-            s = "\\e]52;c;" .. vim.trim(str64) .. "\\x07"
-        end
-        vim.cmd('silent! !echo "' .. s .. '"')
-        vim.cmd("redraw!")
-    end,
+        require('osc52').copy_register('+')
+    end
 })
-
-
-

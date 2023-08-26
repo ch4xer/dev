@@ -190,6 +190,11 @@ local plugins = {
         lazy = false,
     },
     {
+        'ojroques/nvim-osc52',
+        config = config.osc52,
+        lazy = false,
+    },
+    {
         "kylechui/nvim-surround",
         config = config.surround,
         event = "VeryLazy",

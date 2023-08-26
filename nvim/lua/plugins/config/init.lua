@@ -21,6 +21,6 @@ config.outline = require('plugins.config.outline')
 config.fold = require('plugins.config.fold')
 config.session = require('plugins.config.session')
 config.surround = require('plugins.config.surround')
-config.neorg = require('plugins.config.neorg')
+config.osc52 = require('plugins.config.osc52')
 
 return config
