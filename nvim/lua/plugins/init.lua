@@ -39,12 +39,6 @@ local plugins = {
         event = { 'InsertEnter' }
     },
     {
-        'folke/todo-comments.nvim',
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = true,
-        event = { 'VeryLazy' }
-    },
-    {
         'glepnir/dashboard-nvim',
         lazy = true,
         config = config.dashboard,
