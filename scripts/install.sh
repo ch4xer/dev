@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if sudo -n true 2>/dev/null; then
     echo "User can run sudo commands, check passed."
 else
@@ -24,9 +26,9 @@ git submodule init
 git submodule update
 
 BASEDIR=~/.config
-read -p "Do you want to overwrite the configuration file? (yes/no): " response
-response_lowercase=$(echo "$response" | tr '[:upper:]' '[:lower:]')
-if [ "$response_lowercase" == "yes" ]; then
+read -p "Do you want to overwrite the configuration file? (y/n): " response
+
+if [ "$response" == "y" ]; then
     echo "Overwriting the configuration file..."
     rm -r $BASEDIR/alacritty
     yes | rm -r $BASEDIR/tmux
