@@ -55,9 +55,14 @@ local plugins = {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-project.nvim',
+            'nvim-telescope/telescope-fzf-native.nvim',
         },
         cmd = { 'Telescope' },
         config = config.telescope,
+    },
+    {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make'
     },
     {
         -- dont lazy
