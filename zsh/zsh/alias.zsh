@@ -3,6 +3,7 @@ alias s="ssh"
 alias g="git"
 alias l="exa --icons"
 alias ls="exa --icons"
+alias tmux="tmux -u"
 alias msf="msfconsole"
 alias timeshift="sudo timeshift"
 alias clear_cache='yay -Scc;yay -Rns $(yay -Qtdq)'
