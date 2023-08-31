@@ -10,7 +10,7 @@ fi
 if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
   sudo apt update
-  sudo apt install -y tmux zsh ranger alacritty rsync htop bat fzf python3 unzip fd-find exa wget ripgrep
+  sudo apt install -y tmux zsh ranger alacritty rsync htop bat fzf python3 unzip fd-find exa wget ripgrep fontconfig
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   sudo ln -s /usr/bin/batcat /usr/bin/bat
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
@@ -19,7 +19,7 @@ fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh ranger alacritty rsync htop bat python fzf unzip zoxide exa fd wget ripgrep
+  sudo pacman -S --needed --noconfirm tmux zsh ranger alacritty rsync htop bat python fzf unzip zoxide exa fd wget ripgrep fontconfig
 fi
 
 git submodule init
