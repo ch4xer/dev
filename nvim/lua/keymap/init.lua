@@ -49,9 +49,9 @@ local Edit = {
 local Cmd = {
     { 'n', ';',         ':',                                 { nowait = true } },
     { 'v', ';',         ':',                                 { nowait = true } },
-    { 'n', '<leader>q', ':q<CR>',                            { desc = 'quit window' } },
+    { 'n', '<leader>q', 'q1',                                { desc = 'macro record' } },
+    { 'n', '<C-q>',     ':q<CR>',                            { desc = 'quit window' } },
     { 'n', 'Q',         ':wqa<CR>',                          { desc = 'quit all' } },
-    { 'n', '1q',        'q1',                                { desc = 'macro record' } },
     { 'n', 'g=',        vim.lsp.buf.format },
     { 'c', 'w!',        require('keymap.custom').sudo_write, { desc = 'save file as root' } },
 }
