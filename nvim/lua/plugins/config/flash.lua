@@ -14,7 +14,7 @@ M = function()
             -- options used when flash is activated through
             -- a regular search with `/` or `?`
             search = {
-                enabled = true, -- enable flash for search
+                enabled = false, -- enable flash for search
             },
             -- options used when flash is activated through
             -- `f`, `F`, `t`, `T`, `;` and `,` motions
