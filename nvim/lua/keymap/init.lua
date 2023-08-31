@@ -176,12 +176,6 @@ end
 
 
 vim.api.nvim_create_user_command(
-    "Typora",
-    require('keymap.custom').Typora,
-    { desc = "start typora" }
-)
-
-vim.api.nvim_create_user_command(
     "ViewImage",
     require('keymap.custom').view_net_image,
     { desc = "view network image" }

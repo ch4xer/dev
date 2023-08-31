@@ -7,7 +7,7 @@ M.DeleteWinOrBuf = function()
     local exit = 'quit'
     local current_bufnr = vim.api.nvim_win_get_buf(0)
     local current_buf_name = vim.api.nvim_buf_get_name(current_bufnr)
-    local current_win_number = vim.api.nvim_get_current_win()
+    -- local current_win_number = vim.api.nvim_get_current_win()
     local is_valid = function(bufnr)
         if not bufnr or bufnr < 1 then return false end
         local exists = vim.api.nvim_buf_is_valid(bufnr)
@@ -19,16 +19,16 @@ M.DeleteWinOrBuf = function()
         exit = 'Bdelete'
         local should_quit = 0
         -- check if there is other window contains valid buffer
-        for _, win in ipairs(vim.api.nvim_list_wins()) do
-            local bufnr = vim.api.nvim_win_get_buf(win)
-            -- bufnr ~= current_bufnr
-            if win ~= current_win_number and is_valid(bufnr) then
-                pre_exit = 'write'
-                exit = 'quit'
-                should_quit = 1
-                break
-            end
-        end
+        -- for _, win in ipairs(vim.api.nvim_list_wins()) do
+        --     local bufnr = vim.api.nvim_win_get_buf(win)
+        --     -- bufnr ~= current_bufnr
+        --     if win ~= current_win_number and is_valid(bufnr) then
+        --         pre_exit = 'write'
+        --         exit = 'quit'
+        --         should_quit = 1
+        --         break
+        --     end
+        -- end
         if should_quit == 0 then
             -- if there is only [No Name], quitall
             local valid_buffer_number = #vim.tbl_filter(is_valid, vim.api.nvim_list_bufs())
@@ -55,19 +55,6 @@ M.EnterInsert = function()
     if is_valid(current_bufnr) then
         vim.cmd('insert')
     end
-end
-
-M.FormatCode = function()
-    if vim.bo.filetype == "norg" then
-        vim.cmd('execute \"normal gg=G\\<C-o>\"')
-    else
-        vim.lsp.buf.format()
-    end
-end
-
-M.Typora = function()
-    local filename = vim.api.nvim_buf_get_name(0)
-    vim.fn.system("Typora " .. filename)
 end
 
 M.sudo_write = function(tmpfile, filepath)
