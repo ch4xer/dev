@@ -120,12 +120,6 @@ vim.api.nvim_create_autocmd("WinLeave", {
     end,
 })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
 -- inlay hint support
 vim.api.nvim_create_autocmd("LspAttach", {
     pattern = { "*.go", "*.rs" },
@@ -143,6 +137,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
+        vim.highlight.on_yank()
         if package.loaded['osc52'] == nil then
             return
         end
