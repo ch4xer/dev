@@ -5,3 +5,4 @@ cp -r ~/.config/ranger/ ./
 cp ~/.config/tmux/* ./tmux/
 cp ~/.config/zsh/* ./zsh/zsh/
 cp -r ~/.zshrc ./zsh/zshrc
+cp -r ~/.config/fontconfig/ ./

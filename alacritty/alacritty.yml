@@ -15,17 +15,19 @@ window:
 scrolling:
   multiplier: 1
 
+# FiraLX is the comibination of FiraCode and LXGW WenKai
+# see ~/.config/fontconfig/fonts.conf
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: FiraLX
     style: Retina
 
   bold:
-    family: FiraCode Nerd Font
+    family: FiraLX
     style: Bold
 
   italic:
-    family: FiraCode Nerd Font
+    family: FiraLX
     style: Bold Italic
 
   size: 20.0
@@ -45,11 +47,6 @@ cursor:
   unfocused_hollow: true
 
 live_config_reload: true
-
-# shell:
-#   program: /usr/bin/tmux
-#   args:
-#     - -u # force UTF-8 in tmux
 
 mouse:
   double_click: { threshold: 300 }
