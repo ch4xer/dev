@@ -128,7 +128,7 @@ M = function()
         capabilities = capabilities,
         init_options = {
             -- for intelephense
-            licenceKey = '/home/ch4ser/.config/nvim/intelephense_license_key',
+            licenceKey = '/home/ch4ser/.config/nvim/intelephense',
             globalStoragePath = '/home/ch4ser/.config',
         },
         single_file_mode = true

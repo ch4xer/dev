@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 
         vim.g.firstBufferOrDashboard = 0
         -- start without filename
-        if vim.fn.argc() == 0 and vim.fn.line2byte('$') == -1 then
+        if vim.fn.argc() == 0 and vim.fn.line2byte('$') == 1 then
             local ok, _ = pcall(
                 function()
                     require('dashboard'):instance()

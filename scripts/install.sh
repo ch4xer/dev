@@ -40,7 +40,7 @@ if [ "$response" == "y" ]; then
     cp -r ./zsh/zshrc ~/.zshrc
     cp -r ./ranger ~/.config/ranger
     cp -r ./fontconfig ~/.config/
-    license=$BASEDIR/nvim/intelephense_license_key
+    license=$BASEDIR/nvim/intelephense
     if [ -e "$license" ]; then
       content=$(cat $license)
       rm -r $BASEDIR/nvim
