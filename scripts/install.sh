@@ -39,6 +39,7 @@ if [ "$response" == "y" ]; then
     cp -r ./zsh/zsh ~/.config/
     cp -r ./zsh/zshrc ~/.zshrc
     cp -r ./ranger ~/.config/ranger
+    cp -r ./fontconfig ~/.config/
     license=$BASEDIR/nvim/intelephense_license_key
     if [ -e "$license" ]; then
       content=$(cat $license)
@@ -68,19 +69,36 @@ else
   sudo mv nvim.appimage /usr/bin/nvim
 fi
 
-FONT_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
-FONT_FILE2=/usr/share/fonts/FiraCode/FiraCodeNerdFont-Regular.ttf
-FONT='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip'
-if [ -f "$FONT_FILE1" ]; then
+FiraCode_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
+FiraCode_FILE2=/usr/share/fonts/FiraCode/FiraCodeNerdFont-Regular.ttf
+FiraCode='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip'
+if [ -f "$FiraCode_FILE1" ]; then
   echo "FiraCode Nerd Font already exists, skip..."
-elif [ -f "$FONT_FILE2" ]; then
+elif [ -f "$FiraCode_FILE2" ]; then
   echo "FiraCode Nerd Font already exists, skip..."
 else
   echo "Downloading FiraCode Nerd Font..."
-  rm FiraCode.zip.*
-  wget $FONT
+  rm FiraCode.zip
+  wget $FiraCode -O FiraCode.zip
   sudo mkdir -p /usr/share/fonts/FiraCode
   sudo unzip -q FiraCode.zip -d /usr/share/fonts/FiraCode
   rm FiraCode.zip
+  sudo fc-cache -fv
+fi
+
+LXGW_FILE2=/usr/share/fonts/TTF/LXGWWenKai-Regular.ttf
+LXGW_FILE1=/usr/share/fonts/LXGWWenKai/LXGWWenKai-Regular.ttf
+LXGW='https://github.com/lxgw/LxgwWenKai/releases/download/v1.300/lxgw-wenkai-v1.300.zip'
+if [ -f "$LXGW_FILE1" ]; then
+  echo "LXGW Wen Kai already exists, skip..."
+elif [ -f "$LXGW_FILE2" ]; then
+  echo "LXGW Wen Kai already exists, skip..."
+else
+  echo "Downloading LXGW Wen Kai..."
+  rm LXGW.zip
+  wget $LXGW -O LXGW.zip
+  sudo mkdir -p /usr/share/fonts/LXGWWenKai
+  sudo unzip -q LXGW.zip -d /usr/share/fonts/LXGWWenKai
+  rm LXGW.zip
   sudo fc-cache -fv
 fi
