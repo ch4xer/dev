@@ -178,7 +178,7 @@ local plugins = {
     {
         'folke/persistence.nvim',
         config = config.session,
-        event = 'BufReadPre'
+        lazy = true,
     },
     {
         "folke/flash.nvim",
