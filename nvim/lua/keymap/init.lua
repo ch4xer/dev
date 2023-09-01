@@ -73,8 +73,8 @@ local Plugins = {
         { 'n', 'q', custom.DeleteWinOrBuf },
     },
     telescope = {
-        { 'n', 'sw', '<CMD>Telescope grep_string<CR>' },
-        { 'n', 'sf', '<CMD>Telescope find_files<CR>' },
+        { 'n', 'fw', '<CMD>Telescope grep_string<CR>' },
+        { 'n', 'ff', '<CMD>Telescope find_files<CR>' },
     },
     nvim_tree = {
         { 'n', '<leader>t', '<CMD>NvimTreeToggle<CR>' },
@@ -92,7 +92,7 @@ local Plugins = {
     flash = {
         {
             { "n", "x", "o" },
-            'm',
+            's',
             function()
                 if package.loaded['flash'] == nil then
                     return
@@ -102,7 +102,7 @@ local Plugins = {
         },
         {
             { "n", "x", "o" },
-            'M',
+            'S',
             function()
                 if package.loaded['flash'] == nil then
                     return
@@ -118,18 +118,18 @@ local Plugins = {
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
         { 'n',          'gr',    '<CMD>Lspsaga finder<CR>', },
-        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
+        { { 'n', 't' }, 'gs',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     neogen = {
         { 'n', 'go', require('neogen').generate },
     },
     dap = {
-        { 'n', '<F1>', require "dap".toggle_breakpoint },
-        { 'n', '<F2>', require "dap".continue },
-        { 'n', '<F3>', require "dap".step_into },
-        { 'n', '<F4>', require "dap".step_over },
-        { 'n', '<F5>', require "dapui".toggle },
+        { 'n', '<leader>d', require "dap".toggle_breakpoint },
+        { 'n', '<leader>c', require "dap".continue },
+        { 'n', '<F11>', require "dap".step_into },
+        { 'n', '<F12>', require "dap".step_over },
+        { 'n', '<leader>ui', require "dapui".toggle },
     },
     github_upload = {
         { 'n', '<C-p>', "<CMD>lua require('nvim-github-uploader').upload_img()<CR>" }

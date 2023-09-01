@@ -1,9 +1,9 @@
 M = function()
     require("nvim-surround").setup({
         keymaps = {
-            visual = "s",
-            delete = "ds",
-            change = "cs",
+            visual = "r",
+            delete = "dr",
+            change = "cr",
         },
     })
 end
