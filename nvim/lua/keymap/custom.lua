@@ -55,7 +55,7 @@ M.EnterInsert = function()
     end
 end
 
-M.WriteQuitAll = function ()
+M.WriteQuitAll = function()
     vim.cmd('silent wa')
     vim.cmd('qa')
 end

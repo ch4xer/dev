@@ -14,9 +14,11 @@ local Movement = {
     { 'v',          '<C-l>',      '$' },
     { 'v',          '<C-h>',      '^' },
 
-    -- other
-    { 'i',          '<C-Down>',   '<C-O><C-E>' },
-    { 'i',          '<C-Up>',     '<C-O><C-Y>' },
+    -- move window
+    { 'n',          '<C-S-h>',          '<C-w>H' },
+    { 'n',          '<C-S-j>',          '<C-w>J' },
+    { 'n',          '<C-S-k>',          '<C-w>K' },
+    { 'n',          '<C-S-l>',          '<C-w>L' },
 
     -- tab switch
     { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
