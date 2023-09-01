@@ -1,4 +1,5 @@
 M = function()
+    local vim = vim
     local cmp = require('cmp')
     local compare = require('cmp.config.compare')
     local lspkind = require('lspkind')
@@ -173,9 +174,22 @@ M = function()
         }
     }
     lspconfig.ruff_lsp.setup {}
-    local other_servers = { "pyright", "lua_ls", "marksman", "dockerls", "bashls" }
+    local other_servers = { "lua_ls", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
+            capabilities = capabilities,
+            single_file_mode = true,
+        }
+    end
+    local pylance = "/home/ch4ser/Tools/Other/pylance/server.bundle.js"
+    if vim.fn.filereadable(pylance) then
+        lspconfig.pyright.setup {
+            capabilities = capabilities,
+            single_file_mode = true,
+            cmd = { "node", pylance, "--stdio" },
+        }
+    else
+        lspconfig.pyright.setup {
             capabilities = capabilities,
             single_file_mode = true,
         }
