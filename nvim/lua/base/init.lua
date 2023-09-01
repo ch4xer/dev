@@ -21,7 +21,6 @@ vim.opt.updatetime = 300
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
 
 -- clipboard
 vim.opt.clipboard = 'unnamedplus'
