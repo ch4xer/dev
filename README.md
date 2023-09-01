@@ -26,6 +26,7 @@ cd dev
 1. all keybindings does not require prefix key
 2. Ctrl-hjkl and Ctrl-q can be used both in tmux and vim for window operations
 3. use tmux-continuum and resurrect to restore workspaces
+4. If you're using a window manager, you may get dizzy remembering shortcuts, in that case, I recommend you to forgive tmux and use your window manager to manage windows
 
 ### Zsh
 
