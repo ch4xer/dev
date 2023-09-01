@@ -1,4 +1,5 @@
 local vim = vim
+local custom = require('keymap.custom')
 local Movement = {
     -- move cursor in wrapline paragraph
     { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
@@ -32,13 +33,8 @@ local Edit = {
     -- { key: Back, mods: Control, chars: "\x17"}
     -- and configure Ctrl+/-Backspace's output as \x17
     -- { 'i',                    '\x17',   '<C-W>' },
-
-    -- { 'n', '<LeftRelease>', '<LeftRelease><cmd>startinsert<CR>'},
-    -- { 'i', '<C-z>',       '<cmd>undo<CR>' },
     { 'v', '<C-c>',       '"*ygvy' },
     { 'v', 'y',           '"*ygvy' },
-    -- useless, use kitty buildin paste instead.
-    -- { { 'i', 'v', 'c', 't' }, '<C-v>',  '<C-R>+' },
     { 'i', '<C-v>',       '<C-R>+' },
     { 'v', '>',           '>gv',   { desc = 'keep virtual mode after indent' } },
     { 'v', '<',           '<gv',   { desc = 'keep virtual mode after indent' } },
@@ -47,13 +43,13 @@ local Edit = {
 }
 
 local Cmd = {
-    { 'n', ';',         ':',                                 { nowait = true } },
-    { 'v', ';',         ':',                                 { nowait = true } },
-    { 'n', '<leader>q', 'q1',                                { desc = 'macro record' } },
-    { 'n', '<C-q>',     ':q<CR>',                            { desc = 'quit window' } },
-    { 'n', 'Q',         ':wqa<CR>',                          { desc = 'quit all' } },
+    { 'n', ';',         ':',                 { nowait = true } },
+    { 'v', ';',         ':',                 { nowait = true } },
+    { 'n', '<leader>q', 'q1',                { desc = 'macro record' } },
+    { 'n', '<C-q>',     ':q<CR>',            { desc = 'quit window' } },
+    { 'n', 'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
     { 'n', 'g=',        vim.lsp.buf.format },
-    { 'c', 'w!',        require('keymap.custom').sudo_write, { desc = 'save file as root' } },
+    { 'c', 'w!',        custom.sudo_write,   { desc = 'save file as root' } },
 }
 
 local Fold = {
@@ -72,7 +68,7 @@ local ModeSwitch = {
 -- keymaps that need plugin context are not included, like nvim-cmp
 local Plugins = {
     bufdelete = {
-        { 'n', 'q', require('keymap.custom').DeleteWinOrBuf },
+        { 'n', 'q', custom.DeleteWinOrBuf },
     },
     telescope = {
         { 'n', 'sw', '<CMD>Telescope grep_string<CR>' },
@@ -137,7 +133,7 @@ local Plugins = {
         { 'n', '<C-p>', "<CMD>lua require('nvim-github-uploader').upload_img()<CR>" }
     },
     copilot = {
-        { 'i', '<Right>', require('keymap.custom').accept_copilot_suggestion }
+        { 'i', '<Right>', custom.accept_copilot_suggestion }
     },
     tmux = {
         { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
@@ -178,6 +174,6 @@ end
 
 vim.api.nvim_create_user_command(
     "ViewImage",
-    require('keymap.custom').view_net_image,
+    custom.view_net_image,
     { desc = "view network image" }
 )

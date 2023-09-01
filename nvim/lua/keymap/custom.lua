@@ -55,6 +55,11 @@ M.EnterInsert = function()
     end
 end
 
+M.WriteQuitAll = function ()
+    vim.cmd('silent wa')
+    vim.cmd('qa')
+end
+
 M.sudo_write = function(tmpfile, filepath)
     local sudo_exec = function(cmd, print_output)
         vim.fn.inputsave()
