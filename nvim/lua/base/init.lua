@@ -17,9 +17,6 @@ vim.opt.modifiable = true
 vim.opt.autowriteall = true
 -- the refresh time will affect lspsaga's reaction time
 vim.opt.updatetime = 300
--- for which-key
-vim.opt.timeout = true
-vim.opt.timeoutlen = 300
 -- case settintg
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
