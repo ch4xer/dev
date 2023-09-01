@@ -182,7 +182,7 @@ M = function()
         }
     end
     local pylance = "/home/ch4ser/Tools/Other/pylance/server.bundle.js"
-    if vim.fn.filereadable(pylance) then
+    if vim.fn.filereadable(pylance) ~= 0 then
         lspconfig.pyright.setup {
             capabilities = capabilities,
             single_file_mode = true,
