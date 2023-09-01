@@ -32,8 +32,6 @@ M.DeleteWinOrBuf = function()
         if should_quit == 0 then
             -- if there is only [No Name], quitall
             local valid_buffer_number = #vim.tbl_filter(is_valid, vim.api.nvim_list_bufs())
-            vim.print(valid_buffer_number)
-            vim.print(current_buf_name)
             if current_buf_name == "" and valid_buffer_number == 1 then
                 pre_exit = ''
                 exit = 'quitall'

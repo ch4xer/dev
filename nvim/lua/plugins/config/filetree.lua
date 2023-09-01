@@ -44,7 +44,10 @@ M = function()
         sync_root_with_cwd  = true,
         view                = {
             adaptive_size = true,
-            width = 20,
+            width = {
+                min = 20,
+                max = 40,
+            },
             side = 'left',
             preserve_window_proportions = true,
         },
