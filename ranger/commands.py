@@ -14,6 +14,7 @@ import os
 
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import Command
+from plugins.ranger_udisk_menu.mounter import mount
 
 
 class fzf_select(Command):
@@ -59,7 +60,7 @@ class fzf_select(Command):
        env['FZF_DEFAULT_COMMAND'] = fzf_default_command
        env['FZF_DEFAULT_OPTS'] = '--height=100% --layout=reverse --ansi --preview="{}"'.format('''
            (
-               ~/Tools/Other/fzf-scope.sh {} ||
+               ~/.config/ranger/fzf-scope.sh {} ||
                #batcat --color=always {} ||
                #bat --color=always {} ||
                #cat {} ||
