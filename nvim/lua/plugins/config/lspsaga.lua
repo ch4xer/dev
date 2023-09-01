@@ -2,6 +2,9 @@ M = function()
     require('lspsaga').setup({
         ui = {
             code_action = "󱓈 ",
+            colors = {
+                normal_bg = "NONE",
+            }
         },
         code_action = {
             keys = {
