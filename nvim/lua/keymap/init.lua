@@ -11,6 +11,8 @@ local Movement = {
     { 'i',          '<C-l>',      '<ESC>A' },
     { 'n',          '(',          '<ESC>^' },
     { 'n',          ')',          '<ESC>$' },
+    { 'v',          '<C-l>',      '$' },
+    { 'v',          '<C-h>',      '^' },
 
     -- move window
     { 'n',          '<C-S-h>',          '<C-w>H' },
