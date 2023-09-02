@@ -15,10 +15,10 @@ local Movement = {
     { 'v',          '<C-h>',      '^' },
 
     -- move window
-    { 'n',          '<C-S-h>',          '<C-w>H' },
-    { 'n',          '<C-S-j>',          '<C-w>J' },
-    { 'n',          '<C-S-k>',          '<C-w>K' },
-    { 'n',          '<C-S-l>',          '<C-w>L' },
+    { 'n',          '<C-S-h>',    '<C-w>H' },
+    { 'n',          '<C-S-j>',    '<C-w>J' },
+    { 'n',          '<C-S-k>',    '<C-w>K' },
+    { 'n',          '<C-S-l>',    '<C-w>L' },
 
     -- tab switch
     { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
@@ -29,12 +29,7 @@ local Movement = {
 }
 
 local Edit = {
-    -- use Ctrl w in tmux to delete a word
     { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
-    -- remember to configure alacritty with:
-    -- { key: Back, mods: Control, chars: "\x17"}
-    -- and configure Ctrl+/-Backspace's output as \x17
-    -- { 'i',                    '\x17',   '<C-W>' },
     { 'v', '<C-c>',       '"*ygvy' },
     { 'v', 'y',           '"*ygvy' },
     { 'i', '<C-v>',       '<C-R>+' },
@@ -90,26 +85,8 @@ local Plugins = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     flash = {
-        {
-            { "n", "x", "o" },
-            's',
-            function()
-                if package.loaded['flash'] == nil then
-                    return
-                end
-                require("flash").jump()
-            end
-        },
-        {
-            { "n", "x", "o" },
-            'S',
-            function()
-                if package.loaded['flash'] == nil then
-                    return
-                end
-                require("flash").treesitter()
-            end
-        }
+        { { "n", "x", "o" }, 's', require("flash").jump },
+        { { "n", "x", "o" }, 'S', require("flash").treesitter }
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
@@ -125,14 +102,11 @@ local Plugins = {
         { 'n', 'go', require('neogen').generate },
     },
     dap = {
-        { 'n', '<leader>d', require "dap".toggle_breakpoint },
-        { 'n', '<leader>c', require "dap".continue },
-        { 'n', '<F11>', require "dap".step_into },
-        { 'n', '<F12>', require "dap".step_over },
-        { 'n', '<leader>ui', require "dapui".toggle },
-    },
-    github_upload = {
-        { 'n', '<C-p>', "<CMD>lua require('nvim-github-uploader').upload_img()<CR>" }
+        { 'n', '<F1>', require "dap".toggle_breakpoint },
+        { 'n', '<F2>', require "dap".continue },
+        { 'n', '<F3>', require "dap".step_into },
+        { 'n', '<F4>', require "dap".step_over },
+        { 'n', '<F5>', require "dapui".toggle },
     },
     copilot = {
         { 'i', '<Right>', custom.accept_copilot_suggestion }
