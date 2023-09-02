@@ -62,7 +62,6 @@ local ModeSwitch = {
     } },
 }
 
--- keymaps that need plugin context are not included, like nvim-cmp
 local Plugins = {
     bufdelete = {
         { 'n', 'q', custom.DeleteWinOrBuf },
@@ -71,6 +70,7 @@ local Plugins = {
         { 'n', 'fw', '<CMD>Telescope grep_string<CR>' },
         { 'n', 'ff', '<CMD>Telescope find_files<CR>' },
     },
+    --- some keymaps are in filetree.lua
     nvim_tree = {
         { 'n', '<leader>t', '<CMD>NvimTreeToggle<CR>' },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
@@ -116,7 +116,15 @@ local Plugins = {
         { 'n', '<C-k>', '<CMD>TmuxNavigateUp<CR>' },
         { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
         { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
-    }
+    },
+    --- keymaps of nvim-cmp are in cmp.lua
+    cmp = {},
+    --- keymaps of dashboard are in dashboard.lua
+    dashboard = {},
+    --- keymaps of vim-surround are in surround.lua
+    surround = {},
+    --- keymaps of tabout are in tabout.lua
+    tabout = {},
 }
 
 local Nop = {
