@@ -67,8 +67,8 @@ local Plugins = {
         { 'n', 'q', custom.DeleteWinOrBuf },
     },
     telescope = {
-        { 'n', 'fw', '<CMD>Telescope grep_string<CR>' },
-        { 'n', 'ff', '<CMD>Telescope find_files<CR>' },
+        { 'n', 'sw', '<CMD>Telescope grep_string<CR>' },
+        { 'n', 'sf', '<CMD>Telescope find_files<CR>' },
     },
     --- some keymaps are in filetree.lua
     nvim_tree = {
@@ -85,8 +85,8 @@ local Plugins = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     flash = {
-        { { "n", "x", "o" }, 's', require("flash").jump },
-        { { "n", "x", "o" }, 'S', require("flash").treesitter }
+        { { "n", "x", "o" }, 'f', require("flash").jump },
+        { { "n", "x", "o" }, 'F', require("flash").treesitter }
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
@@ -95,7 +95,7 @@ local Plugins = {
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
         { 'n',          'gr',    '<CMD>Lspsaga finder<CR>', },
-        { { 'n', 't' }, 'gs',    '<CMD>Lspsaga term_toggle<CR>' },
+        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     neogen = {

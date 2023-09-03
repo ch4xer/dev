@@ -1,14 +1,14 @@
 M = function()
     -- vim.cmd("highlight FlashLabel guifg=#ffffff guibg=#24283b gui=bold")
     require('flash').setup {
-        -- labels = "abcdefghijklmnopqrstuvwxyz",
-        labels = "asdfghjklqwertyuiopzxcvbnm",
+        labels = "abcdefghijklmnopqrstuvwxyz0123456789",
         label = {
             rainbow = {
                 enabled = true,
                 -- number between 1 and 9
                 shade = 5,
             },
+            uppercase = false,
         },
         modes = {
             -- options used when flash is activated through
@@ -24,7 +24,7 @@ M = function()
             -- options used for treesitter selections
             -- `require("flash").treesitter()`
             treesitter = {
-                labels = "abcdefghijklmnopqrstuvwxyz",
+                labels = "abcdefghijklmnopqrstuvwxyz0123456789",
                 label = { before = true, after = true, style = "inline" },
                 jump = { pos = "range" },
                 highlight = {
@@ -42,6 +42,10 @@ M = function()
         prompt = {
             enabled = false,
         },
+        jump = {
+            pos = "end",
+            autojump = true,
+        }
     }
 end
 
