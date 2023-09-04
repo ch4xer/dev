@@ -18,7 +18,7 @@ cd dev
 
 ### Alacritty
 
-1. use Firacode Nerd Font and LXGW WenKai, see `fontconfig/fonts.conf`
+1. use Firacode Nerd Font, Victor Mono Nerd Font and LXGW WenKai, see `fontconfig/fonts.conf`
 2. define some keybindings to pass through to tmux, see `alacritty/alacritty.yml`
 
 ### Tmux
