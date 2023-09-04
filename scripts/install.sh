@@ -102,3 +102,20 @@ else
   rm LXGW.zip
   sudo fc-cache -fv
 fi
+
+VictorMono_FILE1=/usr/share/fonts/TTF/VictorMonoNerdFont-Regular.ttf
+VictorMono_FILE2=/usr/share/fonts/VictorMono/VictorMonoNerdFont-Regular.ttf
+VictorMono=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/VictorMono.zip
+if [ -f "$VictorMono_FILE1" ]; then
+  echo "VictorMono Nerd Font already exists, skip..."
+elif [ -f "$VictorMono_FILE2" ]; then
+  echo "VictorMono Nerd Font already exists, skip..."
+else
+  echo "Downloading VictorMono Nerd Font..."
+  rm VictorMono.zip
+  wget $VictorMono -O VictorMono.zip
+  sudo mkdir -p /usr/share/fonts/VictorMono
+  sudo unzip -q VictorMono.zip -d /usr/share/fonts/VictorMono
+  rm VictorMono.zip
+  sudo fc-cache -fv
+fi
