@@ -81,3 +81,6 @@ vim.env.GOPATH = "/home/ch4ser/Projects/go"
 vim.env.GOPROXY = "https://goproxy.cn"
 vim.env.GO111MODULE = "on"
 vim.env.CGO_ENABLED = "1"
+
+vim.api.nvim_set_hl(0, "Comment", { bold = true, italic = true })
+vim.api.nvim_set_hl(0, "TSComment", { bold = true, italic = true })
