@@ -30,7 +30,7 @@ cd dev
 
 ### Zsh
 
-1. it contains some useless alias for Personal use, you can delete theme
+1. it contains some useless alias for Personal use, you can delete them.
 
 ### Neovim
 
