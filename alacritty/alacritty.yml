@@ -27,7 +27,7 @@ font:
     style: Bold
 
   italic:
-    family: FiraLX
+    family: VictorLX
     style: Bold Italic
 
   size: 20.0
