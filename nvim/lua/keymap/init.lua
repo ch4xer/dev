@@ -67,12 +67,12 @@ local Plugins = {
         { 'n', 'q', custom.DeleteWinOrBuf },
     },
     telescope = {
-        { 'n', 'sw', '<CMD>Telescope grep_string<CR>' },
-        { 'n', 'sf', '<CMD>Telescope find_files<CR>' },
+        { 'n', 'sw', require('telescope.builtin').live_grep },
+        { 'n', 'sf', require('telescope.builtin').find_files },
     },
     --- some keymaps are in filetree.lua
     nvim_tree = {
-        { 'n', '<leader>t', '<CMD>NvimTreeToggle<CR>' },
+        { 'n', '<leader>t', require('nvim-tree.api').tree.toggle },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
     aerial = {

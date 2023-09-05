@@ -59,10 +59,12 @@ local plugins = {
         },
         cmd = { 'Telescope' },
         config = config.telescope,
+        lazy = true,
     },
     {
         'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make'
+        build = 'make',
+        lazy = true,
     },
     {
         -- dont lazy
@@ -90,6 +92,7 @@ local plugins = {
             'nvim-tree/nvim-web-devicons'
         },
         config = config.filetree,
+        lazy = true,
     },
     {
         'stevearc/aerial.nvim',
