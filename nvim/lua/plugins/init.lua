@@ -57,7 +57,6 @@ local plugins = {
             'nvim-telescope/telescope-project.nvim',
             'nvim-telescope/telescope-fzf-native.nvim',
         },
-        cmd = { 'Telescope' },
         config = config.telescope,
         lazy = true,
     },
