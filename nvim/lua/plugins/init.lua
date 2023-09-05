@@ -46,7 +46,7 @@ local plugins = {
     },
     {
         'glepnir/dashboard-nvim',
-        lazy = true,
+        event = 'VimEnter',
         config = config.dashboard,
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
