@@ -11,8 +11,12 @@ local Movement = {
     { 'i',          '<C-l>',      '<ESC>A' },
     { 'n',          '(',          '<ESC>^' },
     { 'n',          ')',          '<ESC>$' },
-    { 'v',          '<C-l>',      '$' },
-    { 'v',          '<C-h>',      '^' },
+    { { 'n', 'v' }, 'L',          '$' },
+    { { 'n', 'v' }, 'H',          '^' },
+
+    -- tab switch, dont modify <Tab>, which will affect <C-i>
+    { 'n',          'K',          '<CMD>bnext!<CR>' },
+    { 'n',          'J',          '<CMD>bprevious!<CR>' },
 
     -- move window
     { 'n',          '<C-S-h>',    '<C-w>H' },
@@ -20,9 +24,6 @@ local Movement = {
     { 'n',          '<C-S-k>',    '<C-w>K' },
     { 'n',          '<C-S-l>',    '<C-w>L' },
 
-    -- tab switch
-    { 'n',          '<Tab>',      '<CMD>bnext!<CR>' },
-    { 'n',          '<S-Tab>',    '<CMD>bprevious!<CR>' },
     -- page scroll
     { { 'n', 'v' }, '<PageUp>',   math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll 1/3 size of page' } },
     { { 'n', 'v' }, '<PageDown>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll 1/3 size of page' } },
@@ -42,7 +43,7 @@ local Edit = {
 local Cmd = {
     { 'n', ';',         ':',                 { nowait = true } },
     { 'v', ';',         ':',                 { nowait = true } },
-    { 'n', '<leader>q', 'q1',                { desc = 'macro record' } },
+    { 'n', '<leader>q', 'q1',                { desc = 'record macro' } },
     { 'n', '<C-q>',     ':q<CR>',            { desc = 'quit window' } },
     { 'n', 'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
     { 'n', 'g=',        vim.lsp.buf.format },
