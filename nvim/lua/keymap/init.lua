@@ -9,8 +9,8 @@ local Base = {
         { { 'n', 'v' }, 'H',          '^' },
 
         -- tab switch, dont modify <Tab>, which will affect <C-i>
-        { 'n',          'K',          '<CMD>bnext!<CR>' },
-        { 'n',          'J',          '<CMD>bprevious!<CR>' },
+        { 'n',          'K',          '<CMD>bprevious!<CR>' },
+        { 'n',          'J',          '<CMD>bnext!<CR>' },
 
         -- move window
         { 'n',          '<C-S-h>',    '<C-w>H' },
