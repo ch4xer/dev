@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
+        "--branch=stable", -- latest stable release
         lazypath,
     })
 end
@@ -16,9 +16,13 @@ local config = require('plugins.config.init')
 local plugins = {
     {
         'folke/tokyonight.nvim',
+        dependencies = {
+            'akinsho/bufferline.nvim',
+            'hoob3rt/lualine.nvim',
+        },
         lazy = false,
         priority = 1000,
-        config = config.theme
+        config = config.ui
     },
     {
         'numToStr/Comment.nvim',
@@ -58,17 +62,10 @@ local plugins = {
             'nvim-telescope/telescope-fzf-native.nvim',
         },
         config = config.telescope,
-        lazy = true,
     },
     {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make',
-        lazy = true,
-    },
-    {
-        -- dont lazy
-        'akinsho/bufferline.nvim',
-        config = config.bufferline,
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -80,22 +77,14 @@ local plugins = {
         event = 'VeryLazy',
     },
     {
-        'hoob3rt/lualine.nvim',
-        event = 'VeryLazy',
-        config = config.lualine
-    },
-    { 'famiu/bufdelete.nvim' },
-    {
         'kyazdani42/nvim-tree.lua',
         dependencies = {
             'nvim-tree/nvim-web-devicons'
         },
         config = config.filetree,
-        lazy = true,
     },
     {
         'stevearc/aerial.nvim',
-        lazy = true,
         config = config.outline,
         cmd = { 'AerialToggle' }
     },
@@ -137,7 +126,6 @@ local plugins = {
         'danymat/neogen',
         dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
-        lazy = true,
     },
     {
         'kevinhwang91/nvim-ufo',
@@ -151,7 +139,6 @@ local plugins = {
             'rcarriga/nvim-dap-ui',
             'theHamsta/nvim-dap-virtual-text'
         },
-        lazy = true,
         config = config.dap,
     },
     {
@@ -177,11 +164,14 @@ local plugins = {
     {
         "folke/flash.nvim",
         config = config.flash,
-        event = "VeryLazy",
     },
     {
         'christoomey/vim-tmux-navigator',
         lazy = false,
+    },
+    {
+        'famiu/bufdelete.nvim',
+        lazy = false
     },
     {
         'ojroques/nvim-osc52',
@@ -195,4 +185,11 @@ local plugins = {
     },
 }
 
-require("lazy").setup(plugins)
+require("lazy").setup(
+    plugins,
+    {
+        defaults = {
+            lazy = true,
+        }
+    }
+)

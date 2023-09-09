@@ -3,28 +3,32 @@ local custom = require('keymap.custom')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
-        { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true } },
-        { 'n',          'k',          "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true } },
-        { { 'n', 'v' }, 'L',          '$' },
-        { { 'n', 'v' }, 'H',          '^' },
+        { 'n',          'j',       "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true } },
+        { 'n',          'k',       "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true } },
+        { { 'n', 'v' }, 'L',       '$' },
+        { { 'n', 'v' }, 'H',       '^' },
 
         -- tab switch, dont modify <Tab>, which will affect <C-i>
-        { 'n',          'J',          '<CMD>bprevious!<CR>' },
-        { 'n',          'K',          '<CMD>bnext!<CR>' },
+        { 'n',          'J',       '<CMD>bprevious!<CR>' },
+        { 'n',          'K',       '<CMD>bnext!<CR>' },
 
         -- move window
-        { 'n',          '<C-S-h>',    '<C-w>H' },
-        { 'n',          '<C-S-j>',    '<C-w>J' },
-        { 'n',          '<C-S-k>',    '<C-w>K' },
-        { 'n',          '<C-S-l>',    '<C-w>L' },
+        { 'n',          '<C-S-h>', '<C-w>H' },
+        { 'n',          '<C-S-j>', '<C-w>J' },
+        { 'n',          '<C-S-k>', '<C-w>K' },
+        { 'n',          '<C-S-l>', '<C-w>L' },
 
         -- page scroll
-        { { 'n', 'v' }, '<PageUp>',   math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',
-                                                                                          { desc =
-            'scroll 1/2 size of page' } },
+        { { 'n', 'v' }, '<PageUp>', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',
+            {
+                desc =
+                'scroll 1/2 size of page'
+            } },
         { { 'n', 'v' }, '<PageDown>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>',
-                                                                                          { desc =
-            'scroll 1/2 size of page' } },
+            {
+                desc =
+                'scroll 1/2 size of page'
+            } },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
@@ -59,15 +63,15 @@ local Base = {
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', custom.DeleteWinOrBuf },
+        { 'n', 'q', function() custom.DeleteWinOrBuf() end },
     },
     telescope = {
-        { 'n', 'sw', require('telescope.builtin').live_grep },
-        { 'n', 'sf', require('telescope.builtin').find_files },
+        { 'n', 'sw', function() require('telescope.builtin').live_grep() end },
+        { 'n', 'sf', function() require('telescope.builtin').find_files() end },
     },
     --- some keymaps are in filetree.lua
     nvim_tree = {
-        { 'n', '<leader>t', require('nvim-tree.api').tree.toggle },
+        { 'n', '<leader>t', function() require('nvim-tree.api').tree.toggle() end },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
     aerial = {
@@ -80,8 +84,8 @@ local Plugin = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     flash = {
-        { { "n", "x", "o" }, 'f', require("flash").jump },
-        { { "n", "x", "o" }, 'F', require("flash").treesitter }
+        { { "n", "x", "o" }, 'f', function() require("flash").jump() end },
+        { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
     },
     lspsaga = {
         { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
@@ -94,17 +98,17 @@ local Plugin = {
         { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
     },
     neogen = {
-        { 'n', 'go', require('neogen').generate },
+        { 'n', 'go', function() require('neogen').generate() end },
     },
     dap = {
-        { 'n', '<F1>', require "dap".toggle_breakpoint },
-        { 'n', '<F2>', require "dap".continue },
-        { 'n', '<F3>', require "dap".step_into },
-        { 'n', '<F4>', require "dap".step_over },
-        { 'n', '<F5>', require "dapui".toggle },
+        { 'n', '<F1>', function() require "dap".toggle_breakpoint() end },
+        { 'n', '<F2>', function() require "dap".continue() end },
+        { 'n', '<F3>', function() require "dap".step_into() end },
+        { 'n', '<F4>', function() require "dap".step_over() end },
+        { 'n', '<F5>', function() require "dapui".toggle() end },
     },
     copilot = {
-        { 'i', '<Right>', custom.accept_copilot_suggestion }
+        { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
     },
     tmux = {
         { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
@@ -128,12 +132,14 @@ local keyMapper = function(keySet)
             if keymap[4] == nil then
                 keymap[4] = { noremap = true, silent = true }
             end
-            vim.keymap.set(
-                keymap[1],
-                keymap[2],
-                keymap[3],
-                keymap[4]
-            )
+            if keymap[3] ~= nil then
+                vim.keymap.set(
+                    keymap[1],
+                    keymap[2],
+                    keymap[3],
+                    keymap[4]
+                )
+            end
         end
     end
 end
