@@ -112,10 +112,11 @@ local plugins = {
             'WhoIsSethDaniel/mason-tool-installer.nvim',
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
+            'jose-elias-alvarez/null-ls.nvim',
         },
         build = ":MasonUpdate",
-        config = config.mason,
-        event = 'VeryLazy'
+        config = config.lsp,
+        event = 'BufRead'
     },
     {
         'hrsh7th/nvim-cmp',
@@ -137,13 +138,6 @@ local plugins = {
         dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
         lazy = true,
-    },
-    {
-        'jose-elias-alvarez/null-ls.nvim',
-        dependencies = { 'williamboman/mason.nvim' },
-        config = config.nullls,
-        -- dont use VeryLazy, which will cause problem when open a single file
-        event = 'BufRead',
     },
     {
         'kevinhwang91/nvim-ufo',
