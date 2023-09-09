@@ -50,7 +50,7 @@ if [ "$response" == "y" ]; then
       rm -r $BASEDIR/nvim
       cp -r ./nvim ~/.config/
     fi
-elif [ "$response_lowercase" == "no" ]; then
+elif [ "$response_lowercase" == "n" ]; then
     echo "Not overwriting the configuration file."
     exit 0
 else
