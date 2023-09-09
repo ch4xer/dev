@@ -22,7 +22,7 @@ M = function()
             keymap = "",
             key = "f",
             icon = " ",
-            action = "Telescope find_files",
+            action = "lua require('telescope.builtin').find_files()",
         },
         {
             desc = "Recents Projects",
@@ -30,7 +30,7 @@ M = function()
             key = "r",
             icon = " ",
             -- action = "Telescope oldfiles",
-            action = "Telescope project",
+            action = "require'telescope'.extensions.project.project{}",
         },
         -- { shortcut = "<leader>fg", icon = " ", desc = "Find Word", action = "Telescope live_grep" },
         {
@@ -47,7 +47,6 @@ M = function()
             icon = "󰚰 ",
             action = "lua require('persistence').load()",
         },
-        -- { shortcut = "<leader>fm", icon = " ", desc = "Bookmark", action = "Telescope marks" },
         {
             desc = "Update Plugins",
             keymap = "",
@@ -60,7 +59,7 @@ M = function()
             keymap = "",
             key = "c",
             icon = " ",
-            action = "Telescope find_files cwd=~/.config/nvim",
+            action = "lua require('telescope.builtin').find_files({cwd='~/.config/nvim'})",
         },
         {
             desc = "Exit",

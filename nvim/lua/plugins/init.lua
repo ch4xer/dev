@@ -159,7 +159,6 @@ local plugins = {
     {
         'folke/persistence.nvim',
         config = config.session,
-        event = 'BufRead'
     },
     {
         "folke/flash.nvim",
