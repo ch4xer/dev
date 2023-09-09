@@ -15,10 +15,6 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave'
 vim.g.width_open_tree = 150
 
 local toggle_tree = function()
-    -- if there is no nvim-tree plugin, just exit
-    if package.loaded['nvim-tree'] == nil then
-        return
-    end
     local open_tree_without_focus = function()
         require('nvim-tree.api').tree.toggle(false, true)
     end
@@ -79,9 +75,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank()
-        if package.loaded['osc52'] == nil then
-            return
-        end
         require('osc52').copy_register('+')
     end
 })
