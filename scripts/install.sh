@@ -19,7 +19,7 @@ fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh ranger alacritty rsync htop bat python fzf unzip zoxide exa fd wget ripgrep fontconfig
+  sudo pacman -S --needed --noconfirm tmux zsh ranger alacritty rsync htop bat python fzf unzip zoxide eza fd wget ripgrep fontconfig
 fi
 
 git submodule init

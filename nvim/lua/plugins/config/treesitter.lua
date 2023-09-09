@@ -21,6 +21,7 @@ M = function()
             "xml",
             "markdown",
             "markdown_inline",
+            "latex",
         },
         -- switch to buildin syntax highlighting
         highlight = {

@@ -109,7 +109,9 @@ local plugins = {
     {
         'williamboman/mason.nvim',
         dependencies = {
-            'WhoIsSethDaniel/mason-tool-installer.nvim'
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
+            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
         },
         build = ":MasonUpdate",
         config = config.mason,
@@ -118,15 +120,11 @@ local plugins = {
     {
         'hrsh7th/nvim-cmp',
         dependencies = {
-            'neovim/nvim-lspconfig',
-            'hrsh7th/cmp-nvim-lsp',
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
         },
-        -- dont use VeryLazy, which will cause problem when open a single file
-        -- instead of using telescope-project
-        event = "BufRead",
+        event = "InsertEnter",
         config = config.cmp,
     },
     {
