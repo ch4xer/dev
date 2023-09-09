@@ -11,16 +11,10 @@ M = function()
             sidebars = "transparent",
             floats = "dark",
         },
-        sidebars = { "qf", "help" },
-        day_brightness = 0.1,
-        hide_inactive_statusline = false,
-        dim_inactive = true,
-        lualine_bold = true,
 
         on_colors = function(colors)
             colors.border = "#565f89"
         end,
-        on_highlights = function(highlights, colors) end,
     })
 
     require('lualine').setup {

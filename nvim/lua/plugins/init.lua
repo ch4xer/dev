@@ -124,14 +124,13 @@ local plugins = {
     },
     {
         'danymat/neogen',
-        dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
     },
     {
         'kevinhwang91/nvim-ufo',
         config = config.fold,
         dependencies = { 'kevinhwang91/promise-async' },
-        event = 'BufRead'
+        event = 'VeryLazy'
     },
     {
         'mfussenegger/nvim-dap',
