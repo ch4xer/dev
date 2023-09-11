@@ -15,6 +15,7 @@ if [ -f /etc/debian_version ]; then
   sudo ln -s /usr/bin/batcat /usr/bin/bat
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
   sudo ln -s /usr/bin/python3 /usr/bin/python
+  sudo ln -s /usr/bin/exa /usr/bin/eza
 fi
 
 if [ -f /etc/arch-release ]; then
