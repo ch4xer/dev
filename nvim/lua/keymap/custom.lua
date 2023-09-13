@@ -55,6 +55,11 @@ M.EnterInsert = function()
     end
 end
 
+M.format = function ()
+    vim.lsp.buf.format()
+    vim.cmd('write')
+end
+
 M.WriteQuitAll = function()
     vim.cmd('silent wa')
     vim.cmd('qa')

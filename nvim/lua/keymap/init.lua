@@ -44,7 +44,7 @@ local Base = {
         { 'n',          '<leader>q', 'q1',                { desc = 'record macro' } },
         { 'n',          '<C-q>',     ':q<CR>',            { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
-        { 'n',          'g=',        vim.lsp.buf.format },
+        { 'n',          'g=',        custom.format },
         { 'c',          'w!',        custom.sudo_write,   { desc = 'save file as root' } },
     },
     fold = {
