@@ -58,12 +58,10 @@ M = function()
                     functionTypeParameters = true,
                     parameterNames = true,
                     rangeVariableTypes = false,
-                }
+                },
+                usePlaceholders = false,
             },
         },
-        init_options = {
-            usePlaceholders = true,
-        }
     }
     lspconfig.rust_analyzer.setup {
         capabilities = capabilities,

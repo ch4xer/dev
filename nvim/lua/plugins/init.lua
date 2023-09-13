@@ -90,6 +90,7 @@ local plugins = {
     },
     {
         'nvim-treesitter/nvim-treesitter',
+        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
         build = ':TSUpdate',
         event = 'VeryLazy',
         config = config.treesitter
@@ -112,6 +113,7 @@ local plugins = {
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-nvim-lsp-signature-help',
         },
         event = "InsertEnter",
         config = config.cmp,
