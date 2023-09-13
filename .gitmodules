@@ -30,10 +30,6 @@
 	path = tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
     branch = main
-[submodule "tmux/plugins/tmux-yank"]
-	path = tmux/plugins/tmux-yank
-	url = https://github.com/tmux-plugins/tmux-yank.git
-    branch = main
 [submodule "tmux/plugins/tmux-net-speed"]
 	path = tmux/plugins/tmux-net-speed
 	url = https://github.com/tmux-plugins/tmux-net-speed.git
