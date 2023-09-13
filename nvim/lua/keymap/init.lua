@@ -34,7 +34,6 @@ local Base = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
         { 'v', '<C-c>',       '"*ygvy' },
         { 'v', 'y',           '"*ygvy' },
-        { 'i', '<C-v>',       '<C-R>+' },
         { 'v', '>',           '>gv',   { desc = 'keep virtual mode after indent' } },
         { 'v', '<',           '<gv',   { desc = 'keep virtual mode after indent' } },
         { 'n', '<Backspace>', 'ciw' },
