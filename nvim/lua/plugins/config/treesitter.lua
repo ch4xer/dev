@@ -43,31 +43,6 @@ M = function()
             --     scope_incremental = '<TAB>',
             -- }
         },
-        textobjects = {
-            -- move = {
-            --     enable = true,
-            --     set_jumps = true, -- whether to set jumps in the jumplist
-            --     -- goto_next_start = {
-            --     --     ["<C-j>"] = "@parameter.inner",
-            --     -- },
-            --     -- goto_previous_start = {
-            --     --     ["<C-k>"] = "@parameter.inner",
-            --     -- },
-            -- },
-            select = {
-                enable = true,
-                lookahead = true,
-                keymaps = {
-                    ["af"] = "@function.outer",
-                    ["if"] = "@function.inner",
-                    ["ac"] = "@class.outer",
-                    ["ic"] = "@class.inner",
-                    ["ap"] = "@parameter.outer",
-                    ["ip"] = "@parameter.inner"
-                },
-                include_surrounding_whitespace = false,
-            },
-        }
     }
 end
 
