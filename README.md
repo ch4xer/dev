@@ -43,4 +43,4 @@ cd dev
 
 ### Other
 
-Highly recommended to install caps2esc, it's a great tool to remap capslock to esc and ctrl, see [caps2esc](https://gitlab.com/interception/linux/plugins/caps2esc)
+Highly recommended to install keyd, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
