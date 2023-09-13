@@ -11,7 +11,10 @@ This repo contains my configuration of alacritty, tmux, ranger, zsh and neovim.
 ```bash
 git clone https://github.com/ch3n9w/dev
 cd dev
-./scripts/install.sh
+# if you want to install in desktop environment
+./scripts/install-desktop.sh
+# if you only want to install in server environment
+./scripts/install-server.sh
 ```
 
 ## Noteable Info
