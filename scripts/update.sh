@@ -1,5 +1,5 @@
 rm -r nvim
-rm -r zsh
+yes | rm -r zsh
 rm -r alacritty
 rm -r ranger
 rm -r tmux

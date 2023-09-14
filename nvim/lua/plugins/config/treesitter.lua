@@ -48,7 +48,6 @@ M = function()
                 enable = true,
                 lookahead = true,
                 keymaps = {
-                    ["f"] = "@function.outer",
                     ["p"] = "@parameter.outer",
                 },
                 include_surrounding_whitespace = true,
