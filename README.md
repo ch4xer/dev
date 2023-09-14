@@ -37,7 +37,7 @@ cd dev
 
 ### Neovim
 
-1. most keybindings are in `nvim/lua/keymap/init.lua`, some keybindings are in `cmp.lua`, `filetree.lua`, `dashboard.lua`, and `lspsaga.lua`
+1. most keybindings are in `nvim/lua/keymap/init.lua`, some keybindings are in `cmp.lua`, `filetree.lua`, `dashboard.lua`, `lspsaga.lua`, `treesitter.lua` and `surround.lua`
 2. I write golang and python often, but not rust, even though my configuration include related lsp
 3. neovim nightly is unstable, so keep caution when you use it
 
