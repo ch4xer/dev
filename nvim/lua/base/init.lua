@@ -36,8 +36,6 @@ vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
 vim.opt.scrolloff = 5
--- wait PR to be merged, then all things will be better
-vim.opt.smoothscroll = true
 
 -- indent setting
 vim.opt.autoindent = true
