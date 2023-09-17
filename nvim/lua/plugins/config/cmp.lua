@@ -125,29 +125,3 @@ M = function()
 end
 
 return M
-
--- example pyproject.toml for virtual envrionment:
--- [tool.ruff]
--- select = ["PLW","PLE","PLC",]
---
--- # Allow autofix for all enabled rules (when `--fix`) is provided.
--- fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
---
--- # Exclude a variety of commonly ignored directories.
--- exclude = [".bzr",".direnv",".eggs",".git",".git-rewrite",".hg",".mypy_cache",".nox",".pants.d",".pytype",".ruff_cache",".svn",".tox",".venv","__pypackages__","_build","buck-out","build","dist","node_modules","venv"]
---
--- # Same as Black.
--- line-length = 88
---
--- [tool.ruff.mccabe]
--- # Unlike Flake8, default to a complexity level of 10.
--- max-complexity = 10
---
--- [tool.ruff.pydocstyle]
--- convention = "google"
-
--- [tool.pyright]
--- "venvPath": ".",
--- "venv": "."
---
--- marksman 's root directory is where .git folder exists

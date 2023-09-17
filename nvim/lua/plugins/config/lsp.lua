@@ -64,7 +64,6 @@ M = function()
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
-            single_file_support = true,
         }
     end
 
@@ -90,3 +89,22 @@ M = function()
 end
 
 return M
+
+-- example pyproject.toml
+-- [tool.ruff]
+-- select = ["PLW","PLE","PLC",]
+-- fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
+-- exclude = [".bzr",".direnv",".eggs",".git",".git-rewrite",".hg",".mypy_cache",".nox",".pants.d",".pytype",".ruff_cache",".svn",".tox",".venv","__pypackages__","_build","buck-out","build","dist","node_modules","venv"]
+-- line-length = 88
+--
+-- [tool.ruff.pydocstyle]
+-- convention = "google"
+--
+-- [tool.pyright]
+-- "venvPath" = "."
+-- "venv" = "."
+--
+-- [tool.black]
+-- line-length = 88
+--
+-- marksman 's root directory is where .git folder exists
