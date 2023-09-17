@@ -18,6 +18,7 @@ M = function()
             "cpp",
             "bash",
             "yaml",
+            "toml",
             "xml",
             "markdown",
             "markdown_inline",
