@@ -60,7 +60,7 @@ M = function()
         },
     }
     lspconfig.ruff_lsp.setup {}
-    local other_servers = {"rust_analyzer", "lua_ls", "marksman", "dockerls", "bashls" }
+    local other_servers = { "rust_analyzer", "lua_ls", "marksman", "dockerls", "bashls" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
