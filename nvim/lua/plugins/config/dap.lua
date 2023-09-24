@@ -30,13 +30,17 @@ M = function()
         name = "lldb",
     }
 
+    -- dap.adapters.delve = {
+    --     type = 'server',
+    --     port = '${port}',
+    --     executable = {
+    --         command = 'dlv',
+    --         args = { 'dap', '-l', '127.0.0.1:${port}' },
+    --     }
+    -- }
     dap.adapters.delve = {
         type = 'server',
-        port = '${port}',
-        executable = {
-            command = 'dlv',
-            args = { 'dap', '-l', '127.0.0.1:${port}' },
-        }
+        port = '38697',
     }
     dap.adapters.python = function(cb, config)
         if config.request == 'attach' then
@@ -89,6 +93,12 @@ M = function()
             request = "launch",
             mode = "test",
             program = "${file}"
+        },
+        {
+            type = "delve",
+            name = "Attach remote",
+            mode = "remote",
+            request = "attach",
         },
     }
 

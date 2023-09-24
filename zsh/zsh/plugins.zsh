@@ -4,6 +4,7 @@ source $XDG_CONFIG_HOME/zsh/plugins/zsh-history-substring-search/zsh-history-sub
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 source $XDG_CONFIG_HOME/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 autoload -U compinit; compinit
 

@@ -19,5 +19,6 @@ config.fold = require('plugins.config.fold')
 config.session = require('plugins.config.session')
 config.surround = require('plugins.config.surround')
 config.osc52 = require('plugins.config.osc52')
+config.latex = require('plugins.config.latex')
 
 return config

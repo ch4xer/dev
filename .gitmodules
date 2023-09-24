@@ -74,3 +74,6 @@
 	path = zsh/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
     branch = main
+[submodule "zsh/zsh/plugins/zsh-autocomplete"]
+	path = zsh/zsh/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete

@@ -156,10 +156,10 @@ local plugins = {
         config = true,
         event = 'BufRead'
     },
-    {
-        'folke/persistence.nvim',
-        config = config.session,
-    },
+    -- {
+    --     'folke/persistence.nvim',
+    --     config = config.session,
+    -- },
     {
         "folke/flash.nvim",
         config = config.flash,
@@ -182,6 +182,15 @@ local plugins = {
         config = config.surround,
         event = "VeryLazy",
     },
+    {
+        'lervag/vimtex',
+        lazy = false,
+        config = config.latex,
+    },
+    {
+        'tpope/vim-obsession',
+        lazy = false,
+    }
 }
 
 require("lazy").setup(

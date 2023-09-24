@@ -45,7 +45,7 @@ M = function()
             keymap = "",
             key = "s",
             icon = "󰚰 ",
-            action = "lua require('persistence').load()",
+            action = "source Session.vim",
         },
         {
             desc = "Update Plugins",
