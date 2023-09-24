@@ -1,6 +1,7 @@
 alias c="clear"
 alias s="ssh"
 alias g="git"
+alias lg="lazygit"
 alias l="eza --icons"
 alias ls="eza --icons"
 alias tmux="tmux -u"
