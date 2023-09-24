@@ -9,8 +9,6 @@ alias timeshift="sudo timeshift"
 alias clear_cache='yay -Scc;yay -Rns $(yay -Qtdq)'
 alias clear_packages="yay -Qtdq | yay -Rs -"
 alias idea="GTK_IM_MODULE=fcitx /opt/intellij-idea-ultimate-edition/bin/idea.sh .  >/dev/null 2>&1 &"
-# alias vi="/usr/bin/nvim"
-# alias vim="/usr/bin/nvim"
 alias nvmstart="source /usr/share/nvm/init-nvm.sh"
 alias java8="/usr/lib/jvm/java-8-openjdk/bin/java"
 alias javac8="/usr/lib/jvm/java-8-openjdk/bin/javac"

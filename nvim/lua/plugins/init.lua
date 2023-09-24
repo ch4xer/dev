@@ -156,10 +156,6 @@ local plugins = {
         config = true,
         event = 'BufRead'
     },
-    -- {
-    --     'folke/persistence.nvim',
-    --     config = config.session,
-    -- },
     {
         "folke/flash.nvim",
         config = config.flash,
