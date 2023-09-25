@@ -157,6 +157,12 @@ local plugins = {
         event = 'BufRead'
     },
     {
+        "kdheepak/lazygit.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
+    {
         "folke/flash.nvim",
         config = config.flash,
     },
