@@ -161,6 +161,7 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
+        cmd = { 'LazyGit' }
     },
     {
         "folke/flash.nvim",

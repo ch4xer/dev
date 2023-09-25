@@ -87,14 +87,14 @@ local Plugin = {
         { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
     },
     lspsaga = {
-        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',          { silent = true } },
+        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',              { silent = true } },
         { 'n',          'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
         { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
         { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
         { 'n',          'gr',    '<CMD>Lspsaga finder<CR>', },
         { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
-        { { 't' },      '<ESC>', '<CMD>Lspsaga term_toggle<CR>' },
+        { { 't' },      '<ESC>', function() vim.api.nvim_win_close(0, true) end },
     },
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end },
