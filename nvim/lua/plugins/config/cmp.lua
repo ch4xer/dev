@@ -50,7 +50,7 @@ M = function()
         },
         mapping = {
             ['<CR>'] = cmp.mapping.confirm({
-                behavior = cmp.ConfirmBehavior.Replace,
+                behavior = cmp.ConfirmBehavior.Insert,
                 select = true,
             }),
             ['<C-j>'] = cmp.mapping(function(fallback)
