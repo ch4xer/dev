@@ -67,8 +67,7 @@ else
   rm nvim.appimage.*
   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
   chmod u+x nvim.appimage
-  sudo mv /usr/bin/vi /usr/bin/vibak
-  sudo mv nvim.appimage /usr/bin/vi
+  sudo mv nvim.appimage /usr/bin/nvim
 fi
 
 FiraCode_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
