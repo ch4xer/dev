@@ -121,3 +121,4 @@ else
   rm VictorMono.zip
   sudo fc-cache -fv
 fi
+
