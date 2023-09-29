@@ -64,10 +64,8 @@ vim.opt.signcolumn = 'yes'
 -- wrap line when too long to display
 vim.opt.wrap = true
 
--- key mappings
 vim.g.mapleader = ' '
 
--- load preview view
 vim.opt.viewoptions = 'folds,cursor,curdir'
 
 -- setting for nvim-tree
