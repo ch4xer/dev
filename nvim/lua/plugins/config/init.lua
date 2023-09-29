@@ -19,5 +19,6 @@ config.fold = require('plugins.config.fold')
 config.surround = require('plugins.config.surround')
 config.osc52 = require('plugins.config.osc52')
 config.latex = require('plugins.config.latex')
+config.noice = require('plugins.config.noice')
 
 return config
