@@ -16,6 +16,7 @@ alias javac8="/usr/lib/jvm/java-8-openjdk/bin/javac"
 alias py="python"
 alias ipy="ipython"
 alias checklog="journalctl -xefu"
+alias vi="nvim"
 
 # alias k="minikube kubectl --"
 alias k="kubectl"
