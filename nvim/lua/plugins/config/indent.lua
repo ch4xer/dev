@@ -1,5 +1,12 @@
 M = function()
-    require("ibl").setup {}
+    require('hlchunk').setup({
+        line_num = {
+            enable = false
+        },
+        blank = {
+            enable = false
+        }
+    })
 end
 
 return M

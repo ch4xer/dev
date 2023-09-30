@@ -68,9 +68,8 @@ local plugins = {
         build = 'make',
     },
     {
-        'lukas-reineke/indent-blankline.nvim',
-        main = "ibl",
-        event = 'VeryLazy',
+        "shellRaining/hlchunk.nvim",
+        event = "VeryLazy",
         config = config.indent
     },
     {
