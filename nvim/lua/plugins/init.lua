@@ -69,8 +69,8 @@ local plugins = {
     },
     {
         "shellRaining/hlchunk.nvim",
-        event = "VeryLazy",
-        config = config.indent
+        event = { "VeryLazy" },
+        config = config.indent,
     },
     {
         'RRethy/vim-illuminate',

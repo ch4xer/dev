@@ -2,9 +2,11 @@ M = function()
     require('noice').setup {
         cmdline = {
             enabled = true,
+            view = "cmdline",
         },
         messages = {
-            enabled = false,
+            enabled = true,
+            view = "mini"
         },
         notify = {
             enabled = false,

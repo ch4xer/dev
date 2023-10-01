@@ -1,11 +1,8 @@
 M = function()
-    require('hlchunk').setup({
-        line_num = {
-            enable = false
-        },
-        blank = {
-            enable = false
-        }
+    -- require("ibl").setup {}
+    require("hlchunk").setup({
+        blank = { enable = false },
+        line_num = { enable = false, },
     })
 end
 
