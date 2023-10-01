@@ -14,7 +14,7 @@ if [ -f /etc/debian_version ]; then
   echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
   sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
   sudo apt update
-  sudo apt install -y tmux zsh ranger rsync htop bat fzf python3 unzip fd-find eza wget ripgrep
+  sudo apt install -y tmux zsh ranger rsync htop bat fzf python3 unzip fd-find eza wget ripgrep neovim
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   sudo ln -s /usr/bin/batcat /usr/bin/bat
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
@@ -23,7 +23,7 @@ fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh ranger rsync htop bat python fzf unzip zoxide eza fd wget ripgrep
+  sudo pacman -S --needed --noconfirm tmux zsh ranger rsync htop bat python fzf unzip zoxide eza fd wget ripgrep neovim
 fi
 
 git submodule init
@@ -60,13 +60,13 @@ else
     exit 1
 fi
 
-NEOVIM_BINARY=/usr/bin/nvim
-if [ -f "$NEOVIM_BINARY" ]; then
-  echo "Neovim already exists, skip..."
-else
-  echo "Downloading Neovim nightly..."
-  rm nvim.appimage.*
-  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-  chmod u+x nvim.appimage
-  sudo mv nvim.appimage /usr/bin/nvim
-fi
+# NEOVIM_BINARY=/usr/bin/nvim
+# if [ -f "$NEOVIM_BINARY" ]; then
+#   echo "Neovim already exists, skip..."
+# else
+#   echo "Downloading Neovim nightly..."
+#   rm nvim.appimage.*
+#   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+#   chmod u+x nvim.appimage
+#   sudo mv nvim.appimage /usr/bin/nvim
+# fi
