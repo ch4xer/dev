@@ -43,7 +43,15 @@ M = function()
                 'diagnostics'
             },
             lualine_c = { 'filename' },
-            lualine_x = { 'encoding', 'filetype' },
+            lualine_x = {
+                {
+                    require("noice").api.statusline.mode.get,
+                    cond = require("noice").api.statusline.mode.has,
+                    color = { fg = "#ff9e64" },
+                },
+                'encoding',
+                'filetype'
+            },
             lualine_y = { 'progress', 'location' },
             lualine_z = {}
         },
