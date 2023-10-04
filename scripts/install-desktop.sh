@@ -14,7 +14,7 @@ if [ -f /etc/debian_version ]; then
   echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
   sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
   sudo apt update
-  sudo apt install -y tmux zsh ranger alacritty rsync htop bat fzf python3 unzip fd-find eza wget ripgrep fontconfig neovim
+  sudo apt install -y tmux zsh ranger kitty rsync htop bat fzf python3 unzip fd-find eza wget ripgrep neovim
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   sudo ln -s /usr/bin/batcat /usr/bin/bat
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
@@ -23,7 +23,7 @@ fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh ranger alacritty rsync htop bat python fzf unzip zoxide eza fd wget ripgrep fontconfig neovim
+  sudo pacman -S --needed --noconfirm tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide eza fd wget ripgrep neovim
 fi
 
 git submodule init
@@ -34,16 +34,15 @@ read -p "Do you want to overwrite the configuration file? (y/n): " response
 
 if [ "$response" == "y" ]; then
     echo "Overwriting the configuration file..."
-    rm -r $BASEDIR/alacritty
+    rm -r $BASEDIR/kitty
     yes | rm -r $BASEDIR/tmux
     yes | rm -r $BASEDIR/zsh
     yes | rm -r $BASEDIR/ranger
     cp -r ./tmux ~/.config/
-    cp -r ./alacritty ~/.config/
+    cp -r ./kitty ~/.config/
     cp -r ./zsh/zsh ~/.config/
     cp -r ./zsh/zshrc ~/.zshrc
     cp -r ./ranger ~/.config/ranger
-    cp -r ./fontconfig ~/.config/
     license=$BASEDIR/nvim/intelephense
     if [ -e "$license" ]; then
       content=$(cat $license)
@@ -62,17 +61,6 @@ else
     exit 1
 fi
 
-# NEOVIM_BINARY=/usr/bin/nvim
-# if [ -f "$NEOVIM_BINARY" ]; then
-#   echo "Neovim already exists, skip..."
-# else
-#   echo "Downloading Neovim nightly..."
-#   rm nvim.appimage.*
-#   wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-#   chmod u+x nvim.appimage
-#   sudo mv nvim.appimage /usr/bin/nvim
-# fi
-
 FiraCode_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
 FiraCode_FILE2=/usr/share/fonts/FiraCode/FiraCodeNerdFont-Regular.ttf
 FiraCode='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip'
@@ -90,22 +78,22 @@ else
   sudo fc-cache -fv
 fi
 
-LXGW_FILE2=/usr/share/fonts/TTF/LXGWWenKai-Regular.ttf
-LXGW_FILE1=/usr/share/fonts/LXGWWenKai/LXGWWenKai-Regular.ttf
-LXGW='https://github.com/lxgw/LxgwWenKai/releases/download/v1.300/lxgw-wenkai-v1.300.zip'
-if [ -f "$LXGW_FILE1" ]; then
-  echo "LXGW Wen Kai already exists, skip..."
-elif [ -f "$LXGW_FILE2" ]; then
-  echo "LXGW Wen Kai already exists, skip..."
-else
-  echo "Downloading LXGW Wen Kai..."
-  rm LXGW.zip
-  wget $LXGW -O LXGW.zip
-  sudo mkdir -p /usr/share/fonts/LXGWWenKai
-  sudo unzip -q LXGW.zip -d /usr/share/fonts/LXGWWenKai
-  rm LXGW.zip
-  sudo fc-cache -fv
-fi
+# LXGW_FILE2=/usr/share/fonts/TTF/LXGWWenKai-Regular.ttf
+# LXGW_FILE1=/usr/share/fonts/LXGWWenKai/LXGWWenKai-Regular.ttf
+# LXGW='https://github.com/lxgw/LxgwWenKai/releases/download/v1.300/lxgw-wenkai-v1.300.zip'
+# if [ -f "$LXGW_FILE1" ]; then
+#   echo "LXGW Wen Kai already exists, skip..."
+# elif [ -f "$LXGW_FILE2" ]; then
+#   echo "LXGW Wen Kai already exists, skip..."
+# else
+#   echo "Downloading LXGW Wen Kai..."
+#   rm LXGW.zip
+#   wget $LXGW -O LXGW.zip
+#   sudo mkdir -p /usr/share/fonts/LXGWWenKai
+#   sudo unzip -q LXGW.zip -d /usr/share/fonts/LXGWWenKai
+#   rm LXGW.zip
+#   sudo fc-cache -fv
+# fi
 
 VictorMono_FILE1=/usr/share/fonts/TTF/VictorMonoNerdFont-Regular.ttf
 VictorMono_FILE2=/usr/share/fonts/VictorMono/VictorMonoNerdFont-Regular.ttf

@@ -34,7 +34,6 @@ read -p "Do you want to overwrite the configuration file? (y/n): " response
 
 if [ "$response" == "y" ]; then
     echo "Overwriting the configuration file..."
-    rm -r $BASEDIR/alacritty
     yes | rm -r $BASEDIR/tmux
     yes | rm -r $BASEDIR/zsh
     yes | rm -r $BASEDIR/ranger

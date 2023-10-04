@@ -1,4 +1,5 @@
 export TERM=xterm-256color
+export COLORTERM=truecolor
 export CGO_ENABLED=1
 export GOPATH=$HOME/Projects/go
 export GOPROXY=https://goproxy.cn

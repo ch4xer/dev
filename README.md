@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This repo contains my configuration of alacritty, tmux, ranger, zsh and neovim.
+This repo contains my configuration of kitty, tmux, ranger, zsh and neovim.
 
 ## Install
 
@@ -19,10 +19,9 @@ cd dev
 
 ## Noteable Info
 
-### Alacritty
+### Kitty
 
-1. use Firacode Nerd Font, Victor Mono Nerd Font and LXGW WenKai, see `fontconfig/fonts.conf`
-2. define some keybindings to pass through to tmux, see `alacritty/alacritty.yml`
+1. use Firacode Nerd Font and Victor Mono Nerd Font
 
 ### Tmux
 
@@ -42,4 +41,4 @@ cd dev
 
 ### Other
 
-Highly recommended to install keyd, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
+Highly recommended to install key, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
