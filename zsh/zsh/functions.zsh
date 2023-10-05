@@ -84,10 +84,5 @@ man() {
     man "$@"
 }
 
-# make alacritty show current directory in title
-# precmd() {
-#     [[ $TERM == "xterm-256color" ]] && print "\033]0;:> $(pwd)"
-# }
-
 zle -N filemanager
 
