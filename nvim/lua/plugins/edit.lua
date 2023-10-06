@@ -27,7 +27,12 @@ return {
     {
         "shellRaining/hlchunk.nvim",
         event = { "VeryLazy" },
-        config = config.indent,
+        config = config.hlchunk,
+    },
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        event = 'VeryLazy',
+        config = config.indentline,
     },
     {
         'RRethy/vim-illuminate',
