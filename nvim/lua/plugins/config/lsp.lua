@@ -59,45 +59,6 @@ M = function()
             },
         },
     }
-    -- local venv_path = os.getenv('VIRTUAL_ENV')
-    -- local py_path = nil
-    -- if venv_path ~= nil then
-    --     py_path = venv_path .. "/bin/python3"
-    -- else
-    --     py_path = vim.g.python3_host_prog
-    -- end
-    -- lspconfig.pylsp.setup {
-    --     settings = {
-    --         pylsp = {
-    --             plugins = {
-    --                 -- formatter options
-    --                 black = { enabled = true },
-    --                 autopep8 = { enabled = false },
-    --                 yapf = { enabled = false },
-    --                 -- linter options
-    --                 pylint = { enabled = false, executable = "pylint" },
-    --                 ruff = { enabled = true },
-    --                 pyflakes = { enabled = false },
-    --                 pycodestyle = { enabled = false },
-    --                 -- type checker
-    --                 pylsp_mypy = {
-    --                     enabled = true,
-    --                     overrides = { "--python-executable", py_path, true },
-    --                     report_progress = true,
-    --                     live_mode = false
-    --                 },
-    --                 -- auto-completion options
-    --                 jedi_completion = { enabled = true, fuzzy = true },
-    --                 -- import sorting
-    --                 isort = { enabled = true },
-    --             },
-    --         },
-    --     },
-    --     flags = {
-    --         debounce_text_changes = 200,
-    --     },
-    --     capabilities = capabilities,
-    -- }
     local other_servers = { "pyright","rust_analyzer", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
@@ -130,7 +91,8 @@ end
 
 return M
 
--- example pyproject.toml
+-- remember to enter python virtualenv before running nvim
+-- example pyproject.toml, not necessary
 -- [tool.ruff]
 -- select = ["PLW","PLE","PLC",]
 -- fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
@@ -139,10 +101,6 @@ return M
 --
 -- [tool.ruff.pydocstyle]
 -- convention = "google"
---
--- [tool.pyright]
--- "venvPath" = "."
--- "venv" = "."
 --
 -- [tool.black]
 -- line-length = 88
