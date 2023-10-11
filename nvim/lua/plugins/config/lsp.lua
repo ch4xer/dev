@@ -98,7 +98,7 @@ M = function()
     --     },
     --     capabilities = capabilities,
     -- }
-    local other_servers = { "rust_analyzer", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
+    local other_servers = { "pyright","rust_analyzer", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
@@ -106,17 +106,18 @@ M = function()
     end
 
     lspconfig.ruff_lsp.setup {}
-    local pylance = "/home/ch4ser/Tools/Other/pylance/server.bundle.js"
-    if vim.fn.filereadable(pylance) ~= 0 then
-        lspconfig.pyright.setup {
-            capabilities = capabilities,
-            cmd = { "node", pylance, "--stdio" },
-        }
-    else
-        lspconfig.pyright.setup {
-            capabilities = capabilities,
-        }
-    end
+    -- pylance has some issues in neovim, like not report importMissing.
+    -- local pylance = "/home/ch4ser/Tools/Other/pylance/server.bundle.js"
+    -- if vim.fn.filereadable(pylance) ~= 0 then
+    --     lspconfig.pyright.setup {
+    --         capabilities = capabilities,
+    --         cmd = { "node", pylance, "--stdio" },
+    --     }
+    -- else
+    --     lspconfig.pyright.setup {
+    --         capabilities = capabilities,
+    --     }
+    -- end
 
     local null_ls = require("null-ls")
     null_ls.setup({
