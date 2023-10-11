@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
     pattern = { "*.*" },
     callback = function()
         -- keep the size of every window, very usful!
-        vim.cmd('wincmd =')
+        vim.cmd.wincmd('=')
         toggle_tree()
     end
 })
