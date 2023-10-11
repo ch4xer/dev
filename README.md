@@ -17,6 +17,17 @@ cd dev
 ./scripts/install-server.sh
 ```
 
+Alternatively (if you dont want to install all of them), you can copy the configuration directory you like to XDG_CONFIG_HOME, for example:
+
+```
+nvim -> ~/.config/nvim
+kitty -> ~/.config/kitty
+tmux -> ~/.config/tmux
+ranger -> ~/.config/ranger
+zsh/zsh -> ~/.config/zsh
+zsh/zshrc -> ~/.zshrc
+```
+
 ## Noteable Info
 
 ### Kitty
