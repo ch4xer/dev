@@ -59,7 +59,17 @@ M = function()
             },
         },
     }
-    local other_servers = { "pyright","rust_analyzer", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
+    lspconfig.rust_analyzer.setup {
+        capabilities = capabilities,
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = {
+                    command = "clippy",
+                },
+            },
+        }
+    }
+    local other_servers = { "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
     for _, server in ipairs(other_servers) do
         lspconfig[server].setup {
             capabilities = capabilities,
