@@ -42,7 +42,7 @@ local Base = {
     cmd = {
         { { 'n', 'v' }, ';',         ':',                 { nowait = true } },
         { 'n',          '<leader>q', 'q1',                { desc = 'record macro' } },
-        { 'n',          '<C-q>',     '<CMD>q<CR>',            { desc = 'quit window' } },
+        { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
         { 'n',          'g=',        custom.format },
         { 'c',          'w!',        custom.sudo_write,   { desc = 'save file as root' } },
@@ -53,10 +53,8 @@ local Base = {
     },
     modeSwitch = {
         { 'n', '<RightMouse>', 'a' },
-        { 'i', '<ESC>', '<C-O><CMD>stopinsert<CR>', {
-            desc =
-            'back to normal mode without moving cursor'
-        } },
+        -- { 'i', '<ESC>', '<C-O><CMD>stopinsert<CR>', {
+        { 'i', '<ESC>',        custom.esc },
     }
 }
 
@@ -87,7 +85,7 @@ local Plugin = {
         { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
     },
     lspsaga = {
-        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',              { silent = true } },
+        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',                { silent = true } },
         { 'n',          'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
         { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
         { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },

@@ -78,3 +78,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         require('osc52').copy_register('+')
     end
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.rs", "*.py", "*.go" },
+    callback = function()
+        vim.lsp.buf.format({ timeout_ms = 200 })
+    end,
+})

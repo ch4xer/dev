@@ -55,9 +55,14 @@ M.EnterInsert = function()
     end
 end
 
-M.format = function ()
+M.format = function()
     vim.lsp.buf.format()
     vim.cmd('write')
+end
+
+M.esc = function()
+    vim.cmd('write')
+    vim.cmd('stopinsert')
 end
 
 M.WriteQuitAll = function()
