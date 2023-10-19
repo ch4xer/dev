@@ -14,10 +14,6 @@ return {
         build = 'make',
     },
     {
-        'onsails/lspkind-nvim',
-        event = 'VeryLazy'
-    },
-    {
         "kdheepak/lazygit.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
