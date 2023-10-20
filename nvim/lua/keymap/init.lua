@@ -53,7 +53,6 @@ local Base = {
     },
     modeSwitch = {
         { 'n', '<RightMouse>', 'a' },
-        -- { 'i', '<ESC>', '<C-O><CMD>stopinsert<CR>', {
         { 'i', '<ESC>',        custom.esc },
     }
 }

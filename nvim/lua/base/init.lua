@@ -13,8 +13,6 @@ vim.opt.shell = '/bin/zsh'
 -- vim.opt.conceallevel = 3
 
 vim.opt.modifiable = true
--- auto save
-vim.opt.autowriteall = true
 -- the refresh time will affect lspsaga's reaction time
 vim.opt.updatetime = 300
 -- case settintg
