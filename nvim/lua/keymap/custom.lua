@@ -60,11 +60,6 @@ M.format = function()
     vim.cmd('write')
 end
 
-M.esc = function()
-    vim.cmd('write')
-    vim.cmd('stopinsert')
-end
-
 M.WriteQuitAll = function()
     vim.cmd('silent wa')
     vim.cmd('qa')

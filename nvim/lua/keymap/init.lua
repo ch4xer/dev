@@ -45,7 +45,7 @@ local Base = {
         { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
         { 'n',          'g=',        custom.format },
-        { 'c',          'w!',        custom.sudo_write,   { desc = 'save file as root' } },
+        { 'c',          'sw',        custom.sudo_write,   { desc = 'save file as root' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -53,7 +53,7 @@ local Base = {
     },
     modeSwitch = {
         { 'n', '<RightMouse>', 'a' },
-        { 'i', '<ESC>',        custom.esc },
+        { 'i', '<ESC>',        '<C-O><CMD>stopinsert<CR>' },
     }
 }
 
