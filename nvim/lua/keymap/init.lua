@@ -45,7 +45,7 @@ local Base = {
         { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
         { 'n',          'g=',        custom.format },
-        { 'c',          'sw',        custom.sudo_write,   { desc = 'save file as root' } },
+        -- { 'c',          'sw',        custom.sudo_write,   { desc = 'save file as root' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
