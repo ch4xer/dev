@@ -25,11 +25,6 @@ return {
         event = { 'VeryLazy' }
     },
     {
-        "shellRaining/hlchunk.nvim",
-        event = { "VeryLazy" },
-        config = config.hlchunk,
-    },
-    {
         'lukas-reineke/indent-blankline.nvim',
         event = 'VeryLazy',
         config = config.indentline,
