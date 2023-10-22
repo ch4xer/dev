@@ -42,12 +42,15 @@ return {
         lazy = false,
     },
     {
-        'lervag/vimtex',
-        lazy = false,
-        config = config.latex,
-    },
-    {
         'tpope/vim-obsession',
         lazy = false,
+    },
+    {
+        'jbyuki/nabla.nvim',
+        dependencies = {
+            'lervag/vimtex',
+        },
+        ft = { "tex", "markdown" },
+        config = config.latex
     }
 }
