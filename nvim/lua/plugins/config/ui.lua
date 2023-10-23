@@ -75,6 +75,7 @@ M = function()
             diagnostics = "nvim_lsp",
             offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "center" } },
             enforce_regular_tabs = true,
+            tab_size = 14,
         }
     }
     vim.cmd("colorscheme tokyonight")
