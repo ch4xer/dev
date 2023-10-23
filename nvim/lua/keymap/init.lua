@@ -67,7 +67,7 @@ local Plugin = {
     },
     --- some keymaps are in neotree.lua
     neotree = {
-        { 'n', '<leader>t', '<CMD>Neotree action=show source=filesystem toggle<CR>' },
+        { 'n', '<leader>f', '<CMD>Neotree action=show source=filesystem toggle<CR>' },
         { 'n', '<leader>s', '<CMD>Neotree action=show source=document_symbols toggle <CR>' },
     },
     comment = {
