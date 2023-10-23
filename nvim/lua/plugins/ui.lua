@@ -21,16 +21,15 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
     {
-        'kyazdani42/nvim-tree.lua',
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = "v3.x",
         dependencies = {
-            'nvim-tree/nvim-web-devicons'
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
         },
-        config = config.filetree,
-    },
-    {
-        'stevearc/aerial.nvim',
-        config = config.outline,
-        cmd = { 'AerialToggle' }
+        config = config.neotree,
+        cmd = { "Neotree" },
     },
     {
         "folke/noice.nvim",

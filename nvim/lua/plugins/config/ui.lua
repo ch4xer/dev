@@ -73,7 +73,7 @@ M = function()
                 end
             end,
             diagnostics = "nvim_lsp",
-            offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
+            offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "center" } },
             enforce_regular_tabs = true,
         }
     }

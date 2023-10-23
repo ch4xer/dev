@@ -65,12 +65,9 @@ local Plugin = {
         { 'n', 'sf', function() require('telescope.builtin').find_files() end },
     },
     --- some keymaps are in filetree.lua
-    nvim_tree = {
-        { 'n', '<leader>t', function() require('nvim-tree.api').tree.toggle() end },
-        { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
-    },
-    aerial = {
-        { 'n', '<leader>s', '<CMD>AerialToggle<CR>' },
+    neotree = {
+        { 'n', '<leader>t', '<CMD>Neotree toggle<CR>' },
+        { 'n', '<leader>s', '<CMD>Neotree toggle document_symbols<CR>' },
     },
     trouble = {
         { 'n', '<leader>d', function() require("trouble").toggle() end },

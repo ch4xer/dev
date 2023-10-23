@@ -12,13 +12,18 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave'
     command = 'silent !fcitx5-remote -c'
 })
 
-vim.g.width_open_tree = 150
+vim.g.width_open_tree = 120
 
 local toggle_tree = function()
-    local open_tree_without_focus = function()
-        require('nvim-tree.api').tree.toggle(false, true)
+    local get_filetree_window = function()
+        for _, windowId in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+            local buffer = vim.api.nvim_win_get_buf(windowId)
+            if vim.api.nvim_buf_get_option(buffer, 'ft') == 'neo-tree' then
+                return windowId
+            end
+        end
+        return nil
     end
-    -- decide whether to open nvim-tree according to the window size
     if vim.api.nvim_list_uis()[1].width > vim.g.width_open_tree then
         local is_valid_window = function(winnr)
             local bufnr = vim.api.nvim_win_get_buf(winnr)
@@ -29,15 +34,17 @@ local toggle_tree = function()
         if #vim.tbl_filter(is_valid_window, vim.api.nvim_list_wins()) > 1 then
             return
         end
-        if require('nvim-tree.view').is_visible() then
+        if get_filetree_window() ~= nil then
             return
+        end
+        local open_tree_without_focus = function()
+            vim.cmd("Neotree show")
         end
         vim.fn.timer_start(1, open_tree_without_focus)
     else
-        if require('nvim-tree.view').is_visible() then
-            require('nvim-tree.api').tree.close()
+        if get_filetree_window() ~= nil then
+            vim.cmd("Neotree action=close")
         end
-        require('aerial').close_all()
     end
 end
 
