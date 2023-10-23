@@ -31,18 +31,17 @@ M = function()
             width = 25,
             auto_expand_width = false,
             mappings = {
-                ["<2-LeftMouse>"] = "open",
-                ["<cr>"] = "open",
+                ["t"] = {
+                    "toggle_node",
+                    nowait = false,
+                },
                 ["<esc>"] = "cancel",
-                ["P"] = { "toggle_preview", config = { use_float = true } },
                 ["s"] = "open_split",
                 ["v"] = "open_vsplit",
-                ["t"] = "open_tabnew",
                 ["r"] = "rename",
                 ["q"] = "close_window",
                 ["J"] = "prev_source",
                 ["K"] = "next_source",
-                ["?"] = "show_help",
             }
         },
         filesystem = {
@@ -53,13 +52,14 @@ M = function()
             hijack_netrw_behavior = "open_default",
             window = {
                 mappings = {
+                    ["<2-LeftMouse>"] = "open",
+                    ["<cr>"] = "open",
                     ["a"] = "add",
-                    ["<bs>"] = "navigate_up",
                     ["y"] = "copy_to_clipboard",
+                    ["<bs>"] = "navigate_up",
                     ["."] = "set_root",
                     ["x"] = "cut_to_clipboard",
                     ["p"] = "paste_from_clipboard",
-                    ["H"] = "toggle_hidden",
                     ["d"] = "delete",
                     ["/"] = "fuzzy_finder",
                 },
@@ -85,6 +85,12 @@ M = function()
                         }
                     }
                 },
+            },
+            window = {
+                mappings = {
+                    ["<cr>"] = "jump_to_symbol",
+                    ["<2-LeftMouse>"] = "jump_to_symbol",
+                }
             }
         }
     })

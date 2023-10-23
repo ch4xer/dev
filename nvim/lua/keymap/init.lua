@@ -51,7 +51,6 @@ local Base = {
         { 'n', '<2-LeftMouse>', 'za', { desc = 'toggle fold' } },
     },
     modeSwitch = {
-        { 'n', '<RightMouse>', 'a' },
         { 'i', '<ESC>',        '<C-O><CMD>stopinsert<CR>' },
     }
 }
