@@ -14,6 +14,9 @@ M = function()
         auto_clean_after_session_restore = true,
         close_if_last_window = true,
         default_component_configs = {
+            indent = {
+                padding = 0,
+            },
             file_size = {
                 enabled = false,
             },
@@ -25,7 +28,7 @@ M = function()
             },
         },
         window = {
-            width = 30,
+            width = 25,
             auto_expand_width = false,
             mappings = {
                 ["<2-LeftMouse>"] = "open",
