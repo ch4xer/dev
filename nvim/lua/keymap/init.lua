@@ -45,7 +45,6 @@ local Base = {
         { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
         { 'n',          'g=',        custom.format },
-        -- { 'c',          'sw',        custom.sudo_write,   { desc = 'save file as root' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -72,6 +71,9 @@ local Plugin = {
     },
     aerial = {
         { 'n', '<leader>s', '<CMD>AerialToggle<CR>' },
+    },
+    trouble = {
+        { 'n', '<leader>d', function() require("trouble").toggle() end },
     },
     comment = {
         { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },
@@ -142,7 +144,6 @@ end
 
 keyMapper(Base)
 keyMapper(Plugin)
-
 
 vim.api.nvim_create_user_command(
     "ViewImage",
