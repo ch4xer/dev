@@ -66,8 +66,8 @@ local Plugin = {
     },
     --- some keymaps are in filetree.lua
     neotree = {
-        { 'n', '<leader>t', '<CMD>Neotree toggle<CR>' },
-        { 'n', '<leader>s', '<CMD>Neotree toggle document_symbols<CR>' },
+        { 'n', '<leader>t', '<CMD>Neotree action=show source=filesystem toggle<CR>' },
+        { 'n', '<leader>s', '<CMD>Neotree action=show source=document_symbols toggle <CR>' },
     },
     trouble = {
         { 'n', '<leader>d', function() require("trouble").toggle() end },
