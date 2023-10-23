@@ -47,6 +47,6 @@ return {
     },
     {
         "folke/trouble.nvim",
-        config = true,
+        config = config.trouble,
     }
 }

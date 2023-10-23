@@ -33,7 +33,7 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 0
 
 -- indent setting
 vim.opt.autoindent = true

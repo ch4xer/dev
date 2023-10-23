@@ -20,5 +20,6 @@ config.surround = require('plugins.config.surround')
 config.osc52 = require('plugins.config.osc52')
 config.latex = require('plugins.config.latex')
 config.noice = require('plugins.config.noice')
+config.trouble = require('plugins.config.trouble')
 
 return config
