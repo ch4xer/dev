@@ -63,14 +63,12 @@ local Plugin = {
     telescope = {
         { 'n', 'sw', function() require('telescope.builtin').live_grep() end },
         { 'n', 'sf', function() require('telescope.builtin').find_files() end },
+        { 'n', 'sd', function() require('telescope.builtin').diagnostics() end },
     },
-    --- some keymaps are in filetree.lua
+    --- some keymaps are in neotree.lua
     neotree = {
         { 'n', '<leader>t', '<CMD>Neotree action=show source=filesystem toggle<CR>' },
         { 'n', '<leader>s', '<CMD>Neotree action=show source=document_symbols toggle <CR>' },
-    },
-    trouble = {
-        { 'n', '<leader>d', function() require("trouble").toggle() end },
     },
     comment = {
         { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },

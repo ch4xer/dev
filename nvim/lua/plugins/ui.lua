@@ -44,8 +44,4 @@ return {
         config = true,
         event = 'BufRead'
     },
-    {
-        "folke/trouble.nvim",
-        config = config.trouble,
-    }
 }
