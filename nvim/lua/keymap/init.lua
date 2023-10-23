@@ -61,9 +61,9 @@ local Plugin = {
         { 'n', 'q', function() custom.DeleteWinOrBuf() end },
     },
     telescope = {
-        { 'n', 'sw', function() require('telescope.builtin').live_grep() end },
-        { 'n', 'sf', function() require('telescope.builtin').find_files() end },
-        { 'n', 'sd', function() require('telescope.builtin').diagnostics() end },
+        { 'n', 'sw', function() require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({})) end },
+        { 'n', 'sf', function() require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({})) end },
+        { 'n', 'sd', function() require('telescope.builtin').diagnostics(require('telescope.themes').get_dropdown({})) end },
     },
     --- some keymaps are in neotree.lua
     neotree = {
