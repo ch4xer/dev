@@ -6,7 +6,7 @@ return {
             'WhoIsSethDaniel/mason-tool-installer.nvim',
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
-            'jose-elias-alvarez/null-ls.nvim',
+            'nvimtools/none-ls.nvim',
         },
         build = ":MasonUpdate",
         config = config.lsp,
