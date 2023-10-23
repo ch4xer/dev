@@ -31,17 +31,11 @@ M = function()
             width = 25,
             auto_expand_width = false,
             mappings = {
-                ["t"] = {
-                    "toggle_node",
-                    nowait = false,
-                },
+                ["<bs>"] = "next_source",
                 ["<esc>"] = "cancel",
-                ["s"] = "open_split",
-                ["v"] = "open_vsplit",
                 ["r"] = "rename",
                 ["q"] = "close_window",
-                ["J"] = "prev_source",
-                ["K"] = "next_source",
+                ["/"] = "fuzzy_finder",
             }
         },
         filesystem = {
@@ -56,12 +50,12 @@ M = function()
                     ["<cr>"] = "open",
                     ["a"] = "add",
                     ["y"] = "copy_to_clipboard",
-                    ["<bs>"] = "navigate_up",
+                    ["s"] = "open_split",
+                    ["v"] = "open_vsplit",
                     ["."] = "set_root",
                     ["x"] = "cut_to_clipboard",
                     ["p"] = "paste_from_clipboard",
                     ["d"] = "delete",
-                    ["/"] = "fuzzy_finder",
                 },
                 fuzzy_finder_mappings = {
                     ["<down>"] = "move_cursor_down",
