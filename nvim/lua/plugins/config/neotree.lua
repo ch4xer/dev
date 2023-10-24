@@ -12,7 +12,6 @@ M = function()
             },
         },
         selection_chars = 'ABCDEFGHI',
-        hint = 'floating-big-letter',
         highlights = {
             statusline = {
                 unfocused = {
@@ -73,8 +72,8 @@ M = function()
                     ["<cr>"] = "open_with_window_picker",
                     ["a"] = "add",
                     ["y"] = "copy_to_clipboard",
-                    ["s"] = "open_split",
-                    ["v"] = "open_vsplit",
+                    ["s"] = "split_with_window_picker",
+                    ["v"] = "vsplit_with_window_picker",
                     ["."] = "set_root",
                     ["x"] = "cut_to_clipboard",
                     ["p"] = "paste_from_clipboard",
