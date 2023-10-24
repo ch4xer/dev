@@ -81,6 +81,7 @@ M = function()
             },
         },
         document_symbols = {
+            follow_cursor = true,
             renderers = {
                 root = {
                     { "icon", default = "C" },
