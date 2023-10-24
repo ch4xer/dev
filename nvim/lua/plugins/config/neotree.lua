@@ -1,4 +1,26 @@
 M = function()
+    require 'window-picker'.setup({
+        filter_rules = {
+            include_current_win = false,
+            autoselect_one = true,
+            -- filter using buffer options
+            bo = {
+                -- if the file type is one of following, the window will be ignored
+                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                -- if the buffer type is one of following, the window will be ignored
+                buftype = { 'terminal', "quickfix" },
+            },
+        },
+        highlights = {
+            statusline = {
+                unfocused = {
+                    fg = '#ededed',
+                    bg = '#7aa2f7',
+                    bold = true,
+                },
+            },
+        }
+    })
     require("neo-tree").setup({
         sources = {
             'filesystem',
@@ -35,7 +57,6 @@ M = function()
                 ["<esc>"] = "cancel",
                 ["r"] = "rename",
                 ["q"] = "close_window",
-                ["/"] = "fuzzy_finder",
             }
         },
         filesystem = {
@@ -46,8 +67,8 @@ M = function()
             hijack_netrw_behavior = "open_default",
             window = {
                 mappings = {
-                    ["<2-LeftMouse>"] = "open",
-                    ["<cr>"] = "open",
+                    ["<2-LeftMouse>"] = "open_with_window_picker",
+                    ["<cr>"] = "open_with_window_picker",
                     ["a"] = "add",
                     ["y"] = "copy_to_clipboard",
                     ["s"] = "open_split",
@@ -56,10 +77,6 @@ M = function()
                     ["x"] = "cut_to_clipboard",
                     ["p"] = "paste_from_clipboard",
                     ["d"] = "delete",
-                },
-                fuzzy_finder_mappings = {
-                    ["<down>"] = "move_cursor_down",
-                    ["<up>"] = "move_cursor_up",
                 },
             },
         },
