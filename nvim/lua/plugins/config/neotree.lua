@@ -12,6 +12,7 @@ M = function()
             },
         },
         selection_chars = 'ABCDEFGHI',
+        hint = 'floating-big-letter',
         highlights = {
             statusline = {
                 unfocused = {
