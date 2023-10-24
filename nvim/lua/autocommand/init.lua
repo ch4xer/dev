@@ -38,7 +38,8 @@ local toggle_tree = function()
             return
         end
         local open_tree_without_focus = function()
-            vim.cmd("Neotree show")
+            vim.cmd("Neotree show last")
+            vim.cmd.wincmd("=")
         end
         vim.fn.timer_start(1, open_tree_without_focus)
     else
