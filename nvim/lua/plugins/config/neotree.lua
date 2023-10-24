@@ -11,6 +11,7 @@ M = function()
                 buftype = { 'terminal', "quickfix" },
             },
         },
+        selection_chars = 'ABCDEFGHI',
         highlights = {
             statusline = {
                 unfocused = {
