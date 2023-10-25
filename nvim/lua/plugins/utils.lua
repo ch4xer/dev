@@ -52,5 +52,5 @@ return {
         },
         ft = { "tex", "markdown" },
         config = config.latex
-    }
+    },
 }

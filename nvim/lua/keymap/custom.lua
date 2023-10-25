@@ -117,6 +117,35 @@ M.view_net_image = function()
     end
 end
 
+M.toggle_tree = function()
+    local t = function()
+        vim.cmd("Neotree show last toggle")
+        vim.cmd.wincmd("=")
+    end
+    vim.fn.timer_start(1, t)
+end
+
+M.live_grep = function()
+    local t = function()
+        require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))
+    end
+    vim.fn.timer_start(1, t)
+end
+
+M.find_files = function()
+    local t = function()
+        require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))
+    end
+    vim.fn.timer_start(1, t)
+end
+
+M.diagnostics = function()
+    local t = function()
+        require('telescope.builtin').diagnostics(require('telescope.themes').get_dropdown({}))
+    end
+    vim.fn.timer_start(1, t)
+end
+
 M.accept_copilot_suggestion = function()
     if require("copilot.suggestion").is_visible() then
         require("copilot.suggestion").accept()

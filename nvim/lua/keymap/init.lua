@@ -60,13 +60,13 @@ local Plugin = {
         { 'n', 'q', function() custom.DeleteWinOrBuf() end },
     },
     telescope = {
-        { 'n', 'sw', function() require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({})) end },
-        { 'n', 'sf', function() require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({})) end },
-        { 'n', 'sd', function() require('telescope.builtin').diagnostics(require('telescope.themes').get_dropdown({})) end },
+        { 'n', 'sw', custom.live_grep },
+        { 'n', 'sf', custom.find_files },
+        { 'n', 'sd', custom.diagnostics },
     },
     --- some keymaps are in neotree.lua
     neotree = {
-        { 'n', '<leader>t', '<CMD>Neotree show last toggle<CR>' },
+        { 'n', '<leader>t', custom.toggle_tree },
     },
     comment = {
         { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },

@@ -67,8 +67,8 @@ vim.g.mapleader = ' '
 vim.opt.viewoptions = 'folds,cursor,curdir'
 
 -- setting for nvim-tree
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- environment setup
 vim.env.GOPATH = "/home/ch4ser/Projects/go"
