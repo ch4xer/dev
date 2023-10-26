@@ -26,3 +26,6 @@ setopt EXTENDED_HISTORY
 export WORDCHARS=''
 export LS_COLORS='no=00;37:fi=00:di=00;34:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
 
+if [ -f "$HOME/.config/openai.sh" ]; then
+    source $HOME/.config/openai.sh
+fi
