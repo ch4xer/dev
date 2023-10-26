@@ -107,9 +107,6 @@ local Plugin = {
         { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
         { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
     },
-    -- use <C-k> to copy code from answer
-    -- <C-y> to copy answer
-    chatgpt = {{'n', 'gp', '<CMD>ChatGPT<CR>'}},
     --- keymaps of nvim-cmp are in cmp.lua
     cmp = {},
     --- keymaps of dashboard are in dashboard.lua
