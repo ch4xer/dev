@@ -30,14 +30,21 @@ M = function()
         name = "lldb",
     }
 
+    -- dap.adapters.delve = {
+    --     type = 'server',
+    --     port = '${port}',
+    --     executable = {
+    --         command = 'dlv',
+    --         args = { 'dap', '-l', '127.0.0.1:${port}' },
+    --     }
+    -- }
+
     dap.adapters.delve = {
-        type = 'server',
-        port = '${port}',
-        executable = {
-            command = 'dlv',
-            args = { 'dap', '-l', '127.0.0.1:${port}' },
-        }
+        type = "server",
+        host = "127.0.0.1",
+        port = 65510,
     }
+
 
     dap.adapters.python = function(cb, config)
         if config.request == 'attach' then

@@ -92,11 +92,11 @@ local Plugin = {
         { 'n', 'go', function() require('neogen').generate() end },
     },
     dap = {
-        { 'n', '<F1>', function() require "dap".toggle_breakpoint() end },
-        { 'n', '<F2>', function() require "dap".continue() end },
-        { 'n', '<F3>', function() require "dap".step_into() end },
-        { 'n', '<F4>', function() require "dap".step_over() end },
-        { 'n', '<F5>', function() require "dapui".toggle() end },
+        { 'n', '<F1>', function() require("dap").toggle_breakpoint() end },
+        { 'n', '<F2>', function() require("dap").continue() end },
+        { 'n', '<F3>', function() require("dap").step_into() end },
+        { 'n', '<F4>', function() require("dap").step_over() end },
+        { 'n', '<F5>', function() require("dapui").toggle() end },
     },
     copilot = {
         { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
