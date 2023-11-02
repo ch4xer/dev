@@ -44,13 +44,5 @@ return {
     {
         'tpope/vim-obsession',
         lazy = false,
-    },
-    {
-        'jbyuki/nabla.nvim',
-        dependencies = {
-            'lervag/vimtex',
-        },
-        ft = { "tex", "markdown" },
-        config = config.latex
     }
 }
