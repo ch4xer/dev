@@ -1,7 +1,9 @@
 M = function ()
     require('tabout').setup {
-        tabkey = '<Tab>',
-        backwards_tabkey = '<S-Tab>',
+        -- tabkey = '<Tab>',
+        -- backwards_tabkey = '<S-Tab>',
+        tabkey = '',
+        backwards_tabkey = '',
         act_as_tab = true,
         act_as_shift_tab = false,
         enable_backwards = true,
