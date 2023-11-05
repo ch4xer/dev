@@ -93,13 +93,6 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     nested = true,
 })
 
-vim.api.nvim_create_autocmd({ "CursorHold" }, {
-    pattern = { "*.tex" },
-    callback = function()
-        require("nabla").popup()
-    end
-})
-
 -- prevent telescope from opening in insert mode
 vim.api.nvim_create_autocmd("WinLeave", {
   callback = function()

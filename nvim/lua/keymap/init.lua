@@ -51,7 +51,7 @@ local Base = {
         { 'n', '<2-LeftMouse>', 'za', { desc = 'toggle fold' } },
     },
     modeSwitch = {
-        { 'i', '<ESC>',        '<C-O><CMD>stopinsert<CR>' },
+        { 'i', '<ESC>', '<C-O><CMD>stopinsert<CR>' },
     }
 }
 
@@ -108,8 +108,8 @@ local Plugin = {
         { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
     },
     tabout = {
-        {'i', '<Tab>', '<Plug>(TaboutMulti)'},
-        {'i', '<S-Tab>', '<Plug>(TaboutBackMulti)'},
+        { 'i', '<Tab>',   '<Plug>(TaboutMulti)' },
+        { 'i', '<S-Tab>', '<Plug>(TaboutBackMulti)' },
     },
     --- keymaps of nvim-cmp are in cmp.lua
     cmp = {},
