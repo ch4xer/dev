@@ -44,5 +44,10 @@ return {
     {
         'tpope/vim-obsession',
         lazy = false,
+    },
+    {
+        'lervag/vimtex',
+        lazy = false,
+        config = config.latex,
     }
 }
