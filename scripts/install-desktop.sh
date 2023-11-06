@@ -74,22 +74,22 @@ else
   sudo fc-cache -fv
 fi
 
-# LXGW_FILE2=/usr/share/fonts/TTF/LXGWWenKai-Regular.ttf
-# LXGW_FILE1=/usr/share/fonts/LXGWWenKai/LXGWWenKai-Regular.ttf
-# LXGW='https://github.com/lxgw/LxgwWenKai/releases/download/v1.300/lxgw-wenkai-v1.300.zip'
-# if [ -f "$LXGW_FILE1" ]; then
-#   echo "LXGW Wen Kai already exists, skip..."
-# elif [ -f "$LXGW_FILE2" ]; then
-#   echo "LXGW Wen Kai already exists, skip..."
-# else
-#   echo "Downloading LXGW Wen Kai..."
-#   rm LXGW.zip
-#   wget $LXGW -O LXGW.zip
-#   sudo mkdir -p /usr/share/fonts/LXGWWenKai
-#   sudo unzip -q LXGW.zip -d /usr/share/fonts/LXGWWenKai
-#   rm LXGW.zip
-#   sudo fc-cache -fv
-# fi
+LXGW_FILE2=/usr/share/fonts/TTF/LXGWWenKai-Regular.ttf
+LXGW_FILE1=/usr/share/fonts/LXGWWenKai/LXGWWenKai-Regular.ttf
+LXGW='https://github.com/lxgw/LxgwWenKai/releases/download/v1.300/lxgw-wenkai-v1.300.zip'
+if [ -f "$LXGW_FILE1" ]; then
+  echo "LXGW Wen Kai already exists, skip..."
+elif [ -f "$LXGW_FILE2" ]; then
+  echo "LXGW Wen Kai already exists, skip..."
+else
+  echo "Downloading LXGW Wen Kai..."
+  rm LXGW.zip
+  wget $LXGW -O LXGW.zip
+  sudo mkdir -p /usr/share/fonts/LXGWWenKai
+  sudo unzip -q LXGW.zip -d /usr/share/fonts/LXGWWenKai
+  rm LXGW.zip
+  sudo fc-cache -fv
+fi
 
 VictorMono_FILE1=/usr/share/fonts/TTF/VictorMonoNerdFont-Regular.ttf
 VictorMono_FILE2=/usr/share/fonts/VictorMono/VictorMonoNerdFont-Regular.ttf
