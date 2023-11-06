@@ -28,6 +28,12 @@ zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
 ```
 
+## Uninstall
+
+```bash
+./scripts/uninstall.sh
+```
+
 ## Noteable Info
 
 ### Kitty
