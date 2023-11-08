@@ -38,7 +38,7 @@ zsh/zshrc -> ~/.zshrc
 
 ### Kitty
 
-1. use Firacode Nerd Font and Victor Mono Nerd Font
+1. use Firacode Nerd Font and Victor Mono Nerd Font, use LXGW WenKai for Chinese characters.
 
 ### Tmux
 
