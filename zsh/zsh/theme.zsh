@@ -42,7 +42,7 @@
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     # kubecontext             # current kubernetes context (https://kubernetes.io/)
     # ip                    # ip address and bandwidth usage for a specified network interface
-    vim_shell               # vim shell indicator (:sh)
+    # vim_shell               # vim shell indicator (:sh)
     # command_execution_time  # duration of the last command
     # =========================[ Line #2 ]=========================
     newline                 # \n
