@@ -1,7 +1,4 @@
 M = function()
-    local function ts_disable(_, bufnr)
-        return vim.api.nvim_buf_line_count(bufnr) > 2000
-    end
     require('nvim-treesitter.configs').setup {
         ensure_installed = {
             "c",
@@ -28,7 +25,7 @@ M = function()
         highlight = {
             enable = true,
             disable = function(lang, bufnr)
-                return lang == "" or ts_disable(lang, bufnr)
+                return lang == "" or vim.api.nvim_buf_line_count(bufnr) > 2000
             end,
             -- additional_vim_regex_highlighting = {"yaml"},
         },
