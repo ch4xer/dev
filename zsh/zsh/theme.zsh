@@ -37,7 +37,7 @@
     dir                     # current directory
     # todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     vcs                     # git status
-    status                  # exit code of the last command
+    # status                  # exit code of the last command
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     # kubecontext             # current kubernetes context (https://kubernetes.io/)
