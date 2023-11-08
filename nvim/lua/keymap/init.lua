@@ -67,6 +67,7 @@ local Plugin = {
     --- some keymaps are in neotree.lua
     neotree = {
         { 'n', '<leader>t', custom.toggle_tree },
+        { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
     comment = {
         { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },
