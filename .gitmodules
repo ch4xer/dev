@@ -73,3 +73,9 @@
 [submodule "zsh/zsh/plugins/zsh-autocomplete"]
 	path = zsh/zsh/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
+[submodule "tmux/plugins/tmux-yank"]
+	path = tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "ranger/plugins/ranger_devicons"]
+	path = ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons.git
