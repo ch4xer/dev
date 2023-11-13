@@ -58,3 +58,7 @@ zsh/zshrc -> ~/.zshrc
 ### Other
 
 Highly recommended to install key, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
+
+## Trouble Shooting
+
+If you have installed xsel and use my configuration under wayland, you may encounter clipboard problem, in which neovim use `xsel` as clipboard provider instead of `wl-copy`, to solve the problem, just uninstall `xsel`.
