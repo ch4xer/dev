@@ -49,5 +49,9 @@ return {
         'lervag/vimtex',
         lazy = false,
         config = config.latex,
+    },
+    {
+        'lambdalisue/suda.vim',
+        lazy = false,
     }
 }
