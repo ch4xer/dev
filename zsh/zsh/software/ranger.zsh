@@ -1,2 +1,1 @@
-export TERMCMD=alacritty
-# export TERMCMD=kitty
+export TERMCMD=kitty
