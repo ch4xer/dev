@@ -40,7 +40,9 @@ local Base = {
         { 'v', '<Backspace>', 'c' },
     },
     cmd = {
-        { { 'n', 'v' }, ';',         ':',                 { nowait = true } },
+        { { 'n', 'v' }, ';',         ':',                 { nowait = true, desc = 'command mode' } },
+        { { 'n', 'v' }, ']',        ';',                 { nowait = true, desc = 'repeat search right' } },
+        { { 'n', 'v' }, '[',        ',',                 { nowait = true, desc = 'repeat search left' } },
         { 'n',          '<leader>q', 'q1',                { desc = 'record macro' } },
         { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
@@ -60,9 +62,9 @@ local Plugin = {
         { 'n', 'q', function() custom.DeleteWinOrBuf() end },
     },
     telescope = {
-        { 'n', 'sw', custom.live_grep },
-        { 'n', 'sf', custom.find_files },
-        { 'n', 'sd', custom.diagnostics },
+        { 'n', '<leader>w', custom.live_grep },
+        { 'n', '<leader>f', custom.find_files },
+        { 'n', '<leader>d', custom.diagnostics },
     },
     --- some keymaps are in neotree.lua
     neotree = {
@@ -76,18 +78,18 @@ local Plugin = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     flash = {
-        { { "n", "x", "o" }, 'f', function() require("flash").jump() end },
-        { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
+        { { "n", "x", "o" }, 's', function() require("flash").jump() end },
+        { { "n", "x", "o" }, 'S', function() require("flash").treesitter() end }
     },
     lspsaga = {
-        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',                { silent = true } },
-        { 'n',          'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
-        { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
-        { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
-        { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
-        { 'n',          'gr',    '<CMD>Lspsaga finder<CR>', },
-        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
-        { { 't' },      '<ESC>', function() vim.api.nvim_win_close(0, true) end },
+        { 'n',          'ga',        '<CMD>Lspsaga code_action<CR>',                { silent = true } },
+        { 'n',          'ge',        '<CMD>Lspsaga show_line_diagnostics<CR>' },
+        { 'n',          'gh',        '<CMD>Lspsaga hover_doc<CR>' },
+        { 'n',          'gn',        '<CMD>Lspsaga rename<CR>' },
+        { 'n',          'gd',        '<CMD>Lspsaga peek_definition<CR>' },
+        { 'n',          'gr',        '<CMD>Lspsaga finder<CR>', },
+        { { 'n', 't' }, '<leader>s', '<CMD>Lspsaga term_toggle<CR>' },
+        { { 't' },      '<ESC>',     function() vim.api.nvim_win_close(0, true) end },
     },
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end },
