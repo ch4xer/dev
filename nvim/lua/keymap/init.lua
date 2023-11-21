@@ -3,32 +3,24 @@ local custom = require('keymap.custom')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
-        { 'n',          'j',       "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true } },
-        { 'n',          'k',       "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true } },
-        { { 'n', 'v' }, 'L',       '$' },
-        { { 'n', 'v' }, 'H',       '^' },
+        { 'n',          'j',          "v:count == 0 ? 'gj' : 'j'",                   { expr = true, silent = true } },
+        { 'n',          'k',          "v:count == 0 ? 'gk' : 'k'",                   { expr = true, silent = true } },
+        { { 'n', 'v' }, 'L',          '$' },
+        { { 'n', 'v' }, 'H',          '^' },
 
         -- tab switch, dont modify <Tab>, which will affect <C-i>
-        { 'n',          'J',       '<CMD>bprevious!<CR>' },
-        { 'n',          'K',       '<CMD>bnext!<CR>' },
+        { 'n',          'J',          '<CMD>bprevious!<CR>' },
+        { 'n',          'K',          '<CMD>bnext!<CR>' },
 
         -- move window
-        { 'n',          '<C-S-h>', '<C-w>H' },
-        { 'n',          '<C-S-j>', '<C-w>J' },
-        { 'n',          '<C-S-k>', '<C-w>K' },
-        { 'n',          '<C-S-l>', '<C-w>L' },
+        { 'n',          '<C-S-h>',    '<C-w>H' },
+        { 'n',          '<C-S-j>',    '<C-w>J' },
+        { 'n',          '<C-S-k>',    '<C-w>K' },
+        { 'n',          '<C-S-l>',    '<C-w>L' },
 
         -- page scroll
-        { { 'n', 'v' }, '<PageUp>', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',
-            {
-                desc =
-                'scroll 1/2 size of page'
-            } },
-        { { 'n', 'v' }, '<PageDown>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>',
-            {
-                desc =
-                'scroll 1/2 size of page'
-            } },
+        { { 'n', 'v' }, '<PageUp>',   math.floor(vim.fn.winheight(0) / 2) .. '<C-u>' },
+        { { 'n', 'v' }, '<PageDown>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>' },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
@@ -40,7 +32,9 @@ local Base = {
         { 'v', '<Backspace>', 'c' },
     },
     cmd = {
-        { { 'n', 'v' }, ';',         ':',                 { nowait = true, desc = 'command mode' } },
+        { { 'n', 'v' }, ';',         ':',                 { nowait = true } },
+        { { 'n', 'v' }, ']',         '*',                 { nowait = true } },
+        { { 'n', 'v' }, '[',         '#',                 { nowait = true } },
         { 'n',          '<leader>q', 'q1',                { desc = 'record macro' } },
         { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
         { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
@@ -69,25 +63,15 @@ local Plugin = {
         { 'n', '<leader>t', custom.toggle_tree },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
-    comment = {
-        { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },
-        { 'v', '<C-/>', '<Plug>(comment_toggle_linewise_visual)' },
-        { 'n', '<C-_>', '<Plug>(comment_toggle_linewise_current)' },
-        { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
-    },
-    flash = {
-        { { "n", "x", "o" }, 'f', function() require("flash").jump() end },
-        { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
-    },
     lspsaga = {
-        { 'n',          'ga',        '<CMD>Lspsaga code_action<CR>',                { silent = true } },
-        { 'n',          'ge',        '<CMD>Lspsaga show_line_diagnostics<CR>' },
-        { 'n',          'gh',        '<CMD>Lspsaga hover_doc<CR>' },
-        { 'n',          'gn',        '<CMD>Lspsaga rename<CR>' },
-        { 'n',          'gd',        '<CMD>Lspsaga peek_definition<CR>' },
-        { 'n',          'gr',        '<CMD>Lspsaga finder<CR>', },
-        { { 'n', 't' }, 'ss', '<CMD>Lspsaga term_toggle<CR>' },
-        { { 't' },      '<ESC>',     function() vim.api.nvim_win_close(0, true) end },
+        { { 'n', 't' }, 'ss',  '<CMD>Lspsaga term_toggle<CR>' },
+        { 't',        '<ESC>', function() vim.api.nvim_win_close(0, true) end },
+        { 'n',        'ga',    '<CMD>Lspsaga code_action<CR>',                { silent = true } },
+        { 'n',        'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
+        { 'n',        'gh',    '<CMD>Lspsaga hover_doc<CR>' },
+        { 'n',        'gn',    '<CMD>Lspsaga rename<CR>' },
+        { 'n',        'gd',    '<CMD>Lspsaga peek_definition<CR>' },
+        { 'n',        'gr',    '<CMD>Lspsaga finder<CR>', },
     },
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end },
@@ -98,6 +82,16 @@ local Plugin = {
         { 'n', '<F3>', function() require("dap").step_into() end },
         { 'n', '<F4>', function() require("dap").step_over() end },
         { 'n', '<F5>', function() require("dapui").toggle() end },
+    },
+    comment = {
+        { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },
+        { 'v', '<C-/>', '<Plug>(comment_toggle_linewise_visual)' },
+        { 'n', '<C-_>', '<Plug>(comment_toggle_linewise_current)' },
+        { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
+    },
+    flash = {
+        { { "n", "x", "o" }, 'f', function() require("flash").jump() end },
+        { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
     },
     copilot = {
         { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
