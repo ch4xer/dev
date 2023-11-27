@@ -37,11 +37,10 @@ M = function()
             lualine_b = {
                 -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
                 { 'mode', icons_enabled = true, fmt = function(str) return str:sub(1, 3) end },
-                -- 'branch',
-                'diff',
+                'branch',
                 'diagnostics'
             },
-            lualine_c = { 'filename' },
+            lualine_c = { 'filename', 'diff' },
             lualine_x = {
                 {
                     require("noice").api.statusline.mode.get,
