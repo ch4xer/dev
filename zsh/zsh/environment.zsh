@@ -1,4 +1,5 @@
 export TERM=xterm-256color
+export TERM_PROGRAM=tmux
 export COLORTERM=truecolor
 export CGO_ENABLED=1
 export GOPATH=$HOME/Projects/go
