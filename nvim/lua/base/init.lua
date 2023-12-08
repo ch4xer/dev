@@ -21,22 +21,7 @@ vim.opt.ignorecase = true
 vim.opt.cursorline = true
 
 -- clipboard
--- vim.opt.clipboard = 'unnamedplus'
-
--- maybe remove these lines when kitty have new release
-vim.opt.clipboard = 'unnamed'
-vim.g.clipboard = {
-    name = "kittyClipboard",
-    copy = {
-        ["*"] = {"kitty","+kitten", "clipboard"},
-        ["+"] = {"kitty","+kitten", "clipboard"},
-    },
-    paste = {
-        ["*"] = { "kitty","+kitten", "clipboard", "--get-clipboard" },
-        ["+"] = { "kitty","+kitten", "clipboard", "--get-clipboard" },
-    },
-    cache_enabled = 1,
-}
+vim.opt.clipboard = 'unnamedplus'
 
 -- folder view setting
 -- vim.opt.foldmethod = 'expr'
