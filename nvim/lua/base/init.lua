@@ -54,7 +54,7 @@ vim.opt.expandtab = true
 
 -- show numbers
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- save space for window
 vim.opt.signcolumn = 'yes'
