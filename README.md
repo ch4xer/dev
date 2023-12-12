@@ -42,7 +42,7 @@ zsh/zshrc -> ~/.zshrc
 
 ### Tmux
 
-1. all keybindings does not require prefix key, which can still be used though.
+1. all keybindings does not require prefix key, which can still be used though
 2. Ctrl-hjkl and Ctrl-q can be used both in tmux and vim for window operations.
 3. use tmux-continuum and resurrect to restore workspaces.
 4. If you get dizzy remembering shortcuts, just use your mouse.
@@ -53,7 +53,7 @@ zsh/zshrc -> ~/.zshrc
 
 ### Neovim
 
-1. most keybindings are in `nvim/lua/keymap/init.lua`, some keybindings are in `cmp.lua`, `filetree.lua`, `dashboard.lua`, `lspsaga.lua`, `treesitter.lua` and `surround.lua`
+1. most keybindings are in `nvim/lua/keymap/init.lua`, others are in plugins' file.
 
 ### Other
 
