@@ -1,8 +1,17 @@
-local config = require('plugins.config.init')
 return {
     {
         'numToStr/Comment.nvim',
-        config = config.comment,
+        config = function()
+            require('Comment').setup({
+                mappings = {
+                    ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+                    basic = false,
+                    ---Extra mapping; `gco`, `gcO`, `gcA`
+                    extra = false,
+                },
+            }
+            )
+        end,
         event = { 'VeryLazy' }
     },
     {
@@ -15,7 +24,28 @@ return {
         dependencies = {
             'nvim-treesitter/nvim-treesitter'
         },
-        config = config.tabout,
+        config = function()
+            require('tabout').setup {
+                -- tabkey = '<Tab>',
+                -- backwards_tabkey = '<S-Tab>',
+                tabkey = '',
+                backwards_tabkey = '',
+                act_as_tab = true,
+                act_as_shift_tab = false,
+                enable_backwards = true,
+                completion = false,
+                tabouts = {
+                    { open = "'", close = "'" },
+                    { open = '"', close = '"' },
+                    { open = '`', close = '`' },
+                    { open = '(', close = ')' },
+                    { open = '[', close = ']' },
+                    { open = '{', close = '}' }
+                },
+                ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+                exclude = {} -- tabout will ignore these filetypes
+            }
+        end,
         event = { 'InsertEnter' }
     },
     {
@@ -25,39 +55,43 @@ return {
         event = { 'VeryLazy' }
     },
     {
-        'lukas-reineke/indent-blankline.nvim',
-        main = "ibl",
-        event = 'VeryLazy',
-        config = config.indentline,
-    },
-    {
-        'RRethy/vim-illuminate',
-        event = 'VeryLazy',
-    },
-    {
-        'nvim-treesitter/nvim-treesitter',
-        dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-        build = ':TSUpdate',
-        event = 'VeryLazy',
-        config = config.treesitter
-    },
-    {
         'danymat/neogen',
         config = true,
     },
     {
-        'kevinhwang91/nvim-ufo',
-        config = config.fold,
-        dependencies = { 'kevinhwang91/promise-async' },
-        event = 'VeryLazy'
-    },
-    {
-        "folke/flash.nvim",
-        config = config.flash,
-    },
-    {
         "kylechui/nvim-surround",
-        config = config.surround,
+        config = function()
+            require("nvim-surround").setup {
+                keymaps = {
+                    visual = "s",
+                    delete = "ds",
+                    change = "cs",
+                },
+                surrounds = {
+                    ["("] = {
+                        add = { "(", ")" },
+                        find = function()
+                            return M.get_selection({ motion = "a(" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                    ["{"] = {
+                        add = { "{", "}" },
+                        find = function()
+                            return M.get_selection({ motion = "a{" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                    ["["] = {
+                        add = { "[", "]" },
+                        find = function()
+                            return M.get_selection({ motion = "a[" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                }
+            }
+        end,
         event = "VeryLazy",
     },
 }

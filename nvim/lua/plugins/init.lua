@@ -16,10 +16,17 @@ local ui = require('plugins.ui')
 local utils = require('plugins.utils')
 local lsp = require('plugins.lsp')
 local edit = require('plugins.edit')
+local git = require('plugins.git')
+local cmp = require('plugins.cmp')
+local dap = require('plugins.dap')
+local dashboard = require('plugins.dashboard')
+local neotree = require('plugins.neotree')
+local telescope = require('plugins.telescope')
+local treesitter = require('plugins.treesitter')
 
-local concatenateTables = function (...)
+local concatenateTables = function(...)
     local result = {}
-    for _, tableToConcatenate in ipairs{...} do
+    for _, tableToConcatenate in ipairs { ... } do
         for i = 1, #tableToConcatenate do
             result[#result + 1] = tableToConcatenate[i]
         end
@@ -27,7 +34,19 @@ local concatenateTables = function (...)
     return result
 end
 
-local plugins = concatenateTables(ui, utils, lsp, edit)
+local plugins = concatenateTables(
+    ui,
+    utils,
+    lsp,
+    edit,
+    git,
+    cmp,
+    dap,
+    dashboard,
+    neotree,
+    telescope,
+    treesitter
+)
 
 require("lazy").setup(
     plugins,
