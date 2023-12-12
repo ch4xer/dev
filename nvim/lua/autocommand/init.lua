@@ -87,20 +87,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end
 })
 
-vim.api.nvim_create_autocmd({ "InsertEnter" }, {
-    pattern = { "*" },
-    callback = function()
-        vim.opt.relativenumber = false
-    end,
-})
-
-vim.api.nvim_create_autocmd({ "InsertLeave" }, {
-    pattern = { "*" },
-    callback = function()
-        vim.opt.relativenumber = true
-    end,
-})
-
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     pattern = { "*" },
     command = "silent! wall",
