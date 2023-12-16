@@ -1,5 +1,6 @@
 local vim = vim
 local custom = require('keymap.custom')
+local clipboard = require('keymap.clipboard')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
@@ -64,14 +65,14 @@ local Plugin = {
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
     lspsaga = {
-        { { 'n', 't' }, 'ss',  '<CMD>Lspsaga term_toggle<CR>' },
-        { 't',        '<ESC>', function() vim.api.nvim_win_close(0, true) end },
-        { 'n',        'ga',    '<CMD>Lspsaga code_action<CR>',                { silent = true } },
-        { 'n',        'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
-        { 'n',        'gh',    '<CMD>Lspsaga hover_doc<CR>' },
-        { 'n',        'gn',    '<CMD>Lspsaga rename<CR>' },
-        { 'n',        'gd',    '<CMD>Lspsaga peek_definition<CR>' },
-        { 'n',        'gr',    '<CMD>Lspsaga finder<CR>', },
+        { { 'n', 't' }, 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
+        { 't',          '<ESC>', function() vim.api.nvim_win_close(0, true) end },
+        { 'n',          'ga',    '<CMD>Lspsaga code_action<CR>',                { silent = true } },
+        { 'n',          'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
+        { 'n',          'gh',    '<CMD>Lspsaga hover_doc<CR>' },
+        { 'n',          'gn',    '<CMD>Lspsaga rename<CR>' },
+        { 'n',          'gd',    '<CMD>Lspsaga peek_definition<CR>' },
+        { 'n',          'gr',    '<CMD>Lspsaga finder<CR>', },
     },
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end },
@@ -95,6 +96,10 @@ local Plugin = {
     },
     copilot = {
         { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
+    },
+    markdown = {
+        { 'n', '<leader>p', '<CMD>MarkdownPreviewToggle<CR>' },
+        { 'n', 'P',         function() clipboard.paste_as_link() end },
     },
     tmux = {
         { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
