@@ -70,21 +70,6 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
     end
 })
 
--- inlay hint support
-vim.api.nvim_create_autocmd("LspAttach", {
-    pattern = { "*.go", "*.rs", ".py" },
-    callback = function(args)
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        if client.name == "copilot" or client.name == "null-ls" then
-            return
-        end
-        if vim.lsp.inlay_hint ~= nil and vim.bo.ft ~= "TelescopePrompt" then
-            vim.cmd.highlight('default link LspInlayHint Comment')
-            vim.lsp.inlay_hint(0, true)
-        end
-    end,
-})
-
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank()
