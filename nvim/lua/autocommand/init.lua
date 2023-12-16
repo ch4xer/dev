@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave'
 vim.g.width_open_tree = 120
 
 local toggle_tree = function(if_resize)
-    -- if switch to a valid buffer, do not change tree status
+    -- if there is more valid buffer, do not change tree status except if_resize is true
     if if_resize == false then
         if #vim.tbl_filter(vim.api.nvim_buf_is_valid, vim.api.nvim_list_bufs()) > 1 then
             return
