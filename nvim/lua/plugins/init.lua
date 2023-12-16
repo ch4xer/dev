@@ -23,6 +23,7 @@ local dashboard = require('plugins.dashboard')
 local neotree = require('plugins.neotree')
 local telescope = require('plugins.telescope')
 local treesitter = require('plugins.treesitter')
+local note = require('plugins.note')
 
 local concatenateTables = function(...)
     local result = {}
@@ -39,6 +40,7 @@ local plugins = concatenateTables(
     utils,
     lsp,
     edit,
+    note,
     git,
     cmp,
     dap,
