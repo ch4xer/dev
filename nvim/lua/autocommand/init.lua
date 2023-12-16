@@ -13,14 +13,9 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave'
 })
 
 vim.g.width_open_tree = 120
+vim.g.bufenter_check = false
 
-local toggle_tree = function(if_resize)
-    -- if there is more valid buffer, do not change tree status except if_resize is true
-    if if_resize == false then
-        if #vim.tbl_filter(vim.api.nvim_buf_is_valid, vim.api.nvim_list_bufs()) > 1 then
-            return
-        end
-    end
+local toggle_tree = function()
     local get_filetree_window = function()
         for _, windowId in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
             local buffer = vim.api.nvim_win_get_buf(windowId)
@@ -58,7 +53,11 @@ end
 vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
     pattern = { "*.*" },
     callback = function()
-        toggle_tree(false)
+        -- only execute at the first time entering buffer
+        if vim.g.bufenter_check == false then
+            toggle_tree()
+            vim.g.bufenter_check = true
+        end
     end
 })
 
@@ -67,7 +66,7 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
     callback = function()
         -- keep the size of every window, very usful!
         vim.cmd.wincmd('=')
-        toggle_tree(true)
+        toggle_tree()
     end
 })
 
