@@ -98,8 +98,8 @@ local Plugin = {
         { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
     },
     markdown = {
-        { 'n', '<leader>p', '<CMD>MarkdownPreviewToggle<CR>' },
-        { 'n', 'P',         function() clipboard.paste_as_link() end },
+        { 'n', '<leader>p', custom.preview_note },
+        { 'n', 'P',         clipboard.paste_as_link },
     },
     tmux = {
         { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },

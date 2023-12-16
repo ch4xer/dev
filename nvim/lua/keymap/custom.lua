@@ -104,4 +104,12 @@ M.accept_copilot_suggestion = function()
     end
 end
 
+M.preview_note = function ()
+    if vim.bo.filetype == 'markdown' then
+        vim.cmd('MarkdownPreviewToggle')
+    else
+        vim.cmd('VimtexCompile')
+    end
+end
+
 return M
