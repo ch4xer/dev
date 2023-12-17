@@ -9,7 +9,7 @@ This repo contains my configuration of kitty, tmux, ranger, zsh and neovim.
 ## Install
 
 ```bash
-git clone https://github.com/ch3n9w/dev
+git clone --recurse-submodules https://github.com/ch3n9w/dev
 cd dev
 # if you want to install in desktop environment
 ./scripts/install-desktop.sh
