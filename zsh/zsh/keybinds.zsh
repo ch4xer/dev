@@ -1,5 +1,7 @@
 
 # keybindings must be provided after plugin source
+# disable vim mode
+bindkey -e
 bindkey '^R' filemanager
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
