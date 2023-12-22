@@ -84,5 +84,10 @@ man() {
     man "$@"
 }
 
+empty() {
+# empty widget for ESC keybinding
+}
+
 zle -N filemanager
+zle -N empty
 
