@@ -13,11 +13,12 @@ return {
                     functions = {},
                     variables = {},
                     sidebars = "transparent",
-                    floats = "dark",
+                    floats = "transparent",
                 },
 
                 on_colors = function(colors)
                     colors.border = "#565f89"
+                    colors.bg_statusline = colors.none
                 end,
             })
             vim.cmd("colorscheme tokyonight")
