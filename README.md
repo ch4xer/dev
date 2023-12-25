@@ -49,8 +49,8 @@ zsh/zshrc -> ~/.zshrc
 
 ### Zsh
 
-1. customize powerlevel10k for a more compact look, check zsh/zsh/theme.sh
-2. settings about software are in zsh/zsh/plugins, you can add here by yourself
+1. customize powerlevel10k for a more compact look, check `zsh/zsh/theme.zsh`
+2. settings about software are in `zsh/zsh/plugins`, you can add here by yourself
 3. disable vim mode for consistence.
 
 ### Neovim
