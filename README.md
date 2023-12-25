@@ -9,12 +9,12 @@ This repo contains my configuration of kitty, tmux, ranger, zsh and neovim.
 ## Install
 
 ```bash
-git clone --recurse-submodules https://github.com/ch3n9w/dev
+git clone https://github.com/ch3n9w/dev
 cd dev
-# if you want to install in desktop environment
-./scripts/install-desktop.sh
-# if you only want to install in server environment
-./scripts/install-server.sh
+# install dependency software and install configuration
+./scripts/install-software.sh
+# install fonts
+./scripts/install-font.sh
 ```
 
 Alternatively (if you dont want to install all of them), you can copy the configuration directory you like to XDG_CONFIG_HOME, for example:
@@ -42,14 +42,16 @@ zsh/zshrc -> ~/.zshrc
 
 ### Tmux
 
-1. all keybindings does not require prefix key, which can still be used though
+1. commonly used keys are set as shortcuts that dont require prefix key, which can still be used though
 2. Ctrl-hjkl and Ctrl-q can be used both in tmux and vim for window operations.
 3. use tmux-continuum and resurrect to restore workspaces.
 4. If you get dizzy remembering shortcuts, just use your mouse.
 
 ### Zsh
 
-1. it contains some useless alias for Personal use, you can delete them.
+1. customize powerlevel10k for a more compact look, check zsh/zsh/theme.sh
+2. settings about software are in zsh/zsh/plugins, you can add here by yourself
+3. disable vim mode for consistence.
 
 ### Neovim
 
