@@ -15,11 +15,12 @@ if [ -f /etc/debian_version ]; then
   sudo ln -s /usr/bin/batcat /usr/bin/bat
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
   sudo ln -s /usr/bin/python3 /usr/bin/python
+  echo "Please install glow manually if you want, check https://github.com/charmbracelet/glow?tab=readme-ov-file#installation."
 fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim
+  sudo pacman -S --needed --noconfirm tmux zsh ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow
 fi
 
 git submodule init
