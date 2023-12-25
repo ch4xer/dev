@@ -57,7 +57,13 @@ zsh/zshrc -> ~/.zshrc
 
 1. most keybindings are in `nvim/lua/keymap/init.lua`, others are in plugins' file.
 
-### Other
+### Ranger
+
+1. integrate with fzf, you can press `f` to fuzzy search files and directories from pwd, press `F` to fuzzy search files and directories from home directory.
+2. add custom commands so you can copy and paste items across different ranger instances!
+3. all other modes' keybindings are discarded, only normal mode is used for simplicity.
+
+## Other
 
 Highly recommended to install key, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
 
