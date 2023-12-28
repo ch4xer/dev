@@ -81,8 +81,8 @@ return {
     },
     {
         "folke/flash.nvim",
+        event = 'VeryLazy',
         config = function()
-            -- vim.cmd("highlight FlashLabel guifg=#ffffff guibg=#24283b gui=bold")
             require('flash').setup {
                 labels = "abcdefghijklmnopqrstuvwxyz0123456789",
                 label = {
@@ -97,7 +97,7 @@ return {
                     -- options used when flash is activated through
                     -- a regular search with `/` or `?`
                     search = {
-                        enabled = false, -- enable flash for search
+                        enabled = true, -- enable flash for search
                     },
                     -- options used when flash is activated through
                     -- `f`, `F`, `t`, `T`, `;` and `,` motions

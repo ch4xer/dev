@@ -91,8 +91,9 @@ local Plugin = {
         { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)' },
     },
     flash = {
-        { { "n", "x", "o" }, 'f', function() require("flash").jump() end },
-        { { "n", "x", "o" }, 'F', function() require("flash").treesitter() end }
+        -- press '/' to search and jump
+        -- press '?' to search and select in treesitter
+        { { "n", "x", "o" }, '?', function() require("flash").treesitter() end }
     },
     copilot = {
         { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
