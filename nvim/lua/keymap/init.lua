@@ -20,8 +20,8 @@ local Base = {
         { 'n',          '<C-S-l>',    '<C-w>L' },
 
         -- page scroll
-        { { 'n', 'v' }, '<PageUp>',   math.floor(vim.fn.winheight(0) / 2) .. '<C-u>' },
-        { { 'n', 'v' }, '<PageDown>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>' },
+        { { 'n', 'v' }, 'F',   math.floor(vim.fn.winheight(0) / 2) .. '<C-u>' },
+        { { 'n', 'v' }, 'f', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>' },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },

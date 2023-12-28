@@ -56,6 +56,7 @@ zsh/zshrc -> ~/.zshrc
 ### Neovim
 
 1. most keybindings are in `nvim/lua/keymap/init.lua`, others are in plugins' file.
+2. disgard f/F t/T inline search and only use global search enhanced by flash.nvim.
 
 ### Ranger
 
