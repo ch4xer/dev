@@ -35,7 +35,7 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        event = 'BufRead',
+        lazy = false,
         config = function()
             require('bufferline').setup {
                 options = {
@@ -65,7 +65,7 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        event = 'BufRead',
+        lazy = false,
         config = function()
             require('lualine').setup {
                 options = {
