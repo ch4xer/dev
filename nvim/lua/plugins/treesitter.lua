@@ -17,6 +17,7 @@ return {
                     "java",
                     "json",
                     "python",
+                    "dockerfile",
                     "php",
                     "cpp",
                     "bash",
