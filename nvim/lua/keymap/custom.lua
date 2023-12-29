@@ -69,7 +69,8 @@ end
 
 M.toggle_tree = function()
     local t = function()
-        vim.cmd("Neotree show last toggle")
+        -- vim.cmd("Neotree show last toggle")
+        vim.cmd("Neotree focus last toggle")
         vim.cmd.wincmd("=")
     end
     vim.fn.timer_start(1, t)
