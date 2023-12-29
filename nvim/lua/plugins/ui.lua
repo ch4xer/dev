@@ -19,9 +19,15 @@ return {
                 on_colors = function(colors)
                     colors.border = "#565f89"
                     colors.bg_statusline = colors.none
+                    -- useless, may caused by bug
+                    -- colors.Folded = {
+                    --     bg = colors.none,
+                    --     fg = colors.none,
+                    -- }
                 end,
             })
             vim.cmd("colorscheme tokyonight")
+            vim.api.nvim_set_hl(0, "Folded", { guifg = nil, guibg = nil })
         end,
     },
     {
