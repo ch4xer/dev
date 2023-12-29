@@ -29,7 +29,7 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        lazy = false,
+        event = 'BufRead',
         config = function()
             require('bufferline').setup {
                 options = {
@@ -59,7 +59,7 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        lazy = false,
+        event = 'BufRead',
         config = function()
             require('lualine').setup {
                 options = {
@@ -100,10 +100,6 @@ return {
                 },
             }
         end
-    },
-    {
-        'onsails/lspkind-nvim',
-        event = 'VeryLazy'
     },
     {
         "folke/noice.nvim",

@@ -16,7 +16,6 @@ return {
                 trim       = true, -- Trim surrounding whitespaces before copy
             }
         end,
-        lazy = false,
     },
     {
         'tpope/vim-obsession',
@@ -28,12 +27,12 @@ return {
     },
     {
         'RRethy/vim-illuminate',
-        event = 'VeryLazy',
+        event = 'BufRead',
     },
     {
         'lukas-reineke/indent-blankline.nvim',
         main = "ibl",
-        event = 'VeryLazy',
+        event = 'BufRead',
         config = function()
             require("ibl").setup {}
         end,
@@ -77,11 +76,11 @@ return {
             vim.api.nvim_set_hl(0, "Folded", { guifg = nil, guibg = nil })
         end,
         dependencies = { 'kevinhwang91/promise-async' },
-        event = 'VeryLazy'
+        event = "BufRead",
     },
     {
         "folke/flash.nvim",
-        event = 'VeryLazy',
+        event = 'BufRead',
         config = function()
             require('flash').setup {
                 labels = "abcdefghijklmnopqrstuvwxyz0123456789",

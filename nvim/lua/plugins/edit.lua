@@ -12,7 +12,7 @@ return {
             }
             )
         end,
-        event = { 'VeryLazy' }
+        event = { 'BufRead' }
     },
     {
         'windwp/nvim-autopairs',
@@ -52,7 +52,7 @@ return {
         'folke/todo-comments.nvim',
         dependencies = { "nvim-lua/plenary.nvim" },
         config = true,
-        event = { 'VeryLazy' }
+        event = { 'BufRead' }
     },
     {
         'danymat/neogen',
@@ -92,6 +92,6 @@ return {
                 }
             }
         end,
-        event = "VeryLazy",
+        event = "BufRead",
     },
 }
