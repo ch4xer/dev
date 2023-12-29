@@ -43,7 +43,7 @@ return {
         config = function()
             local handler = function(virtText, lnum, endLnum, width, truncate)
                 local newVirtText = {}
-                local suffix = ('  %d '):format(endLnum - lnum)
+                local suffix = (' 󰁂 %d '):format(endLnum - lnum)
                 local sufWidth = vim.fn.strdisplaywidth(suffix)
                 local targetWidth = width - sufWidth
                 local curWidth = 0
@@ -68,13 +68,13 @@ return {
                 table.insert(newVirtText, { suffix, 'MoreMsg' })
                 return newVirtText
             end
-
             require('ufo').setup({
                 provider_selector = function()
                     return { 'treesitter', 'indent' }
                 end,
                 fold_virt_text_handler = handler
             })
+            vim.api.nvim_set_hl(0, "Folded", { guifg = nil, guibg = nil })
         end,
         dependencies = { 'kevinhwang91/promise-async' },
         event = 'VeryLazy'
