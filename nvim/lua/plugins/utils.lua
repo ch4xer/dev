@@ -125,7 +125,7 @@ return {
                 },
                 jump = {
                     pos = "end",
-                    autojump = true,
+                    autojump = false,
                 }
             }
         end,
