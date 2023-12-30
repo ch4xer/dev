@@ -108,15 +108,11 @@ local Plugin = {
         { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
         { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
     },
-    tabout = {
-        { 'i', '<Tab>',   '<Plug>(TaboutMulti)' },
-        { 'i', '<S-Tab>', '<Plug>(TaboutBackMulti)' },
-    },
     --- keymaps of nvim-cmp are in cmp.lua
     cmp = {},
     --- keymaps of dashboard are in dashboard.lua
     dashboard = {},
-    --- keymaps of vim-surround are in surround.lua
+    --- keymaps of vim-surround are in edit.lua
     surround = {},
 }
 
