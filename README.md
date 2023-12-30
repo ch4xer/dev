@@ -70,4 +70,5 @@ Highly recommended to install key, it's a great tool to remap capslock to esc an
 
 ## Trouble Shooting
 
-If you have installed xsel and use my configuration under wayland, you may encounter clipboard problem, in which neovim use `xsel` as clipboard provider instead of `wl-copy`, to solve the problem, just uninstall `xsel`.
+1. if you occur `xdg-open: unexpected option '--'` in ranger, create `~/.mime.types` and add filetype in it (eg. `text/x-rust rs` for rust, `text/x-lua lua` for lua)
+2. If you have installed xsel and use my configuration under wayland, you may encounter clipboard problem, in which neovim use `xsel` as clipboard provider instead of `wl-copy`, to solve the problem, just uninstall `xsel`.
