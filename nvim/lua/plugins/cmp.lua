@@ -6,6 +6,7 @@ return {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
             'onsails/lspkind-nvim',
+            'zbirenbaum/copilot.lua',
         },
         event = "InsertEnter",
         config = function()
@@ -56,31 +57,27 @@ return {
                     format = lspkind.cmp_format({
                         mode = 'symbol_text',
                         maxwidth = 50,
+                        ellipsis_char = '...',
                     }),
                 },
                 mapping = {
-                    ['<CR>'] = cmp.mapping.confirm({
-                        behavior = cmp.ConfirmBehavior.Insert,
-                        select = true,
-                    }),
+                    ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
                     ['<Tab>'] = cmp.mapping(function(fallback)
-                        if luasnip.expand_or_locally_jumpable() then
+                        if cmp.visible() then
+                            cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
+                        elseif require("copilot.suggestion").is_visible() then
+                            require("copilot.suggestion").accept()
+                        elseif luasnip.expand_or_locally_jumpable() then
                             luasnip.expand_or_jump()
                         else
                             fallback()
                         end
                     end, { 'i', 's' }),
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
-                        if luasnip.jumpable(-1) then
-                            luasnip.jump(-1)
-                        else
-                            fallback()
-                        end
-                    end, { 'i', 's' }),
-                    ['<Left>'] = cmp.mapping.close(),
-                    ['<Down>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
-                            cmp.select_next_item()
+                            cmp.close()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
                         else
                             fallback()
                         end
@@ -91,6 +88,25 @@ return {
                         else
                             fallback()
                         end
+                    end, { 'i', 's' }),
+                    ['<Down>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        else
+                            fallback()
+                        end
+                    end, { 'i', 's' }),
+                    ['<Left>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.close()
+                        end
+                        fallback()
+                    end, { 'i', 's' }),
+                    ['<Right>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.close()
+                        end
+                        fallback()
                     end, { 'i', 's' }),
                 },
                 matching = {
@@ -105,7 +121,7 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                 }, {
-                    { name = 'buffer' },
+                    -- { name = 'buffer' },
                 }),
                 sorting = {
                     priority_weight = 1.0,
@@ -124,6 +140,7 @@ return {
                     },
                 }
             })
+
 
             -- auto insert `(` after select function or method item
             local cmp_autopairs = require('nvim-autopairs.completion.cmp')

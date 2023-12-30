@@ -95,9 +95,6 @@ local Plugin = {
         -- press '?' to search and select in treesitter
         { { "n", "x", "o" }, '?', function() require("flash").treesitter() end }
     },
-    copilot = {
-        { 'i', '<Right>', function() custom.accept_copilot_suggestion() end }
-    },
     markdown = {
         { 'n', '<leader>p', custom.preview_note },
         { 'n', 'P',         clipboard.paste_as_link },

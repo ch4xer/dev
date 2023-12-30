@@ -97,14 +97,6 @@ M.diagnostics = function()
     vim.fn.timer_start(1, t)
 end
 
-M.accept_copilot_suggestion = function()
-    if require("copilot.suggestion").is_visible() then
-        require("copilot.suggestion").accept()
-    else
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, false, true), "n", false)
-    end
-end
-
 M.preview_note = function ()
     if vim.bo.filetype == 'markdown' then
         vim.cmd('MarkdownPreviewToggle')
