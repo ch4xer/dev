@@ -40,12 +40,8 @@ return {
             require('bufferline').setup {
                 options = {
                     close_command = "Bdelete %d",
-                    buffer_close_icon = '',
-                    modified_icon = '●',
-                    close_icon = '',
                     indicator = {
-                        icon = '>',
-                        style = 'underline',
+                        style = 'none',
                     },
                     name_formatter = function(buf)
                         if buf.name:match('%.*') then
@@ -55,7 +51,7 @@ return {
                     diagnostics = "nvim_lsp",
                     offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "center" } },
                     enforce_regular_tabs = true,
-                    tab_size = 14,
+                    tab_size = 12,
                 }
             }
         end,
