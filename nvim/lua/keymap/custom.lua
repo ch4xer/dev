@@ -2,6 +2,7 @@ local vim = vim
 
 M = {}
 
+
 M.DeleteWinOrBuf = function()
     local pre_exit = ''
     local exit = 'quit'
