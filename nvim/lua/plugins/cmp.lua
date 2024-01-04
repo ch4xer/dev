@@ -3,6 +3,7 @@ return {
         'hrsh7th/nvim-cmp',
         dependencies = {
             'L3MON4D3/LuaSnip',
+            'rafamadriz/friendly-snippets',
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
             'onsails/lspkind-nvim',
@@ -32,6 +33,7 @@ return {
                 region_check_events = { "CursorMoved", "CursorHold", "InsertEnter", "CursorMovedI" },
                 history = true,
             })
+            require("luasnip.loaders.from_vscode").lazy_load()
             require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
             require('neogen').setup({ snippet_engine = "luasnip" })
 
@@ -76,6 +78,8 @@ return {
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.close()
+                        elseif require("copilot.suggestion").is_visible() then
+                            require("copilot.suggestion").dismiss()
                         elseif luasnip.jumpable(-1) then
                             luasnip.jump(-1)
                         else
