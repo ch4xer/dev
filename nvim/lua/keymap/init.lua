@@ -4,24 +4,24 @@ local clipboard = require('keymap.clipboard')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
-        { 'n', 'j',       "v:count == 0 ? 'gj' : 'j'",                   { expr = true, silent = true } },
-        { 'n', 'k',       "v:count == 0 ? 'gk' : 'k'",                   { expr = true, silent = true } },
-        { 'n', 'L',       '$' },
-        { 'n', 'H',       '^' },
+        { 'n',        'j',       "v:count == 0 ? 'gj' : 'j'",                   { expr = true, silent = true } },
+        { 'n',        'k',       "v:count == 0 ? 'gk' : 'k'",                   { expr = true, silent = true } },
+        { { 'n', 'v' }, 'L',     '$' },
+        { { 'n', 'v' }, 'H',     '^' },
 
         -- tab switch, dont modify <Tab>, which will affect <C-i>
-        { 'n', 'J',       '<CMD>bprevious!<CR>' },
-        { 'n', 'K',       '<CMD>bnext!<CR>' },
+        { 'n',        'J',       '<CMD>bprevious!<CR>' },
+        { 'n',        'K',       '<CMD>bnext!<CR>' },
 
         -- move window
-        { 'n', '<C-S-h>', '<C-w>H' },
-        { 'n', '<C-S-j>', '<C-w>J' },
-        { 'n', '<C-S-k>', '<C-w>K' },
-        { 'n', '<C-S-l>', '<C-w>L' },
+        { 'n',        '<C-S-h>', '<C-w>H' },
+        { 'n',        '<C-S-j>', '<C-w>J' },
+        { 'n',        '<C-S-k>', '<C-w>K' },
+        { 'n',        '<C-S-l>', '<C-w>L' },
 
         -- page scroll
-        { 'n', 'F',       math.floor(vim.fn.winheight(0) / 2) .. '<C-u>' },
-        { 'n', 'f',       math.floor(vim.fn.winheight(0) / 2) .. '<C-d>' },
+        { 'n',        'F',       math.floor(vim.fn.winheight(0) / 2) .. '<C-u>' },
+        { 'n',        'f',       math.floor(vim.fn.winheight(0) / 2) .. '<C-d>' },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
