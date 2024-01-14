@@ -83,6 +83,7 @@ return {
                             ["<cr>"] = "open_with_window_picker",
                             ["<bs>"] = "navigate_up",
                             ["a"] = "add",
+                            ["h"] = "toggle_hidden",
                             ["y"] = "copy_to_clipboard",
                             ["s"] = "split_with_window_picker",
                             ["v"] = "vsplit_with_window_picker",
