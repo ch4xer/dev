@@ -76,6 +76,3 @@
 [submodule "ranger/plugins/ranger_devicons"]
 	path = ranger/plugins/ranger_devicons
 	url = https://github.com/alexanderjeurissen/ranger_devicons.git
-[submodule "tmux/plugins/tmux-pomodoro-plus"]
-	path = tmux/plugins/tmux-pomodoro-plus
-	url = https://github.com/olimorris/tmux-pomodoro-plus.git
