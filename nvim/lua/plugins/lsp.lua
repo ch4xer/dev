@@ -13,6 +13,7 @@ return {
                 ensure_installed = {
                     'bash-language-server',
                     'gopls',
+                    "clangd",
                     'delve',
                     'intelephense',
                     'lua-language-server',
@@ -68,6 +69,10 @@ return {
                         },
                     },
                 }
+            }
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+                cmd = { "clangd", "--fallback-style=llvm", "--offset-encoding=utf-16" },
             }
             local other_servers = { "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
             for _, server in ipairs(other_servers) do
