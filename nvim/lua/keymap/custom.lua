@@ -3,7 +3,7 @@ local vim = vim
 M = {}
 
 
-M.DeleteWinOrBuf = function()
+M.delete_win_or_buf = function()
     local pre_exit = ''
     local exit = 'quit'
     local current_bufnr = vim.api.nvim_win_get_buf(0)
@@ -42,6 +42,7 @@ M.DeleteWinOrBuf = function()
     -- dont block exit even failed to save
     pcall(vim.cmd, pre_exit)
     vim.cmd(exit)
+    vim.cmd.wincmd("=")
 end
 
 M.format = function()
@@ -49,7 +50,7 @@ M.format = function()
     vim.cmd('write')
 end
 
-M.WriteQuitAll = function()
+M.wq_all = function()
     vim.cmd('silent wa')
     vim.cmd('qa')
 end
@@ -75,6 +76,11 @@ M.toggle_tree = function()
         vim.cmd.wincmd("=")
     end
     vim.fn.timer_start(1, t)
+end
+
+M.quit_win = function ()
+    vim.api.nvim_win_close(0, true)
+    vim.cmd.wincmd("=")
 end
 
 M.live_grep = function()

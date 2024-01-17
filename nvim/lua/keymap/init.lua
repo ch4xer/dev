@@ -37,8 +37,8 @@ local Base = {
         { { 'n', 'v' }, ']',         '*',                 { nowait = true } },
         { { 'n', 'v' }, '[',         '#',                 { nowait = true } },
         { 'n',          '<leader>q', 'q1',                { desc = 'record macro' } },
-        { 'n',          '<C-q>',     '<CMD>q<CR>',        { desc = 'quit window' } },
-        { 'n',          'Q',         custom.WriteQuitAll, { desc = 'quit all' } },
+        { 'n',          '<C-q>',     custom.quit_win,        { desc = 'quit window' } },
+        { 'n',          'Q',         custom.wq_all, { desc = 'quit all' } },
         { 'n',          'g=',        custom.format },
     },
     fold = {
@@ -52,7 +52,7 @@ local Base = {
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', function() custom.DeleteWinOrBuf() end },
+        { 'n', 'q', function() custom.delete_win_or_buf() end },
     },
     telescope = {
         { 'n', 'sw', custom.live_grep },
