@@ -9,6 +9,9 @@ vim.opt.mouse = 'a'
 vim.opt.mousemodel = 'extend'
 vim.opt.shell = '/bin/zsh'
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 -- hidden conceal char
 -- vim.opt.conceallevel = 3
 
