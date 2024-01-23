@@ -45,21 +45,6 @@ return {
                     globalStoragePath = '/home/ch4ser/.config',
                 },
             }
-            lspconfig.gopls.setup {
-                capabilities = capabilities,
-                root_dir = lspconfig.util.root_pattern("go.mod"),
-                settings = {
-                    gopls = {
-                        experimentalPostfixCompletions = true,
-                        analyses = {
-                            unusedparams = true,
-                            shadow = true,
-                        },
-                        staticcheck = true,
-                        usePlaceholders = false,
-                    },
-                },
-            }
             lspconfig.rust_analyzer.setup {
                 capabilities = capabilities,
                 settings = {
@@ -74,7 +59,7 @@ return {
                 capabilities = capabilities,
                 cmd = { "clangd", "--fallback-style=llvm", "--offset-encoding=utf-16" },
             }
-            local other_servers = { "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
+            local other_servers = { "gopls", "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
@@ -120,6 +105,9 @@ return {
                     colors = {
                         normal_bg = "NONE",
                     }
+                },
+                lightbulb = {
+                    virtual_text = false
                 },
                 code_action = {
                     keys = {
