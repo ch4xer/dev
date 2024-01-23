@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This repo contains my configuration of kitty, tmux, ranger, zsh and neovim.
+This repo contains my configuration of kitty, tmux, lf, zsh and neovim.
 
 ## Install
 
@@ -23,7 +23,7 @@ Alternatively (if you dont want to install all of them), you can copy the config
 nvim -> ~/.config/nvim
 kitty -> ~/.config/kitty
 tmux -> ~/.config/tmux
-ranger -> ~/.config/ranger
+lf -> ~/.config/lf
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
 ```
@@ -59,11 +59,9 @@ zsh/zshrc -> ~/.zshrc
 2. disgard f/F t/T inline search and only use global search enhanced by flash.nvim.
 3. the completion behavior simulate vscode's, which is more intuitive:)
 
-### Ranger
+### lf
 
-1. integrate with fzf, you can press `f` to fuzzy search files and directories from pwd, press `F` to fuzzy search files and directories from home directory.
-2. add custom commands so you can copy and paste items across different ranger instances!
-3. all other modes' keybindings are discarded, only normal mode is used for simplicity.
+1. integrate with fzf, you can press `f` to fuzzy search files and directories from pwd
 
 ## Other
 
@@ -71,5 +69,4 @@ Highly recommended to install key, it's a great tool to remap capslock to esc an
 
 ## Trouble Shooting
 
-1. if you occur `xdg-open: unexpected option '--'` in ranger, create `~/.mime.types` and add filetype in it (eg. `text/x-rust rs` for rust, `text/x-lua lua` for lua)
-2. If you have installed xsel and use my configuration under wayland, you may encounter clipboard problem, in which neovim use `xsel` as clipboard provider instead of `wl-copy`, to solve the problem, just uninstall `xsel`.
+1. If you have installed xsel and use my configuration under wayland, you may encounter clipboard problem, in which neovim use `xsel` as clipboard provider instead of `wl-copy`, to solve the problem, just uninstall `xsel`.

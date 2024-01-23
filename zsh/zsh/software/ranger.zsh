@@ -1,1 +1,0 @@
-export TERMCMD=kitty

@@ -63,17 +63,19 @@ function fzf_rg () {
     rg -l "${selected_pattern}" | fzf 
 }
 
-
 filemanager() {
-    # avoid nested ranger instances
-    if [ -z "$RANGER_LEVEL" ]; then
-        ranger --choosedir=$HOME/.rangerdir < $TTY
-        LASTDIR=`cat $HOME/.rangerdir`
-        cd "$LASTDIR"
-        zoxide add "$LASTDIR"
-        redraw-prompt
-    else
-        exit
+    tmp="$(mktemp)"
+    /usr/bin/lf --last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+                zoxide add "$dir"
+                redraw-prompt
+            fi
+        fi
     fi
 }
 
@@ -90,4 +92,3 @@ empty() {
 
 zle -N filemanager
 zle -N empty
-

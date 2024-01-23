@@ -35,10 +35,3 @@ vim.keymap.set(
     '<leader><Space>',
     mark_item_done
 )
-
-
-vim.keymap.set(
-    'n',
-    '<2-LeftMouse>',
-    mark_item_done
-)
