@@ -53,7 +53,7 @@ cmd zip ${{
 }}
 
 cmd fzf_select ${{
-    res="$(fd --exclude={.wine,.git,.idea,.vscode,.sass-cache,node_modules,build,.local,.steam,.m2,.rangerdir,.ssh,.ghidra,.mozilla,.cache} --follow | fzf --height=100% --layout=reverse --preview='~/.config/lf/fzf-scope.sh {}')"
+    res="$(fd --exclude={.wine,.git,.idea,.vscode,.sass-cache,node_modules,build,.local,.steam,.m2,.rangerdir,.ssh,.ghidra,.mozilla,.cache} --follow | fzf --height=100% --layout=reverse --preview='~/.config/lf/fzf-scope.sh {} || tree -ahpCL 3 -I .git -I __pycache__')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
