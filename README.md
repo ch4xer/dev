@@ -62,6 +62,7 @@ zsh/zshrc -> ~/.zshrc
 ### lf
 
 1. integrate with fzf, you can press `f` to fuzzy search files and directories from pwd
+2. since lf use `rifle` to open file in my config, ranger is still needed.
 
 ## Other
 
