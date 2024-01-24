@@ -16,7 +16,22 @@ set cursoractivefmt "\033[7;1m"
 
 %mkdir -p ~/.trash
 
-cmd open $set -f; rifle -p 0 "$fx"
+cmd open &{{
+  filetype=$(file --mime-type -b $f)
+  fork_types=("image" "application/pdf")
+  for type in "${fork_types[@]}"; do
+    if [[ $filetype == $type* ]]; then
+      # 如果文件类型需要分叉进程，直接执行
+      exec rifle $fx 
+      break
+    else
+      # 其他文件类型，使用 'lf' 环境执行
+      lf -remote "send $id \$rifle \$fx"
+      break
+    fi
+  done
+}}
+
 cmd open-with ${{
     clear
     set -f
