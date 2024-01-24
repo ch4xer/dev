@@ -6,7 +6,11 @@ X=$4
 Y=$5
 
 preview() {
-    kitty +kitten icat --silent --stdin no --transfer-mode file --place "${PV_WIDTH}x${PV_HEIGHT}@${X}x${Y}" "$1" < /dev/null > /dev/tty
+  if [ -n "$TMUX" ]; then
+    file ${1}
+  else
+    kitty +kitten icat --stdin no --transfer-mode file --place "${PV_WIDTH}x${PV_HEIGHT}@${X}x${Y}" "${1}" < /dev/null > /dev/tty
+  fi
 }
 
 TEMPDIR=/tmp/
@@ -26,7 +30,7 @@ case "$(file --dereference --brief --mime-type -- "${FILE_PATH}")" in
   image/*)
     preview "$FILE_PATH"
     ;;
-  text/* | */xml | */json) 
+  text/* | */xml | */*json) 
     env COLORTERM=8bit bat --color=always --style="plain" -- "${FILE_PATH}" && return 5
     ;;
 esac
