@@ -4,6 +4,4 @@ if [ -n "$TMUX" ]; then
   return 1
 fi
 
-kitty +kitten icat --clear --stdin no --silent --transfer-mode file < /dev/null > /dev/tty && echo 123 > /home/ch4ser/success
-
-
+kitty +kitten icat --clear --stdin no --silent --transfer-mode file < /dev/null > /dev/tty 

@@ -42,7 +42,7 @@ cmd open-with ${{
 }}
 
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-cmd trash ${{
+cmd trash &{{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
@@ -55,7 +55,7 @@ cmd trash ${{
     fi
   done
 }}
-cmd delete ${{
+cmd delete &{{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
     file=${files%%;*}
