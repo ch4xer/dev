@@ -10,7 +10,7 @@ fi
 if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
   sudo apt update
-  sudo apt install -y tmux zsh lf kitty rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim zathura
+  sudo apt install -y tmux zsh lf ranger kitty rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim zathura
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   sudo ln -s /usr/bin/batcat /usr/bin/bat
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
@@ -20,7 +20,7 @@ fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
+  sudo pacman -S --needed --noconfirm tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
 fi
 
 git submodule init
