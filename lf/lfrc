@@ -6,7 +6,8 @@ set icons true
 set info size
 set dircounts
 set ratios 1:1
-set previewer ~/.config/lf/pv-wrapper.sh
+set previewer ~/.config/lf/lf_kitty_preview
+set cleaner ~/.config/lf/lf_kitty_clean
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
@@ -24,10 +25,32 @@ cmd open-with ${{
     rifle -p $method $fx
 }}
 
-map r open-with
 cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
-cmd delete %set -f; rm -rf $fx
-cmd trash %set -f; mv $fx ~/.trash
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+    rm -rf ~/.trash/"$(basename "$file")"
+    mv $file ~/.trash
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+cmd delete ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+    rm -rf $file
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
