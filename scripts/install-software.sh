@@ -33,24 +33,24 @@ if [ "$response" == "o" ]; then
     echo "Overwriting the configuration file..."
     yes | rm -r $BASEDIR/tmux
     yes | rm -r $BASEDIR/zsh
-    yes | rm -r $BASEDIR/ranger
+    yes | rm -r $BASEDIR/lf
     yes | rm -r $BASEDIR/nvim
     cp -r ./tmux $BASEDIR/
     cp -r ./zsh/zsh $BASEDIR/
     cp -r ./zsh/zshrc ~/.zshrc
-    cp -r ./ranger $BASEDIR/
+    cp -r ./lf $BASEDIR/
     cp -r ./nvim $BASEDIR/
 elif [ "$response" == "b" ]; then
     echo "Backup the configuration file..."
     mv $BASEDIR/tmux $BASEDIR/tmux_bak
     mv $BASEDIR/zsh $BASEDIR/zsh_bak
     mv ~/.zshrc ~/.zshrc_bak
-    mv $BASEDIR/ranger $BASEDIR/ranger_bak
+    mv $BASEDIR/lf $BASEDIR/lf_bak
     mv $BASEDIR/nvim $BASEDIR/nvim_bak
     cp -r ./tmux $BASEDIR/
     cp -r ./zsh/zsh $BASEDIR/
     cp -r ./zsh/zshrc ~/.zshrc
-    cp -r ./ranger $BASEDIR/
+    cp -r ./lf $BASEDIR/
     cp -r ./nvim $BASEDIR/
 else
     echo "Invalid response. Please enter 'o' or 'b'."
