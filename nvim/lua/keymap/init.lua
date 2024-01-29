@@ -77,6 +77,9 @@ local Plugin = {
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end },
     },
+    neotest = {
+        { 'n', 'tt', function() require('neotest').run.run() end },
+    },
     dap = {
         { 'n', '<F1>', function() require("dap").toggle_breakpoint() end },
         { 'n', '<F2>', function() require("dap").continue() end },

@@ -19,6 +19,7 @@ local edit = require('plugins.edit')
 local git = require('plugins.git')
 local cmp = require('plugins.cmp')
 local dap = require('plugins.dap')
+local test = require('plugins.test')
 local dashboard = require('plugins.dashboard')
 local neotree = require('plugins.neotree')
 local telescope = require('plugins.telescope')
@@ -44,6 +45,7 @@ local plugins = concatenateTables(
     git,
     cmp,
     dap,
+    test,
     dashboard,
     neotree,
     telescope,
