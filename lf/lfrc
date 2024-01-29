@@ -6,8 +6,8 @@ set icons true
 set info size
 set dircounts
 set ratios 1:1
-set previewer ~/.config/lf/lf_kitty_preview
-set cleaner ~/.config/lf/lf_kitty_clean
+set previewer ~/.config/lf/preview.sh
+# set cleaner ~/.config/lf/clean.sh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10

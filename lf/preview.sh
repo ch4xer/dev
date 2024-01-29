@@ -28,7 +28,7 @@ case "$(file --dereference --brief --mime-type -- "${FILE_PATH}")" in
       return 5 || return 1
     ;;
   image/*)
-    preview "$FILE_PATH"
+    file "$FILE_PATH" && return 5
     ;;
   text/* | */xml | */*json) 
     env COLORTERM=8bit bat --color=always --style="plain" -- "${FILE_PATH}" && return 5
