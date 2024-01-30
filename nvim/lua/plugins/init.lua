@@ -57,6 +57,9 @@ require("lazy").setup(
     {
         defaults = {
             lazy = true,
+        },
+        checker = {
+            enabled = true,
         }
     }
 )
