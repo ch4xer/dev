@@ -91,10 +91,3 @@ vim.api.nvim_create_autocmd("WinLeave", {
         end
     end,
 })
-
-vim.api.nvim_create_autocmd("User", {
-    pattern = "LazyCheck",
-    callback = function()
-        require('lazy').sync({ wait = false, show = false })
-    end,
-})
