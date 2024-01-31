@@ -107,7 +107,7 @@ end
 M.preview_note = function ()
     if vim.bo.filetype == 'markdown' then
         vim.cmd('MarkdownPreviewToggle')
-    else
+    elseif vim.bo.filetype == 'tex' then
         vim.cmd('VimtexCompile')
     end
 end
