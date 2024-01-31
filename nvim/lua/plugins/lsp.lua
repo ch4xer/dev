@@ -79,6 +79,7 @@ return {
         config = function()
             local null_ls = require("null-ls")
             null_ls.setup({
+                log_level = 'off',
                 sources = {
                     null_ls.builtins.formatting.prettier,
                     null_ls.builtins.formatting.black,
