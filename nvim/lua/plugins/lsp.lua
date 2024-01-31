@@ -37,14 +37,6 @@ return {
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-            lspconfig.intelephense.setup {
-                capabilities = capabilities,
-                init_options = {
-                    -- for intelephense
-                    licenceKey = '/home/ch4ser/.config/nvim/intelephense',
-                    globalStoragePath = '/home/ch4ser/.config',
-                },
-            }
             lspconfig.rust_analyzer.setup {
                 capabilities = capabilities,
                 settings = {
@@ -90,6 +82,8 @@ return {
                 sources = {
                     null_ls.builtins.formatting.prettier,
                     null_ls.builtins.formatting.black,
+                    null_ls.builtins.formatting.gofumpt,
+                    null_ls.builtins.diagnostics.golangci_lint,
                 },
             })
         end,
