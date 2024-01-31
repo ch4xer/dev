@@ -1,10 +1,5 @@
 export TERM=xterm-256color
-export TERM_PROGRAM=tmux
 export COLORTERM=truecolor
-export CGO_ENABLED=1
-export GOPATH=$HOME/Projects/go
-export GOPROXY=https://goproxy.cn
-export GO111MODULE=on
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin:/usr/lib:$GOPATH/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HOME/.local/bin
