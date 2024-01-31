@@ -7,7 +7,6 @@ return {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-buffer',
             'onsails/lspkind-nvim',
-            'zbirenbaum/copilot.lua',
         },
         event = "InsertEnter",
         config = function()
