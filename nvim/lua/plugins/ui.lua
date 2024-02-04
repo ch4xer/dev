@@ -63,17 +63,6 @@ return {
         },
         lazy = false,
         config = function()
-            local function mode_icon()
-                local mode = vim.api.nvim_get_mode().mode
-                print(mode)
-                if mode then
-                    return {
-                        n = '',
-                        i = '',
-                        v = '',
-                    }
-                end
-            end
             require('lualine').setup {
                 options = {
                     theme = 'tokyonight',
