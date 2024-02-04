@@ -66,7 +66,8 @@ zsh/zshrc -> ~/.zshrc
 
 ## Other
 
-Highly recommended to install key, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
+1. Highly recommended to install key, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
+2. Some software should be manually installed if you are using debian.
 
 ## Trouble Shooting
 
