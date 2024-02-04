@@ -63,6 +63,17 @@ return {
         },
         lazy = false,
         config = function()
+            local function mode_icon()
+                local mode = vim.api.nvim_get_mode().mode
+                print(mode)
+                if mode then
+                    return {
+                        n = '',
+                        i = '',
+                        v = '',
+                    }
+                end
+            end
             require('lualine').setup {
                 options = {
                     theme = 'tokyonight',
@@ -71,19 +82,27 @@ return {
                 },
                 sections = {
                     lualine_a = {
+                        -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
                         {
-                            'fileformat',
-                            symbols = {
-                                unix = '', -- e712
-                                -- unix = '', -- e712
-                                dos = '', -- e70f
-                                mac = '', -- e711
-                            }
+                            'mode',
+                            icons_enabled = true,
+                            fmt = function(str)
+                                local indicator = str:sub(1, 1)
+                                if indicator == 'N' then
+                                    return ''
+                                end
+                                if indicator == 'I' then
+                                    return ''
+                                end
+                                if indicator == 'V' then
+                                    return ''
+                                end
+                                return ''
+                                -- return str:sub(1, 3)
+                            end,
                         },
                     },
                     lualine_b = {
-                        -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
-                        { 'mode', icons_enabled = true, fmt = function(str) return str:sub(1, 3) end },
                         'branch',
                         'diagnostics'
                     },
@@ -94,7 +113,6 @@ return {
                             cond = require("noice").api.statusline.mode.has,
                             color = { fg = "#ff9e64" },
                         },
-                        'encoding',
                         'filetype'
                     },
                     lualine_y = { 'progress', 'location' },
