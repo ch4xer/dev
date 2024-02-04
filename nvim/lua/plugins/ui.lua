@@ -60,6 +60,7 @@ return {
         'hoob3rt/lualine.nvim',
         dependencies = {
             'folke/tokyonight.nvim',
+            'folke/noice.nvim',
         },
         lazy = false,
         config = function()
@@ -96,14 +97,7 @@ return {
                         'diagnostics'
                     },
                     lualine_c = { 'filename', 'diff' },
-                    lualine_x = {
-                        {
-                            require("noice").api.statusline.mode.get,
-                            cond = require("noice").api.statusline.mode.has,
-                            color = { fg = "#ff9e64" },
-                        },
-                        'filetype'
-                    },
+                    lualine_x = {},
                     lualine_y = { 'progress', 'location' },
                     lualine_z = {}
                 },
