@@ -56,7 +56,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- show numbers
-vim.opt.number = true
+vim.opt.number = false
 vim.opt.relativenumber = false
 
 -- save space for window
