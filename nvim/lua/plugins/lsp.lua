@@ -2,38 +2,12 @@ return {
     {
         'williamboman/mason.nvim',
         dependencies = {
-            'WhoIsSethDaniel/mason-tool-installer.nvim',
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
         },
         build = ":MasonUpdate",
         config = function()
             require('mason').setup()
-            require('mason-tool-installer').setup {
-                ensure_installed = {
-                    'bash-language-server',
-                    'gopls',
-                    "clangd",
-                    'delve',
-                    'intelephense',
-                    'lua-language-server',
-                    'marksman',
-                    'markdown-toc',
-                    'prettier',
-                    'pyright',
-                    'ruff-lsp',
-                    'black',
-                    'rust-analyzer',
-                    'yaml-language-server',
-                    'yamlfmt',
-                    'dockerfile-language-server'
-                },
-
-                auto_update = true,
-                run_on_start = true,
-                start_delay = 3000, -- 3 second delay
-                debounce_hours = 5, -- at least 5 hours between attempts to install/update
-            }
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

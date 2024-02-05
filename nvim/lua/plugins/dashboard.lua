@@ -1,7 +1,7 @@
 return {
     {
         'glepnir/dashboard-nvim',
-        event = 'VimEnter',
+        event = 'UIEnter',
         config = function()
             local version = vim.version()
             local header = {

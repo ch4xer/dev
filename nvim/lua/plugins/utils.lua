@@ -5,7 +5,7 @@ return {
     },
     {
         'famiu/bufdelete.nvim',
-        lazy = false
+        event = 'VeryLazy',
     },
     {
         'ojroques/nvim-osc52',
@@ -23,16 +23,16 @@ return {
     },
     {
         'lambdalisue/suda.vim',
-        lazy = false,
+        event = 'VeryLazy',
     },
     {
         'RRethy/vim-illuminate',
-        event = 'BufRead',
+        event = 'VeryLazy',
     },
     {
         'lukas-reineke/indent-blankline.nvim',
         main = "ibl",
-        event = 'BufRead',
+        event = 'VeryLazy',
         config = function()
             require("ibl").setup {}
         end,
@@ -75,11 +75,11 @@ return {
             })
         end,
         dependencies = { 'kevinhwang91/promise-async' },
-        event = "BufRead",
+        event = "UIEnter",
     },
     {
         "folke/flash.nvim",
-        event = 'BufRead',
+        event = 'VeryLazy',
         config = function()
             require('flash').setup {
                 labels = "abcdefghijklmnopqrstuvwxyz0123456789",
