@@ -1,10 +1,15 @@
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-extract/extract.plugin.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
-source $XDG_CONFIG_HOME/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
-source $XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# make powerlevel10k at first, use instant prompt to load other plugins later
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+PLUGIN_HOME=$XDG_CONFIG_HOME/zsh/plugins
+source $PLUGIN_HOME/powerlevel10k/powerlevel10k.zsh-theme
+source $PLUGIN_HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $PLUGIN_HOME/zsh-extract/extract.plugin.zsh
+source $PLUGIN_HOME/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $PLUGIN_HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $PLUGIN_HOME/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
+source $PLUGIN_HOME/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 autoload -U compinit; compinit
 
