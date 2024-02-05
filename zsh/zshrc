@@ -1,20 +1,14 @@
-# zmodload zsh/zprof
-
-
 export XDG_CONFIG_HOME=~/.config
+source $XDG_CONFIG_HOME/zsh/environment.zsh
+source $XDG_CONFIG_HOME/zsh/plugins.zsh
+source $XDG_CONFIG_HOME/zsh/functions.zsh
+source $XDG_CONFIG_HOME/zsh/alias.zsh
+source $XDG_CONFIG_HOME/zsh/keybinds.zsh
+source $XDG_CONFIG_HOME/zsh/exec.zsh
+source $XDG_CONFIG_HOME/zsh/theme.zsh
+
 # load software configuration
 for conf in "$XDG_CONFIG_HOME/zsh/software/"*.zsh; do
   source "${conf}"
 done
 unset conf
-
-source $XDG_CONFIG_HOME/zsh/environment.zsh
-source $XDG_CONFIG_HOME/zsh/functions.zsh
-source $XDG_CONFIG_HOME/zsh/theme.zsh
-source $XDG_CONFIG_HOME/zsh/plugins.zsh
-source $XDG_CONFIG_HOME/zsh/alias.zsh
-source $XDG_CONFIG_HOME/zsh/keybinds.zsh
-source $XDG_CONFIG_HOME/zsh/exec.zsh
-
-
-# zprof
