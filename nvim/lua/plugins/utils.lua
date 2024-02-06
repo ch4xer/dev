@@ -75,7 +75,7 @@ return {
             })
         end,
         dependencies = { 'kevinhwang91/promise-async' },
-        event = "UIEnter",
+        event = "VeryLazy",
     },
     {
         "folke/flash.nvim",

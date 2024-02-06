@@ -3,7 +3,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
         build = ':TSUpdate',
-        event = 'VeryLazy',
+        event = 'LspAttach',
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- dont install latex, it's too slow
@@ -26,7 +26,6 @@ return {
                     "toml",
                     "xml",
                     "markdown",
-                    "markdown_inline",
                 },
                 -- switch to buildin syntax highlighting
                 highlight = {
@@ -38,7 +37,7 @@ return {
                             return true
                         end
                     end,
-                    -- additional_vim_regex_highlighting = {"yaml"},
+                    additional_vim_regex_highlighting = false,
                 },
                 indent = {
                     enable = true,
