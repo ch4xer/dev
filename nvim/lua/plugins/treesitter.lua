@@ -3,7 +3,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
         build = ':TSUpdate',
-        event = 'LspAttach',
+        event = 'VeryLazy',
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- dont install latex, it's too slow

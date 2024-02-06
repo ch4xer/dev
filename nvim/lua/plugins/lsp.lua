@@ -98,6 +98,6 @@ return {
                 },
             })
         end,
-        event = 'VeryLazy'
+        event = 'LspAttach'
     },
 }
