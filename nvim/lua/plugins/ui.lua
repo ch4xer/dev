@@ -35,7 +35,7 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        event = 'UIEnter',
+        event = 'VeryLazy',
         config = function()
             require('bufferline').setup {
                 options = {
@@ -62,7 +62,7 @@ return {
             'folke/tokyonight.nvim',
             'folke/noice.nvim',
         },
-        event = 'UIEnter',
+        event = 'VeryLazy',
         config = function()
             require('lualine').setup {
                 options = {
