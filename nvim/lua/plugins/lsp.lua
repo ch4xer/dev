@@ -3,8 +3,10 @@ return {
         'neovim/nvim-lspconfig',
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
+            'williamboman/mason.nvim',
         },
         config = function()
+            require('mason').setup()
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             lspconfig.clangd.setup {
@@ -21,7 +23,7 @@ return {
                     },
                 }
             }
-            local other_servers = { "gopls", "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
+            local other_servers = { "gopls", "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab", "ruff_lsp" }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
