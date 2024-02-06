@@ -60,7 +60,7 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 
 -- save space for window
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'number'
 
 -- wrap line when too long to display
 vim.opt.wrap = true
