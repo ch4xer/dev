@@ -22,6 +22,7 @@ local dap = require('plugins.dap')
 local test = require('plugins.test')
 local neotree = require('plugins.neotree')
 local telescope = require('plugins.telescope')
+local dashboard = require('plugins.dashboard')
 local treesitter = require('plugins.treesitter')
 local note = require('plugins.note')
 
@@ -46,6 +47,7 @@ local plugins = concatenateTables(
     dap,
     test,
     neotree,
+    dashboard,
     telescope,
     treesitter
 )
