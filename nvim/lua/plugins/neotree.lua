@@ -61,7 +61,7 @@ return {
                     },
                 },
                 window = {
-                    width = 25,
+                    width = 20,
                     auto_expand_width = false,
                     mappings = {
                         ["t"] = "toggle_node",
