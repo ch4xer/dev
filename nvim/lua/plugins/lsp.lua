@@ -1,16 +1,16 @@
 return {
     {
-        'williamboman/mason.nvim',
+        'neovim/nvim-lspconfig',
         dependencies = {
-            'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
         },
-        build = ":MasonUpdate",
         config = function()
-            require('mason').setup()
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+                cmd = { "clangd", "--fallback-style=llvm", "--offset-encoding=utf-16" },
+            }
             lspconfig.rust_analyzer.setup {
                 capabilities = capabilities,
                 settings = {
@@ -21,30 +21,12 @@ return {
                     },
                 }
             }
-            lspconfig.clangd.setup {
-                capabilities = capabilities,
-                cmd = { "clangd", "--fallback-style=llvm", "--offset-encoding=utf-16" },
-            }
             local other_servers = { "gopls", "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab" }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
                 }
             end
-
-            lspconfig.ruff_lsp.setup {}
-            -- pylance has some issues in neovim, like not report importMissing.
-            -- local pylance = "/home/ch4ser/Tools/Other/pylance/server.bundle.js"
-            -- if vim.fn.filereadable(pylance) ~= 0 then
-            --     lspconfig.pyright.setup {
-            --         capabilities = capabilities,
-            --         cmd = { "node", pylance, "--stdio" },
-            --     }
-            -- else
-            --     lspconfig.pyright.setup {
-            --         capabilities = capabilities,
-            --     }
-            -- end
         end,
         event = 'BufRead',
     },
