@@ -124,6 +124,23 @@ return {
                     bottom_search = true,   -- use a classic bottom cmdline for search
                     lsp_doc_border = false, -- add a border to hover docs and signature help
                 },
+                routes = {
+                    {
+                        filter = {
+                            event = "msg_show",
+                            kind = "",
+                            find = "written",
+                        },
+                        opts = { skip = true },
+                    },
+                    {
+                        filter = {
+                            event = "msg_show",
+                            find = "gitsigns",
+                        },
+                        opts = { skip = true },
+                    },
+                },
             }
         end
     },
