@@ -181,7 +181,7 @@ return {
                 },
                 filetypes = {
                     yaml = true,
-                    markdown = true,
+                    markdown = false,
                     help = false,
                     gitcommit = false,
                     gitrebase = false,
