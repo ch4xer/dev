@@ -41,7 +41,6 @@ cmd open-with ${{
     rifle -p $method $fx
 }}
 
-cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
 cmd trash &{{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
@@ -111,7 +110,7 @@ map gp cd ~/Projects
 
 map a :push %mkdir<space>
 map t :push %touch<space>
-map r push :rename<space>
+map r rename
 map o open-with
 
 map . set hidden!
