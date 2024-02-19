@@ -23,7 +23,7 @@ return {
                     },
                 }
             }
-            local other_servers = { "gopls", "pyright", "lua_ls", "marksman", "dockerls", "bashls", "texlab", "ruff_lsp" }
+            local other_servers = { "gopls", "pyright", "lua_ls", "dockerls", "bashls", "texlab", "ruff_lsp" }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
