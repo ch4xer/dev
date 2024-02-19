@@ -30,15 +30,6 @@ return {
                     action = "lua require('telescope.builtin').find_files()",
                 },
                 {
-                    desc = "Recents Projects",
-                    keymap = "",
-                    key = "r",
-                    icon = " ",
-                    -- action = "Telescope oldfiles",
-                    action = "require'telescope'.extensions.project.project{}",
-                },
-                -- { shortcut = "<leader>fg", icon = " ", desc = "Find Word", action = "Telescope live_grep" },
-                {
                     desc = "New File",
                     keymap = "",
                     key = "n",

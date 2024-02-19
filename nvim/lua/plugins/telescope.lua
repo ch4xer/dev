@@ -3,7 +3,6 @@ return {
         'nvim-telescope/telescope.nvim',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-project.nvim',
             'nvim-telescope/telescope-fzf-native.nvim',
         },
         config = function()
@@ -38,12 +37,6 @@ return {
                     },
                 },
                 extensions = {
-                    project = {
-                        base_dirs = {
-                            '~/Projects',
-                            '~/Projects/go/src',
-                        }
-                    },
                     fzf = {
                         fuzzy = true,           -- false will only do exact matching
                         override_generic_sorter = true, -- override the generic sorter
@@ -53,7 +46,6 @@ return {
                     }
                 }
             }
-            require 'telescope'.load_extension('project')
             require('telescope').load_extension('fzf')
         end,
     },
