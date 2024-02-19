@@ -72,6 +72,7 @@ require("lazy").setup(
                     "netrwSettings",
                     "netrwFileHandlers",
                     "matchit",
+                    "matchparen",
                     "man",
                     "tar",
                     "tarPlugin",
@@ -91,6 +92,7 @@ require("lazy").setup(
                     "compiler",
                     "bugreport",
                     "ftplugin",
+                    "editorconfig",
                 },
             },
         }
