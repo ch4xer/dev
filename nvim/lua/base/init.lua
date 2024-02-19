@@ -1,13 +1,11 @@
 local vim = vim
 
--- set title for alacritty
 vim.opt.title = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.errorbells = false
 vim.opt.mouse = 'a'
 vim.opt.mousemodel = 'extend'
-vim.opt.shell = '/bin/zsh'
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
