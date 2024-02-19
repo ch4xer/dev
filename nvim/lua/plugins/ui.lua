@@ -96,9 +96,17 @@ return {
                         'branch',
                         'diagnostics'
                     },
-                    lualine_c = { 'filename', 'diff' },
-                    lualine_x = {},
-                    lualine_y = { 'progress', 'location' },
+                    lualine_c = {},
+                    lualine_x = { 'diff', 'filename' },
+                    lualine_y = {
+                        {
+                            'progress',
+                            fmt = function(str)
+                                local str1 = str:gsub(' ', '')
+                                return ' ' .. str1
+                            end,
+                        }
+                    },
                     lualine_z = {}
                 },
             }
