@@ -45,7 +45,7 @@ return {
                 },
             })
         end,
-        event = 'BufRead',
+        event = 'LspAttach',
     },
     {
         'glepnir/lspsaga.nvim',
