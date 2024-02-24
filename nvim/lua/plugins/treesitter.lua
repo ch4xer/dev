@@ -26,6 +26,7 @@ return {
                     "toml",
                     "xml",
                     "markdown",
+                    "markdown_inline",
                 },
                 -- switch to buildin syntax highlighting
                 highlight = {
