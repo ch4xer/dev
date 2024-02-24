@@ -6,6 +6,16 @@
 
 This repo contains my configuration of kitty, tmux, lf, zsh and neovim.
 
+## Try
+
+You can try my configuration in docker container.
+
+```bash
+git clone https://github.com/ch3n9w/dev
+cd dev
+docker build . -t dev:latest
+docker run -it dev /bin/zsh
+```
 ## Install
 
 ```bash
