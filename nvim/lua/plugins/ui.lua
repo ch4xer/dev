@@ -49,6 +49,10 @@ return {
                         end
                     end,
                     diagnostics = "nvim_lsp",
+                    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+                        local icon = level:match("error") and " " or " "
+                        return icon .. count
+                    end,
                     offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "center" } },
                     enforce_regular_tabs = true,
                     tab_size = 12,
@@ -56,67 +60,68 @@ return {
             }
         end,
     },
-    {
-        'hoob3rt/lualine.nvim',
-        dependencies = {
-            'folke/tokyonight.nvim',
-            'folke/noice.nvim',
-        },
-        event = 'UIEnter',
-        config = function()
-            require('lualine').setup {
-                options = {
-                    theme = 'tokyonight',
-                    globalstatus = true,
-                    section_separators = { left = '', right = '' },
-                },
-                sections = {
-                    lualine_a = {
-                        -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
-                        {
-                            'mode',
-                            icons_enabled = true,
-                            fmt = function(str)
-                                local indicator = str:sub(1, 1)
-                                if indicator == 'N' then
-                                    return ''
-                                end
-                                if indicator == 'I' then
-                                    return ''
-                                end
-                                if indicator == 'V' then
-                                    return ''
-                                end
-                                return ''
-                                -- return str:sub(1, 3)
-                            end,
-                        },
-                    },
-                    lualine_b = {
-                        'branch',
-                        'diagnostics'
-                    },
-                    lualine_c = {},
-                    lualine_x = { 'diff', 'filename' },
-                    lualine_y = {
-                        {
-                            'progress',
-                            fmt = function(str)
-                                local str1 = str:gsub(' ', '')
-                                return ' ' .. str1
-                            end,
-                        }
-                    },
-                    lualine_z = {}
-                },
-            }
-        end
-    },
+    -- {
+    --     'hoob3rt/lualine.nvim',
+    --     dependencies = {
+    --         'folke/tokyonight.nvim',
+    --         'folke/noice.nvim',
+    --     },
+    --     event = 'UIEnter',
+    --     config = function()
+    --         require('lualine').setup {
+    --             options = {
+    --                 theme = 'tokyonight',
+    --                 globalstatus = true,
+    --                 section_separators = { left = '', right = '' },
+    --             },
+    --             sections = {
+    --                 lualine_a = {
+    --                     -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
+    --                     {
+    --                         'mode',
+    --                         icons_enabled = true,
+    --                         fmt = function(str)
+    --                             local indicator = str:sub(1, 1)
+    --                             if indicator == 'N' then
+    --                                 return ''
+    --                             end
+    --                             if indicator == 'I' then
+    --                                 return ''
+    --                             end
+    --                             if indicator == 'V' then
+    --                                 return ''
+    --                             end
+    --                             return ''
+    --                             -- return str:sub(1, 3)
+    --                         end,
+    --                     },
+    --                 },
+    --                 lualine_b = {
+    --                     'branch',
+    --                     'diagnostics'
+    --                 },
+    --                 lualine_c = {},
+    --                 lualine_x = { 'diff', 'filename' },
+    --                 lualine_y = {
+    --                     {
+    --                         'progress',
+    --                         fmt = function(str)
+    --                             local str1 = str:gsub(' ', '')
+    --                             return ' ' .. str1
+    --                         end,
+    --                     }
+    --                 },
+    --                 lualine_z = {}
+    --             },
+    --         }
+    --     end
+    -- },
     {
         "folke/noice.nvim",
         dependencies = {
             "MunifTanjim/nui.nvim",
         },
+        event = 'UIEnter',
         config = function()
             require('noice').setup {
                 cmdline = {

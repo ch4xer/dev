@@ -1,5 +1,6 @@
 local vim = vim
 
+vim.opt.laststatus = 0
 vim.opt.title = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
