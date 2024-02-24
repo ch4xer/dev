@@ -1,26 +1,33 @@
 #!/bin/bash
 
-if sudo -n true 2>/dev/null; then
-    echo "User can run sudo commands, check passed."
+if [ "$(id -u)" -eq 0 ]; then
+    echo "Current user is root, check passed"
 else
-    echo "User cannot run sudo commands."
-    exit 1
+    echo "switch to root..."
+    if sudo -s true; then
+        echo "switch to root successfully."
+    else
+        echo "Failed to switch to root."
+        exit 1
+    fi
 fi
+
 
 if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
-  sudo apt update
-  sudo apt install -y tmux zsh lf ranger kitty rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim zathura
+  apt update
+  apt install -y git tmux zsh lf ranger kitty rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim zathura
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  sudo ln -s /usr/bin/batcat /usr/bin/bat
-  sudo ln -s /usr/bin/fdfind /usr/bin/fd
-  sudo ln -s /usr/bin/python3 /usr/bin/python
+  ln -s /usr/bin/batcat /usr/bin/bat
+  ln -s /usr/bin/fdfind /usr/bin/fd
+  ln -s /usr/bin/python3 /usr/bin/python
   echo "Please install glow manually if you want, check https://github.com/charmbracelet/glow?tab=readme-ov-file#installation."
 fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  sudo pacman -S --needed --noconfirm tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
+  pacman -Sy
+  pacman -S --needed --noconfirm git tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
 fi
 
 git submodule init

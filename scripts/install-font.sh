@@ -1,10 +1,15 @@
 #!/bin/bash
 
-if sudo -n true 2>/dev/null; then
-    echo "User can run sudo commands, check passed."
+if [ "$(id -u)" -eq 0 ]; then
+    echo "Current user is root, check passed"
 else
-    echo "User cannot run sudo commands."
-    exit 1
+    echo "switch to root..."
+    if sudo -s true; then
+        echo "switch to root successfully."
+    else
+        echo "Failed to switch to root."
+        exit 1
+    fi
 fi
 
 FiraCode_FILE1=/usr/share/fonts/TTF/FiraCodeNerdFont-Regular.ttf
