@@ -1,6 +1,7 @@
 return {
     {
-        'christoomey/vim-tmux-navigator',
+        'alexghergh/nvim-tmux-navigation',
+        config = true,
         lazy = false,
     },
     {

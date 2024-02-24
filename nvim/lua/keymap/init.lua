@@ -33,12 +33,12 @@ local Base = {
         { 'v', '<Backspace>', 'c' },
     },
     cmd = {
-        { { 'n', 'v' }, ';',         ':',                 { nowait = true } },
-        { { 'n', 'v' }, ']',         '*',                 { nowait = true } },
-        { { 'n', 'v' }, '[',         '#',                 { nowait = true } },
-        { 'n',          '<leader>q', 'q1',                { desc = 'record macro' } },
-        { 'n',          '<C-q>',     custom.quit_win,        { desc = 'quit window' } },
-        { 'n',          'Q',         custom.wq_all, { desc = 'quit all' } },
+        { { 'n', 'v' }, ';',         ':',             { nowait = true } },
+        { { 'n', 'v' }, ']',         '*',             { nowait = true } },
+        { { 'n', 'v' }, '[',         '#',             { nowait = true } },
+        { 'n',          '<leader>q', 'q1',            { desc = 'record macro' } },
+        { 'n',          '<C-q>',     custom.quit_win, { desc = 'quit window' } },
+        { 'n',          'Q',         custom.wq_all,   { desc = 'quit all' } },
         { 'n',          'g=',        custom.format },
     },
     fold = {
@@ -103,10 +103,11 @@ local Plugin = {
         { 'n', 'P',         clipboard.paste_as_link },
     },
     tmux = {
-        { 'n', '<C-j>', '<CMD>TmuxNavigateDown<CR>' },
-        { 'n', '<C-k>', '<CMD>TmuxNavigateUp<CR>' },
-        { 'n', '<C-h>', '<CMD>TmuxNavigateLeft<CR>' },
-        { 'n', '<C-l>', '<CMD>TmuxNavigateRight<CR>' },
+        { 'n', '<C-j>', require('nvim-tmux-navigation').NvimTmuxNavigateDown },
+        { 'n', '<C-k>', require('nvim-tmux-navigation').NvimTmuxNavigateUp },
+        { 'n', '<C-h>', require('nvim-tmux-navigation').NvimTmuxNavigateLeft },
+        { 'n', '<C-l>', require('nvim-tmux-navigation').NvimTmuxNavigateRight },
+
     },
     --- keymaps of nvim-cmp are in cmp.lua
     cmp = {},
