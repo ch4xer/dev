@@ -25,10 +25,18 @@ return {
                     --     fg = colors.none,
                     -- }
                 end,
+                on_highlights = function(hl, c)
+                    hl.Folded = {
+                        guifg = nil,
+                        guibg = nil,
+                    }
+                    hl.VerticalSplit = {
+                        fg = "#565f89",
+                        bg = nil,
+                    }
+                end,
             })
             vim.cmd("colorscheme tokyonight")
-            vim.api.nvim_set_hl(0, "Folded", { guifg = nil, guibg = nil })
-            vim.api.nvim_set_hl(0, "VerticalSplit", { fg = "#565f89", bg = nil })
         end,
     },
     {
