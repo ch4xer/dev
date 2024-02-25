@@ -19,11 +19,6 @@ return {
                 on_colors = function(colors)
                     colors.border = "#565f89"
                     colors.bg_statusline = colors.none
-                    -- useless, may caused by bug
-                    -- colors.Folded = {
-                    --     bg = colors.none,
-                    --     fg = colors.none,
-                    -- }
                 end,
                 on_highlights = function(hl, c)
                     hl.Folded = {
