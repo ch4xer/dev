@@ -1,6 +1,10 @@
 local vim = vim
 
+-- disable statusline, set splitline for windows
 vim.opt.laststatus = 0
+local str = string.rep('-', vim.api.nvim_win_get_width(0))
+vim.opt.statusline = '%#VerticalSplit#'..str..'%*'
+
 vim.opt.title = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
@@ -8,6 +12,7 @@ vim.opt.errorbells = false
 vim.opt.mouse = 'a'
 vim.opt.mousemodel = 'extend'
 
+-- split window setting
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 

@@ -28,6 +28,7 @@ return {
             })
             vim.cmd("colorscheme tokyonight")
             vim.api.nvim_set_hl(0, "Folded", { guifg = nil, guibg = nil })
+            vim.api.nvim_set_hl(0, "VerticalSplit", { fg = "#565f89", bg = nil })
         end,
     },
     {
