@@ -1,8 +1,6 @@
 # Personal Development Toolkit 📡
 
-## Introduction
-
-This repo contains my configuration of kitty, tmux, lf, zsh and neovim.
+This repo contains my configuration of kitty, tmux, lf, zsh, todotxt-cli and neovim.
 
 ## Try
 
@@ -32,6 +30,7 @@ nvim -> ~/.config/nvim
 kitty -> ~/.config/kitty
 tmux -> ~/.config/tmux
 lf -> ~/.config/lf
+todo -> ~/.config/todo
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
 ```
