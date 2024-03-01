@@ -1,7 +1,5 @@
 # Personal Development Toolkit 📡
 
-![wallpaper](./wallpaper.png)
-
 ## Introduction
 
 This repo contains my configuration of kitty, tmux, lf, zsh and neovim.
