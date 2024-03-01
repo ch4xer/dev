@@ -2,7 +2,7 @@ return {
     {
         'glepnir/dashboard-nvim',
         event = 'UIEnter',
-        enabled = function() return vim.fn.argc() < 1 end,
+        cond = function() return #vim.v.argv == 2 end,
         config = function()
             local version = vim.version()
             local header = {
