@@ -27,7 +27,7 @@ return {
                     keymap = "",
                     key = "f",
                     icon = " ",
-                    action = "lua require('telescope.builtin').find_files()",
+                    action = "lua require('fzf-lua').files()",
                 },
                 {
                     desc = "New File",
@@ -55,7 +55,7 @@ return {
                     keymap = "",
                     key = "c",
                     icon = " ",
-                    action = "lua require('telescope.builtin').find_files({cwd='~/.config/nvim'})",
+                    action = "lua require('fzf-lua').files({cwd='~/.config/nvim'})",
                 },
                 {
                     desc = "Exit",

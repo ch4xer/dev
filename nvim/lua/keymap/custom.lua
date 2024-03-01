@@ -83,27 +83,6 @@ M.quit_win = function ()
     vim.cmd.wincmd("=")
 end
 
-M.live_grep = function()
-    local t = function()
-        require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({}))
-    end
-    vim.fn.timer_start(1, t)
-end
-
-M.find_files = function()
-    local t = function()
-        require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))
-    end
-    vim.fn.timer_start(1, t)
-end
-
-M.diagnostics = function()
-    local t = function()
-        require('telescope.builtin').diagnostics(require('telescope.themes').get_dropdown({}))
-    end
-    vim.fn.timer_start(1, t)
-end
-
 M.preview_note = function ()
     if vim.bo.filetype == 'markdown' then
         vim.cmd('MarkdownPreviewToggle')

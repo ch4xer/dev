@@ -54,10 +54,10 @@ local Plugin = {
     bufdelete = {
         { 'n', 'q', function() custom.delete_win_or_buf() end },
     },
-    telescope = {
-        { 'n', 'sw', custom.live_grep },
-        { 'n', 'sf', custom.find_files },
-        { 'n', 'sd', custom.diagnostics },
+    fzf = {
+        { 'n', 'sw', function () require('fzf-lua').live_grep() end },
+        { 'n', 'sf', function () require('fzf-lua').files() end },
+        { 'n', 'sd', function () require('fzf-lua').diagnostics_workspace() end },
     },
     --- some keymaps are in neotree.lua
     neotree = {
