@@ -30,7 +30,8 @@ return {
                 }
             end
         end,
-        event = 'BufRead',
+        -- dont use any event, as new created file will not have lsp attached
+        lazy = false,
     },
     {
         'nvimtools/none-ls.nvim',
