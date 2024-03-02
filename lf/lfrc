@@ -107,6 +107,8 @@ map gh cd ~
 map gd cd ~/Documents
 map gn cd ~/Downloads
 map gp cd ~/Projects
+map H jump-prev
+map L jump-next
 
 map a :push %mkdir<space>
 map t :push %touch<space>
