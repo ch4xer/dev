@@ -30,10 +30,6 @@ vim.opt.cursorline = true
 -- clipboard
 vim.opt.clipboard = 'unnamedplus'
 
--- folder view setting
--- vim.opt.foldmethod = 'expr'
--- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.foldlevel = 20
 -- for ufo plugin
 vim.opt.foldcolumn = '0' -- '0' is not bad
 vim.opt.foldlevel = 99
