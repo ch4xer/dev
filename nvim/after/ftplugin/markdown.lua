@@ -24,7 +24,10 @@ local mark_item_done = function()
         new_line = string.gsub(current_line, "- %[ %] ", "- %[x%] ");
         vim.api.nvim_set_current_line(new_line)
     elseif string.match(current_line, "- %[x%] ") then
-        new_line = string.gsub(current_line, "- %[x%] ", "- %[ %] ")
+        new_line = string.gsub(current_line, "- %[x%] ", "- ")
+        vim.api.nvim_set_current_line(new_line)
+    elseif string.match(current_line, "- ") then
+        new_line = string.gsub(current_line, "- ", "- %[x%] ")
         vim.api.nvim_set_current_line(new_line)
     end
 end
