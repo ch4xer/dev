@@ -26,6 +26,7 @@ local Base = {
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
         { 'v', '<C-c>',       '"*ygvy' },
+        { 'n', '<C-S-v>',       '<C-v>' },
         { 'v', 'y',           '"*ygvy' },
         { 'v', '>',           '>gv',   { desc = 'keep virtual mode after indent' } },
         { 'v', '<',           '<gv',   { desc = 'keep virtual mode after indent' } },
@@ -138,9 +139,3 @@ end
 
 keyMapper(Base)
 keyMapper(Plugin)
-
-vim.api.nvim_create_user_command(
-    "ViewImage",
-    custom.view_net_image,
-    { desc = "view network image" }
-)

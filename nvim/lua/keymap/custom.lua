@@ -55,20 +55,6 @@ M.wq_all = function()
     vim.cmd('qa')
 end
 
-M.view_net_image = function()
-    local current_line = vim.api.nvim_get_current_line()
-    local link_start = string.find(current_line, "]%(")
-    if link_start ~= nil then
-        local link_end = string.find(current_line, "%)", link_start + 2)
-        if link_end ~= nil then
-            local link = string.sub(current_line, link_start + 2, link_end - 1)
-            local tmpfile = os.getenv("HOME") .. "/.cache/nvim/imv-" .. os.date('%F-%H-%M-%S') .. ".jpg"
-            os.execute('curl -s "' .. link .. '" -o ' .. tmpfile)
-            os.execute('imv ' .. tmpfile .. ' &')
-        end
-    end
-end
-
 M.toggle_tree = function()
     local t = function()
         -- vim.cmd("Neotree show last toggle")
