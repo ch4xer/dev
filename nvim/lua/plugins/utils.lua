@@ -23,10 +23,6 @@ return {
         lazy = false,
     },
     {
-        'lambdalisue/suda.vim',
-        event = 'VeryLazy',
-    },
-    {
         'RRethy/vim-illuminate',
         event = 'VeryLazy',
     },
