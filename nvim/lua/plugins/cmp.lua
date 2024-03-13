@@ -54,7 +54,6 @@ return {
                 window = {
                     completion = {
                         border = border,
-                        scrollbar = '║',
                     },
                     documentation = {
                         border = 'rounded'
@@ -135,7 +134,7 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                 }, {
-                    -- { name = 'buffer' },
+                    { name = 'buffer' },
                 }),
                 sorting = {
                     priority_weight = 1.0,
