@@ -4,8 +4,8 @@ local clipboard = require('keymap.clipboard')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
-        { 'n',          'j',       "v:count == 0 ? 'gj' : 'j'",                   { expr = true, silent = true } },
-        { 'n',          'k',       "v:count == 0 ? 'gk' : 'k'",                   { expr = true, silent = true } },
+        { { 'n', 'v' }, 'j',       "v:count == 0 ? 'gj' : 'j'",                   { expr = true, silent = true } },
+        { { 'n', 'v' }, 'k',       "v:count == 0 ? 'gk' : 'k'",                   { expr = true, silent = true } },
         { { 'n', 'v' }, 'L',       '$' },
         { { 'n', 'v' }, 'H',       '^' },
 
@@ -26,7 +26,7 @@ local Base = {
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
         { 'v', '<C-c>',       '"*ygvy' },
-        { 'n', '<C-S-v>',       '<C-v>' },
+        { 'n', '<C-S-v>',     '<C-v>' },
         { 'v', 'y',           '"*ygvy' },
         { 'v', '>',           '>gv',   { desc = 'keep virtual mode after indent' } },
         { 'v', '<',           '<gv',   { desc = 'keep virtual mode after indent' } },
@@ -56,9 +56,9 @@ local Plugin = {
         { 'n', 'q', function() custom.delete_win_or_buf() end },
     },
     fzf = {
-        { 'n', 'sw', function () require('fzf-lua').live_grep() end },
-        { 'n', 'sf', function () require('fzf-lua').files() end },
-        { 'n', 'sd', function () require('fzf-lua').diagnostics_workspace() end },
+        { 'n', 'sw', function() require('fzf-lua').live_grep() end },
+        { 'n', 'sf', function() require('fzf-lua').files() end },
+        { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end },
     },
     --- some keymaps are in neotree.lua
     neotree = {
