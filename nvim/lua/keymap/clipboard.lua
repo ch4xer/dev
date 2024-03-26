@@ -33,16 +33,26 @@ end
 M.paste_clipboard_image = function(is_wayland)
     local current_time = os.date("%Y-%m-%d-%H-%M-%S")
     local abs_dir = M.get_marksman_root_dir() .. "/.images/"
-    if vim.fn.isdirectory(abs_dir) == 0 then
-        return
-    end
     local filename = vim.fn.fnamemodify(vim.fn.expand "%", ":t:r")
-    local note_dir = abs_dir .. filename .. "/"
-    if vim.fn.isdirectory(note_dir) == 0 then
-        vim.print(note_dir)
-        vim.fn.mkdir(note_dir, "p")
+    local abs_path, rlt_path
+    -- for hugo blog index.md
+    if filename == "index" then
+        vim.print("index")
+        abs_path = vim.fn.fnamemodify(vim.fn.expand "%", ":p:h") .. "/" .. current_time .. ".png"
+        rlt_path = current_time .. ".png"
+    else
+        if vim.fn.isdirectory(abs_dir) == 0 then
+            return
+        end
+        local note_dir = abs_dir .. filename .. "/"
+        if vim.fn.isdirectory(note_dir) == 0 then
+            vim.print(note_dir)
+            vim.fn.mkdir(note_dir, "p")
+        end
+        abs_path = note_dir .. current_time .. ".png"
+        rlt_path = "/.images/" .. filename .. "/" .. current_time .. ".png"
     end
-    local abs_path = note_dir .. current_time .. ".png"
+    vim.print(abs_path)
     local cmd
     if is_wayland then
         cmd = "wl-paste --no-newline --type image/png > '%s'"
@@ -50,7 +60,6 @@ M.paste_clipboard_image = function(is_wayland)
         cmd = "xclip -selection clipboard -t image/png -o > '%s'"
     end
     os.execute(string.format(cmd, abs_path))
-    local rlt_path = "/.images/" .. filename .. "/" .. current_time .. ".png"
     local insert_txt = string.format("![](%s)", rlt_path)
     vim.api.nvim_put({ insert_txt }, "l", true, true)
 end

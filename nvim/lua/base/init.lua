@@ -30,7 +30,7 @@ vim.opt.cursorline = true
 -- clipboard
 vim.opt.clipboard = 'unnamedplus'
 
--- for ufo plugin
+-- folder
 vim.opt.foldcolumn = '0' -- '0' is not bad
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99

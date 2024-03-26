@@ -26,6 +26,7 @@ local Base = {
     edit = {
         { 'i', '<C-BS>',      '<C-W>', { desc = 'delete word forward' } },
         { 'v', '<C-c>',       '"*ygvy' },
+        { 'n', 'yw',          'yiw' },
         { 'n', '<C-S-v>',     '<C-v>' },
         { 'v', 'y',           '"*ygvy' },
         { 'v', '>',           '>gv',   { desc = 'keep virtual mode after indent' } },

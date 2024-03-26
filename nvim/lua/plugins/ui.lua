@@ -21,7 +21,10 @@ return {
                     colors.bg_statusline = colors.none
                 end,
                 on_highlights = function(hl, c)
-                    hl.Folded = {}
+                    hl.Folded = {
+                        fg = "#7aa2f7",
+                        bg = nil,
+                    }
                     hl.VerticalSplit = {
                         fg = "#565f89",
                         bg = nil,

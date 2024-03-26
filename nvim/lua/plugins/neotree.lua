@@ -44,6 +44,7 @@ return {
                         { source = "document_symbols" },
                     },
                 },
+                hide_root_node = true,
                 auto_clean_after_session_restore = true,
                 close_if_last_window = true,
                 default_component_configs = {

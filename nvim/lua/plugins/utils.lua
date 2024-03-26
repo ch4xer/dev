@@ -27,13 +27,33 @@ return {
         event = 'VeryLazy',
     },
     {
-        'lukas-reineke/indent-blankline.nvim',
-        main = "ibl",
-        event = 'VeryLazy',
+        "shellRaining/hlchunk.nvim",
+        event = { "UIEnter" },
         config = function()
-            require("ibl").setup {}
-        end,
+            require("hlchunk").setup({
+                chunk = {
+                    style = {
+                        { fg = "#7aa2f7" },
+                        { fg = "#c21f30" }, -- this fg is used to highlight wrong chunk
+                    },
+                },
+                blank = {
+                    enable = false,
+                },
+                indent = {
+                    enable = false,
+                }
+            })
+        end
     },
+    -- {
+    --     'lukas-reineke/indent-blankline.nvim',
+    --     main = "ibl",
+    --     event = 'VeryLazy',
+    --     config = function()
+    --         require("ibl").setup {}
+    --     end,
+    -- },
     {
         'kevinhwang91/nvim-ufo',
         config = function()
