@@ -35,6 +35,8 @@ vim.opt.foldcolumn = '0' -- '0' is not bad
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 vim.opt.scrolloff = 0
 
@@ -68,6 +70,9 @@ vim.opt.wrap = true
 vim.g.mapleader = ' '
 
 vim.opt.viewoptions = 'folds,cursor,curdir'
+
+-- save undo history
+vim.opt.undofile = true
 
 vim.g.python3_host_prog = vim.fn.exepath("python3")
 
