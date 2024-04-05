@@ -1,6 +1,5 @@
 local vim = vim
-local custom = require('keymap.custom')
-local clipboard = require('keymap.clipboard')
+local utils = require('utils')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
@@ -39,9 +38,9 @@ local Base = {
         { { 'n', 'v' }, ']',         '*',             { nowait = true } },
         { { 'n', 'v' }, '[',         '#',             { nowait = true } },
         { 'n',          '<leader>q', 'q1',            { desc = 'record macro' } },
-        { 'n',          '<C-q>',     custom.quit_win, { desc = 'quit window' } },
-        { 'n',          'Q',         custom.wq_all,   { desc = 'quit all' } },
-        { 'n',          'g=',        custom.format },
+        { 'n',          '<C-q>',     utils.quit_win, { desc = 'quit window' } },
+        { 'n',          'Q',         utils.wq_all,   { desc = 'quit all' } },
+        { 'n',          'g=',        utils.format },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -54,7 +53,7 @@ local Base = {
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', function() custom.delete_win_or_buf() end },
+        { 'n', 'q', function() utils.delete_win_or_buf() end },
     },
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end },
@@ -63,7 +62,7 @@ local Plugin = {
     },
     --- some keymaps are in neotree.lua
     neotree = {
-        { 'n', '<leader>t', custom.toggle_tree },
+        { 'n', '<leader>t', utils.toggle_tree },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
     lspsaga = {
@@ -102,8 +101,8 @@ local Plugin = {
         { { "n", "x", "o" }, '?', function() require("flash").treesitter() end }
     },
     markdown = {
-        { 'n', '<leader>p', custom.preview_note },
-        { 'n', 'P',         clipboard.paste_as_link },
+        { 'n', '<leader>p', utils.preview_note },
+        { 'n', 'P',         utils.paste_as_link },
     },
     tmux = {
         { 'n', '<C-j>', require('nvim-tmux-navigation').NvimTmuxNavigateDown },

@@ -1,7 +1,10 @@
 vim.loader.enable()
-package.path = package.path .. "./lua/?/init.lua"
+
+-- When you do require("foo.bar"), Neovim will try to load one of these file patterns:
+-- lua/foo/bar.lua
+-- lua/foo/bar/init.lua
 
 require('base')
 require('plugins')
-require('autocommand')
+require('autocmd')
 require('keymap')

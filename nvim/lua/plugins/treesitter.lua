@@ -12,7 +12,6 @@ return {
                     "lua",
                     "vim",
                     "vimdoc",
-                    "query",
                     "go",
                     "rust",
                     "java",

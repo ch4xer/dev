@@ -4,6 +4,8 @@ local vim = vim
 vim.opt.laststatus = 0
 local str = string.rep('-', vim.api.nvim_win_get_width(0))
 vim.opt.statusline = '%#VerticalSplit#'..str..'%*'
+-- set cmd height, set by noice.nvim
+-- vim.opt.cmdheight = 0
 
 vim.opt.title = true
 vim.opt.termguicolors = true
