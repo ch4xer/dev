@@ -166,6 +166,23 @@ M.toggle_tree = function()
     vim.fn.timer_start(1, t)
 end
 
+M.close_tree = function()
+    local get_filetree_window = function()
+        for _, windowId in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+            local buffer = vim.api.nvim_win_get_buf(windowId)
+            if vim.api.nvim_buf_get_option(buffer, 'ft') == 'neo-tree' then
+                return windowId
+            end
+        end
+        return nil
+    end
+    if vim.api.nvim_list_uis()[1].width <= vim.g.width_close_tree then
+        if get_filetree_window() ~= nil then
+            vim.cmd("Neotree action=close")
+        end
+    end
+end
+
 M.quit_win = function ()
     vim.api.nvim_win_close(0, true)
     vim.cmd.wincmd("=")
