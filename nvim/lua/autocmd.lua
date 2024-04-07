@@ -35,3 +35,12 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     command = "silent! wall",
     nested = true,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "yml", "yaml", "json", "html", "css", "javascript", "typescript", "sh", "sql", "vue" },
+    callback = function(event)
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+    end,
+})
