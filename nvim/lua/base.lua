@@ -56,6 +56,7 @@ vim.opt.sel = 'inclusive'
 
 -- set tab to 4 spaces, could be override by ftplugin
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- show numbers
