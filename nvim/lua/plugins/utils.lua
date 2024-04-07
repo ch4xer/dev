@@ -26,30 +26,30 @@ return {
         'RRethy/vim-illuminate',
         event = 'VeryLazy',
     },
-    {
-        "shellRaining/hlchunk.nvim",
-        event = { "UIEnter" },
-        config = function()
-            require("hlchunk").setup({
-                chunk = {
-                    notify = false,
-                    style = {
-                        { fg = "#7aa2f7" },
-                        { fg = "#c21f30" }, -- this fg is used to highlight wrong chunk
-                    },
-                },
-                line_num = {
-                    enable = false,
-                },
-                blank = {
-                    enable = false,
-                },
-                indent = {
-                    enable = false,
-                }
-            })
-        end
-    },
+    -- {
+    --     "shellRaining/hlchunk.nvim",
+    --     event = { "UIEnter" },
+    --     config = function()
+    --         require("hlchunk").setup({
+    --             chunk = {
+    --                 notify = false,
+    --                 style = {
+    --                     { fg = "#7aa2f7" },
+    --                     { fg = "#c21f30" }, -- this fg is used to highlight wrong chunk
+    --                 },
+    --             },
+    --             line_num = {
+    --                 enable = false,
+    --             },
+    --             blank = {
+    --                 enable = false,
+    --             },
+    --             indent = {
+    --                 enable = false,
+    --             }
+    --         })
+    --     end
+    -- },
     -- {
     --     'lukas-reineke/indent-blankline.nvim',
     --     main = "ibl",
