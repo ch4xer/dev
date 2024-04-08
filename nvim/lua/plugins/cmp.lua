@@ -77,7 +77,9 @@ return {
                         if cmp.visible() then
                             cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
                         elseif require("copilot.suggestion").is_visible() then
+                            require("nvim-autopairs").disable()
                             require("copilot.suggestion").accept()
+                            require("nvim-autopairs").enable()
                         elseif luasnip.jumpable(1) then
                             luasnip.jump(1)
                         else
