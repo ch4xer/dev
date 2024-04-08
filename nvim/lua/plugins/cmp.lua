@@ -154,11 +154,13 @@ return {
                 }
             })
 
-            -- auto insert `(` after select function or method item
-            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            -- auto insert `(` after select function or method item, while not conflict with copilot
             cmp.event:on(
                 'confirm_done',
-                cmp_autopairs.on_confirm_done()
+                function(evt)
+                    require('nvim-autopairs.completion.cmp').on_confirm_done()(evt)
+                    vim.api.nvim_exec_autocmds('CompleteChanged', {})
+                end
             )
         end,
     },
