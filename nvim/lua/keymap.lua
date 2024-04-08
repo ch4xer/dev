@@ -80,7 +80,7 @@ local Plugin = {
     },
     neotest = {
         { 'n', 'tt', function() require('neotest').run.run() end },
-        { 'n', 'ts', function() require('neotest').run.run() end },
+        { 'n', 'ts', function() require('neotest').output.open() end },
     },
     dap = {
         { 'n', '<F1>', function() require("dap").toggle_breakpoint() end },
