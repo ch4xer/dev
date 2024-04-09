@@ -29,6 +29,10 @@ return {
                         fg = "#565f89",
                         bg = nil,
                     }
+                    -- popup menu transparent
+                    hl.Pmenu = {
+                        bg = nil,
+                    }
                 end,
             })
             vim.cmd("colorscheme tokyonight")

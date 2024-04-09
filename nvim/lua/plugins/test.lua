@@ -25,7 +25,9 @@ return {
                 -- your neotest config here
                 adapters = {
                     require("neotest-go"),
-                    require("neotest-python")
+                    require("neotest-python")({
+                        args = {"--log-level", "DEBUG","-s"},
+                    })
                 },
             })
         end
