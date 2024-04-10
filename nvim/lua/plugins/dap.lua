@@ -46,6 +46,7 @@ return {
             --     }
             -- }
 
+            -- dlv debug -l 127.0.0.1:65510 --headless . -- param1 param2 param3 ...
             dap.adapters.delve = {
                 type = "server",
                 host = "127.0.0.1",
