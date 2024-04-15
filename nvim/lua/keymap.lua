@@ -3,14 +3,14 @@ local utils = require('utils')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
-        { { 'n', 'v' }, 'j',       "v:count == 0 ? 'gj' : 'j'",                   { expr = true, silent = true } },
-        { { 'n', 'v' }, 'k',       "v:count == 0 ? 'gk' : 'k'",                   { expr = true, silent = true } },
+        { { 'n', 'v' }, 'j',       "v:count == 0 ? 'gj' : 'j'",                      { expr = true, silent = true } },
+        { { 'n', 'v' }, 'k',       "v:count == 0 ? 'gk' : 'k'",                      { expr = true, silent = true } },
         { { 'n', 'v' }, 'L',       '$' },
         { { 'n', 'v' }, 'H',       '^' },
 
         -- tab switch, dont modify <Tab>, which will affect <C-i>
-        { 'n',          'J',       '<CMD>bprevious!<CR>' },
-        { 'n',          'K',       '<CMD>bnext!<CR>' },
+        { 'n',          'J',       function() vim.api.nvim_command('bprevious!') end },
+        { 'n',          'K',       function() vim.api.nvim_command('bnext!') end },
 
         -- move window
         { 'n',          '<C-S-h>', '<C-w>H' },
@@ -34,10 +34,10 @@ local Base = {
         { 'v', '<Backspace>', 'c' },
     },
     cmd = {
-        { { 'n', 'v' }, ';',         ':',             { nowait = true } },
-        { { 'n', 'v' }, ']',         '*',             { nowait = true } },
-        { { 'n', 'v' }, '[',         '#',             { nowait = true } },
-        { 'n',          '<leader>q', 'q1',            { desc = 'record macro' } },
+        { { 'n', 'v' }, ';',         ':',            { nowait = true } },
+        { { 'n', 'v' }, ']',         '*',            { nowait = true } },
+        { { 'n', 'v' }, '[',         '#',            { nowait = true } },
+        { 'n',          '<leader>q', 'q1',           { desc = 'record macro' } },
         { 'n',          '<C-q>',     utils.quit_win, { desc = 'quit window' } },
         { 'n',          'Q',         utils.wq_all,   { desc = 'quit all' } },
         { 'n',          'g=',        utils.format },
@@ -66,14 +66,14 @@ local Plugin = {
         { 'n', '<leader>c', '<CMD>cd %:h<CR>' },
     },
     lspsaga = {
-        { 'n', 'ss',    '<CMD>Lspsaga term_toggle<CR>' },
+        { 'n', 'ss',    function() vim.api.nvim_command('Lspsaga term_toggle') end },
         { 't', '<ESC>', function() vim.api.nvim_win_close(0, true) end },
-        { 'n', 'ga',    '<CMD>Lspsaga code_action<CR>',                { silent = true } },
-        { 'n', 'ge',    '<CMD>Lspsaga show_line_diagnostics<CR>' },
-        { 'n', 'gh',    '<CMD>Lspsaga hover_doc<CR>' },
-        { 'n', 'gn',    '<CMD>Lspsaga rename<CR>' },
-        { 'n', 'gd',    '<CMD>Lspsaga peek_definition<CR>' },
-        { 'n', 'gr',    '<CMD>Lspsaga finder<CR>', },
+        { 'n', 'ga',    function() vim.api.nvim_command('Lspsaga code_action') end,          { silent = true } },
+        { 'n', 'ge',    function() vim.api.nvim_command('Lspsaga show_line_diagnostics') end },
+        { 'n', 'gh',    function() vim.api.nvim_command('Lspsaga hover_doc') end },
+        { 'n', 'gn',    function() vim.api.nvim_command('Lspsaga rename') end },
+        { 'n', 'gd',    function() vim.api.nvim_command('Lspsaga peek_definition') end },
+        { 'n', 'gr',    function() vim.api.nvim_command('Lspsaga finder') end },
     },
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end },
