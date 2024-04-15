@@ -32,7 +32,7 @@ end
 
 M.paste_clipboard_image = function(is_wayland)
     local current_time = os.date("%Y-%m-%d-%H-%M-%S")
-    local abs_dir = M.get_marksman_root_dir() .. "/.images/"
+    local abs_dir = M.get_marksman_root_dir() .. "/Attachment/"
     local filename = vim.fn.fnamemodify(vim.fn.expand "%", ":t:r")
     local abs_path, rlt_path
     -- for hugo blog index.md
@@ -50,7 +50,7 @@ M.paste_clipboard_image = function(is_wayland)
             vim.fn.mkdir(note_dir, "p")
         end
         abs_path = note_dir .. current_time .. ".png"
-        rlt_path = "/.images/" .. filename .. "/" .. current_time .. ".png"
+        rlt_path = "/Attachment/" .. filename .. "/" .. current_time .. ".png"
     end
     vim.print(abs_path)
     local cmd
@@ -105,7 +105,7 @@ M.get_clipboard_type = function()
     return is_wayland, is_img
 end
 
-M.delete_win_or_buf = function()
+M.delete_buf_or_quit = function()
     local pre_exit = ''
     local exit = 'quit'
     local current_bufnr = vim.api.nvim_win_get_buf(0)
@@ -183,12 +183,15 @@ M.close_tree = function()
     end
 end
 
-M.quit_win = function ()
+M.quit_win = function()
+    if #vim.api.nvim_list_wins() == 1 then
+        vim.cmd('qa')
+    end
     vim.api.nvim_win_close(0, true)
     vim.cmd.wincmd("=")
 end
 
-M.preview_note = function ()
+M.preview_note = function()
     if vim.bo.filetype == 'markdown' then
         vim.cmd('MarkdownPreviewToggle')
     elseif vim.bo.filetype == 'tex' then

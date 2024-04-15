@@ -53,7 +53,7 @@ local Base = {
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', function() utils.delete_win_or_buf() end },
+        { 'n', 'q', function() utils.delete_buf_or_quit() end },
     },
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end },
