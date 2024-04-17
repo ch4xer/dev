@@ -12,6 +12,7 @@ if [ $(uname -s) = "Linux" ]; then
             exit 1
         fi
     fi
+fi
 
 if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
