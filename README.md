@@ -49,7 +49,6 @@ zsh/zshrc -> ~/.zshrc
   - use tmux-continuum and resurrect to restore workspaces.
   - If you get dizzy remembering shortcuts, just use your mouse.
 - Zsh
-  - customize powerlevel10k for a more compact look, check `zsh/zsh/theme.zsh`
   - settings about software are in `zsh/zsh/plugins`, you can add here by yourself
   - disable vim mode for consistence.
 - Neovim

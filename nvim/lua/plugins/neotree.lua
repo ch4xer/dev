@@ -118,8 +118,32 @@ return {
                             ["<cr>"] = "jump_to_symbol",
                             ["<2-LeftMouse>"] = "jump_to_symbol",
                         }
+                    },
+                    kinds = {
+                        Namespace = { icon = "", hl = "Include" },
+                        Package = { icon = "", hl = "Label" },
+                        Class = { icon = "", hl = "Include" },
+                        Method = { icon = "", hl = "Function" },
+                        Property = { icon = "", hl = "@property" },
+                        Field = { icon = "", hl = "@field" },
+                        Enum = { icon = "", hl = "@number" },
+                        Interface = { icon = "", hl = "Type" },
+                        Function = { icon = "󰡱", hl = "Function" },
+                        Variable = { icon = "", hl = "@variable" },
+                        Constant = { icon = "", hl = "Constant" },
+                        String = { icon = "󰅳", hl = "String" },
+                        Array = { icon = "󰅨", hl = "Type" },
+                        Object = { icon = "", hl = "Type" },
+                        Key = { icon = "", hl = "Constant" },
+                        Null = { icon = "󰟢", hl = "Constant" },
+                        EnumMember = { icon = "", hl = "Number" },
+                        Struct = { icon = "", hl = "Type" },
+                        Event = { icon = "", hl = "Constant" },
+                        Operator = { icon = "", hl = "Operator" },
+                        TypeParameter = { icon = "", hl = "Type" },
                     }
-                }
+
+                },
             })
         end,
         cmd = { "Neotree" },

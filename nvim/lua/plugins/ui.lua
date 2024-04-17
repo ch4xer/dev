@@ -5,8 +5,7 @@ return {
         priority = 1000,
         config = function()
             require("tokyonight").setup({
-                style = "storm",
-                transparent = true,
+                style = "night",
                 styles = {
                     comments = { italic = true },
                     keywords = { italic = true },
@@ -18,7 +17,7 @@ return {
 
                 on_colors = function(colors)
                     colors.border = "#565f89"
-                    colors.bg_statusline = colors.none
+                    -- colors.bg_statusline = colors.none
                 end,
                 on_highlights = function(hl, c)
                     hl.Folded = {

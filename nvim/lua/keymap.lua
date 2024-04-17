@@ -58,6 +58,7 @@ local Plugin = {
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end },
         { 'n', 'sf', function() require('fzf-lua').files() end },
+        { 'n', 'z', function() require('fzf-lua').buffers() end },
         { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end },
     },
     --- some keymaps are in neotree.lua
@@ -83,11 +84,11 @@ local Plugin = {
         { 'n', 'ts', function() require('neotest').output.open() end },
     },
     dap = {
-        { 'n', '<F1>', function() require("dap").toggle_breakpoint() end },
-        { 'n', '<F2>', function() require("dap").continue() end },
+        { 'n', '`', function() require("dap").toggle_breakpoint() end },
+        { 'n', '<F1>', function() require("dap").continue() end },
+        { 'n', '<F2>', function() require("dap").step_over() end },
         { 'n', '<F3>', function() require("dap").step_into() end },
-        { 'n', '<F4>', function() require("dap").step_over() end },
-        { 'n', '<F5>', function() require("dapui").toggle() end },
+        { 'n', '<F4>', function() require("dapui").toggle() end },
     },
     comment = {
         { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)' },
