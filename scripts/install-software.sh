@@ -1,43 +1,34 @@
 #!/bin/bash
 
-if [ $(uname -s) = "Linux" ]; then
-    if [ "$(id -u)" -eq 0 ]; then
-        echo "Current user is root, check passed"
-    else
-        echo "switch to root..."
-        if sudo -s true; then
-            echo "switch to root successfully."
-        else
-            echo "Failed to switch to root."
-            exit 1
-        fi
-    fi
+if ! sudo -v &> /dev/null; then
+    echo "Failed to execute sudo. Make sure you have sudo privileges."
+    exit 1
 fi
 
 if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
-  apt update
-  apt install -y git tmux zsh lf ranger rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim todotxt-cli clang nodejs
+  sudo apt update
+  sudo apt install -y git tmux zsh lf ranger rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim todotxt-cli clang nodejs
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  ln -s /usr/bin/batcat /usr/bin/bat
-  ln -s /usr/bin/fdfind /usr/bin/fd
-  ln -s /usr/bin/python3 /usr/bin/python
+  sudo ln -s /usr/bin/batcat /usr/bin/bat
+  sudo ln -s /usr/bin/fdfind /usr/bin/fd
+  sudo ln -s /usr/bin/python3 /usr/bin/python
   echo "Please install glow and kitty manually if you want"
 fi
 
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
-  pacman -Sy
-  pacman -S --needed --noconfirm git tmux zsh lf ranger rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs
+  sudo pacman -Sy
+  sudo pacman -S --needed --noconfirm git tmux zsh lf ranger rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs
   echo "Please install todotxt-cli and kitty if you want."
 
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
   echo "Detect macOS, installing packages with homebrew..."
-  brew tap zegervdv/zathura
-  brew update
-  brew install git tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
+  sudo brew tap zegervdv/zathura
+  sudo brew update
+  sudo brew install git tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
 fi
 
 # git submodule init
