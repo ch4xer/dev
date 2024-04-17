@@ -13,37 +13,35 @@ if [ $(uname -s) = "Linux" ]; then
         fi
     fi
 
-
-    if [ -f /etc/debian_version ]; then
-    echo "Detect Debian based system, installing packages with apt..."
-    apt update
-    apt install -y git tmux zsh lf ranger kitty rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim zathura todotxt-cli
-    curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-    ln -s /usr/bin/batcat /usr/bin/bat
-    ln -s /usr/bin/fdfind /usr/bin/fd
-    ln -s /usr/bin/python3 /usr/bin/python
-    echo "Please install glow manually if you want, check https://github.com/charmbracelet/glow?tab=readme-ov-file#installation."
-    fi
-
-    if [ -f /etc/arch-release ]; then
-    echo "Detect Arch based system, installing packages with pacman..."
-    pacman -Sy
-    pacman -S --needed --noconfirm git tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
-    echo "Please install todotxt-cli from AUR if you want."
-    fi
+if [ -f /etc/debian_version ]; then
+  echo "Detect Debian based system, installing packages with apt..."
+  apt update
+  apt install -y git tmux zsh lf ranger rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim todotxt-cli clang nodejs
+  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+  ln -s /usr/bin/batcat /usr/bin/bat
+  ln -s /usr/bin/fdfind /usr/bin/fd
+  ln -s /usr/bin/python3 /usr/bin/python
+  echo "Please install glow and kitty manually if you want"
 fi
 
-# macOS
+if [ -f /etc/arch-release ]; then
+  echo "Detect Arch based system, installing packages with pacman..."
+  pacman -Sy
+  pacman -S --needed --noconfirm git tmux zsh lf ranger rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs
+  echo "Please install todotxt-cli and kitty if you want."
+
+fi
+
 if [ $(uname -s) = "Darwin" ]; then
   echo "Detect macOS, installing packages with homebrew..."
-  # https://github.com/zegervdv/homebrew-zathura
   brew tap zegervdv/zathura
   brew update
   brew install git tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
 fi
 
-git submodule init
-git submodule update
+# git submodule init
+# git submodule update
+git submodule update --init --recursive
 
 BASEDIR=~/.config
 read -p "Do you want to overwrite or backup the configuration file? (o/b): " response

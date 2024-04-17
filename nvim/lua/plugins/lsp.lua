@@ -23,7 +23,8 @@ return {
                     },
                 }
             }
-            local other_servers = { "gopls", "pyright", "lua_ls", "dockerls", "bashls", "texlab", "ruff_lsp", "jsonls", "marksman" }
+            local other_servers = { "gopls", "pyright", "lua_ls", "dockerls", "bashls", "texlab", "ruff_lsp", "jsonls",
+                "marksman" }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
@@ -57,7 +58,11 @@ return {
                     code_action = "󱓈 ",
                     colors = {
                         normal_bg = "NONE",
-                    }
+                    },
+                },
+                symbol_in_winbar = {
+                    separator = "›",
+                    hide_keyword = true,
                 },
                 lightbulb = {
                     virtual_text = false

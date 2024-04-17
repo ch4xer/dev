@@ -132,8 +132,9 @@ return {
                     end,
                 },
             }
-            vim.fn.sign_define('DapBreakpoint', {text='', texthl='WarningMsg'})
-            vim.fn.sign_define('DapStopped', {text=' ', texthl='ErrorMsg'})
+            vim.api.nvim_set_hl(0, 'DapStopLine', {fg="#000000",bg='#e0af68'})
+            vim.fn.sign_define('DapBreakpoint', {text='', texthl='ErrorMsg'})
+            vim.fn.sign_define('DapStopped', {text='', texthl='WarningMsg', linehl='DapStopLine'})
             require("nvim-dap-virtual-text").setup({
                 show_stop_reason = false,
             })

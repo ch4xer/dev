@@ -44,15 +44,14 @@ M.paste_clipboard_image = function(is_wayland)
         if vim.fn.isdirectory(abs_dir) == 0 then
             return
         end
-        local note_dir = abs_dir .. filename .. "/"
+        local note_dir = abs_dir
         if vim.fn.isdirectory(note_dir) == 0 then
             vim.print(note_dir)
             vim.fn.mkdir(note_dir, "p")
         end
         abs_path = note_dir .. current_time .. ".png"
-        rlt_path = "/Attachment/" .. filename .. "/" .. current_time .. ".png"
+        rlt_path = "/Attachment/" .. current_time .. ".png"
     end
-    vim.print(abs_path)
     local cmd
     if is_wayland then
         cmd = "wl-paste --no-newline --type image/png > '%s'"
