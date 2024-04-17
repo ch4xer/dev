@@ -1,17 +1,17 @@
 #!/bin/bash
 
-if [ "$(id -u)" -eq 0 ]; then
-    echo "Current user is root, check passed"
-else
-    echo "switch to root..."
-    if sudo -s true; then
-        echo "switch to root successfully."
+if [ $(uname -s) = "Linux" ]; then
+    if [ "$(id -u)" -eq 0 ]; then
+        echo "Current user is root, check passed"
     else
-        echo "Failed to switch to root."
-        exit 1
+        echo "switch to root..."
+        if sudo -s true; then
+            echo "switch to root successfully."
+        else
+            echo "Failed to switch to root."
+            exit 1
+        fi
     fi
-fi
-
 
 if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
@@ -29,6 +29,14 @@ if [ -f /etc/arch-release ]; then
   pacman -Sy
   pacman -S --needed --noconfirm git tmux zsh lf ranger rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs
   echo "Please install todotxt-cli and kitty if you want."
+
+fi
+
+if [ $(uname -s) = "Darwin" ]; then
+  echo "Detect macOS, installing packages with homebrew..."
+  brew tap zegervdv/zathura
+  brew update
+  brew install git tmux zsh lf ranger kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow zathura
 fi
 
 # git submodule init
