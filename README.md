@@ -10,7 +10,7 @@ You can try my configuration in docker container.
 git clone https://github.com/ch3n9w/dev
 cd dev
 docker build . -t dev:latest
-docker run -it dev /bin/zsh
+docker run -it dev:latest /bin/zsh
 ```
 ## Install
 
@@ -33,12 +33,6 @@ zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
 ```
 
-## Uninstall
-
-```bash
-./scripts/uninstall.sh
-```
-
 ## Noteable Info
 
 - Kitty
@@ -58,12 +52,3 @@ zsh/zshrc -> ~/.zshrc
 - lf
   - integrate with fzf, you can press `f` to fuzzy search files and directories from pwd
   - since lf use `rifle` to open file in my config, ranger is still needed.
-
-## Other
-
-1. Highly recommended to install key, it's a great tool to remap capslock to esc and ctrl, see [keyd](https://github.com/rvaiya/keyd)
-2. Some software should be manually installed if you are using debian.
-
-## Trouble Shooting
-
-1. If you have installed xsel and use my configuration under wayland, you may encounter clipboard problem, in which neovim use `xsel` as clipboard provider instead of `wl-copy`, to solve the problem, just uninstall `xsel`.
