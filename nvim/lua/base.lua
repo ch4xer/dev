@@ -29,16 +29,7 @@ vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cursorline = true
 
--- clipboard
 vim.o.clipboard = 'unnamedplus'
-
--- folder
-vim.o.foldcolumn = '0' -- '0' is not bad
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 vim.o.scrolloff = 0
 
@@ -75,7 +66,6 @@ vim.o.viewoptions = 'folds,cursor,curdir'
 
 -- save undo history
 vim.o.undofile = true
-
 
 vim.g.python3_host_prog = vim.fn.exepath("python3")
 

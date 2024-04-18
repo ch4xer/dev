@@ -44,3 +44,18 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.softtabstop = 2
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(event)
+        vim.o.foldcolumn = '0'
+        vim.o.foldlevel = 99
+        vim.o.foldlevelstart = 99
+        vim.o.foldenable = true
+        if require("nvim-treesitter.parsers").get_parser() then
+            vim.o.foldmethod = "expr"
+            vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        else
+            vim.o.foldmethod = "syntax"
+        end
+    end,
+})

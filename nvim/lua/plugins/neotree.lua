@@ -69,7 +69,6 @@ return {
                         ["<tab>"] = "next_source",
                         ["<esc>"] = "cancel",
                         ["r"] = "rename",
-                        ["q"] = "close_window",
                     }
                 },
                 filesystem = {
@@ -82,8 +81,6 @@ return {
                         mappings = {
                             ["<2-LeftMouse>"] = "open_with_window_picker",
                             ["<cr>"] = "open_with_window_picker",
-                            ["l"] = "open_with_window_picker",
-                            ["h"] = "navigate_up",
                             ["a"] = "add",
                             ["."] = "toggle_hidden",
                             ["y"] = "copy_to_clipboard",

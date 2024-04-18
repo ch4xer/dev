@@ -35,6 +35,7 @@ return {
             require("nvim-surround").setup {
                 keymaps = {
                     visual = "s",
+                    normal = "ys",
                     delete = "ds",
                     change = "cs",
                 },
@@ -57,6 +58,13 @@ return {
                         add = { "[", "]" },
                         find = function()
                             return M.get_selection({ motion = "a[" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                    ["<"] = {
+                        add = { "<", ">" },
+                        find = function()
+                            return M.get_selection({ motion = "a<" })
                         end,
                         delete = "^(.?)().-(?.)()$",
                     },
