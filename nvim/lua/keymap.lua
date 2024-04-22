@@ -72,6 +72,9 @@ local Plugin = {
     neogen = {
         { 'n', 'go', function() require('neogen').generate() end, { desc = 'generate doc comment' } },
     },
+    lazygit = {
+        { 'n', 'gi', function() vim.api.nvim_command('LazyGit') end, { desc = 'toggle lazygit' } },
+    },
     neotest = {
         { 'n', 'tt', function() require('neotest').run.run() end,     { desc = 'run test' } },
         { 'n', 'ts', function() require('neotest').output.open() end, { desc = 'show test output' } },
@@ -98,10 +101,10 @@ local Plugin = {
         { 'n', 'P',         utils.paste_as_link, { desc = 'paste image as link' } },
     },
     tmux = {
-        { 'n', '<C-j>', require('nvim-tmux-navigation').NvimTmuxNavigateDown,   { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-k>', require('nvim-tmux-navigation').NvimTmuxNavigateUp,     { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-h>', require('nvim-tmux-navigation').NvimTmuxNavigateLeft,   { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-l>', require('nvim-tmux-navigation').NvimTmuxNavigateRight,  { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-j>', require('nvim-tmux-navigation').NvimTmuxNavigateDown,  { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-k>', require('nvim-tmux-navigation').NvimTmuxNavigateUp,    { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-h>', require('nvim-tmux-navigation').NvimTmuxNavigateLeft,  { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-l>', require('nvim-tmux-navigation').NvimTmuxNavigateRight, { desc = 'navigate in neovim windows and tmux windows' } },
 
     },
     --- keymaps of nvim-cmp are in cmp.lua
