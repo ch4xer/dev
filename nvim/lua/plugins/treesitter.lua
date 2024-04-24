@@ -26,6 +26,7 @@ return {
                     "xml",
                     "markdown",
                     "markdown_inline",
+                    "comment",
                 },
                 -- switch to buildin syntax highlighting
                 highlight = {
