@@ -23,8 +23,18 @@ return {
                     },
                 }
             }
-            local other_servers = { "gopls", "pyright", "lua_ls", "dockerls", "bashls", "texlab", "ruff_lsp", "jsonls",
-                "marksman" }
+            local other_servers = {
+                "gopls",
+                "pyright",
+                "lua_ls",
+                "dockerls",
+                "bashls",
+                "texlab",
+                "ruff_lsp",
+                "jsonls",
+                "yamlls",
+                "marksman"
+            }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
@@ -40,7 +50,13 @@ return {
             local null_ls = require("null-ls")
             null_ls.setup({
                 sources = {
-                    null_ls.builtins.formatting.prettier,
+                    null_ls.builtins.formatting.prettier.with({
+                        disabled_filetypes = { "yaml" },
+                    }),
+                    -- use kubernetes style for yaml
+                    null_ls.builtins.formatting.yamlfmt.with({
+                        extra_args = { "--formatter", "indentless_arrays=true" },
+                    }),
                     null_ls.builtins.formatting.black,
                     null_ls.builtins.formatting.gofumpt,
                     null_ls.builtins.diagnostics.golangci_lint,
@@ -104,6 +120,7 @@ return {
                 },
             })
         end,
-        event = 'LspAttach'
+        -- to use lspsaga terminal whenever lsp is attached
+        event = 'VeryLazy'
     },
 }
