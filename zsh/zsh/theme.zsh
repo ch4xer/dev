@@ -33,6 +33,7 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     # os_icon                 # os identifier
+    context
     dir                     # current directory
     vcs                     # git status
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
