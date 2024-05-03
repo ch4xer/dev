@@ -81,7 +81,8 @@ return {
                     hide_keyword = true,
                 },
                 lightbulb = {
-                    virtual_text = false
+                    sign = false,
+                    virtual_text = false,
                 },
                 code_action = {
                     keys = {
