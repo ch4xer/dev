@@ -1,4 +1,4 @@
-alias c="clear;todo.sh list"
+alias c="clear"
 alias s="ssh"
 alias lg="lazygit"
 alias l="lsd"
