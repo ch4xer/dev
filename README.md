@@ -45,6 +45,7 @@ zsh/zshrc -> ~/.zshrc
 - Zsh
   - settings about software are in `zsh/zsh/plugins`, you can add here by yourself
   - disable vim mode for consistence.
+  - customize `context` module of powerlevel10k
 - Neovim
   - most keybindings are in `nvim/lua/keymap.lua`, others are in plugins' file.
   - disgard f/F t/T inline search and only use global search enhanced by flash.nvim.
