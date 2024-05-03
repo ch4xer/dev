@@ -1,4 +1,5 @@
 lazy-lock.json
 .luarc.json
 zsh/zsh/software/*
+!zsh/zsh/software/.gitkeep
 
