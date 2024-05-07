@@ -32,7 +32,6 @@ end
 
 M.paste_clipboard_image = function(is_wayland)
     local current_time = os.date("%Y-%m-%d-%H-%M-%S")
-    local abs_dir = M.get_marksman_root_dir() .. "/Attachment/"
     local filename = vim.fn.fnamemodify(vim.fn.expand "%", ":t:r")
     local abs_path, rlt_path
     -- for hugo blog index.md
@@ -41,6 +40,9 @@ M.paste_clipboard_image = function(is_wayland)
         abs_path = vim.fn.fnamemodify(vim.fn.expand "%", ":p:h") .. "/" .. current_time .. ".png"
         rlt_path = current_time .. ".png"
     else
+        -- 1. markdown file in git repo
+        -- 2. has Attachment folder in root directory
+        local abs_dir = M.get_marksman_root_dir() .. "/Attachment/"
         if vim.fn.isdirectory(abs_dir) == 0 then
             return
         end
