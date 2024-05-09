@@ -50,13 +50,7 @@ return {
             local null_ls = require("null-ls")
             null_ls.setup({
                 sources = {
-                    null_ls.builtins.formatting.prettier.with({
-                        disabled_filetypes = { "yaml" },
-                    }),
-                    -- use kubernetes style for yaml
-                    null_ls.builtins.formatting.yamlfmt.with({
-                        extra_args = { "--formatter", "indentless_arrays=true" },
-                    }),
+                    null_ls.builtins.formatting.prettier,
                     null_ls.builtins.formatting.black,
                     null_ls.builtins.formatting.gofumpt,
                     null_ls.builtins.diagnostics.golangci_lint,
