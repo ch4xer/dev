@@ -5,14 +5,6 @@ PV_HEIGHT=$3
 X=$4
 Y=$5
 
-preview() {
-  if [ -n "$TMUX" ]; then
-    file ${1}
-  else
-    kitty +kitten icat --stdin no --transfer-mode file --place "${PV_WIDTH}x${PV_HEIGHT}@${X}x${Y}" "${1}" < /dev/null > /dev/tty
-  fi
-}
-
 TEMPDIR=/tmp/
 
 case "$(file --dereference --brief --mime-type -- "${FILE_PATH}")" in
