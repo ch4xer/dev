@@ -51,4 +51,3 @@ zsh/zshrc -> ~/.zshrc
   - the completion behavior simulate vscode's, which is more intuitive:)
 - lf
   - integrate with fzf, you can press `f` to fuzzy search files and directories from pwd
-  - since lf use `rifle` to open file in my config, ranger is still needed.

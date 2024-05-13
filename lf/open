@@ -1,0 +1,43 @@
+#!/bin/sh
+# Handle by MIME type
+case "$(file -Lb --mime-type -- "$1")" in
+    text/*|*/xml|*/csv|*/json)
+        ${EDITOR:-nvim} "$@" && exit ;;
+    video/*)
+        if [ -n "$DISPLAY" ]; then
+            mpv --msg-level=all=no -- "$@" || mplayer -- "$@" &
+        else
+            cmplayer "$@" ||
+            mplayer -vo fbdev2 -vc ffh264, -- "$@" ||
+            mpv --vo=gpu --gpu-context=drm --msg-level=all=no -- "$@"
+        fi > /dev/null 2>&1 && exit ;;
+    audio/*)
+        mpv -- "$@" || mplayer -- "$@" && exit ;;
+    application/pdf)
+        if [ -n "$DISPLAY" ]; then
+            zathura "$@" 2> /dev/null &
+        else
+            jfbview "$@"
+        fi && exit ;;
+    image/*)
+        if [ -n "$DISPLAY" ]; then
+            imv "$@" || sxiv "$@" || vimiv "$@" &
+        fi && exit ;;
+    *) 
+        ${EDITOR:-nvim} "$@" && exit ;;
+esac
+
+# Handle by extension
+case "$(echo "${1##*.}" | tr '[:upper:]' '[:lower:]')" in
+    ts) ;;
+
+    azw*) ;;
+
+    *) ;; # Go on to handle by mime type
+esac
+
+if [ -n "$DISPLAY" ]; then
+    for f in "$@"; do
+        if [ -x "$f" ]; then "$f"; else xdg-open "$f"; fi
+    done &
+fi

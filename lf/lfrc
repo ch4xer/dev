@@ -7,7 +7,6 @@ set info size
 set dircounts
 set ratios 1:1
 set previewer ~/.config/lf/preview.sh
-# set cleaner ~/.config/lf/clean.sh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
@@ -27,9 +26,9 @@ cmd open &{{
     fi
   done
   if $fork_needed; then
-    exec rifle $fx 
+    exec ~/.config/lf/open $fx 
   else
-    lf -remote "send $id \$rifle \$fx"
+    lf -remote "send $id \$~/.config/lf/open \$fx"
   fi
 }}
 
@@ -54,6 +53,7 @@ cmd trash &{{
     fi
   done
 }}
+
 cmd delete &{{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
