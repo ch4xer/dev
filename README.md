@@ -57,8 +57,8 @@ zsh/zshrc -> ~/.zshrc
 
 |   Software    |              Key               |                 Effect                 |
 | :-----------: | :----------------------------: | :------------------------------------: |
-|      zsh      |             <C-r>              |         execute lf filemanager         |
-|      zsh      |         <C-backspace>          |          delete word backward          |
+|      zsh      |              C-r               |         execute lf filemanager         |
+|      zsh      |          C-backspace           |          delete word backward          |
 |      lf       |               gh               |             go to home (~)             |
 |      lf       |               gd               |           go to ~/Documents            |
 |      lf       |               gn               |           go to ~/Downloads            |
@@ -75,28 +75,28 @@ zsh/zshrc -> ~/.zshrc
 |      lf       |               d                |                  cut                   |
 |      lf       |               p                |                 paste                  |
 |      lf       |               D                |             move to trash              |
-|      lf       |            <delete>            |                   rm                   |
+|      lf       |             delete             |                   rm                   |
 |      lf       |               f                |         fuzzy search using fzf         |
-| tmux & neovim |             <C-h>              |  go to the left pane or neovim window  |
-| tmux & neovim |             <C-j>              | go to the pane below or neovim window  |
-| tmux & neovim |             <C-k>              |  go to the top pane or neovim window   |
-| tmux & neovim |             <C-l>              | go to the right pane or neovim window  |
-| tmux & neovim |             <C-q>              |    kill pane or close neovim window    |
-|     tmux      |            <C-S-j>             |        swap with the next pane         |
-|     tmux      |            <C-S-k>             |      swap with the previous pane       |
-|     tmux      |             <C-x>              |       split window horizontally        |
-|     tmux      |            <C-S-x>             |        split window vertically         |
-|     tmux      |             <C-f>              |          make pane fullscreen          |
-|     tmux      |             <C-t>              |           create new window            |
-|     tmux      |            <C-S-t>             |             rename window              |
-|     tmux      |            <C-PgUp>            |         go to previous window          |
-|     tmux      |            <C-PgDn>            |           go to next window            |
-|     tmux      |           <C-S-PgUp>           |       swap with previous window        |
-|     tmux      |           <C-S-PgDn>           |         swap with next window          |
-|     tmux      |         <C-(number x)>         |             go to window x             |
-|     tmux      |             <C-s>              |             choose session             |
-|     tmux      |            <C-S-s>             |             rename session             |
-|     tmux      |             <C-n>              |           create new session           |
+| tmux & neovim |              C-h               |  go to the left pane or neovim window  |
+| tmux & neovim |              C-j               | go to the pane below or neovim window  |
+| tmux & neovim |              C-k               |  go to the top pane or neovim window   |
+| tmux & neovim |              C-l               | go to the right pane or neovim window  |
+| tmux & neovim |              C-q               |    kill pane or close neovim window    |
+|     tmux      |             C-S-j              |        swap with the next pane         |
+|     tmux      |             C-S-k              |      swap with the previous pane       |
+|     tmux      |              C-x               |       split window horizontally        |
+|     tmux      |             C-S-x              |        split window vertically         |
+|     tmux      |              C-f               |          make pane fullscreen          |
+|     tmux      |              C-t               |           create new window            |
+|     tmux      |             C-S-t              |             rename window              |
+|     tmux      |             C-PgUp             |         go to previous window          |
+|     tmux      |             C-PgDn             |           go to next window            |
+|     tmux      |            C-S-PgUp            |       swap with previous window        |
+|     tmux      |            C-S-PgDn            |         swap with next window          |
+|     tmux      |          C-(number x)          |             go to window x             |
+|     tmux      |              C-s               |             choose session             |
+|     tmux      |             C-S-s              |             rename session             |
+|     tmux      |              C-n               |           create new session           |
 |    neovim     |               L                |         go to the end of line          |
 |    neovim     |               H                |        go to the begin of line         |
 |    neovim     |               J                |       go to the previous buffer        |
@@ -106,17 +106,17 @@ zsh/zshrc -> ~/.zshrc
 |    neovim     |               ;                |         enter commandline mode         |
 |    neovim     |               Q                |                quit all                |
 |    neovim     |               g=               |            format document             |
-|    neovim     |           <leader>q            |       record macro to register 1       |
-|    neovim     |         <2-LeftMouse>          |              toggle fold               |
-|    neovim     |              <CR>              |              toggle fold               |
+|    neovim     |            leaderq             |       record macro to register 1       |
+|    neovim     |          2-LeftMouse           |              toggle fold               |
+|    neovim     |               CR               |              toggle fold               |
 |    neovim     |               q                |             delete buffer              |
 |    neovim     |               sw               |           fuzzy search word            |
 |    neovim     |               sf               |         fuzzy search filename          |
 |    neovim     |               z                |      fuzzy search opened buffers       |
 |    neovim     |               sd               |        fuzzy search diagnostics        |
-|    neovim     |           <leader>t            |             toggle neotree             |
-|    neovim     |           <leader>c            |         change root directory          |
-|    neovim     |               ss               |   floating terminal (close by <ESC>)   |
+|    neovim     |            leadert             |             toggle neotree             |
+|    neovim     |            leaderc             |         change root directory          |
+|    neovim     |               ss               |    floating terminal (close by ESC)    |
 |    neovim     |               ga               |           (lsp) code action            |
 |    neovim     |               ge               |     (lsp) show diagnostics in line     |
 |    neovim     |               gh               |           (lsp) get document           |
@@ -128,11 +128,11 @@ zsh/zshrc -> ~/.zshrc
 |    neovim     |               tt               | (test) run test functions (go, python) |
 |    neovim     |               ts               |        (test) show test output         |
 |    neovim     |               `                |       (debug) toggle breakpoint        |
-|    neovim     |              <F1>              |            (debug) continue            |
-|    neovim     |              <F2>              |           (debug) step_over            |
-|    neovim     |              <F3>              |           (debug) step_into            |
-|    neovim     |              <F4>              |        (debug) toggle debug ui         |
-|    neovim     |             <C-/>              |              comment line              |
+|    neovim     |               F1               |            (debug) continue            |
+|    neovim     |               F2               |           (debug) step_over            |
+|    neovim     |               F3               |           (debug) step_into            |
+|    neovim     |               F4               |        (debug) toggle debug ui         |
+|    neovim     |              C-/               |              comment line              |
 |    neovim     |               /                |            search and jump             |
 |    neovim     |               ?                |    search and select in treesitter     |
 |    neovim     | keymaps in plugins/neotree.lua |          some file operations          |
