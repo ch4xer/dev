@@ -106,7 +106,7 @@ zsh/zshrc -> ~/.zshrc
 |    neovim     |               ;                |         enter commandline mode         |
 |    neovim     |               Q                |                quit all                |
 |    neovim     |               g=               |            format document             |
-|    neovim     |            leaderq             |       record macro to register 1       |
+|    neovim     |            Space q             |       record macro to register 1       |
 |    neovim     |          2-LeftMouse           |              toggle fold               |
 |    neovim     |               CR               |              toggle fold               |
 |    neovim     |               q                |             delete buffer              |
@@ -114,8 +114,8 @@ zsh/zshrc -> ~/.zshrc
 |    neovim     |               sf               |         fuzzy search filename          |
 |    neovim     |               z                |      fuzzy search opened buffers       |
 |    neovim     |               sd               |        fuzzy search diagnostics        |
-|    neovim     |            leadert             |             toggle neotree             |
-|    neovim     |            leaderc             |         change root directory          |
+|    neovim     |            Space t             |             toggle neotree             |
+|    neovim     |            Space c             |         change root directory          |
 |    neovim     |               ss               |    floating terminal (close by ESC)    |
 |    neovim     |               ga               |           (lsp) code action            |
 |    neovim     |               ge               |     (lsp) show diagnostics in line     |
