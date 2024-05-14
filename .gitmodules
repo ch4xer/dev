@@ -1,67 +1,51 @@
 [submodule "zsh/plugins/powerlevel10k"]
 	path = zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-    branch = main
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-    branch = main
 [submodule "zsh/plugins/zsh-autoswitch-virtualenv"]
 	path = zsh/plugins/zsh-autoswitch-virtualenv
 	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
-    branch = main
 [submodule "zsh/plugins/zsh-extract"]
 	path = zsh/plugins/zsh-extract
 	url = https://github.com/le0me55i/zsh-extract.git
-    branch = main
 [submodule "zsh/plugins/zsh-history-substring-search"]
 	path = zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-    branch = main
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-    branch = main
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-    branch = main
 [submodule "tmux/plugins/tmux-sensible"]
 	path = tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
-    branch = main
 [submodule "tmux/plugins/tmux-continuum"]
 	path = tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
-    branch = main
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
-    branch = main
 [submodule "zsh/zsh/plugins/powerlevel10k"]
 	path = zsh/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-    branch = main
 [submodule "zsh/zsh/plugins/zsh-autosuggestions"]
 	path = zsh/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-    branch = main
 [submodule "zsh/zsh/plugins/zsh-autoswitch-virtualenv"]
 	path = zsh/zsh/plugins/zsh-autoswitch-virtualenv
 	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
-    branch = main
 [submodule "zsh/zsh/plugins/zsh-extract"]
 	path = zsh/zsh/plugins/zsh-extract
 	url = https://github.com/le0me55i/zsh-extract.git
-    branch = main
 [submodule "zsh/zsh/plugins/zsh-history-substring-search"]
 	path = zsh/zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-    branch = main
 [submodule "zsh/zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-    branch = main
 [submodule "zsh/zsh/plugins/zsh-autocomplete"]
 	path = zsh/zsh/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete
