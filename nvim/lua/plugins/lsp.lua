@@ -32,7 +32,6 @@ return {
                 "texlab",
                 "ruff_lsp",
                 "jsonls",
-                "yamlls",
                 "marksman"
             }
             for _, server in ipairs(other_servers) do
