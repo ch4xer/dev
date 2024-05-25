@@ -20,10 +20,6 @@ return {
         event = { 'InsertEnter' }
     },
     {
-        'danymat/neogen',
-        config = true,
-    },
-    {
         "kylechui/nvim-surround",
         config = function()
             require("nvim-surround").setup {

@@ -13,8 +13,8 @@ local Base = {
         { 'n',          'K', function() vim.api.nvim_command('bnext!') end,     { desc = 'go to next buffer' } },
         -- <PageUp>
         -- page scroll
-        { 'n',          'F', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',    { desc = 'scroll half page forward' } },
-        { 'n',          'f', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>',    { desc = 'scroll half page backward' } },
+        { { 'n', 'v' }, 'F', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',    { desc = 'scroll half page forward' } },
+        { { 'n', 'v' }, 'f', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>',    { desc = 'scroll half page backward' } },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>',  { desc = 'delete word forward' } },
@@ -68,9 +68,6 @@ local Plugin = {
         { 'n', 'gn',    function() vim.api.nvim_command('Lspsaga rename') end,                { desc = 'rename symbol' } },
         { 'n', 'gd',    function() vim.api.nvim_command('Lspsaga peek_definition') end,       { desc = 'peek definition' } },
         { 'n', 'gr',    function() vim.api.nvim_command('Lspsaga finder') end,                { desc = 'find reference' } },
-    },
-    neogen = {
-        { 'n', 'go', function() require('neogen').generate() end, { desc = 'generate doc comment' } },
     },
     lazygit = {
         { 'n', 'gi', function() vim.api.nvim_command('LazyGit') end, { desc = 'toggle lazygit' } },
