@@ -123,7 +123,6 @@ zsh/zshrc -> ~/.zshrc
 |    neovim     |               gn               |          (lsp) rename symbol           |
 |    neovim     |               gd               |         (lsp) peek definition          |
 |    neovim     |               gr               |          (lsp) find reference          |
-|    neovim     |               go               |            generate comment            |
 |    neovim     |               gi               |              show lazygit              |
 |    neovim     |               tt               | (test) run test functions (go, python) |
 |    neovim     |               ts               |        (test) show test output         |
