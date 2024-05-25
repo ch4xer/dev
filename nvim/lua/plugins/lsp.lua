@@ -13,32 +13,41 @@ return {
                 capabilities = capabilities,
                 cmd = { "clangd", "--fallback-style=llvm", "--offset-encoding=utf-16" },
             }
-            lspconfig.rust_analyzer.setup {
-                capabilities = capabilities,
-                settings = {
-                    ["rust-analyzer"] = {
-                        checkOnSave = {
-                            command = "clippy",
-                        },
-                    },
-                }
-            }
             local other_servers = {
+                "rust_analyzer",
                 "gopls",
                 "pyright",
                 "lua_ls",
                 "dockerls",
                 "bashls",
                 "texlab",
-                "ruff_lsp",
                 "jsonls",
-                "marksman"
+                "marksman",
             }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
+                    settings = {
+                        rust_analyzer = {
+                            checkOnSave = {
+                                command = "clippy",
+                            },
+                        },
+                        gopls = {
+                            hints = {
+                                assignVariableTypes = true,
+                                compositeLiteralFields = true,
+                                compositeLiteralTypes = true,
+                                constantValues = true,
+                                functionTypeParameters = true,
+                                parameterNames = true,
+                                rangeVariableTypes = true,
+                            },
+                        },
+                    }
                 }
             end
+            vim.lsp.inlay_hint.enable()
         end,
         -- dont use any event, as new created file will not have lsp attached
         lazy = false,
