@@ -13,9 +13,13 @@ case "$(file -Lb --mime-type -- "$1")" in
         fi > /dev/null 2>&1 && exit ;;
     audio/*)
         mpv -- "$@" || mplayer -- "$@" && exit ;;
+    application/vnd.tcpdump.pcap)
+        if [ -n "$DISPLAY" ]; then
+            wireshark "$@" 2> /dev/null &
+        fi && exit ;;
     application/pdf)
         if [ -n "$DISPLAY" ]; then
-            zathura "$@" 2> /dev/null &
+            okular "$@" 2> /dev/null &
         else
             jfbview "$@"
         fi && exit ;;
