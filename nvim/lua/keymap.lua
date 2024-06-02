@@ -41,7 +41,11 @@ local Base = {
     },
     modeSwitch = {
         { 'i', '<ESC>', '<C-O><CMD>stopinsert<CR>', { desc = 'exit to normal mode while keeping cursor location' } },
-    }
+    },
+    comment = {
+        { 'v', '<C-/>', 'gc',  { desc = 'comment', remap = true, silent = true} },
+        { 'n', '<C-/>', 'gcc', { desc = 'comment', remap = true, silent = true } },
+    },
 }
 
 local Plugin = {
@@ -82,12 +86,6 @@ local Plugin = {
         { 'n', '<F2>', function() require("dap").step_over() end,         { desc = 'step over' } },
         { 'n', '<F3>', function() require("dap").step_into() end,         { desc = 'step into' } },
         { 'n', '<F4>', function() require("dapui").toggle() end,          { desc = 'toggle debug ui' } },
-    },
-    comment = {
-        { 'v', '<C-_>', '<Plug>(comment_toggle_linewise_visual)',  { desc = 'comment' } },
-        { 'v', '<C-/>', '<Plug>(comment_toggle_linewise_visual)',  { desc = 'comment' } },
-        { 'n', '<C-_>', '<Plug>(comment_toggle_linewise_current)', { desc = 'comment' } },
-        { 'n', '<C-/>', '<Plug>(comment_toggle_linewise_current)', { desc = 'comment' } },
     },
     flash = {
         -- press '/' to search and jump
