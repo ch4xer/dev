@@ -156,7 +156,7 @@ fi             # FILE
 *.r             󰟔
 *.rproj         󰗆
 *.sol           󰡪
-*.pem           
+*.pem           
 
 # file names (vim-devicons) (case-insensitive not supported in lf)
 *gruntfile.coffee       
@@ -354,4 +354,4 @@ Vagrantfile             
 *.xspf  
 
 # other formats
-*.pdf   
+*.pdf   
