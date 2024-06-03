@@ -62,3 +62,12 @@ vim.api.nvim_create_autocmd("FileType", {
         end
     end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function(ctx)
+    local root = vim.fs.root(ctx.buf, { ".git", ".svn", "Makefile", "mvnw", "package.json", "go.mod", "Cargo.toml" })
+    if root and root ~= "." and root ~= vim.fn.getcwd() then
+      vim.cmd.cd(root)
+    end
+  end,
+})

@@ -14,7 +14,6 @@ vim.o.splitright = true
 
 -- hidden conceal char
 -- vim.o.conceallevel = 3
-
 vim.o.modifiable = true
 -- the refresh time will affect lspsaga's reaction time
 vim.o.updatetime = 300
