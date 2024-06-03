@@ -1,5 +1,80 @@
 return {
     {
+        'windwp/nvim-autopairs',
+        config = true,
+        event = { 'InsertEnter' }
+    },
+    {
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup {
+                keymaps = {
+                    visual = "s",
+                    normal = "ys",
+                    delete = "ds",
+                    change = "cs",
+                },
+                surrounds = {
+                    ["("] = {
+                        add = { "(", ")" },
+                        find = function()
+                            return M.get_selection({ motion = "a(" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                    ["{"] = {
+                        add = { "{", "}" },
+                        find = function()
+                            return M.get_selection({ motion = "a{" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                    ["["] = {
+                        add = { "[", "]" },
+                        find = function()
+                            return M.get_selection({ motion = "a[" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                    ["<"] = {
+                        add = { "<", ">" },
+                        find = function()
+                            return M.get_selection({ motion = "a<" })
+                        end,
+                        delete = "^(.?)().-(?.)()$",
+                    },
+                }
+            }
+        end,
+        event = "VeryLazy",
+    },
+    {
+        "kdheepak/lazygit.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        cmd = { "LazyGit", },
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        event = "VeryLazy",
+        ft = "markdown",
+        build = function() vim.fn["mkdp#util#install"]() end,
+        config = function()
+            vim.g.mkdp_browser = 'min-browser'
+            vim.g.mkdp_auto_close = 0
+            vim.g.mkdp_combine_preview = 1
+        end,
+    },
+    {
+        'lervag/vimtex',
+        ft = "tex",
+        config = function()
+            vim.g.vimtex_view_method = 'zathura'
+            vim.g.vimtex_quickfix_ignore_filters = { "Underfull", "Overfull", "Missing" }
+        end,
+    },
+    {
         'alexghergh/nvim-tmux-navigation',
         config = true,
         lazy = false,
@@ -84,6 +159,25 @@ return {
     --     dependencies = { 'kevinhwang91/promise-async' },
     --     event = "VeryLazy",
     -- },
+    -- {
+    --     'echasnovski/mini.jump2d',
+    --     version = false,
+    --     lazy = false,
+    --     config = function()
+    --         require('mini.jump2d').setup {
+    --             view = {
+    --                 dim = true,
+    --             },
+    --             allowed_lines = {
+    --                 blank = false, -- Blank line (not sent to spotter even if `true`)
+    --                 cursor_before = true, -- Lines before cursor line
+    --                 cursor_at = true, -- Cursor line
+    --                 cursor_after = true, -- Lines after cursor line
+    --                 fold = true, -- Start of fold (not sent to spotter even if `true`)
+    --             },
+    --         }
+    --     end
+    -- },
     {
         "folke/flash.nvim",
         event = 'VeryLazy',
@@ -119,10 +213,6 @@ return {
                             backdrop = false,
                             matches = false,
                         },
-                    },
-                    -- options used for remote flash
-                    remote = {
-                        remote_op = { restore = true, motion = true },
                     },
                 },
                 -- options for the floating window that shows the prompt,

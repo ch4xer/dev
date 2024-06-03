@@ -15,16 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 local ui = require('plugins.ui')
 local utils = require('plugins.utils')
 local lsp = require('plugins.lsp')
-local edit = require('plugins.edit')
-local git = require('plugins.git')
 local cmp = require('plugins.cmp')
 local dap = require('plugins.dap')
 local test = require('plugins.test')
 local neotree = require('plugins.neotree')
 local fzf = require('plugins.fzf')
-local dashboard = require('plugins.dashboard')
 local treesitter = require('plugins.treesitter')
-local note = require('plugins.note')
 
 local concatenateTables = function(...)
     local result = {}
@@ -40,14 +36,10 @@ local plugins = concatenateTables(
     ui,
     utils,
     lsp,
-    edit,
-    note,
-    git,
     cmp,
     dap,
     test,
     neotree,
-    dashboard,
     fzf,
     treesitter
 )

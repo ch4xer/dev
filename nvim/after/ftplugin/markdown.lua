@@ -1,10 +1,4 @@
 local vim = vim
-vim.opt_local.expandtab = true
-vim.opt_local.shiftwidth = 2
-vim.opt_local.tabstop = 2
-vim.opt_local.softtabstop = 2
-vim.opt_local.foldmethod = "expr"
-vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.api.nvim_set_hl(0, "@text.title1", { fg = "#7aa2f7", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@text.title2", { fg = "#ff9e64", bold = true, italic = true })

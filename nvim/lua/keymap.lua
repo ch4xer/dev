@@ -59,7 +59,7 @@ local Plugin = {
         { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end, { desc = 'search diagnostics' } },
     },
     neotree = {
-        --- some keymaps are in neotree.lua
+        --- some keymaps are in configuration of neotree
         { 'n', '<leader>t', utils.toggle_tree, { desc = 'toggle neotree' } },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>', { desc = 'change root directory' } },
     },
@@ -88,7 +88,7 @@ local Plugin = {
         { 'n', '<F4>', function() require("dapui").toggle() end,          { desc = 'toggle debug ui' } },
     },
     flash = {
-        -- press '/' to search and jump
+        -- press '/' to jump in regular search
         { { "n", "x", "o" }, '?', function() require("flash").treesitter() end, { desc = 'search and select in treesitter' } }
     },
     markdown = {
@@ -102,9 +102,9 @@ local Plugin = {
         { 'n', '<C-l>', require('nvim-tmux-navigation').NvimTmuxNavigateRight, { desc = 'navigate in neovim windows and tmux windows' } },
 
     },
-    --- keymaps of nvim-cmp are in cmp.lua
+    -- keymaps are in configuration of nvim-cmp
     cmp = {},
-    --- keymaps of nvim-surround are in edit.lua
+    -- keymaps are in configuration of nvim-surround
     surround = {},
 }
 

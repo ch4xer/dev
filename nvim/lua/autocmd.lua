@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "yml", "yaml", "json", "html", "css", "javascript", "typescript", "sh", "sql", "vue" },
+    pattern = { "yml", "yaml", "json", "html", "css", "javascript", "typescript", "sh", "sql", "vue", "markdown" },
     callback = function(event)
         vim.opt_local.shiftwidth = 2
         vim.opt_local.tabstop = 2
@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.o.foldenable = true
         if require("nvim-treesitter.parsers").get_parser() then
             vim.o.foldmethod = "expr"
-            vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+            vim.o.foldexpr = "nvim_treesitter#foldexpr()"
         else
             vim.o.foldmethod = "syntax"
         end

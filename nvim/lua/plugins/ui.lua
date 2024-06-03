@@ -37,41 +37,10 @@ return {
             vim.cmd("colorscheme tokyonight")
         end,
     },
-    -- {
-    --     'akinsho/bufferline.nvim',
-    --     dependencies = {
-    --         'folke/tokyonight.nvim',
-    --     },
-    --     event = 'UIEnter',
-    --     config = function()
-    --         require('bufferline').setup {
-    --             options = {
-    --                 close_command = "Bdelete %d",
-    --                 indicator = {
-    --                     style = 'none',
-    --                 },
-    --                 name_formatter = function(buf)
-    --                     if buf.name:match('%.*') then
-    --                         return vim.fn.fnamemodify(buf.name, ':t:r')
-    --                     end
-    --                 end,
-    --                 diagnostics = "nvim_lsp",
-    --                 diagnostics_indicator = function(count, level, diagnostics_dict, context)
-    --                     local icon = level:match("error") and " " or " "
-    --                     return icon .. count
-    --                 end,
-    --                 offsets = { { filetype = "neo-tree", text = "Neotree", text_align = "center" } },
-    --                 enforce_regular_tabs = true,
-    --                 tab_size = 12,
-    --             }
-    --         }
-    --     end,
-    -- },
     {
         'hoob3rt/lualine.nvim',
         dependencies = {
             'folke/tokyonight.nvim',
-            'folke/noice.nvim',
         },
         event = 'UIEnter',
         config = function()
@@ -135,44 +104,136 @@ return {
         end
     },
     {
-        "folke/noice.nvim",
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        },
+        'lewis6991/gitsigns.nvim',
+        config = true,
+        event = 'VeryLazy',
+    },
+    {
+        'glepnir/dashboard-nvim',
         event = 'UIEnter',
+        cond = function() return #vim.v.argv == 2 end,
         config = function()
-            require('noice').setup {
-                cmdline = {
-                    view = "cmdline",
+            local version = vim.version()
+            local header = {
+                "",
+                "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
+                "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
+                "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
+                "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
+                "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
+                "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
+                "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
+                " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
+                " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
+                "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
+                "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+                "N E O V I M - v " .. version.major .. "." .. version.minor,
+                "",
+            }
+            local center = {
+                {
+                    desc = "Find File                     ",
+                    keymap = "",
+                    key = "f",
+                    icon = " ",
+                    action = "lua require('fzf-lua').files()",
                 },
-                messages = {
-                    view = "mini"
+                {
+                    desc = "New File",
+                    keymap = "",
+                    key = "n",
+                    icon = " ",
+                    action = "enew",
                 },
-                notify = {
-                    enabled = false,
+                {
+                    desc = "Restore Session Of CWD",
+                    keymap = "",
+                    key = "s",
+                    icon = "󰚰 ",
+                    action = "source Session.vim",
                 },
-                presets = {
-                    bottom_search = true,   -- use a classic bottom cmdline for search
-                    lsp_doc_border = false, -- add a border to hover docs and signature help
+                {
+                    desc = "Update Plugins",
+                    keymap = "",
+                    key = "u",
+                    icon = " ",
+                    action = "Lazy update",
                 },
-                routes = {
-                    {
-                        filter = {
-                            event = "msg_show",
-                            kind = "",
-                            find = "written",
-                        },
-                        opts = { skip = true },
-                    },
-                    {
-                        filter = {
-                            event = "msg_show",
-                            find = "gitsigns",
-                        },
-                        opts = { skip = true },
-                    },
+                {
+                    desc = "Config",
+                    keymap = "",
+                    key = "c",
+                    icon = " ",
+                    action = "lua require('fzf-lua').files({cwd='~/.config/nvim'})",
+                },
+                {
+                    desc = "Exit",
+                    keymap = "",
+                    key = "q",
+                    icon = " ",
+                    action = "exit",
                 },
             }
-        end
+            local custom_footer = { "The quieter you become", "The more you are able to hear" }
+            vim.api.nvim_create_autocmd("Filetype", {
+                pattern = "dashboard",
+                group = vim.api.nvim_create_augroup("Dashboard_au", { clear = true }),
+                callback = function()
+                    vim.cmd([[
+            setlocal buftype=nofile
+            setlocal nonumber norelativenumber nocursorline noruler
+        ]])
+                end,
+            })
+
+            require('dashboard').setup({
+                theme = 'doom',
+                config = {
+                    header = header,
+                    center = center,
+                    footer = custom_footer,
+                },
+
+            })
+        end,
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    -- {
+    --     "folke/noice.nvim",
+    --     event = 'UIEnter',
+    --     config = function()
+    --         require('noice').setup {
+    --             cmdline = {
+    --                 view = "cmdline",
+    --             },
+    --             messages = {
+    --                 view = "mini"
+    --             },
+    --             notify = {
+    --                 enabled = false,
+    --             },
+    --             presets = {
+    --                 bottom_search = true,   -- use a classic bottom cmdline for search
+    --                 lsp_doc_border = false, -- add a border to hover docs and signature help
+    --             },
+    --             routes = {
+    --                 {
+    --                     filter = {
+    --                         event = "msg_show",
+    --                         kind = "",
+    --                         find = "written",
+    --                     },
+    --                     opts = { skip = true },
+    --                 },
+    --                 {
+    --                     filter = {
+    --                         event = "msg_show",
+    --                         find = "gitsigns",
+    --                     },
+    --                     opts = { skip = true },
+    --                 },
+    --             },
+    --         }
+    --     end
+    -- },
 }
