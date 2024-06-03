@@ -50,7 +50,7 @@ local Base = {
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', function() utils.delete_buf_or_quit() end, { desc = 'delete buffer or quit' } },
+        { 'n', 'q', utils.delete_buf_or_quit , { desc = 'delete buffer or quit' } },
     },
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end,             { desc = 'search word' } },

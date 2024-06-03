@@ -5,49 +5,45 @@ return {
         lazy = false,
     },
     {
-        'famiu/bufdelete.nvim',
-        event = 'VeryLazy',
+        'echasnovski/mini.bufremove',
+        version = false,
+        config = true,
+        lazy = false
     },
     {
-        'tpope/vim-obsession',
+        'echasnovski/mini.sessions',
+        version = false,
         lazy = false,
+        config = true,
+        opts = {
+            -- Hook functions for actions. Default `nil` means 'do nothing'.
+            hooks = {
+                pre = { write = function() vim.cmd("Neotree close") end },
+                post = { read = nil, write = nil, delete = nil },
+            },
+        }
     },
     {
-        'RRethy/vim-illuminate',
+        'echasnovski/mini.cursorword',
+        version = false,
         event = 'VeryLazy',
+        config = true
     },
-    -- {
-    --     "shellRaining/hlchunk.nvim",
-    --     event = { "UIEnter" },
-    --     config = function()
-    --         require("hlchunk").setup({
-    --             chunk = {
-    --                 notify = false,
-    --                 style = {
-    --                     { fg = "#7aa2f7" },
-    --                     { fg = "#c21f30" }, -- this fg is used to highlight wrong chunk
-    --                 },
-    --             },
-    --             line_num = {
-    --                 enable = false,
-    --             },
-    --             blank = {
-    --                 enable = false,
-    --             },
-    --             indent = {
-    --                 enable = false,
-    --             }
-    --         })
-    --     end
-    -- },
-    -- {
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     main = "ibl",
-    --     event = 'VeryLazy',
-    --     config = function()
-    --         require("ibl").setup {}
-    --     end,
-    -- },
+    {
+        'echasnovski/mini.hipatterns',
+        version = false,
+        event = 'VeryLazy',
+        config = function()
+            local hipatterns = require('mini.hipatterns')
+            hipatterns.setup({
+                highlighters = {
+                    hex_color = hipatterns.gen_highlighter.hex_color(),
+                },
+            })
+        end
+    },
+
+
     -- {
     --     'kevinhwang91/nvim-ufo',
     --     config = function()

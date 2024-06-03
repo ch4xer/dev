@@ -120,7 +120,7 @@ M.delete_buf_or_quit = function()
     -- the current buffer should be valid
     if is_valid(current_bufnr) then
         pre_exit = 'write'
-        exit = 'Bdelete'
+        exit = 'lua MiniBufremove.delete()'
         local should_quit = 0
         -- check if there is other window contains valid buffer
         -- for _, win in ipairs(vim.api.nvim_list_wins()) do
