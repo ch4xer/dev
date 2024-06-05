@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
 })
 
 vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave' }, {
-    command = 'silent !fcitx5-remote -c'
+    command = "silent! !fcitx5-remote -c",
 })
 
 vim.g.width_close_tree = 120
@@ -64,10 +64,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function(ctx)
-    local root = vim.fs.root(ctx.buf, { ".git", ".svn", "Makefile", "mvnw", "package.json", "go.mod", "Cargo.toml" })
-    if root and root ~= "." and root ~= vim.fn.getcwd() then
-      vim.cmd.cd(root)
-    end
-  end,
+    callback = function(ctx)
+        local root = vim.fs.root(ctx.buf, { ".git", ".svn", "Makefile", "mvnw", "package.json", "go.mod", "Cargo.toml" })
+        if root and root ~= "." and root ~= vim.fn.getcwd() then
+            vim.cmd.cd(root)
+        end
+    end,
 })
