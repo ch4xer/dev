@@ -2,15 +2,18 @@ local vim = vim
 local utils = require('utils')
 
 vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
-    command = 'silent! mkview'
+    command = "silent! mkview"
 })
 
 vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
-    command = 'silent! loadview'
+    command = "silent! loadview"
 })
 
 vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave' }, {
-    command = "silent! !fcitx5-remote -c",
+    callback = function()
+        -- prevent statusline flinker
+        os.execute("fcitx5-remote -c")
+    end
 })
 
 vim.g.width_close_tree = 120
@@ -35,8 +38,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
     pattern = { "*" },
-    command = "silent! wall",
-    nested = true,
+    command = "silent! wa"
 })
 
 vim.api.nvim_create_autocmd("FileType", {

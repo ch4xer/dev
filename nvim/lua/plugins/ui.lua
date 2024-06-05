@@ -50,6 +50,7 @@ return {
                     globalstatus = true,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
+                    ignore_focus = {"neo-tree"}
                 },
                 sections = {
                     lualine_a = {
@@ -198,42 +199,37 @@ return {
         end,
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-    -- {
-    --     "folke/noice.nvim",
-    --     event = 'UIEnter',
-    --     config = function()
-    --         require('noice').setup {
-    --             cmdline = {
-    --                 view = "cmdline",
-    --             },
-    --             messages = {
-    --                 view = "mini"
-    --             },
-    --             notify = {
-    --                 enabled = false,
-    --             },
-    --             presets = {
-    --                 bottom_search = true,   -- use a classic bottom cmdline for search
-    --                 lsp_doc_border = false, -- add a border to hover docs and signature help
-    --             },
-    --             routes = {
-    --                 {
-    --                     filter = {
-    --                         event = "msg_show",
-    --                         kind = "",
-    --                         find = "written",
-    --                     },
-    --                     opts = { skip = true },
-    --                 },
-    --                 {
-    --                     filter = {
-    --                         event = "msg_show",
-    --                         find = "gitsigns",
-    --                     },
-    --                     opts = { skip = true },
-    --                 },
-    --             },
-    --         }
-    --     end
-    -- },
+    {
+        "folke/noice.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+        },
+        event = 'UIEnter',
+        config = function()
+            require('noice').setup {
+                cmdline = {
+                    view = "cmdline",
+                },
+                messages = {
+                    view = "mini"
+                },
+                notify = {
+                    enabled = false,
+                },
+                presets = {
+                    bottom_search = true,   -- use a classic bottom cmdline for search
+                    lsp_doc_border = false, -- add a border to hover docs and signature help
+                },
+                routes = {
+                    {
+                        filter = {
+                            event = "msg_show",
+                            kind = "",
+                        },
+                        opts = { skip = true },
+                    },
+                },
+            }
+        end
+    },
 }

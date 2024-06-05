@@ -107,7 +107,6 @@ M.get_clipboard_type = function()
 end
 
 M.delete_buf_or_quit = function()
-    local pre_exit = ''
     local exit = 'quit'
     local current_bufnr = vim.api.nvim_win_get_buf(0)
     local current_buf_name = vim.api.nvim_buf_get_name(current_bufnr)
@@ -119,7 +118,6 @@ M.delete_buf_or_quit = function()
     end
     -- the current buffer should be valid
     if is_valid(current_bufnr) then
-        pre_exit = 'write'
         exit = 'lua MiniBufremove.delete()'
         local should_quit = 0
         -- check if there is other window contains valid buffer
@@ -137,13 +135,10 @@ M.delete_buf_or_quit = function()
             -- if there is only [No Name], quitall
             local valid_buffer_number = #vim.tbl_filter(is_valid, vim.api.nvim_list_bufs())
             if current_buf_name == "" and valid_buffer_number == 1 then
-                pre_exit = ''
                 exit = 'quitall'
             end
         end
     end
-    -- dont block exit even failed to save
-    pcall(vim.cmd, pre_exit)
     vim.cmd(exit)
     vim.cmd.wincmd("=")
 end
