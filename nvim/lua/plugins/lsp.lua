@@ -5,6 +5,9 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'williamboman/mason.nvim',
         },
+        -- BufRead will not avoid loading in dashboard
+        -- while keeping lazy false
+        event = "BufRead",
         config = function()
             require('mason').setup()
             local lspconfig = require('lspconfig')
@@ -49,8 +52,6 @@ return {
             end
             vim.lsp.inlay_hint.enable()
         end,
-        -- dont use any event, as new created file will not have lsp attached
-        lazy = false,
     },
     {
         'nvimtools/none-ls.nvim',
@@ -127,6 +128,6 @@ return {
             })
         end,
         -- to use lspsaga terminal whenever lsp is attached
-        event = 'VeryLazy'
+        event = 'User Lazyest'
     },
 }

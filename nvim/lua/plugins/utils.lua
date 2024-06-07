@@ -46,7 +46,7 @@ return {
                 }
             }
         end,
-        event = "VeryLazy",
+        event = "User Lazyest",
     },
     {
         "kdheepak/lazygit.nvim",
@@ -57,8 +57,7 @@ return {
     },
     {
         "iamcco/markdown-preview.nvim",
-        event = "VeryLazy",
-        ft = "markdown",
+        ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
         config = function()
             vim.g.mkdp_browser = 'min-browser'
@@ -101,13 +100,13 @@ return {
     {
         'echasnovski/mini.cursorword',
         version = false,
-        event = 'VeryLazy',
+        event = 'User Lazyest',
         config = true
     },
     {
         'echasnovski/mini.hipatterns',
         version = false,
-        event = 'VeryLazy',
+        event = 'User Lazyest',
         config = function()
             local hipatterns = require('mini.hipatterns')
             hipatterns.setup({
@@ -180,7 +179,7 @@ return {
     -- },
     {
         "folke/flash.nvim",
-        event = 'VeryLazy',
+        event = 'User Lazyest',
         config = function()
             require('flash').setup {
                 labels = "abcdefghijklmnopqrstuvwxyz0123456789",

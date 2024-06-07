@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
     command = "silent! loadview"
 })
 
-vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufCreate', 'BufEnter', 'BufLeave' }, {
+vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
     callback = function()
         -- prevent statusline flinker
         os.execute("fcitx5-remote -c")
@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("BufRead", {
     callback = function(event)
         vim.o.foldcolumn = '0'
         vim.o.foldlevel = 99
@@ -72,4 +72,22 @@ vim.api.nvim_create_autocmd("BufEnter", {
             vim.cmd.cd(root)
         end
     end,
+})
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = { "VeryLazy" },
+    callback = function()
+        local _trigger = function()
+            vim.api.nvim_exec_autocmds("User", { pattern = "Lazyest" })
+        end
+
+        if vim.bo.filetype == "dashboard" then
+            vim.api.nvim_create_autocmd("BufRead", {
+                once = true,
+                callback = _trigger
+            })
+        else
+            _trigger()
+        end
+    end
 })

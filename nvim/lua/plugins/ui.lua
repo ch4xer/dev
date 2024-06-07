@@ -42,7 +42,7 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        event = 'UIEnter',
+        event = 'User Lazyest',
         config = function()
             require('lualine').setup {
                 options = {
@@ -50,7 +50,7 @@ return {
                     globalstatus = true,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
-                    ignore_focus = {"neo-tree"}
+                    ignore_focus = { "neo-tree" }
                 },
                 sections = {
                     lualine_a = {
@@ -107,7 +107,7 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         config = true,
-        event = 'VeryLazy',
+        event = 'User Lazyest',
     },
     {
         'glepnir/dashboard-nvim',
@@ -204,7 +204,7 @@ return {
         dependencies = {
             "MunifTanjim/nui.nvim",
         },
-        event = 'UIEnter',
+        event = 'User Lazyest',
         config = function()
             require('noice').setup {
                 cmdline = {
