@@ -4,6 +4,8 @@ vim.loader.enable()
 -- lua/foo/bar.lua
 -- lua/foo/bar/init.lua
 
+-- register global functions first
+require('utils')
 require('base')
 require('plugins')
 require('autocmd')

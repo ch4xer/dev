@@ -1,5 +1,4 @@
 local vim = vim
-local utils = require('utils')
 
 vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
     command = "silent! mkview"
@@ -22,7 +21,7 @@ vim.api.nvim_create_autocmd({ 'VimResized' }, {
     callback = function()
         -- keep the size of every window, very usful!
         vim.cmd.wincmd('=')
-        utils.close_tree()
+        vim.g.close_tree()
     end
 })
 
@@ -43,7 +42,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "yml", "yaml", "json", "html", "css", "javascript", "typescript", "sh", "sql", "vue", "markdown" },
-    callback = function(event)
+    callback = function()
         vim.opt_local.shiftwidth = 2
         vim.opt_local.tabstop = 2
         vim.opt_local.softtabstop = 2
@@ -51,7 +50,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufRead", {
-    callback = function(event)
+    callback = function()
+        if vim.g.is_large() then
+            return
+        end
         vim.o.foldcolumn = '0'
         vim.o.foldlevel = 99
         vim.o.foldlevelstart = 99
@@ -81,13 +83,16 @@ vim.api.nvim_create_autocmd("User", {
             vim.api.nvim_exec_autocmds("User", { pattern = "Lazyest" })
         end
 
+        -- BufRead will not avoid plugin loading in dashboard
         if vim.bo.filetype == "dashboard" then
             vim.api.nvim_create_autocmd("BufRead", {
                 once = true,
                 callback = _trigger
             })
         else
-            _trigger()
+            if vim.g.is_large() == false then
+                _trigger()
+            end
         end
     end
 })

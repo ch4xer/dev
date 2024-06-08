@@ -1,8 +1,7 @@
 local vim = vim
-
 M = {}
 
-M.paste_as_link = function()
+vim.g.paste_as_link = function()
     if vim.bo.filetype ~= "markdown" then
         return
     end
@@ -106,7 +105,7 @@ M.get_clipboard_type = function()
     return is_wayland, is_img
 end
 
-M.delete_buf_or_quit = function()
+vim.g.delete_buf_or_quit = function()
     local exit = 'quit'
     local current_bufnr = vim.api.nvim_win_get_buf(0)
     local current_buf_name = vim.api.nvim_buf_get_name(current_bufnr)
@@ -143,17 +142,12 @@ M.delete_buf_or_quit = function()
     vim.cmd.wincmd("=")
 end
 
-M.format = function()
-    vim.lsp.buf.format()
-    vim.cmd('write')
-end
-
-M.wq_all = function()
+vim.g.wq_all = function()
     vim.cmd('silent wa')
     vim.cmd('qa')
 end
 
-M.toggle_tree = function()
+vim.g.toggle_tree = function()
     local t = function()
         -- vim.cmd("Neotree show last toggle")
         vim.cmd("Neotree focus last toggle")
@@ -162,7 +156,7 @@ M.toggle_tree = function()
     vim.fn.timer_start(1, t)
 end
 
-M.close_tree = function()
+vim.g.close_tree = function()
     local get_filetree_window = function()
         for _, windowId in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
             local buffer = vim.api.nvim_win_get_buf(windowId)
@@ -179,7 +173,7 @@ M.close_tree = function()
     end
 end
 
-M.quit_win = function()
+vim.g.quit_win = function()
     if #vim.api.nvim_list_wins() == 1 then
         vim.cmd('qa')
     end
@@ -187,7 +181,7 @@ M.quit_win = function()
     vim.cmd.wincmd("=")
 end
 
-M.preview_note = function()
+vim.g.preview_note = function()
     if vim.bo.filetype == 'markdown' then
         vim.cmd('MarkdownPreviewToggle')
     elseif vim.bo.filetype == 'tex' then
@@ -195,4 +189,30 @@ M.preview_note = function()
     end
 end
 
-return M
+vim.g.is_large = function()
+    -- will not trigger if file size is larger than 1000 KB
+    local max_filesize = 1000 * 1024 -- 1000 KB
+    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(0))
+    if ok and stats and stats.size > max_filesize then
+        return true
+    end
+    return false
+end
+
+vim.g.register_keymap = function(keySet)
+    for _, set in pairs(keySet) do
+        for _, keymap in ipairs(set) do
+            if keymap[4] == nil then
+                keymap[4] = { noremap = true, silent = true }
+            end
+            if keymap[3] ~= nil then
+                vim.keymap.set(
+                    keymap[1],
+                    keymap[2],
+                    keymap[3],
+                    keymap[4]
+                )
+            end
+        end
+    end
+end

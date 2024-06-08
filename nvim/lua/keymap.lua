@@ -1,5 +1,4 @@
 local vim = vim
-local utils = require('utils')
 local Base = {
     movement = {
         -- move cursor in wrapline paragraph
@@ -31,9 +30,9 @@ local Base = {
         { { 'n', 'v' }, ']',         '*',            { nowait = true, desc = 'search forward for the word where the cursor is located' } },
         { { 'n', 'v' }, '[',         '#',            { nowait = true, desc = 'search backward for the word where the cursor is located' } },
         { 'n',          '<leader>q', 'q1',           { desc = 'record macro to register 1' } },
-        { 'n',          '<C-q>',     utils.quit_win, { desc = 'quit window' } },
-        { 'n',          'Q',         utils.wq_all,   { desc = 'quit all' } },
-        { 'n',          'g=',        utils.format,   { desc = 'format document' } },
+        { 'n',          '<C-q>',     vim.g.quit_win, { desc = 'quit window' } },
+        { 'n',          'Q',         vim.g.wq_all,   { desc = 'quit all' } },
+        { 'n',          'g=',        vim.lsp.buf.format,   { desc = 'format document' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -44,13 +43,15 @@ local Base = {
     },
     comment = {
         { 'v', '<C-/>', 'gc',  { desc = 'comment', remap = true, silent = true} },
+        { 'v', '<C-_>', 'gc',  { desc = 'comment', remap = true, silent = true} },
         { 'n', '<C-/>', 'gcc', { desc = 'comment', remap = true, silent = true } },
+        { 'n', '<C-_>', 'gcc', { desc = 'comment', remap = true, silent = true } },
     },
 }
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', utils.delete_buf_or_quit , { desc = 'delete buffer or quit' } },
+        { 'n', 'q', vim.g.delete_buf_or_quit , { desc = 'delete buffer or quit' } },
     },
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end,             { desc = 'search word' } },
@@ -60,7 +61,7 @@ local Plugin = {
     },
     neotree = {
         --- some keymaps are in configuration of neotree
-        { 'n', '<leader>t', utils.toggle_tree, { desc = 'toggle neotree' } },
+        { 'n', '<leader>t', vim.g.toggle_tree, { desc = 'toggle neotree' } },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>', { desc = 'change root directory' } },
     },
     lspsaga = {
@@ -92,14 +93,14 @@ local Plugin = {
         { { "n", "x", "o" }, '?', function() require("flash").treesitter() end, { desc = 'search and select in treesitter' } }
     },
     markdown = {
-        { 'n', '<leader>p', utils.preview_note,  { desc = 'preview markdown' } },
-        { 'n', 'P',         utils.paste_as_link, { desc = 'paste image as link' } },
+        { 'n', '<leader>p', vim.g.preview_note,  { desc = 'preview markdown' } },
+        { 'n', 'P',         vim.g.paste_as_link, { desc = 'paste image as link' } },
     },
     tmux = {
-        { 'n', '<C-j>', require('nvim-tmux-navigation').NvimTmuxNavigateDown,  { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-k>', require('nvim-tmux-navigation').NvimTmuxNavigateUp,    { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-h>', require('nvim-tmux-navigation').NvimTmuxNavigateLeft,  { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-l>', require('nvim-tmux-navigation').NvimTmuxNavigateRight, { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-j>', function() require('nvim-tmux-navigation').NvimTmuxNavigateDown() end,  { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-k>', function() require('nvim-tmux-navigation').NvimTmuxNavigateUp() end,    { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-h>',function() require('nvim-tmux-navigation').NvimTmuxNavigateLeft() end,  { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-l>',function() require('nvim-tmux-navigation').NvimTmuxNavigateRight() end, { desc = 'navigate in neovim windows and tmux windows' } },
 
     },
     -- keymaps are in configuration of nvim-cmp
@@ -108,23 +109,5 @@ local Plugin = {
     surround = {},
 }
 
-local keyMapper = function(keySet)
-    for _, set in pairs(keySet) do
-        for _, keymap in ipairs(set) do
-            if keymap[4] == nil then
-                keymap[4] = { noremap = true, silent = true }
-            end
-            if keymap[3] ~= nil then
-                vim.keymap.set(
-                    keymap[1],
-                    keymap[2],
-                    keymap[3],
-                    keymap[4]
-                )
-            end
-        end
-    end
-end
-
-keyMapper(Base)
-keyMapper(Plugin)
+vim.g.register_keymap(Base)
+vim.g.register_keymap(Plugin)

@@ -42,7 +42,8 @@ return {
         dependencies = {
             'folke/tokyonight.nvim',
         },
-        event = 'User Lazyest',
+        -- `User Lazyest` will cause display issue, werid
+        event = "UIEnter",
         config = function()
             require('lualine').setup {
                 options = {
@@ -53,28 +54,7 @@ return {
                     ignore_focus = { "neo-tree" }
                 },
                 sections = {
-                    lualine_a = {
-                        -- this prevent the shrink from <C-o>:stopinsert when exit insert mode
-                        -- {
-                        --     'mode',
-                        --     icons_enabled = true,
-                        --     fmt = function(str)
-                        --         local indicator = str:sub(1, 1)
-                        --         if indicator == 'N' then
-                        --             return ''
-                        --         end
-                        --         if indicator == 'I' then
-                        --             return ''
-                        --         end
-                        --         if indicator == 'V' then
-                        --             return ''
-                        --         end
-                        --         return ''
-                        --         -- return str:sub(1, 3)
-                        --     end,
-                        -- },
-                        -- 'buffers'
-                    },
+                    lualine_a = {},
                     lualine_b = {
                         {
                             'buffers',
