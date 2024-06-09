@@ -3,7 +3,8 @@ return {
         'nvim-treesitter/nvim-treesitter',
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
         build = ':TSUpdate',
-        event = 'User Lazyest',
+        -- prevent flickering when opening file
+        event = 'BufRead',
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- dont install latex, it's too slow
