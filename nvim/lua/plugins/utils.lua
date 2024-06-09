@@ -116,67 +116,49 @@ return {
             })
         end
     },
+    {
+        -- ufo can prevent blocking nvim with treesitter fold method
+        -- which is weird when switching to a buffer with large file
+        'kevinhwang91/nvim-ufo',
+        dependencies = { 'kevinhwang91/promise-async' },
+        event = "User Lazyest",
+        config = function()
 
-
-    -- {
-    --     'kevinhwang91/nvim-ufo',
-    --     config = function()
-    --         local handler = function(virtText, lnum, endLnum, width, truncate)
-    --             local newVirtText = {}
-    --             local suffix = ('  %d '):format(endLnum - lnum)
-    --             local sufWidth = vim.fn.strdisplaywidth(suffix)
-    --             local targetWidth = width - sufWidth
-    --             local curWidth = 0
-    --             for _, chunk in ipairs(virtText) do
-    --                 local chunkText = chunk[1]
-    --                 local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-    --                 if targetWidth > curWidth + chunkWidth then
-    --                     table.insert(newVirtText, chunk)
-    --                 else
-    --                     chunkText = truncate(chunkText, targetWidth - curWidth)
-    --                     local hlGroup = chunk[2]
-    --                     table.insert(newVirtText, { chunkText, hlGroup })
-    --                     chunkWidth = vim.fn.strdisplaywidth(chunkText)
-    --                     -- str width returned from truncate() may less than 2nd argument, need padding
-    --                     if curWidth + chunkWidth < targetWidth then
-    --                         suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
-    --                     end
-    --                     break
-    --                 end
-    --                 curWidth = curWidth + chunkWidth
-    --             end
-    --             table.insert(newVirtText, { suffix, 'MoreMsg' })
-    --             return newVirtText
-    --         end
-    --         require('ufo').setup({
-    --             provider_selector = function()
-    --                 return { 'treesitter', 'indent' }
-    --             end,
-    --             fold_virt_text_handler = handler
-    --         })
-    --     end,
-    --     dependencies = { 'kevinhwang91/promise-async' },
-    --     event = "VeryLazy",
-    -- },
-    -- {
-    --     'echasnovski/mini.jump2d',
-    --     version = false,
-    --     lazy = false,
-    --     config = function()
-    --         require('mini.jump2d').setup {
-    --             view = {
-    --                 dim = true,
-    --             },
-    --             allowed_lines = {
-    --                 blank = false, -- Blank line (not sent to spotter even if `true`)
-    --                 cursor_before = true, -- Lines before cursor line
-    --                 cursor_at = true, -- Cursor line
-    --                 cursor_after = true, -- Lines after cursor line
-    --                 fold = true, -- Start of fold (not sent to spotter even if `true`)
-    --             },
-    --         }
-    --     end
-    -- },
+            local handler = function(virtText, lnum, endLnum, width, truncate)
+                local newVirtText = {}
+                local suffix = ('  %d '):format(endLnum - lnum)
+                local sufWidth = vim.fn.strdisplaywidth(suffix)
+                local targetWidth = width - sufWidth
+                local curWidth = 0
+                for _, chunk in ipairs(virtText) do
+                    local chunkText = chunk[1]
+                    local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+                    if targetWidth > curWidth + chunkWidth then
+                        table.insert(newVirtText, chunk)
+                    else
+                        chunkText = truncate(chunkText, targetWidth - curWidth)
+                        local hlGroup = chunk[2]
+                        table.insert(newVirtText, { chunkText, hlGroup })
+                        chunkWidth = vim.fn.strdisplaywidth(chunkText)
+                        -- str width returned from truncate() may less than 2nd argument, need padding
+                        if curWidth + chunkWidth < targetWidth then
+                            suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+                        end
+                        break
+                    end
+                    curWidth = curWidth + chunkWidth
+                end
+                table.insert(newVirtText, { suffix, 'MoreMsg' })
+                return newVirtText
+            end
+            require('ufo').setup({
+                provider_selector = function()
+                    return { 'treesitter', 'indent' }
+                end,
+                fold_virt_text_handler = handler
+            })
+        end,
+    },
     {
         "folke/flash.nvim",
         event = 'User Lazyest',

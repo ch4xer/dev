@@ -58,23 +58,6 @@ return {
                 },
             }
 
-            -- only enable this autocmd after treesitter is loaded
-            vim.api.nvim_create_autocmd("BufNew", {
-                callback = function()
-                    if vim.g.is_large() then
-                        vim.opt.foldmethod = "manual"
-                        return
-                    end
-                    vim.o.foldcolumn = '0'
-                    vim.o.foldlevel = 99
-                    vim.o.foldlevelstart = 99
-                    vim.o.foldenable = true
-                    if require("nvim-treesitter.parsers").get_parser() then
-                        vim.opt.foldmethod = "expr"
-                        vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-                    end
-                end,
-            })
         end
     },
 }

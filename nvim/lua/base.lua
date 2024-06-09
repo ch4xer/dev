@@ -24,6 +24,11 @@ vim.o.cursorline = true
 
 vim.o.clipboard = 'unnamedplus'
 
+vim.o.foldcolumn = '0'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 vim.o.scrolloff = 0
 
 -- indent setting
