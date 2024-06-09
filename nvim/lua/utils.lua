@@ -77,7 +77,7 @@ M.get_marksman_root_dir = function()
 end
 
 M.get_clipboard_type = function()
-    local system_os = vim.loop.os_uname().sysname
+    local system_os = vim.uv.os_uname().sysname
     local cmd_check, is_wayland, is_img
     if system_os == "Linux" then
         local display_server = os.getenv "XDG_SESSION_TYPE"
@@ -192,7 +192,7 @@ end
 vim.g.is_large = function()
     -- will not trigger if file size is larger than 1000 KB
     local max_filesize = 1000 * 1024 -- 1000 KB
-    local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(0))
+    local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(0))
     if ok and stats and stats.size > max_filesize then
         return true
     end

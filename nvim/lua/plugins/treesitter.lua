@@ -33,7 +33,7 @@ return {
                     enable = true,
                     disable = function(lang, buf)
                         local max_filesize = 100 * 1024 -- 100 KB
-                        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                        local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
                         if ok and stats and stats.size > max_filesize then
                             return true
                         end
@@ -57,6 +57,24 @@ return {
                     },
                 },
             }
+
+            -- only enable this autocmd after treesitter is loaded
+            vim.api.nvim_create_autocmd("BufNew", {
+                callback = function()
+                    if vim.g.is_large() then
+                        vim.opt.foldmethod = "manual"
+                        return
+                    end
+                    vim.o.foldcolumn = '0'
+                    vim.o.foldlevel = 99
+                    vim.o.foldlevelstart = 99
+                    vim.o.foldenable = true
+                    if require("nvim-treesitter.parsers").get_parser() then
+                        vim.opt.foldmethod = "expr"
+                        vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+                    end
+                end,
+            })
         end
     },
 }

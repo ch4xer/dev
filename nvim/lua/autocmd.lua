@@ -49,24 +49,6 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-vim.api.nvim_create_autocmd("BufRead", {
-    callback = function()
-        if vim.g.is_large() then
-            return
-        end
-        vim.o.foldcolumn = '0'
-        vim.o.foldlevel = 99
-        vim.o.foldlevelstart = 99
-        vim.o.foldenable = true
-        if require("nvim-treesitter.parsers").get_parser() then
-            vim.o.foldmethod = "expr"
-            vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-        else
-            vim.o.foldmethod = "syntax"
-        end
-    end,
-})
-
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function(ctx)
         local root = vim.fs.root(ctx.buf, { ".git", ".svn", "Makefile", "mvnw", "package.json", "go.mod", "Cargo.toml" })
