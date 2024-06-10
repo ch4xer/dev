@@ -19,6 +19,7 @@ zstyle ':completion:*:default' list-colors '=(#b)(-*)(-- *)===34' '=(#b)(-- *)=3
 # zstyle ':completion:*' list-colors '=*=34'
 zstyle ':completiom:*' list-colors 'di=1:fi=96:*.m=31:*.py=32:*.txt=36:*.out=35'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}  
+zstyle ':completion:*' menu select
 
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bg=#d33682,fg=#002b36
 
