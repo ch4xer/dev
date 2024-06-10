@@ -46,9 +46,6 @@
 [submodule "zsh/zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/zsh/plugins/zsh-autocomplete"]
-	path = zsh/zsh/plugins/zsh-autocomplete
-	url = https://github.com/marlonrichert/zsh-autocomplete
 [submodule "tmux/plugins/tmux-cpu"]
 	path = tmux/plugins/tmux-cpu
 	url = https://github.com/tmux-plugins/tmux-cpu.git
