@@ -9,7 +9,6 @@ source $PLUGIN_HOME/zsh-extract/extract.plugin.zsh
 source $PLUGIN_HOME/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $PLUGIN_HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGIN_HOME/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
-source $PLUGIN_HOME/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 autoload -U compinit; compinit
 
