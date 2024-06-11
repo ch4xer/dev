@@ -36,6 +36,7 @@
     context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
+    virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
 
