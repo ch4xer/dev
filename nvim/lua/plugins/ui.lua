@@ -1,53 +1,73 @@
 return {
     {
-        'folke/tokyonight.nvim',
-        lazy = false,
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
+        lazy = false,
         config = function()
-            require("tokyonight").setup({
-                style = "night",
-                styles = {
-                    comments = { italic = true },
-                    keywords = { italic = true },
-                    functions = {},
-                    variables = {},
-                    sidebars = "transparent",
-                    floats = "transparent",
+            require("catppuccin").setup({
+                term_colors = false,         -- sets terminal colors (e.g. `g:terminal_color_0`)
+                styles = {                   -- Handles the styles of general hi groups (see `:h highlight-args`):
+                    comments = { "italic" }, -- Change the style of comments
+                    conditionals = { "italic" },
+                    functions = { "italic" },
+                    properties = { "italic" },
                 },
-
-                on_colors = function(colors)
-                    colors.border = "#565f89"
-                    -- colors.bg_statusline = colors.none
-                end,
-                on_highlights = function(hl, c)
-                    hl.Folded = {
-                        fg = "#7aa2f7",
-                        bg = nil,
-                    }
-                    hl.VerticalSplit = {
-                        fg = "#565f89",
-                        bg = nil,
-                    }
-                    -- popup menu transparent
-                    hl.Pmenu = {
-                        bg = nil,
-                    }
-                end,
+                integrations = {
+                    neotree = true,
+                },
             })
-            vim.cmd("colorscheme tokyonight")
-        end,
+
+            vim.cmd.colorscheme "catppuccin"
+        end
     },
+    -- {
+    --     'folke/tokyonight.nvim',
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         require("tokyonight").setup({
+    --             -- storm, night, day are similar, moon is specially soft
+    --             style = "moon",
+    --             styles = {
+    --                 comments = { italic = true },
+    --                 keywords = { italic = true },
+    --                 functions = { italic = true },
+    --                 variables = {},
+    --                 sidebars = "transparent",
+    --                 floats = "transparent",
+    --             },
+    --
+    --             on_colors = function(colors)
+    --                 colors.border = "#565f89"
+    --                 -- use night bg color
+    --                 -- colors.bg = "#1a1b26"
+    --             end,
+    --             on_highlights = function(hl, c)
+    --                 hl.Folded = {
+    --                     fg = "#7aa2f7",
+    --                     bg = nil,
+    --                 }
+    --                 hl.VerticalSplit = {
+    --                     fg = "#565f89",
+    --                     bg = nil,
+    --                 }
+    --                 -- popup menu transparent
+    --                 hl.Pmenu = {
+    --                     bg = nil,
+    --                 }
+    --             end,
+    --         })
+    --         vim.cmd("colorscheme tokyonight")
+    --     end,
+    -- },
     {
         'hoob3rt/lualine.nvim',
-        dependencies = {
-            'folke/tokyonight.nvim',
-        },
         -- `User Lazyest` will cause display issue, werid
         event = "UIEnter",
         config = function()
             require('lualine').setup {
                 options = {
-                    theme = 'tokyonight',
                     globalstatus = true,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
