@@ -189,14 +189,20 @@ vim.g.preview_note = function()
     end
 end
 
-vim.g.is_large = function()
+vim.g.is_not_large = function()
     -- will not trigger if file size is larger than 1000 KB
     local max_filesize = 1000 * 1024 -- 1000 KB
     local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(0))
     if ok and stats and stats.size > max_filesize then
-        return true
+        return false
     end
-    return false
+    return true
+end
+
+vim.g.exec_on_small = function(func, ...)
+    if vim.g.is_not_large() then
+        func(...)
+    end
 end
 
 vim.g.register_keymap = function(keySet)

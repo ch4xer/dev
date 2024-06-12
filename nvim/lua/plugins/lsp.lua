@@ -8,9 +8,7 @@ return {
         -- BufRead will not avoid loading in dashboard
         -- while keeping lazy false
         event = "BufRead",
-        cond = function()
-            return not vim.g.is_large()
-        end,
+        cond = vim.g.is_not_large,
         config = function()
             require('mason').setup()
             local lspconfig = require('lspconfig')

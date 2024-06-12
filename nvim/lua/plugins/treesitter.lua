@@ -5,9 +5,7 @@ return {
         build = ':TSUpdate',
         -- prevent flickering when opening file
         event = 'BufRead',
-        cond = function()
-            return not vim.g.is_large()
-        end,
+        cond = vim.g.is_not_large,
         config = function()
             require('nvim-treesitter.configs').setup {
                 -- dont install latex, it's too slow

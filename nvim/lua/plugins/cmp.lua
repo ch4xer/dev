@@ -10,6 +10,7 @@ return {
             'onsails/lspkind-nvim',
         },
         event = "InsertEnter",
+        cond = vim.g.is_not_large,
         config = function()
             local vim = vim
             local cmp = require('cmp')
@@ -164,6 +165,7 @@ return {
     {
         'zbirenbaum/copilot.lua',
         event = "InsertEnter",
+        cond = vim.g.is_not_large,
         config = function()
             require('copilot').setup({
                 panel = {

@@ -1,11 +1,15 @@
 local vim = vim
 
 vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
-    command = "silent! mkview"
+    callback = function()
+        vim.g.exec_on_small(vim.cmd, "silent! mkview")
+    end
 })
 
 vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
-    command = "silent! loadview"
+    callback = function()
+        vim.g.exec_on_small(vim.cmd, "silent! loadview")
+    end
 })
 
 vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
@@ -72,9 +76,7 @@ vim.api.nvim_create_autocmd("User", {
                 callback = _trigger
             })
         else
-            if vim.g.is_large() == false then
-                _trigger()
-            end
+            vim.g.exec_on_small(_trigger)
         end
     end
 })
