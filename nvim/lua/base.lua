@@ -1,10 +1,8 @@
 local vim = vim
 
-vim.o.cmdheight = 0
 vim.o.title = true
 vim.o.termguicolors = true
 vim.o.background = "dark"
-vim.o.errorbells = false
 vim.o.mouse = 'a'
 vim.o.mousemodel = 'extend'
 
@@ -15,8 +13,6 @@ vim.o.splitright = true
 -- hidden conceal char
 -- vim.o.conceallevel = 3
 vim.o.modifiable = true
--- the refresh time will affect lspsaga's reaction time
-vim.o.updatetime = 300
 -- case settintg
 vim.o.smartcase = true
 vim.o.ignorecase = true
@@ -63,8 +59,10 @@ vim.g.mapleader = ' '
 
 vim.o.viewoptions = 'folds,cursor,curdir'
 
--- save undo history
-vim.o.undofile = true
+-- save undo history, slow startup with large file
+if vim.g.is_large() == false then
+    vim.o.undofile = true
+end
 
 vim.g.python3_host_prog = vim.fn.exepath("python3")
 
