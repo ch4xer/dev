@@ -57,6 +57,7 @@ vim.o.signcolumn = 'number'
 
 -- wrap line when too long to display
 vim.o.wrap = true
+vim.o.smoothscroll = true
 
 vim.g.mapleader = ' '
 
