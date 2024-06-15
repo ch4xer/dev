@@ -37,7 +37,6 @@ local plugins = concatenateTables(
     lsp,
     cmp,
     dap,
-    test,
     neotree,
     fzf,
     treesitter
