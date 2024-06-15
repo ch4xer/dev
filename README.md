@@ -120,13 +120,12 @@ zsh/zshrc -> ~/.zshrc
 |    neovim     |               ge               |    (lsp) show diagnostics in line     |
 |    neovim     |               gh               |          (lsp) get document           |
 |    neovim     |               gn               |          (lsp) rename symbol          |
-|    neovim     |               gd               |         (lsp) peek definition         |
-|    neovim     |               gr               |         (lsp) find reference          |
-|    neovim     |               \`               |       (debug) toggle breakpoint       |
-|    neovim     |               F1               |           (debug) continue            |
-|    neovim     |               F2               |           (debug) step_over           |
-|    neovim     |               F3               |           (debug) step_into           |
-|    neovim     |               F4               |        (debug) toggle debug ui        |
+|    neovim     |               gd               |         (lsp) find reference          |
+|    neovim     |               F1               |       (debug) toggle breakpoint       |
+|    neovim     |               F2               |           (debug) continue            |
+|    neovim     |               F3               |           (debug) step_over           |
+|    neovim     |               F4               |           (debug) step_into           |
+|    neovim     |               F5               |        (debug) toggle debug ui        |
 |    neovim     |              C-/               |             comment line              |
 |    neovim     |               /                |            search and jump            |
 |    neovim     |               ?                |    search and select in treesitter    |

@@ -3,7 +3,8 @@ return {
         'mfussenegger/nvim-dap',
         dependencies = {
             'rcarriga/nvim-dap-ui',
-            'theHamsta/nvim-dap-virtual-text'
+            'theHamsta/nvim-dap-virtual-text',
+            'nvim-neotest/nvim-nio'
         },
         config = function()
             local dap, dapui = require("dap"), require("dapui")
@@ -132,9 +133,9 @@ return {
                     end,
                 },
             }
-            vim.api.nvim_set_hl(0, 'DapStopLine', {fg="#000000",bg='#e0af68'})
-            vim.fn.sign_define('DapBreakpoint', {text='', texthl='ErrorMsg'})
-            vim.fn.sign_define('DapStopped', {text='', texthl='WarningMsg', linehl='DapStopLine'})
+            vim.api.nvim_set_hl(0, 'DapStopLine', { fg = "#000000", bg = '#e0af68' })
+            vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'ErrorMsg' })
+            vim.fn.sign_define('DapStopped', { text = '', texthl = 'WarningMsg', linehl = 'DapStopLine' })
             require("nvim-dap-virtual-text").setup({
                 show_stop_reason = false,
             })

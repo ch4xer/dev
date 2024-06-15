@@ -35,7 +35,7 @@ local Base = {
         { 'n', 'gn', vim.lsp.buf.rename,        { desc = 'rename symbol' } },
         { 'n', 'g=', vim.lsp.buf.format,        { desc = 'format document' } },
         { 'n', 'gh', vim.lsp.buf.hover,         { desc = 'show documentation' } },
-        { 'n', 'ge', vim.diagnostic.open_float, { desc = 'show documentation' } },
+        { 'n', 'ge', vim.diagnostic.open_float, { desc = 'show diagnostic' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -62,8 +62,7 @@ local Plugin = {
         { 'n', 'z',  function() require('fzf-lua').buffers() end,               { desc = 'search buffer' } },
         { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end, { desc = 'search diagnostics' } },
         { 'n', 'ga', function() require('fzf-lua').lsp_code_actions() end,      { desc = 'code action' } },
-        { 'n', 'gd', function() require('fzf-lua').lsp_definitions() end,       { desc = 'peek definition' } },
-        { 'n', 'gr', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
+        { 'n', 'gd', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
     },
     neotree = {
         --- some keymaps are in configuration of neotree
@@ -71,11 +70,11 @@ local Plugin = {
         { 'n', '<leader>c', '<CMD>cd %:h<CR>', { desc = 'change root directory' } },
     },
     dap = {
-        { 'n', '`',    function() require("dap").toggle_breakpoint() end, { desc = 'toggle breakpoint' } },
-        { 'n', '<F1>', function() require("dap").continue() end,          { desc = 'continue' } },
-        { 'n', '<F2>', function() require("dap").step_over() end,         { desc = 'step over' } },
-        { 'n', '<F3>', function() require("dap").step_into() end,         { desc = 'step into' } },
-        { 'n', '<F4>', function() require("dapui").toggle() end,          { desc = 'toggle debug ui' } },
+        { 'n', '<F1>', function() require("dap").toggle_breakpoint() end, { desc = 'toggle breakpoint' } },
+        { 'n', '<F2>', function() require("dap").continue() end,          { desc = 'continue' } },
+        { 'n', '<F3>', function() require("dap").step_over() end,         { desc = 'step over' } },
+        { 'n', '<F4>', function() require("dap").step_into() end,         { desc = 'step into' } },
+        { 'n', '<F5>', function() require("dapui").toggle() end,          { desc = 'toggle debug ui' } },
     },
     flash = {
         -- press '/' to jump in regular search
