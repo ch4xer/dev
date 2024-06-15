@@ -5,6 +5,12 @@ return {
         event = { 'InsertEnter' }
     },
     {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true,
+        cmd = {"ToggleTerm"}
+    },
+    {
         "kylechui/nvim-surround",
         config = function()
             require("nvim-surround").setup {
@@ -123,7 +129,6 @@ return {
         dependencies = { 'kevinhwang91/promise-async' },
         event = "User Lazyest",
         config = function()
-
             local handler = function(virtText, lnum, endLnum, width, truncate)
                 local newVirtText = {}
                 local suffix = ('  %d '):format(endLnum - lnum)

@@ -27,12 +27,15 @@ local Base = {
     },
     cmd = {
         { { 'n', 'v' }, ';',         ':',            { nowait = true, desc = 'enter commandline mode' } },
-        { { 'n', 'v' }, ']',         '*',            { nowait = true, desc = 'search forward for the word where the cursor is located' } },
-        { { 'n', 'v' }, '[',         '#',            { nowait = true, desc = 'search backward for the word where the cursor is located' } },
         { 'n',          '<leader>q', 'q1',           { desc = 'record macro to register 1' } },
         { 'n',          '<C-q>',     vim.g.quit_win, { desc = 'quit window' } },
         { 'n',          'Q',         vim.g.wq_all,   { desc = 'quit all' } },
-        { 'n',          'g=',        vim.lsp.buf.format,   { desc = 'format document' } },
+    },
+    lsp = {
+        { 'n', 'gn', vim.lsp.buf.rename,        { desc = 'rename symbol' } },
+        { 'n', 'g=', vim.lsp.buf.format,        { desc = 'format document' } },
+        { 'n', 'gh', vim.lsp.buf.hover,         { desc = 'show documentation' } },
+        { 'n', 'ge', vim.diagnostic.open_float, { desc = 'show documentation' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -42,8 +45,8 @@ local Base = {
         { 'i', '<ESC>', '<C-O><CMD>stopinsert<CR>', { desc = 'exit to normal mode while keeping cursor location' } },
     },
     comment = {
-        { 'v', '<C-/>', 'gc',  { desc = 'comment', remap = true, silent = true} },
-        { 'v', '<C-_>', 'gc',  { desc = 'comment', remap = true, silent = true} },
+        { 'v', '<C-/>', 'gc',  { desc = 'comment', remap = true, silent = true } },
+        { 'v', '<C-_>', 'gc',  { desc = 'comment', remap = true, silent = true } },
         { 'n', '<C-/>', 'gcc', { desc = 'comment', remap = true, silent = true } },
         { 'n', '<C-_>', 'gcc', { desc = 'comment', remap = true, silent = true } },
     },
@@ -51,28 +54,25 @@ local Base = {
 
 local Plugin = {
     bufdelete = {
-        { 'n', 'q', vim.g.delete_buf_or_quit , { desc = 'delete buffer or quit' } },
+        { 'n', 'q', vim.g.delete_buf_or_quit, { desc = 'delete buffer or quit' } },
     },
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end,             { desc = 'search word' } },
         { 'n', 'sf', function() require('fzf-lua').files() end,                 { desc = 'search file' } },
         { 'n', 'z',  function() require('fzf-lua').buffers() end,               { desc = 'search buffer' } },
         { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end, { desc = 'search diagnostics' } },
+        { 'n', 'ga', function() require('fzf-lua').lsp_code_actions() end,      { desc = 'code action' } },
+        { 'n', 'gd', function() require('fzf-lua').lsp_definitions() end,       { desc = 'peek definition' } },
+        { 'n', 'gr', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
+    },
+    term = {
+        { 'n', 'ss',    function() vim.cmd('ToggleTerm') end,           { desc = 'toggle terminal' } },
+        { 't', '<ESC>', function() vim.api.nvim_win_close(0, true) end, { desc = 'close terminal' } },
     },
     neotree = {
         --- some keymaps are in configuration of neotree
         { 'n', '<leader>t', vim.g.toggle_tree, { desc = 'toggle neotree' } },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>', { desc = 'change root directory' } },
-    },
-    lspsaga = {
-        { 'n', 'ss',    function() vim.api.nvim_command('Lspsaga term_toggle') end,           { desc = 'toggle terminal' } },
-        { 't', '<ESC>', function() vim.api.nvim_win_close(0, true) end,                       { desc = 'close terminal' } },
-        { 'n', 'ga',    function() vim.api.nvim_command('Lspsaga code_action') end,           { silent = true, desc = 'code action' } },
-        { 'n', 'ge',    function() vim.api.nvim_command('Lspsaga show_line_diagnostics') end, { desc = 'show diagnostics in line' } },
-        { 'n', 'gh',    function() vim.api.nvim_command('Lspsaga hover_doc') end,             { desc = 'get document' } },
-        { 'n', 'gn',    function() vim.api.nvim_command('Lspsaga rename') end,                { desc = 'rename symbol' } },
-        { 'n', 'gd',    function() vim.api.nvim_command('Lspsaga peek_definition') end,       { desc = 'peek definition' } },
-        { 'n', 'gr',    function() vim.api.nvim_command('Lspsaga finder') end,                { desc = 'find reference' } },
     },
     lazygit = {
         { 'n', 'gi', function() vim.api.nvim_command('LazyGit') end, { desc = 'toggle lazygit' } },
@@ -99,8 +99,8 @@ local Plugin = {
     tmux = {
         { 'n', '<C-j>', function() require('nvim-tmux-navigation').NvimTmuxNavigateDown() end,  { desc = 'navigate in neovim windows and tmux windows' } },
         { 'n', '<C-k>', function() require('nvim-tmux-navigation').NvimTmuxNavigateUp() end,    { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-h>',function() require('nvim-tmux-navigation').NvimTmuxNavigateLeft() end,  { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-l>',function() require('nvim-tmux-navigation').NvimTmuxNavigateRight() end, { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-h>', function() require('nvim-tmux-navigation').NvimTmuxNavigateLeft() end,  { desc = 'navigate in neovim windows and tmux windows' } },
+        { 'n', '<C-l>', function() require('nvim-tmux-navigation').NvimTmuxNavigateRight() end, { desc = 'navigate in neovim windows and tmux windows' } },
 
     },
     -- keymaps are in configuration of nvim-cmp
