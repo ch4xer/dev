@@ -5,12 +5,6 @@ return {
         event = { 'InsertEnter' }
     },
     {
-        'akinsho/toggleterm.nvim',
-        version = "*",
-        config = true,
-        cmd = {"ToggleTerm"}
-    },
-    {
         "kylechui/nvim-surround",
         config = function()
             require("nvim-surround").setup {
@@ -53,13 +47,6 @@ return {
             }
         end,
         event = "User Lazyest",
-    },
-    {
-        "kdheepak/lazygit.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-        cmd = { "LazyGit", },
     },
     {
         "iamcco/markdown-preview.nvim",

@@ -65,21 +65,10 @@ local Plugin = {
         { 'n', 'gd', function() require('fzf-lua').lsp_definitions() end,       { desc = 'peek definition' } },
         { 'n', 'gr', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
     },
-    term = {
-        { 'n', 'ss',    function() vim.cmd('ToggleTerm') end,           { desc = 'toggle terminal' } },
-        { 't', '<ESC>', function() vim.api.nvim_win_close(0, true) end, { desc = 'close terminal' } },
-    },
     neotree = {
         --- some keymaps are in configuration of neotree
         { 'n', '<leader>t', vim.g.toggle_tree, { desc = 'toggle neotree' } },
         { 'n', '<leader>c', '<CMD>cd %:h<CR>', { desc = 'change root directory' } },
-    },
-    lazygit = {
-        { 'n', 'gi', function() vim.api.nvim_command('LazyGit') end, { desc = 'toggle lazygit' } },
-    },
-    neotest = {
-        { 'n', 'tt', function() require('neotest').run.run() end,     { desc = 'run test' } },
-        { 'n', 'ts', function() require('neotest').output.open() end, { desc = 'show test output' } },
     },
     dap = {
         { 'n', '`',    function() require("dap").toggle_breakpoint() end, { desc = 'toggle breakpoint' } },
