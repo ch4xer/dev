@@ -72,25 +72,6 @@ return {
         lazy = false,
     },
     {
-        'echasnovski/mini.bufremove',
-        version = false,
-        config = true,
-        lazy = false
-    },
-    {
-        'echasnovski/mini.sessions',
-        version = false,
-        lazy = false,
-        config = true,
-        opts = {
-            -- Hook functions for actions. Default `nil` means 'do nothing'.
-            hooks = {
-                pre = { write = function() vim.cmd("Neotree close") end },
-                post = { read = nil, write = nil, delete = nil },
-            },
-        }
-    },
-    {
         'echasnovski/mini.cursorword',
         version = false,
         event = 'User Lazyest',

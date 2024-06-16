@@ -16,8 +16,6 @@ local ui = require('plugins.ui')
 local utils = require('plugins.utils')
 local lsp = require('plugins.lsp')
 local cmp = require('plugins.cmp')
-local dap = require('plugins.dap')
-local neotree = require('plugins.neotree')
 local fzf = require('plugins.fzf')
 local treesitter = require('plugins.treesitter')
 
@@ -36,8 +34,6 @@ local plugins = concatenateTables(
     utils,
     lsp,
     cmp,
-    dap,
-    neotree,
     fzf,
     treesitter
 )
