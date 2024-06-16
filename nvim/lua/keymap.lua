@@ -26,16 +26,15 @@ local Base = {
         { 'v', '<Backspace>', 'c',      { desc = 'delete and edit in visual mode' } },
     },
     cmd = {
-        { { 'n', 'v' }, ';',         ':',            { nowait = true, desc = 'enter commandline mode' } },
-        { 'n',          '<leader>q', 'q1',           { desc = 'record macro to register 1' } },
-        { 'n',          '<C-q>',     vim.g.quit_win, { desc = 'quit window' } },
-        { 'n',          'Q',         vim.g.wq_all,   { desc = 'quit all' } },
+        { { 'n', 'v' }, ';',     ':',            { nowait = true, desc = 'enter commandline mode' } },
+        { 'n',          '<C-q>', vim.g.quit_win, { desc = 'quit window' } },
     },
     lsp = {
         { 'n', 'gn', vim.lsp.buf.rename,        { desc = 'rename symbol' } },
         { 'n', 'g=', vim.lsp.buf.format,        { desc = 'format document' } },
         { 'n', 'gh', vim.lsp.buf.hover,         { desc = 'show documentation' } },
         { 'n', 'ge', vim.diagnostic.open_float, { desc = 'show diagnostic' } },
+        { 'n', 'gd', vim.lsp.buf.definition,    { desc = 'go to definition' } },
     },
     fold = {
         { 'n', '<CR>',          'za', { desc = 'toggle fold' } },
@@ -53,28 +52,13 @@ local Base = {
 }
 
 local Plugin = {
-    bufdelete = {
-        { 'n', 'q', vim.g.delete_buf_or_quit, { desc = 'delete buffer or quit' } },
-    },
     fzf = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end,             { desc = 'search word' } },
         { 'n', 'sf', function() require('fzf-lua').files() end,                 { desc = 'search file' } },
         { 'n', 'z',  function() require('fzf-lua').buffers() end,               { desc = 'search buffer' } },
         { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end, { desc = 'search diagnostics' } },
         { 'n', 'ga', function() require('fzf-lua').lsp_code_actions() end,      { desc = 'code action' } },
-        { 'n', 'gd', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
-    },
-    neotree = {
-        --- some keymaps are in configuration of neotree
-        { 'n', '<leader>t', vim.g.toggle_tree, { desc = 'toggle neotree' } },
-        { 'n', '<leader>c', '<CMD>cd %:h<CR>', { desc = 'change root directory' } },
-    },
-    dap = {
-        { 'n', '<F1>', function() require("dap").toggle_breakpoint() end, { desc = 'toggle breakpoint' } },
-        { 'n', '<F2>', function() require("dap").continue() end,          { desc = 'continue' } },
-        { 'n', '<F3>', function() require("dap").step_over() end,         { desc = 'step over' } },
-        { 'n', '<F4>', function() require("dap").step_into() end,         { desc = 'step into' } },
-        { 'n', '<F5>', function() require("dapui").toggle() end,          { desc = 'toggle debug ui' } },
+        { 'n', 'gr', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
     },
     flash = {
         -- press '/' to jump in regular search
