@@ -39,14 +39,14 @@ zsh/zshrc -> ~/.zshrc
   - use JetbrainMono Nerd Font and LXGW WenKai, please install them by yourself.
 - Tmux
   - commonly used keys are set as shortcuts that dont require prefix key, which can still be used though
-  - Ctrl-hjkl and Ctrl-q can be used both in tmux and vim for window operations.
+  - Ctrl-hjkl and Ctrl-q can be used both in tmux and nvim for window operations.
   - use tmux-continuum and resurrect to restore workspaces.
   - If you get dizzy remembering shortcuts, just use your mouse.
 - Zsh
   - settings about software are in `zsh/zsh/plugins`, you can add here by yourself
   - disable vim mode for consistence.
-  - customize `context` module of powerlevel10k
 - Neovim
+  - Neovim is good at single window editing, please use vscode for large scale projects:)
   - most keybindings are in `nvim/lua/keymap.lua`, others are in plugins' file.
   - disgard f/F t/T inline search and only use global search enhanced by flash.nvim.
   - the completion behavior simulate vscode's, which is more intuitive:)
