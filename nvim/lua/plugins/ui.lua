@@ -6,9 +6,9 @@ return {
         lazy = false,
         config = function()
             require("catppuccin").setup({
-                term_colors = false,         -- sets terminal colors (e.g. `g:terminal_color_0`)
-                styles = {                   -- Handles the styles of general hi groups (see `:h highlight-args`):
-                    comments = { "italic" }, -- Change the style of comments
+                term_colors = false,
+                styles = {
+                    comments = { "italic" },
                     conditionals = { "italic" },
                     functions = { "italic" },
                     properties = { "italic" },
