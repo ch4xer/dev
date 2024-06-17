@@ -7,9 +7,6 @@ local Base = {
         { { 'n', 'v' }, 'L', '$',                                               { desc = 'go to the end of line' } },
         { { 'n', 'v' }, 'H', '^',                                               { desc = 'go the begin of line' } },
 
-        -- dont modify <Tab>, which will affect <C-i>
-        { 'n',          'J', function() vim.api.nvim_command('bprevious!') end, { desc = 'go to previous buffer' } },
-        { 'n',          'K', function() vim.api.nvim_command('bnext!') end,     { desc = 'go to next buffer' } },
         -- <PageUp>
         -- page scroll
         { { 'n', 'v' }, 'F', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',    { desc = 'scroll half page forward' } },
@@ -64,10 +61,6 @@ local Plugin = {
     flash = {
         -- press '/' to jump in regular search
         { { "n", "x", "o" }, '?', function() require("flash").treesitter() end, { desc = 'search and select in treesitter' } }
-    },
-    markdown = {
-        { 'n', '<leader>p', vim.g.preview_note,  { desc = 'preview markdown' } },
-        { 'n', 'P',         vim.g.paste_as_link, { desc = 'paste image as link' } },
     },
     tmux = {
         { 'n', '<C-j>', function() require('nvim-tmux-navigation').NvimTmuxNavigateDown() end,  { desc = 'navigate in neovim windows and tmux windows' } },
