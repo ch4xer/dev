@@ -105,14 +105,6 @@ M.get_clipboard_type = function()
     return is_wayland, is_img
 end
 
-vim.g.quit_win = function()
-    if #vim.api.nvim_list_wins() == 1 then
-        vim.cmd('qa')
-    end
-    vim.api.nvim_win_close(0, true)
-    vim.cmd.wincmd("=")
-end
-
 vim.g.preview_note = function()
     if vim.bo.filetype == 'markdown' then
         vim.cmd('MarkdownPreviewToggle')

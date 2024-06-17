@@ -26,8 +26,8 @@ local Base = {
         { 'v', '<Backspace>', 'c',      { desc = 'delete and edit in visual mode' } },
     },
     cmd = {
-        { { 'n', 'v' }, ';',     ':',            { nowait = true, desc = 'enter commandline mode' } },
-        { 'n',          '<C-q>', vim.g.quit_win, { desc = 'quit window' } },
+        { { 'n', 'v' }, ';',     ':',           { nowait = true, desc = 'enter commandline mode' } },
+        { 'n',          '<C-q>', '<CMD>qa<CR>', { desc = 'quit neovim' } },
     },
     lsp = {
         { 'n', 'gn', vim.lsp.buf.rename,        { desc = 'rename symbol' } },

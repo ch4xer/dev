@@ -81,7 +81,7 @@ zsh/zshrc -> ~/.zshrc
 | tmux & neovim |            C-j             | go to the pane below or neovim window |
 | tmux & neovim |            C-k             |  go to the top pane or neovim window  |
 | tmux & neovim |            C-l             | go to the right pane or neovim window |
-| tmux & neovim |            C-q             |   kill pane or close neovim window    |
+| tmux & neovim |            C-q             |       kill pane or quit neovim        |
 |     tmux      |           C-S-j            |        swap with the next pane        |
 |     tmux      |           C-S-k            |      swap with the previous pane      |
 |     tmux      |            C-x             |       split window horizontally       |
