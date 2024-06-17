@@ -63,8 +63,7 @@ return {
     -- },
     {
         'hoob3rt/lualine.nvim',
-        -- `User Lazyest` will cause display issue, werid
-        event = "UIEnter",
+        event = "User Lazyest",
         config = function()
             require('lualine').setup {
                 options = {
