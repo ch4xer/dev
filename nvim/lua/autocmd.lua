@@ -19,16 +19,6 @@ vim.api.nvim_create_autocmd({ 'InsertLeave' }, {
     end
 })
 
-vim.g.width_close_tree = 120
-vim.api.nvim_create_autocmd({ 'VimResized' }, {
-    pattern = { "*.*" },
-    callback = function()
-        -- keep the size of every window, very usful!
-        vim.cmd.wincmd('=')
-        vim.g.close_tree()
-    end
-})
-
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank()

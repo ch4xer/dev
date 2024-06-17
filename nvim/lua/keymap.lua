@@ -26,8 +26,9 @@ local Base = {
         { 'v', '<Backspace>', 'c',      { desc = 'delete and edit in visual mode' } },
     },
     cmd = {
-        { { 'n', 'v' }, ';',     ':',           { nowait = true, desc = 'enter commandline mode' } },
-        { 'n',          '<C-q>', '<CMD>qa<CR>', { desc = 'quit neovim' } },
+        { { 'n', 'v' }, ';', ':',            { nowait = true, desc = 'enter commandline mode' } },
+        { 'n',          'q', '<CMD>wqa<CR>', { desc = 'quit neovim' } },
+        { 'n',          'Q', 'q',            { desc = 'macro record' } },
     },
     lsp = {
         { 'n', 'gn', vim.lsp.buf.rename,        { desc = 'rename symbol' } },
