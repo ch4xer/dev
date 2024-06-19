@@ -13,9 +13,11 @@ return {
                     functions = { "italic" },
                     properties = { "italic" },
                 },
-                integrations = {
-                    neotree = true,
-                },
+                custom_highlights = function(colors)
+                    return {
+                        Folded = { bg = colors.none },
+                    }
+                end,
             })
 
             vim.cmd.colorscheme "catppuccin"
@@ -70,7 +72,6 @@ return {
                     globalstatus = true,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
-                    ignore_focus = { "neo-tree" }
                 },
                 sections = {
                     lualine_a = {},
