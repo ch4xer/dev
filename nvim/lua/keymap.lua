@@ -4,8 +4,6 @@ local Base = {
         -- move cursor in wrapline paragraph
         { { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'",                       { expr = true, silent = true, desc = 'go to next wrapline' } },
         { { 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'",                       { expr = true, silent = true, desc = 'go to previous wrapline' } },
-        { { 'n', 'v' }, 'L', '$',                                               { desc = 'go to the end of line' } },
-        { { 'n', 'v' }, 'H', '^',                                               { desc = 'go the begin of line' } },
 
         -- <PageUp>
         -- page scroll
@@ -54,7 +52,6 @@ local Plugin = {
         { 'n', 'sw', function() require('fzf-lua').live_grep() end,             { desc = 'search word' } },
         { 'n', 'sf', function() require('fzf-lua').files() end,                 { desc = 'search file' } },
         { 'n', 'z',  function() require('fzf-lua').buffers() end,               { desc = 'search buffer' } },
-        { 'n', 'sd', function() require('fzf-lua').diagnostics_workspace() end, { desc = 'search diagnostics' } },
         { 'n', 'ga', function() require('fzf-lua').lsp_code_actions() end,      { desc = 'code action' } },
         { 'n', 'gr', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
     },
