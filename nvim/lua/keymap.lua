@@ -24,7 +24,7 @@ local Base = {
     },
     cmd = {
         { { 'n', 'v' }, ';', ':',            { nowait = true, desc = 'enter commandline mode' } },
-        { 'n',          'q', '<CMD>wqa<CR>', { desc = 'quit neovim' } },
+        { 'n',          'q', '<CMD>q!<CR>', { desc = 'quit neovim' } },
         { 'n',          'Q', 'q',            { desc = 'macro record' } },
     },
     lsp = {

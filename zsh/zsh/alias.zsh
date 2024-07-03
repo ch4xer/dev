@@ -4,7 +4,6 @@ alias lg="lazygit"
 alias l="lsd"
 alias ls="lsd"
 alias ll="lsd --tree --depth 2"
-alias tmux="tmux -u"
 alias clear_cache='yay -Scc;yay -Rns $(yay -Qtdq)'
 alias clear_packages="yay -Qtdq | yay -Rs -"
 alias nvmstart="source /usr/share/nvm/init-nvm.sh"
