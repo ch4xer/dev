@@ -35,7 +35,6 @@ return {
                 history = true,
             })
             require("luasnip.loaders.from_vscode").lazy_load()
-            require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/snippets" })
 
             cmp.setup({
                 completion = {
@@ -77,8 +76,6 @@ return {
                     ['<Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true })
-                        elseif require("copilot.suggestion").is_visible() then
-                            require("copilot.suggestion").accept()
                         elseif luasnip.jumpable(1) then
                             luasnip.jump(1)
                         else
@@ -88,8 +85,6 @@ return {
                     ['<S-Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.close()
-                        elseif require("copilot.suggestion").is_visible() then
-                            require("copilot.suggestion").dismiss()
                         elseif luasnip.jumpable(-1) then
                             luasnip.jump(-1)
                         else
@@ -161,37 +156,5 @@ return {
                 require('nvim-autopairs.completion.cmp').on_confirm_done()
             )
         end,
-    },
-    {
-        'zbirenbaum/copilot.lua',
-        event = "InsertEnter",
-        cond = vim.g.is_not_large,
-        config = function()
-            require('copilot').setup({
-                panel = {
-                    enabled = false,
-                },
-                suggestion = {
-                    enabled = true,
-                    auto_trigger = true,
-                    debounce = 75,
-                    keymap = {
-                        accept = false,
-                    },
-                },
-                filetypes = {
-                    yaml = true,
-                    markdown = false,
-                    help = false,
-                    gitcommit = false,
-                    gitrebase = false,
-                    hgcommit = false,
-                    ["."] = false,
-                    ["Dockerfile"] = true,
-                },
-                copilot_node_command = 'node', -- Node.js version must be > 16.x
-                server_opts_overrides = {},
-            })
-        end
     },
 }
