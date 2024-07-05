@@ -1,14 +1,15 @@
 local vim = vim
 local Base = {
     movement = {
-        -- move cursor in wrapline paragraph
-        { { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'",                       { expr = true, silent = true, desc = 'go to next wrapline' } },
-        { { 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'",                       { expr = true, silent = true, desc = 'go to previous wrapline' } },
+        { { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true, desc = 'go to next wrapline' } },
+        { { 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true, desc = 'go to previous wrapline' } },
+        { { 'n', 'v' }, 'L', '$',                                            { desc = 'go to the end of line' } },
+        { { 'n', 'v' }, 'H', '^',                                            { desc = 'go the begin of line' } },
 
         -- <PageUp>
         -- page scroll
-        { { 'n', 'v' }, 'F', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>',    { desc = 'scroll half page forward' } },
-        { { 'n', 'v' }, 'f', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>',    { desc = 'scroll half page backward' } },
+        { { 'n', 'v' }, 'F', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll half page forward' } },
+        { { 'n', 'v' }, 'f', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll half page backward' } },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>',  { desc = 'delete word forward' } },
@@ -21,9 +22,9 @@ local Base = {
         { 'v', '<Backspace>', 'c',      { desc = 'delete and edit in visual mode' } },
     },
     cmd = {
-        { { 'n', 'v' }, ';', ':',            { nowait = true, desc = 'enter commandline mode' } },
+        { { 'n', 'v' }, ';', ':',           { nowait = true, desc = 'enter commandline mode' } },
         { 'n',          'q', '<CMD>q!<CR>', { desc = 'quit neovim' } },
-        { 'n',          'Q', 'q',            { desc = 'macro record' } },
+        { 'n',          'Q', 'q',           { desc = 'macro record' } },
     },
     lsp = {
         { 'n', 'gn', vim.lsp.buf.rename,        { desc = 'rename symbol' } },
@@ -49,11 +50,11 @@ local Base = {
 
 local Plugin = {
     fzf = {
-        { 'n', 'sw', function() require('fzf-lua').live_grep() end,             { desc = 'search word' } },
-        { 'n', 'sf', function() require('fzf-lua').files() end,                 { desc = 'search file' } },
-        { 'n', 'z',  function() require('fzf-lua').buffers() end,               { desc = 'search buffer' } },
-        { 'n', 'ga', function() require('fzf-lua').lsp_code_actions() end,      { desc = 'code action' } },
-        { 'n', 'gr', function() require('fzf-lua').lsp_references() end,        { desc = 'find reference' } },
+        { 'n', 'sw', function() require('fzf-lua').live_grep() end,        { desc = 'search word' } },
+        { 'n', 'sf', function() require('fzf-lua').files() end,            { desc = 'search file' } },
+        { 'n', 'z',  function() require('fzf-lua').buffers() end,          { desc = 'search buffer' } },
+        { 'n', 'ga', function() require('fzf-lua').lsp_code_actions() end, { desc = 'code action' } },
+        { 'n', 'gr', function() require('fzf-lua').lsp_references() end,   { desc = 'find reference' } },
     },
     flash = {
         -- press '/' to jump in regular search
