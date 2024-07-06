@@ -39,17 +39,16 @@ zsh/zshrc -> ~/.zshrc
   - use JetbrainMono Nerd Font and LXGW WenKai, please install them by yourself.
 - Tmux
   - use with `kitty --config ~/.config/kitty/tmux-mode.conf`, otherwise some keybindings will conflict with kitty.
-  - commonly used keys are set as shortcuts that dont require prefix key, which can still be used though
-  - use tmux-continuum and resurrect to restore workspaces.
+  - commonly used shortcuts dont require prefix key, which can still be used though
+  - use tmux-continuum and resurrect to restore sessions.
 - Zsh
-  - settings about software are in `zsh/zsh/plugins`, you can add here by yourself
-  - disable vim mode for consistence.
+  - you can add software settings in `zsh/zsh/software`
+  - disable vim mode.
 - Neovim
-  - Neovim is good at single window editing, please use vscode for multi-window or multi-file projects:)
-  - disgard f/F t/T inline search and only use global search enhanced by flash.nvim.
+  - Only use 30- plugins to make Neovim tiny and good enough for simple editing
   - the completion behavior simulate vscode's, which is more intuitive:)
 - lf
-  - integrate with fzf, you can press `f` to fuzzy search files and directories from pwd
+  - integrate with fzf, press `f` to start fuzzy search from pwd
 
 ## Keymap
 
@@ -100,8 +99,8 @@ zsh/zshrc -> ~/.zshrc
 |       tmux        |       C-s       |          choose session          |
 |       tmux        |      C-S-s      |          rename session          |
 |       tmux        |       C-n       |        create new session        |
-|      neovim       |        f        |     scroll half page forward     |
-|      neovim       |        F        |    scroll half page backward     |
+|      neovim       |       f/F       | scroll half page forward/backward|
+|      neovim       |       H/L       |    go to the begin/end of line   |
 |      neovim       |        ;        |      enter commandline mode      |
 |      neovim       |       g=        |         format document          |
 |      neovim       |   2-LeftMouse   |           toggle fold            |

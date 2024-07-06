@@ -3,8 +3,8 @@ local Base = {
     movement = {
         { { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true, desc = 'go to next wrapline' } },
         { { 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true, desc = 'go to previous wrapline' } },
-        { { 'n', 'v' }, 'L', '$',                                            { desc = 'go to the end of line' } },
-        { { 'n', 'v' }, 'H', '^',                                            { desc = 'go the begin of line' } },
+        { { 'n', 'v' }, 'L', 'g_',                                            { desc = 'go to line end' } },
+        { { 'n', 'v' }, 'H', '^',                                            { desc = 'go to line begin' } },
 
         -- <PageUp>
         -- page scroll
