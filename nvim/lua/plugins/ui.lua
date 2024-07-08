@@ -150,23 +150,6 @@ return {
     },
     {
         'nvim-tree/nvim-web-devicons',
-        config = function()
-            require 'nvim-web-devicons'.setup {
-                override_by_extension = {
-                    ["go"] = {
-                        icon = "󰟓",
-                        color = "#519aba",
-                        cterm_color = "74",
-                        name = "Go",
-                    },
-                    ["py"] = {
-                        icon = "",
-                        color = "#7aa2f7",
-                        cterm_color = "214",
-                        name = "Py",
-                    },
-                },
-            }
-        end
+        config = true
     }
 }
