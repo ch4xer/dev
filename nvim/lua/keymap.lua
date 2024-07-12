@@ -60,13 +60,6 @@ local Plugin = {
         -- press '/' to jump in regular search
         { { "n", "x", "o" }, '?', function() require("flash").treesitter() end, { desc = 'search and select in treesitter' } }
     },
-    tmux = {
-        { 'n', '<C-j>', function() require('nvim-tmux-navigation').NvimTmuxNavigateDown() end,  { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-k>', function() require('nvim-tmux-navigation').NvimTmuxNavigateUp() end,    { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-h>', function() require('nvim-tmux-navigation').NvimTmuxNavigateLeft() end,  { desc = 'navigate in neovim windows and tmux windows' } },
-        { 'n', '<C-l>', function() require('nvim-tmux-navigation').NvimTmuxNavigateRight() end, { desc = 'navigate in neovim windows and tmux windows' } },
-
-    },
     -- keymaps are in configuration of nvim-cmp
     cmp = {},
     -- keymaps are in configuration of nvim-surround

@@ -71,11 +71,6 @@ return {
         event = "User Lazyest",
     },
     {
-        'alexghergh/nvim-tmux-navigation',
-        config = true,
-        lazy = false,
-    },
-    {
         'echasnovski/mini.cursorword',
         version = false,
         event = 'User Lazyest',
