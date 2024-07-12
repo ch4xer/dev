@@ -95,7 +95,6 @@ zsh/zshrc -> ~/.zshrc
 |       tmux        |     C-PgDn      |        go to next window         |
 |       tmux        |    C-S-PgUp     |    swap with previous window     |
 |       tmux        |    C-S-PgDn     |      swap with next window       |
-|       tmux        |  C-(number x)   |          go to window x          |
 |       tmux        |       C-s       |          choose session          |
 |       tmux        |      C-S-s      |          rename session          |
 |       tmux        |       C-n       |        create new session        |
