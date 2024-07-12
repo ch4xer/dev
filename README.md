@@ -36,10 +36,9 @@ zsh/zshrc -> ~/.zshrc
 ## Noteable Info
 
 - Kitty
-  - use JetbrainMono Nerd Font and LXGW WenKai, please install them by yourself.
+  - use JetbrainMono Nerd Font and LXGW WenKai
 - Tmux
   - use with `kitty --config ~/.config/kitty/tmux-mode.conf`, otherwise some keybindings will conflict with kitty.
-  - commonly used shortcuts dont require prefix key, which can still be used though
   - use tmux-continuum and resurrect to restore sessions.
 - Zsh
   - you can add software settings in `zsh/zsh/software`
@@ -47,8 +46,6 @@ zsh/zshrc -> ~/.zshrc
 - Neovim
   - Only use 30- plugins to make Neovim tiny and good enough for simple editing
   - the completion behavior simulate vscode's, which is more intuitive:)
-- lf
-  - integrate with fzf, press `f` to start fuzzy search from pwd
 
 ## Keymap
 
