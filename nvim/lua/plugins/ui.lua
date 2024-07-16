@@ -23,46 +23,6 @@ return {
             vim.cmd.colorscheme "catppuccin"
         end
     },
-    -- {
-    --     'folke/tokyonight.nvim',
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         require("tokyonight").setup({
-    --             -- storm, night, day are similar, moon is specially soft
-    --             style = "moon",
-    --             styles = {
-    --                 comments = { italic = true },
-    --                 keywords = { italic = true },
-    --                 functions = { italic = true },
-    --                 variables = {},
-    --                 sidebars = "transparent",
-    --                 floats = "transparent",
-    --             },
-    --
-    --             on_colors = function(colors)
-    --                 colors.border = "#565f89"
-    --                 -- use night bg color
-    --                 -- colors.bg = "#1a1b26"
-    --             end,
-    --             on_highlights = function(hl, c)
-    --                 hl.Folded = {
-    --                     fg = "#7aa2f7",
-    --                     bg = nil,
-    --                 }
-    --                 hl.VerticalSplit = {
-    --                     fg = "#565f89",
-    --                     bg = nil,
-    --                 }
-    --                 -- popup menu transparent
-    --                 hl.Pmenu = {
-    --                     bg = nil,
-    --                 }
-    --             end,
-    --         })
-    --         vim.cmd("colorscheme tokyonight")
-    --     end,
-    -- },
     {
         'hoob3rt/lualine.nvim',
         event = "User Lazyest",
