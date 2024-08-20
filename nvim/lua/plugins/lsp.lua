@@ -5,9 +5,8 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'williamboman/mason.nvim',
         },
-        -- BufRead will not avoid loading in dashboard
-        -- while keeping lazy false
-        event = "BufRead",
+        -- BufRead will skip empty new buffer
+        lazy = false,
         cond = vim.g.is_not_large,
         config = function()
             require('mason').setup()
