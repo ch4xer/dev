@@ -23,7 +23,6 @@ return {
                 "lua_ls",
                 "dockerls",
                 "bashls",
-                "texlab",
                 "jsonls",
                 "marksman",
             }
