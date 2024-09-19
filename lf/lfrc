@@ -12,6 +12,7 @@ set ifs "\n"
 set scrolloff 10
 set cursorpreviewfmt "\033[7;1m"
 set cursoractivefmt "\033[7;1m"
+set dupfilefmt "%f.%n"
 
 %mkdir -p ~/.trash
 
