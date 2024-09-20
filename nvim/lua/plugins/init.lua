@@ -17,6 +17,7 @@ local utils = require('plugins.utils')
 local lsp = require('plugins.lsp')
 local cmp = require('plugins.cmp')
 local treesitter = require('plugins.treesitter')
+local neotree = require('plugins.neotree')
 
 local concatenateTables = function(...)
     local result = {}
@@ -33,7 +34,8 @@ local plugins = concatenateTables(
     utils,
     lsp,
     cmp,
-    treesitter
+    treesitter,
+    neotree
 )
 
 require("lazy").setup(

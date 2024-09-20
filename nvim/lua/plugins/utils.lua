@@ -4,17 +4,7 @@ return {
         dependencies = {
             'nvim-tree/nvim-web-devicons',
         },
-        config = function()
-            local actions = require("fzf-lua").actions
-            require("fzf-lua").setup({
-                buffers = {
-                    actions = {
-                        ["ctrl-x"] = false,
-                        ["ctrl-d"] = { actions.buf_del, actions.resume },
-                    }
-                }
-            })
-        end,
+        config = true,
     },
     {
         'windwp/nvim-autopairs',
