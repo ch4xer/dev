@@ -11,6 +11,11 @@ local Base = {
         { { 'n', 'v' }, '<C-d>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll half page backward' } },
 
         { 'n',          '<C-i>', '<C-i>',                                        { desc = 'fix conflict caused by <Tab> mapping' } },
+
+        { 'n',          '<A-h>', '<C-w>h',                                        { desc = 'move to window' } },
+        { 'n',          '<A-j>', '<C-w>j',                                        { desc = 'move to window' } },
+        { 'n',          '<A-k>', '<C-w>k',                                        { desc = 'move to window' } },
+        { 'n',          '<A-l>', '<C-w>l',                                        { desc = 'move to window' } },
     },
     buffer = {
         { 'n', '<Tab>',   '<CMD>bnext<CR>', { desc = 'next buffer' } },

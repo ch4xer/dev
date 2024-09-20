@@ -97,6 +97,7 @@ zsh/zshrc -> ~/.zshrc
 |      neovim       |        q        |         quit window/neovim       |
 |      neovim       |        Q        |            record macro          |
 |      neovim       |       H/L       |    go to the begin/end of line   |
+|      neovim       |    A-h/j/k/l    |          move to window          |
 |      neovim       |  <TAB>/<S-TAB>  |    go to the next/prev buffer    |
 |      neovim       |        ;        |      enter commandline mode      |
 |      neovim       |       g=        |         format document          |
