@@ -16,10 +16,7 @@ local Base = {
         { 'n',          '<A-j>', '<C-w>j',                                        { desc = 'move to window' } },
         { 'n',          '<A-k>', '<C-w>k',                                        { desc = 'move to window' } },
         { 'n',          '<A-l>', '<C-w>l',                                        { desc = 'move to window' } },
-    },
-    buffer = {
-        { 'n', '<Tab>',   '<CMD>bnext<CR>', { desc = 'next buffer' } },
-        { 'n', '<S-Tab>', '<CMD>bprev<CR>', { desc = 'prev buffer' } },
+        { 'n', '<Tab>',   '<C-w>W', { desc = 'next buffer' } },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>',  { desc = 'delete word forward' } },
