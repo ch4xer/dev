@@ -45,7 +45,6 @@ zsh/zshrc -> ~/.zshrc
   - disable vim mode.
 - Neovim
   - Only use 30- plugins to make Neovim tiny and good enough for simple editing
-  - the completion behavior simulate vscode's, which is more intuitive:)
 
 ## Keymap
 
@@ -95,8 +94,10 @@ zsh/zshrc -> ~/.zshrc
 |       tmux        |       C-s       |          choose session          |
 |       tmux        |      C-S-s      |          rename session          |
 |       tmux        |       C-n       |        create new session        |
+|      neovim       |        q        |         quit window/neovim       |
+|      neovim       |        Q        |            record macro          |
 |      neovim       |       H/L       |    go to the begin/end of line   |
-|      neovim       |  <TAB>/<S-TAB>  |    go to the next/prev buffer   |
+|      neovim       |  <TAB>/<S-TAB>  |    go to the next/prev buffer    |
 |      neovim       |        ;        |      enter commandline mode      |
 |      neovim       |       g=        |         format document          |
 |      neovim       | 2-LeftMouse/<CR>|           toggle fold            |
@@ -111,4 +112,4 @@ zsh/zshrc -> ~/.zshrc
 |      neovim       |       gr        |       (lsp) find reference       |
 |      neovim       |       C-/       |           comment line           |
 |      neovim       |       f         |           flash jump             |
-|      neovim       | plugins/cmp.lua |         code completions         |
+|      neovim       |  <Tab>/<S-Tab>  |         code completions         |
