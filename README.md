@@ -78,7 +78,7 @@ zsh/zshrc -> ~/.zshrc
 |        lf         |        d        |               cut                |
 |        lf         |        p        |              paste               |
 |        lf         |        D        |          move to trash           |
-|        lf         |     delete      |                rm                |
+|        lf         |    <delete>     |                rm                |
 |        lf         |        f        |      fuzzy search using fzf      |
 |       tmux        |    C-h/j/k/l    |         go to other pane         |
 |       tmux        |       C-q       |            kill pane             |
@@ -95,12 +95,11 @@ zsh/zshrc -> ~/.zshrc
 |       tmux        |       C-s       |          choose session          |
 |       tmux        |      C-S-s      |          rename session          |
 |       tmux        |       C-n       |        create new session        |
-|      neovim       |       f/F       | scroll half page forward/backward|
 |      neovim       |       H/L       |    go to the begin/end of line   |
+|      neovim       |  <TAB>/<S-TAB>  |    go to the next/prev buffer   |
 |      neovim       |        ;        |      enter commandline mode      |
 |      neovim       |       g=        |         format document          |
-|      neovim       |   2-LeftMouse   |           toggle fold            |
-|      neovim       |       CR        |           toggle fold            |
+|      neovim       | 2-LeftMouse/<CR>|           toggle fold            |
 |      neovim       |       sw        |        fuzzy search word         |
 |      neovim       |       sf        |      fuzzy search filename       |
 |      neovim       |        z        |   fuzzy search opened buffers    |
@@ -111,6 +110,5 @@ zsh/zshrc -> ~/.zshrc
 |      neovim       |       gd        |      (lsp) go to definition      |
 |      neovim       |       gr        |       (lsp) find reference       |
 |      neovim       |       C-/       |           comment line           |
-|      neovim       |        /        |         search and jump          |
-|      neovim       |        ?        | search and select in treesitter  |
+|      neovim       |       f         |           flash jump             |
 |      neovim       | plugins/cmp.lua |         code completions         |

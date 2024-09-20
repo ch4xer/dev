@@ -7,11 +7,6 @@ return {
         config = function()
             local actions = require("fzf-lua").actions
             require("fzf-lua").setup({
-                winopts = {
-                    preview = {
-                        vertical = 'down:70%'
-                    }
-                },
                 buffers = {
                     actions = {
                         ["ctrl-x"] = false,
@@ -144,6 +139,7 @@ return {
                         shade = 5,
                     },
                     uppercase = false,
+                    distance = true,
                 },
                 modes = {
                     -- options used when flash is activated through
@@ -159,6 +155,7 @@ return {
                     -- options used for treesitter selections
                     -- `require("flash").treesitter()`
                     treesitter = {
+                        enabled = false,
                         labels = "abcdefghijklmnopqrstuvwxyz0123456789",
                         label = { before = true, after = true, style = "inline" },
                         jump = { pos = "range" },
@@ -176,7 +173,7 @@ return {
                 jump = {
                     pos = "end",
                     autojump = false,
-                }
+                },
             }
         end,
     },

@@ -1,15 +1,20 @@
 local vim = vim
 local Base = {
     movement = {
-        { { 'n', 'v' }, 'j', "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true, desc = 'go to next wrapline' } },
-        { { 'n', 'v' }, 'k', "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true, desc = 'go to previous wrapline' } },
-        { { 'n', 'v' }, 'L', 'g_',                                            { desc = 'go to line end' } },
-        { { 'n', 'v' }, 'H', '^',                                            { desc = 'go to line begin' } },
+        { { 'n', 'v' }, 'j',     "v:count == 0 ? 'gj' : 'j'",                    { expr = true, silent = true, desc = 'go to next wrapline' } },
+        { { 'n', 'v' }, 'k',     "v:count == 0 ? 'gk' : 'k'",                    { expr = true, silent = true, desc = 'go to previous wrapline' } },
+        { { 'n', 'v' }, 'L',     'g_',                                           { desc = 'go to line end' } },
+        { { 'n', 'v' }, 'H',     '^',                                            { desc = 'go to line begin' } },
 
-        -- <PageUp>
         -- page scroll
-        { { 'n', 'v' }, 'F', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll half page forward' } },
-        { { 'n', 'v' }, 'f', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll half page backward' } },
+        { { 'n', 'v' }, '<C-u>', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll half page forward' } },
+        { { 'n', 'v' }, '<C-d>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll half page backward' } },
+
+        { 'n',          '<C-i>', '<C-i>',                                        { desc = 'fix conflict caused by <Tab> mapping' } },
+    },
+    buffer = {
+        { 'n', '<Tab>',   '<CMD>bnext<CR>', { desc = 'next buffer' } },
+        { 'n', '<S-Tab>', '<CMD>bprev<CR>', { desc = 'prev buffer' } },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>',  { desc = 'delete word forward' } },
@@ -57,8 +62,7 @@ local Plugin = {
         { 'n', 'gr', function() require('fzf-lua').lsp_references() end,   { desc = 'find reference' } },
     },
     flash = {
-        -- press '/' to jump in regular search
-        { { "n", "x", "o" }, '?', function() require("flash").treesitter() end, { desc = 'search and select in treesitter' } }
+        { { "n" }, 'f', function() require("flash").jump() end, { desc = 'jump in screen' } },
     },
     -- keymaps are in configuration of nvim-cmp
     cmp = {},
