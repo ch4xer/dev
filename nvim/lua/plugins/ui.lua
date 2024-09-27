@@ -6,6 +6,7 @@ return {
         lazy = false,
         config = function()
             require("catppuccin").setup({
+                transparent_background = true,
                 term_colors = false,
                 styles = {
                     comments = { "italic" },
@@ -31,7 +32,7 @@ return {
                 options = {
                     globalstatus = true,
                     component_separators = { left = '', right = '' },
-                    section_separators = { left = '', right = '' },
+                    section_separators = { left = '', right = '' },
                 },
                 sections = {
                     lualine_a = {

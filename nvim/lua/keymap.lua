@@ -10,8 +10,8 @@ local Base = {
         { { 'n', 'v' }, '<C-u>', math.floor(vim.fn.winheight(0) / 2) .. '<C-u>', { desc = 'scroll half page forward' } },
         { { 'n', 'v' }, '<C-d>', math.floor(vim.fn.winheight(0) / 2) .. '<C-d>', { desc = 'scroll half page backward' } },
 
+        { 'n',          '<C-i>', '<C-i>',                                        { desc = 'fix conflict caused by <Tab> mapping, no need in vscode' } },
         { 'n',          '<Tab>', '<C-w>W',                                       { desc = 'move to window' } },
-        { 'n',          '<C-i>', '<C-i>',                                        { desc = 'fix conflict caused by <Tab> mapping' } },
     },
     edit = {
         { 'i', '<C-BS>',      '<C-W>',  { desc = 'delete word forward' } },
@@ -22,6 +22,8 @@ local Base = {
         { 'v', '<',           '<gv',    { desc = 'indent while keeping virtual mode after ' } },
         { 'n', '<Backspace>', 'ciw',    { desc = 'delete word and edit in normal mode' } },
         { 'v', '<Backspace>', 'c',      { desc = 'delete and edit in visual mode' } },
+        { 'x', 'i',           'I',      { desc = 'column insert' } },
+        { 'x', 'a',           'A',      { desc = 'column append' } },
     },
     cmd = {
         { { 'n', 'v' }, ';', ':',           { nowait = true, desc = 'enter commandline mode' } },
@@ -48,6 +50,9 @@ local Base = {
         { 'n', '<C-/>', 'gcc', { desc = 'comment', remap = true, silent = true } },
         { 'n', '<C-_>', 'gcc', { desc = 'comment', remap = true, silent = true } },
     },
+    misc = {
+        { 'n', '<ESC>', '<CMD>noh<CR><ESC>', { desc = 'clear search highlight' } },
+    }
 }
 
 local Plugin = {
@@ -59,18 +64,14 @@ local Plugin = {
         { 'n', 'gr', function() require('fzf-lua').lsp_references() end,   { desc = 'find reference' } },
     },
     flash = {
-        { { "n" }, 'f', function() require("flash").jump() end, { desc = 'jump in screen' } },
-    },
-    -- keymaps are in configuration of nvim-cmp
+        { { "n" }, 'f', function() require("flash").jump() end, { desc = 'jump in screen' } }, },
+    -- more keymaps in cmp.lua
     cmp = {},
-    -- keymaps are in configuration of nvim-surround
+    -- more keymaps in utils.lua
     surround = {},
+    -- more keymaps in neotree.lua
     neotree = {
-        { 'n', '<leader>t', function()
-            vim.cmd("Neotree focus last toggle")
-            -- vim.cmd.wincmd("W")
-            vim.cmd.wincmd("=")
-        end, { desc = 'toggle neotree' } },
+        { 'n', 't', function() vim.cmd("Neotree focus last toggle") end, { desc = 'toggle neotree' } },
     }
 }
 

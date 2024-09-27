@@ -12,50 +12,6 @@ return {
         event = { 'InsertEnter' }
     },
     {
-        "kylechui/nvim-surround",
-        config = function()
-            require("nvim-surround").setup {
-                keymaps = {
-                    visual = "s",
-                    normal = "ys",
-                    delete = "ds",
-                    change = "cs",
-                },
-                surrounds = {
-                    ["("] = {
-                        add = { "(", ")" },
-                        find = function()
-                            return M.get_selection({ motion = "a(" })
-                        end,
-                        delete = "^(.?)().-(?.)()$",
-                    },
-                    ["{"] = {
-                        add = { "{", "}" },
-                        find = function()
-                            return M.get_selection({ motion = "a{" })
-                        end,
-                        delete = "^(.?)().-(?.)()$",
-                    },
-                    ["["] = {
-                        add = { "[", "]" },
-                        find = function()
-                            return M.get_selection({ motion = "a[" })
-                        end,
-                        delete = "^(.?)().-(?.)()$",
-                    },
-                    ["<"] = {
-                        add = { "<", ">" },
-                        find = function()
-                            return M.get_selection({ motion = "a<" })
-                        end,
-                        delete = "^(.?)().-(?.)()$",
-                    },
-                }
-            }
-        end,
-        event = "User Lazyest",
-    },
-    {
         'echasnovski/mini.cursorword',
         version = false,
         event = 'User Lazyest',
@@ -115,6 +71,29 @@ return {
                 fold_virt_text_handler = handler
             })
         end,
+    },
+    {
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup {
+                keymaps = {
+                    visual = "s",
+                    normal = "ys",
+                    delete = "ds",
+                    change = "cs",
+                },
+                surrounds = {
+                    ["("] = false,
+                    ["["] = false,
+                },
+                -- remove leading and trailing whitespace
+                aliases = {
+                    ["("] = ")",
+                    ["["] = "]",
+                }
+            }
+        end,
+        event = "User Lazyest",
     },
     {
         "folke/flash.nvim",

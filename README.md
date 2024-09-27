@@ -113,4 +113,4 @@ zsh/zshrc -> ~/.zshrc
 |      neovim       |       C-/       |           comment line           |
 |      neovim       |       f         |           flash jump             |
 |      neovim       |  <Tab>/<S-Tab>  |         code completions         |
-|      neovim       |    <leader>t    |             File Tree            |
+|      neovim       |        t        |             File Tree            |
