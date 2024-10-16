@@ -61,6 +61,7 @@ zsh/zshrc -> ~/.zshrc
 | kitty(kitty.conf) |       f1        |          search content          |
 | kitty(kitty.conf) |       f11       |           toggle zoom            |
 |        zsh        |       C-r       |      execute lf filemanager      |
+|        zsh        |       C-e       |        open filemanager-gui      |
 |        zsh        |   C-backspace   |       delete word backward       |
 |        lf         |       gh        |          go to home (~)          |
 |        lf         |       gd        |        go to ~/Documents         |

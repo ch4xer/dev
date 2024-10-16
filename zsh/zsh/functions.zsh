@@ -22,6 +22,10 @@ filemanager() {
     fi
 }
 
+filemanager_gui() {
+    xdg-open $(pwd)
+}
+
 man() {
     local width=$(tput cols)
     [ $width -gt $MANWIDTH ] && width=$MANWIDTH
@@ -34,4 +38,5 @@ empty() {
 }
 
 zle -N filemanager
+zle -N filemanager_gui
 zle -N empty
