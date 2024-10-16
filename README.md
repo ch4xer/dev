@@ -1,10 +1,14 @@
-# Personal Development Toolkit 📡
+# Development Toolkit 📡
 
-This repo contains my configuration of kitty, tmux, lf, zsh and neovim.
+A comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
+
+- terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
+- shell: [zsh](https://www.zsh.org/)
+- editor: [neovim](https://github.com/neovim/neovim)
+- terminal filemanager: [lf](https://github.com/gokcehan/lf)
+- multiplexers: [tmux](https://github.com/tmux/tmux) or [kitty](https://github.com/kovidgoyal/kitty)
 
 ## Try
-
-You can try my configuration in docker container.
 
 ```bash
 docker run -it --rm --name dev ch4xer/dev:latest /bin/zsh
@@ -19,7 +23,7 @@ cd dev
 ./scripts/install-software.sh
 ```
 
-Alternatively (if you dont want to install all of them), you can copy the configuration directory you like to XDG_CONFIG_HOME, for example:
+Alternatively (if you dont want to install all of them), you can copy the configuration directory you like to `XDG_CONFIG_HOME` (commonly `~/.config`), for example:
 
 ```
 nvim -> ~/.config/nvim
@@ -34,7 +38,7 @@ zsh/zshrc -> ~/.zshrc
 
 - Kitty
   - use `Ctrl` and `Shift` as modifier key for all shortcuts
-  - use JetbrainMono Nerd Font and LXGW WenKai
+  - use JetbrainMono Nerd Font and LXGW WenKai as font
 - Tmux
   - use `Alt` and `Ctrl` as modifier key for all shortcuts
   - set `Alt-a` as prefix key instead of `Ctrl-b`
