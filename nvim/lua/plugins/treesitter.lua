@@ -3,8 +3,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 		build = ":TSUpdate",
-		-- prevent flickering when opening file
-		event = "BufRead",
+        lazy = false,
 		cond = vim.g.is_not_large,
 		config = function()
 			require("nvim-treesitter.configs").setup({
@@ -12,11 +11,9 @@ return {
 				ensure_installed = {
 					"c",
 					"lua",
-					"vim",
 					"vimdoc",
 					"go",
 					"rust",
-					"java",
 					"json",
 					"python",
 					"dockerfile",
