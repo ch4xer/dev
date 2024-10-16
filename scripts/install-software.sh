@@ -47,6 +47,7 @@ read -p "Do you want to overwrite or backup the configuration file? (o/b): " res
 if [ "$response" == "o" ]; then
     echo "Overwriting the configuration file..."
     yes | rm -r $BASEDIR/tmux
+    rm ~/.zshrc
     yes | rm -r $BASEDIR/zsh
     yes | rm -r $BASEDIR/lf
     yes | rm -r $BASEDIR/nvim

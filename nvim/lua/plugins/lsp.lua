@@ -22,7 +22,6 @@ return {
                     'bash-language-server',
                     'marksman',
                     'json-lsp',
-                    'remark-language-server',
                 }
             }
             local lspconfig = require('lspconfig')
@@ -40,7 +39,6 @@ return {
                 "bashls",
                 "jsonls",
                 "marksman",
-                "remark_ls",
             }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
