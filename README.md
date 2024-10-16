@@ -81,7 +81,7 @@ zsh/zshrc -> ~/.zshrc
 |    lf    |        d         |               cut                |
 |    lf    |        p         |              paste               |
 |    lf    |        D         |          move to trash           |
-|    lf    |     <delete>     |                rm                |
+|    lf    |      delete      |                rm                |
 |    lf    |        f         |      fuzzy search using fzf      |
 |   tmux   |       M-a        |            prefix key            |
 |   tmux   |    M-h/j/k/l     |         go to other pane         |
