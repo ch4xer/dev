@@ -4,12 +4,27 @@ return {
         dependencies = {
             'hrsh7th/cmp-nvim-lsp',
             'williamboman/mason.nvim',
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
         },
         -- BufRead will skip empty new buffer
         lazy = false,
         cond = vim.g.is_not_large,
         config = function()
             require('mason').setup()
+            require('mason-tool-installer').setup {
+                ensure_installed = {
+                    'rust-analyzer',
+                    'gopls',
+                    'clangd',
+                    'lua-language-server',
+                    'pyright',
+                    'dockerfile-language-server',
+                    'bash-language-server',
+                    'marksman',
+                    'json-lsp',
+                    'remark-language-server',
+                }
+            }
             local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             lspconfig.clangd.setup {
@@ -25,6 +40,7 @@ return {
                 "bashls",
                 "jsonls",
                 "marksman",
+                "remark_ls",
             }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {

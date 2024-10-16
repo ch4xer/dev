@@ -7,10 +7,7 @@ This repo contains my configuration of kitty, tmux, lf, zsh and neovim.
 You can try my configuration in docker container.
 
 ```bash
-git clone https://github.com/ch3n9w/dev
-cd dev
-docker build . -t dev:latest
-docker run -it dev:latest /bin/zsh
+docker run -it ch4xer/dev:latest /bin/zsh
 ```
 
 ## Install
@@ -36,9 +33,11 @@ zsh/zshrc -> ~/.zshrc
 ## Noteable Info
 
 - Kitty
+  - use `Ctrl` and `Shift` as modifier key for all shortcuts
   - use JetbrainMono Nerd Font and LXGW WenKai
 - Tmux
-  - use with `kitty --config ~/.config/kitty/tmux-mode.conf`, otherwise some keybindings will conflict with kitty.
+  - use `Alt` and `Ctrl` as modifier key for all shortcuts
+  - set `Alt-a` as prefix key instead of `Ctrl-b`
   - use tmux-continuum and resurrect to restore sessions.
 - Zsh
   - you can add software settings in `zsh/zsh/software`
@@ -50,16 +49,16 @@ zsh/zshrc -> ~/.zshrc
 
 |     Software      |       Key       |              Effect              |
 | :---------------: | :-------------: | :------------------------------: |
-| kitty(kitty.conf) |       C-t       |             new tab              |
-| kitty(kitty.conf) |      C-CR       |            new window            |
-| kitty(kitty.conf) |       C-w       |          delete window           |
-| kitty(kitty.conf) |    C-h/j/k/l    |        focus other window        |
-| kitty(kitty.conf) |   C-S-h/j/k/l   |           move window            |
-| kitty(kitty.conf) |   C-PgUp/PgDn   |          goto other tab          |
-| kitty(kitty.conf) |  C-S-PgUp/PgDn  |             move tab             |
-| kitty(kitty.conf) |      C-=/-      |         adjust font size         |
-| kitty(kitty.conf) |       f1        |          search content          |
-| kitty(kitty.conf) |       f11       |           toggle zoom            |
+| kitty |       C-t       |             new tab              |
+| kitty |      C-CR       |            new window            |
+| kitty |       C-w       |          delete window           |
+| kitty |    C-h/j/k/l    |        focus other window        |
+| kitty |   C-S-h/j/k/l   |           move window            |
+| kitty |   C-PgUp/PgDn   |          goto other tab          |
+| kitty |  C-S-PgUp/PgDn  |             move tab             |
+| kitty |      C-=/-      |         adjust font size         |
+| kitty |       f1        |          search content          |
+| kitty |       f11       |           toggle zoom            |
 |        zsh        |       C-r       |      execute lf filemanager      |
 |        zsh        |       C-e       |        open filemanager-gui      |
 |        zsh        |   C-backspace   |       delete word backward       |
@@ -80,21 +79,22 @@ zsh/zshrc -> ~/.zshrc
 |        lf         |        D        |          move to trash           |
 |        lf         |    <delete>     |                rm                |
 |        lf         |        f        |      fuzzy search using fzf      |
-|       tmux        |    C-h/j/k/l    |         go to other pane         |
-|       tmux        |       C-q       |            kill pane             |
-|       tmux        |     C-S-j/k     |      swap with other panes       |
-|       tmux        |       C-x       |    split window horizontally     |
-|       tmux        |      C-S-x      |     split window vertically      |
-|       tmux        |       C-f       |           toggle zoom            |
-|       tmux        |       C-t       |        create new window         |
-|       tmux        |      C-S-t      |          rename window           |
-|       tmux        |     C-PgUp      |      go to previous window       |
-|       tmux        |     C-PgDn      |        go to next window         |
-|       tmux        |    C-S-PgUp     |    swap with previous window     |
-|       tmux        |    C-S-PgDn     |      swap with next window       |
-|       tmux        |       C-s       |          choose session          |
-|       tmux        |      C-S-s      |          rename session          |
-|       tmux        |       C-n       |        create new session        |
+|       tmux        |       M-a       |            prefix key            |
+|       tmux        |    M-h/j/k/l    |         go to other pane         |
+|       tmux        |       M-q       |            kill pane             |
+|       tmux        |     M-C-j/k     |      swap with other panes       |
+|       tmux        |       M-x       |    split window horizontally     |
+|       tmux        |      M-C-x      |     split window vertically      |
+|       tmux        |       M-f       |           toggle zoom            |
+|       tmux        |       M-t       |        create new window         |
+|       tmux        |      M-C-t      |          rename window           |
+|       tmux        |     M-PgUp      |      go to previous window       |
+|       tmux        |     M-PgDn      |        go to next window         |
+|       tmux        |    M-C-PgUp     |    swap with previous window     |
+|       tmux        |    M-C-PgDn     |      swap with next window       |
+|       tmux        |       M-s       |          choose session          |
+|       tmux        |      M-C-s      |          rename session          |
+|       tmux        |       M-n       |        create new session        |
 |      neovim       |        q        |         quit window/neovim       |
 |      neovim       |        Q        |            record macro          |
 |      neovim       |       H/L       |    go to the begin/end of line   |

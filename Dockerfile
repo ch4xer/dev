@@ -11,7 +11,8 @@ RUN sed -i 's/^Server =.*archlinux.org$/Server = https:\/\/mirrors.tuna.tsinghua
 RUN pacman -Sy && pacman -S --needed --noconfirm sudo
 RUN echo 'o' | bash ./scripts/install-software.sh
 RUN nvim --headless "+Lazy! sync" +qa
+RUN nvim --headless "+MasonToolsInstallSync!" +qa
 WORKDIR /root
 RUN rm -r /root/dev
 
-CMD [ "/usr/bin/zsh" ]
+CMD [ "/bin/zsh" ]
