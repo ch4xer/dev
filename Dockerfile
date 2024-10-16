@@ -1,5 +1,7 @@
 FROM archlinux:latest
 
+RUN sed -i 's/^# *\(en_US.UTF-8 UTF-8\)/\1/' /etc/locale.gen
+RUN locale-gen
 COPY . /root/dev
 WORKDIR /root/dev
 # RUN sed -i 's/^Server =.*archlinux.org$/Server = https:\/\/mirrors.tuna.tsinghua.edu.cn\/archlinux\/\$repo\/os\/\$arch/' /etc/pacman.d/mirrorlist
