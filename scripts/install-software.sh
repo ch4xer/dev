@@ -55,6 +55,7 @@ if [ "$response" == "o" ]; then
     cp -r ./zsh/zshrc ~/.zshrc
     cp -r ./lf $BASEDIR/
     cp -r ./nvim $BASEDIR/
+    cp -r ./kitty $BASEDIR/
 elif [ "$response" == "b" ]; then
     echo "Backup the configuration file..."
     mv $BASEDIR/tmux $BASEDIR/tmux_bak || echo "$BASEDIR/tmux not found. Skip."
@@ -62,11 +63,13 @@ elif [ "$response" == "b" ]; then
     mv ~/.zshrc ~/.zshrc_bak || echo "~/.zshrc not found. Skip."
     mv $BASEDIR/lf $BASEDIR/lf_bak || echo "$BASEDIR/lf not found. Skip."
     mv $BASEDIR/nvim $BASEDIR/nvim_bak || echo "$BASEDIR/nvim not found. Skip."
+    mv $BASEDIR/kitty $BASEDIR/kitty_bak || echo "$BASEDIR/kitty not found. Skip."
     cp -r ./tmux $BASEDIR/
     cp -r ./zsh/zsh $BASEDIR/
     cp -r ./zsh/zshrc ~/.zshrc
     cp -r ./lf $BASEDIR/
     cp -r ./nvim $BASEDIR/
+    cp -r ./kitty $BASEDIR/
 else
     echo "Invalid response. Please enter 'o' or 'b'."
     exit 1
