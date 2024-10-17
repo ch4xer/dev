@@ -62,7 +62,7 @@ vim.o.viewoptions = "folds,cursor,curdir"
 
 -- save undo history, slow startup with large file
 if vim.g.is_not_large() then
-	vim.o.undofile = true
+    vim.o.undofile = true
 end
 
 vim.g.python3_host_prog = vim.fn.exepath("python3")
