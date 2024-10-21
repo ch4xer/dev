@@ -13,10 +13,10 @@ if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
   sudo apt update
   if [ "$(cat /etc/lsb-release | grep DISTRIB_RELEASE | cut -d '=' -f 2)" = "20.04" ]; then
-    sudo apt install -y git kitty tmux zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep neovim clang nodejs npm golang python3-pip
+    sudo apt install -y git kitty tmux zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep neovim clang nodejs npm golang python3-pip python3-venv
     echo "Please install lf and lsd manually if you want"
   else
-    sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim clang nodejs npm golang python3-pip
+    sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim clang nodejs npm golang python3-pip python3-venv
   fi
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   sudo ln -s -f /usr/bin/batcat /usr/bin/bat

@@ -25,7 +25,6 @@ return {
                     "json-lsp",
                     "isort",
                     "black",
-                    "shellharden",
                     "prettierd",
                 },
             })
