@@ -104,6 +104,7 @@ cmd fzf_select ${{
 }}
 
 map <enter> shell
+map <m-2> updir
 map gh cd ~
 map gd cd ~/Documents
 map gn cd ~/Downloads
