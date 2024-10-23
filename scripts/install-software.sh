@@ -18,6 +18,7 @@ if [ -f /etc/debian_version ]; then
   else
     sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim clang nodejs npm golang python3-pip python3-venv
   fi
+  curl -O https://starship.rs/install.sh
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   sudo ln -s -f /usr/bin/batcat /usr/bin/bat
   sudo ln -s -f /usr/bin/fdfind /usr/bin/fd
@@ -27,13 +28,13 @@ fi
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
   sudo pacman -Sy
-  sudo pacman -S --needed --noconfirm kitty git tmux zsh lf rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go
+  sudo pacman -S --needed --noconfirm kitty git tmux zsh lf rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go starship
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
   echo "Detect macOS, installing packages with homebrew..."
   brew update
-  brew install git tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go
+  brew install git tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go starship
 fi
 
 # git submodule init
@@ -56,6 +57,7 @@ if [ "$response" == "o" ]; then
   cp -r ./lf $BASEDIR/
   cp -r ./nvim $BASEDIR/
   cp -r ./kitty $BASEDIR/
+  cp ./starship/starship.toml $BASEDIR/
 elif [ "$response" == "b" ]; then
   echo "Backup the configuration file..."
   mv $BASEDIR/tmux $BASEDIR/tmux_bak || echo "$BASEDIR/tmux not found. Skip."
@@ -70,6 +72,7 @@ elif [ "$response" == "b" ]; then
   cp -r ./lf $BASEDIR/
   cp -r ./nvim $BASEDIR/
   cp -r ./kitty $BASEDIR/
+  cp ./starship/starship.toml $BASEDIR/
 else
   echo "Invalid response. Please enter 'o' or 'b'."
   exit 1
