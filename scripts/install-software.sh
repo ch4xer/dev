@@ -78,7 +78,7 @@ else
   exit 1
 fi
 
-zsh -i -c "echo 'zsh plugins installed!';exit"
+zsh -i -c "znap pull;echo 'zsh plugins installed!';exit"
 nvim --headless "+Lazy! sync" +qa
 nvim --headless "+MasonToolsInstallSync" +qa
 nvim --headless "+TSUpdateSync" +qa
