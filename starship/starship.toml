@@ -1,0 +1,33 @@
+add_newline = false
+
+format = """
+[╭─](white) $os$hostname$directory$python$git_branch$git_status$kubernetes
+[╰─](white)$character"""
+
+[character]
+success_symbol = '[❯](green)[❯](blue)'
+error_symbol = '[❯](red)[❯](blue)'
+
+[directory]
+style = "blue"
+
+[os]
+disabled = false
+
+[os.symbols]
+Arch = " "
+Debian = " "
+Macos = " "
+Manjaro = " "
+NixOS = " "
+Ubuntu = " "
+
+[hostname]
+style = 'white'
+ssh_only = false
+
+[kubernetes]
+disabled = true
+symbol = '󱃾 '
+style = 'purple'
+format = '[$symbol$context(\($namespace\))]($style)'

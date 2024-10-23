@@ -1,51 +1,36 @@
-[submodule "zsh/plugins/powerlevel10k"]
-	path = zsh/plugins/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "zsh/plugins/zsh-autosuggestions"]
-	path = zsh/plugins/zsh-autosuggestions
+[submodule "zsh/zsh/plugins/znap"]
+	path = zsh/zsh/plugins/znap
+	url = https://github.com/marlonrichert/zsh-snap.git
+[submodule "zsh/zsh/plugins/zsh-users/zsh-autosuggestions"]
+	path = zsh/zsh/plugins/zsh-users/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "zsh/plugins/zsh-autoswitch-virtualenv"]
-	path = zsh/plugins/zsh-autoswitch-virtualenv
+[submodule "zsh/zsh/plugins/MichaelAquilina/zsh-autoswitch-virtualenv"]
+	path = zsh/zsh/plugins/MichaelAquilina/zsh-autoswitch-virtualenv
 	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
-[submodule "zsh/plugins/zsh-extract"]
-	path = zsh/plugins/zsh-extract
+[submodule "zsh/zsh/plugins/le0me55i/zsh-extract"]
+	path = zsh/zsh/plugins/le0me55i/zsh-extract
 	url = https://github.com/le0me55i/zsh-extract.git
-[submodule "zsh/plugins/zsh-history-substring-search"]
-	path = zsh/plugins/zsh-history-substring-search
+[submodule "zsh/zsh/plugins/zsh-users/zsh-history-substring-search"]
+	path = zsh/zsh/plugins/zsh-users/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/plugins/zsh-syntax-highlighting
+[submodule "zsh/zsh/plugins/zsh-users/zsh-syntax-highlighting"]
+	path = zsh/zsh/plugins/zsh-users/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/zsh/plugins/zsh-users/zsh-completions"]
+	path = zsh/zsh/plugins/zsh-users/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
 [submodule "tmux/plugins/tmux-sensible"]
 	path = tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible.git
-[submodule "tmux/plugins/tmux-continuum"]
-	path = tmux/plugins/tmux-continuum
-	url = https://github.com/tmux-plugins/tmux-continuum.git
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule "zsh/zsh/plugins/powerlevel10k"]
-	path = zsh/zsh/plugins/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "zsh/zsh/plugins/zsh-autosuggestions"]
-	path = zsh/zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "zsh/zsh/plugins/zsh-autoswitch-virtualenv"]
-	path = zsh/zsh/plugins/zsh-autoswitch-virtualenv
-	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
-[submodule "zsh/zsh/plugins/zsh-extract"]
-	path = zsh/zsh/plugins/zsh-extract
-	url = https://github.com/le0me55i/zsh-extract.git
-[submodule "zsh/zsh/plugins/zsh-history-substring-search"]
-	path = zsh/zsh/plugins/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "zsh/zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "tmux/plugins/tmux-continuum"]
+	path = tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
 [submodule "tmux/plugins/tmux-cpu"]
 	path = tmux/plugins/tmux-cpu
 	url = https://github.com/tmux-plugins/tmux-cpu.git

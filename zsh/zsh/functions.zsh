@@ -1,11 +1,3 @@
-redraw-prompt() {
-  local f
-  for f in chpwd "${chpwd_functions[@]}" precmd "${precmd_functions[@]}"; do
-    [[ "${+functions[$f]}" == 0 ]] || "$f" &>/dev/null || true
-  done
-  p10k display -r
-}
-
 filemanager() {
     tmp="$(mktemp)"
     lf --last-dir-path="$tmp" "$@"
@@ -16,7 +8,7 @@ filemanager() {
             if [ "$dir" != "$(pwd)" ]; then
                 cd "$dir"
                 zoxide add "$dir"
-                redraw-prompt
+                zle reset-prompt
             fi
         fi
     fi
