@@ -5,11 +5,12 @@ format = """
 [╰─](white)$character"""
 
 [character]
-success_symbol = '[❯](green)[❯](blue)'
+success_symbol = '[❯](cyan)[❯](blue)'
 error_symbol = '[❯](red)[❯](blue)'
 
 [directory]
-style = "blue"
+style = "cyan"
+format = '[ ]($style)[$path]($style)[$read_only]($read_only_style) '
 
 [os]
 disabled = false
@@ -25,9 +26,20 @@ Ubuntu = " "
 [hostname]
 style = 'white'
 ssh_only = false
+format = '[$ssh_symbol$hostname]($style) '
 
 [kubernetes]
 disabled = true
 symbol = '󱃾 '
 style = 'purple'
-format = '[$symbol$context(\($namespace\))]($style)'
+format = '[$symbol$context(\($namespace\))]($style) '
+
+[python]
+symbol = ' '
+style = 'blue bold'
+version_format = '${raw}'
+format = '[${symbol}${pyenv_prefix}(${version})]($style) '
+detect_extensions = []
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
