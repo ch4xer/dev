@@ -1,10 +1,3 @@
-git submodule add --force https://github.com/marlonrichert/zsh-snap.git zsh/zsh/plugins/znap
-git submodule add --force https://github.com/zsh-users/zsh-autosuggestions.git zsh/zsh/plugins/zsh-users/zsh-autosuggestions
-git submodule add --force https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git zsh/zsh/plugins/MichaelAquilina/zsh-autoswitch-virtualenv
-git submodule add --force https://github.com/le0me55i/zsh-extract.git zsh/zsh/plugins/le0me55i/zsh-extract
-git submodule add --force https://github.com/zsh-users/zsh-history-substring-search.git zsh/zsh/plugins/zsh-users/zsh-history-substring-search
-git submodule add --force https://github.com/zsh-users/zsh-syntax-highlighting.git zsh/zsh/plugins/zsh-users/zsh-syntax-highlighting
-git submodule add --force https://github.com/zsh-users/zsh-completions.git zsh/zsh/plugins/zsh-users/zsh-completions
 git submodule add --force https://github.com/tmux-plugins/tpm.git tmux/plugins/tpm
 git submodule add --force https://github.com/tmux-plugins/tmux-sensible.git tmux/plugins/tmux-sensible
 git submodule add --force https://github.com/tmux-plugins/tmux-resurrect.git tmux/plugins/tmux-resurrect
