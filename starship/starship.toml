@@ -44,3 +44,4 @@ detect_extensions = []
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = ' '
