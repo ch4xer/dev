@@ -3,7 +3,7 @@
 A comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
 
 - terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
-- shell: [zsh](https://www.zsh.org/)
+- shell: [zsh](https://www.zsh.org/) + [starship](https://github.com/starship/starship)
 - editor: [neovim](https://github.com/neovim/neovim)
 - terminal filemanager: [lf](https://github.com/gokcehan/lf)
 - multiplexers: [tmux](https://github.com/tmux/tmux) or [kitty](https://github.com/kovidgoyal/kitty)
@@ -32,6 +32,7 @@ tmux -> ~/.config/tmux
 lf -> ~/.config/lf
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
+starship/starship.toml -> ~/.config/starship.toml
 ```
 
 ## Noteable Info
