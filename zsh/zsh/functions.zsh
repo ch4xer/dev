@@ -8,8 +8,8 @@ filemanager() {
             if [ "$dir" != "$(pwd)" ]; then
                 cd "$dir"
                 zoxide add "$dir"
-                zle reset-prompt
             fi
+            zle reset-prompt
         fi
     fi
 }
