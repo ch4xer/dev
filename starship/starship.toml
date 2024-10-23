@@ -27,6 +27,7 @@ Ubuntu = " "
 style = 'white'
 ssh_only = false
 format = '[$ssh_symbol$hostname]($style) '
+ssh_symbol = ' '
 
 [kubernetes]
 disabled = true

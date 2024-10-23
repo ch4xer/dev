@@ -8,15 +8,6 @@ export LC_ALL="en_US.UTF-8"
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
-
-# let zsh-autosuggestions work
-export SAVEHIST=100000
-export HISTSIZE=100000
-export HISTFILESIZE=100000
-export HISTFILE=$HOME/.zsh_history
-# share history in different terminal
-setopt SHARE_HISTORY
-setopt EXTENDED_HISTORY
 # This will make only alphanumeric characters count as words.
 # better experience for ctrl+left/right
 export WORDCHARS=''

@@ -29,3 +29,12 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bg=#d33682,fg=#002b36
 
 HISTORY_SUBSTRING_SEARCH_PREFIXED=1
 setopt HIST_FIND_NO_DUPS
+
+# let zsh-autosuggestions work
+export SAVEHIST=100000
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export HISTFILE=$HOME/.zsh_history
+# share history in different terminal
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
