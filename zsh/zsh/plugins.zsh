@@ -11,9 +11,10 @@ znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search
 znap source MichaelAquilina/zsh-autoswitch-virtualenv
+znap source le0me55i/zsh-extract
 
 # `znap install` adds new commands and completions.
-znap install zsh-users/zsh-completions le0me55i/zsh-extract
+znap install zsh-users/zsh-completions
 
 # fix case error
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
