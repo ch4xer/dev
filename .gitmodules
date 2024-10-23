@@ -1,24 +1,3 @@
-[submodule "zsh/zsh/plugins/znap"]
-	path = zsh/zsh/plugins/znap
-	url = https://github.com/marlonrichert/zsh-snap.git
-[submodule "zsh/zsh/plugins/zsh-users/zsh-autosuggestions"]
-	path = zsh/zsh/plugins/zsh-users/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "zsh/zsh/plugins/MichaelAquilina/zsh-autoswitch-virtualenv"]
-	path = zsh/zsh/plugins/MichaelAquilina/zsh-autoswitch-virtualenv
-	url = https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git
-[submodule "zsh/zsh/plugins/le0me55i/zsh-extract"]
-	path = zsh/zsh/plugins/le0me55i/zsh-extract
-	url = https://github.com/le0me55i/zsh-extract.git
-[submodule "zsh/zsh/plugins/zsh-users/zsh-history-substring-search"]
-	path = zsh/zsh/plugins/zsh-users/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "zsh/zsh/plugins/zsh-users/zsh-syntax-highlighting"]
-	path = zsh/zsh/plugins/zsh-users/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/zsh/plugins/zsh-users/zsh-completions"]
-	path = zsh/zsh/plugins/zsh-users/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
