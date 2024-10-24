@@ -4,13 +4,15 @@ format = """
 [╭─](white) $os$hostname$directory$python$git_branch$git_status$kubernetes
 [╰─](white)$character"""
 
+command_timeout = 1000
+
 [character]
 success_symbol = '[❯](cyan)[❯](blue)'
 error_symbol = '[❯](red)[❯](blue)'
 
 [directory]
 style = "cyan"
-format = '[ ]($style)[$path]($style)[$read_only]($read_only_style) '
+format = '[ ]($style)[$path]($style)[$read_only]($read_only_style) '
 
 [os]
 disabled = false
