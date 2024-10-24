@@ -18,7 +18,6 @@ if [ -f /etc/debian_version ]; then
   else
     sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim clang nodejs npm golang python3-pip python3-venv
   fi
-  curl -O https://starship.rs/install.sh
   chmod +x install.sh
   ./install.sh --yes
   rm ./install.sh
@@ -31,13 +30,13 @@ fi
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
   sudo pacman -Sy
-  sudo pacman -S --needed --noconfirm kitty git tmux zsh lf rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go starship
+  sudo pacman -S --needed --noconfirm kitty git tmux zsh lf rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
   echo "Detect macOS, installing packages with homebrew..."
   brew update
-  brew install git tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go starship
+  brew install git tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go
 fi
 
 # git submodule init
@@ -60,7 +59,6 @@ if [ "$response" == "o" ]; then
   cp -r ./lf $BASEDIR/
   cp -r ./nvim $BASEDIR/
   cp -r ./kitty $BASEDIR/
-  cp ./starship/starship.toml $BASEDIR/
 elif [ "$response" == "b" ]; then
   echo "Backup the configuration file..."
   mv $BASEDIR/tmux $BASEDIR/tmux_bak || echo "$BASEDIR/tmux not found. Skip."
@@ -69,14 +67,12 @@ elif [ "$response" == "b" ]; then
   mv $BASEDIR/lf $BASEDIR/lf_bak || echo "$BASEDIR/lf not found. Skip."
   mv $BASEDIR/nvim $BASEDIR/nvim_bak || echo "$BASEDIR/nvim not found. Skip."
   mv $BASEDIR/kitty $BASEDIR/kitty_bak || echo "$BASEDIR/kitty not found. Skip."
-  mv $BASEDIR/starship.toml $BASEDIR/starship.toml.bak || echo "$BASEDIR/starship.toml not found. Skip."
   cp -r ./tmux $BASEDIR/
   cp -r ./zsh/zsh $BASEDIR/
   cp -r ./zsh/zshrc ~/.zshrc
   cp -r ./lf $BASEDIR/
   cp -r ./nvim $BASEDIR/
   cp -r ./kitty $BASEDIR/
-  cp ./starship/starship.toml $BASEDIR/
 else
   echo "Invalid response. Please enter 'o' or 'b'."
   exit 1

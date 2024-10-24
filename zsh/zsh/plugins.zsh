@@ -1,12 +1,13 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 PLUGIN_HOME=$XDG_CONFIG_HOME/zsh/plugins
 [[ -r $PLUGIN_HOME/znap/znap.zsh ]] ||
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git $PLUGIN_HOME/znap
 source $PLUGIN_HOME/znap/znap.zsh
 
-znap eval starship 'starship init zsh --print-full-init'
-znap prompt
-
 # `znap source` starts plugins.
+znap source romkatv/powerlevel10k
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-history-substring-search

@@ -4,6 +4,7 @@ source $XDG_CONFIG_HOME/zsh/plugins.zsh
 source $XDG_CONFIG_HOME/zsh/functions.zsh
 source $XDG_CONFIG_HOME/zsh/alias.zsh
 source $XDG_CONFIG_HOME/zsh/keybinds.zsh
+source $XDG_CONFIG_HOME/zsh/theme.zsh
 
 # load software configuration
 setopt nullglob
