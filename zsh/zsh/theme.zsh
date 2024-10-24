@@ -318,7 +318,7 @@
       '~/Documents(|/*)'  DOCUMENTS     ''
       '~/Desktop(|/*)'  DESKTOP     ''
       '~/Projects(|/*)'  PROJECTS     ''
-      '*'            DEFAULT  ''
+      '*'            DEFAULT  ''
   )
   #
   # Whenever the current directory is ~/work or a subdirectory of ~/work, it gets styled with one
