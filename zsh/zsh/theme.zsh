@@ -313,12 +313,12 @@
   # For example, given these settings:
   #
     typeset -g POWERLEVEL9K_DIR_CLASSES=(
-      '~'  HOME     ''
-      '~/Downloads(|/*)'  DOWNLOADS     ''
-      '~/Documents(|/*)'  DOCUMENTS     ''
-      '~/Desktop(|/*)'  DESKTOP     ''
-      '~/Projects(|/*)'  PROJECTS     ''
-      '*'            DEFAULT  ''
+      '~'  HOME     ''
+      '~/Downloads(|/*)'  DOWNLOADS     ''
+      '~/Documents(|/*)'  DOCUMENTS     ''
+      '~/Desktop(|/*)'  DESKTOP     ''
+      '~/Projects(|/*)'  PROJECTS     ''
+      '*'            DEFAULT  ''
   )
   #
   # Whenever the current directory is ~/work or a subdirectory of ~/work, it gets styled with one
