@@ -3,4 +3,5 @@ lazy-lock.json
 zsh/zsh/software/*
 zsh/zsh/plugins/*
 !.gitkeep
+!zoxide.zsh
 *.zwc
