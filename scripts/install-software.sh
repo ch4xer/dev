@@ -13,15 +13,14 @@ if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
   sudo apt update
   if [ "$(cat /etc/lsb-release | grep DISTRIB_ID | cut -d '=' -f 2)" = "Ubuntu" ]; then
-    sudo apt install -y git kitty tmux zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep neovim clang nodejs npm golang python3-pip python3-venv
+    sudo apt install -y git kitty tmux zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep clang nodejs npm golang python3-pip python3-venv
     echo "Please install lf and lsd manually if you want"
   else
-    sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep neovim clang nodejs npm golang python3-pip python3-venv
+    sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep clang nodejs npm golang python3-pip python3-venv
   fi
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim-linux64.deb
-  sudo dpkg -i nvim-linux64.deb
-  rm nvim-linux64.deb
+  wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim.appimage 
+  mv nvim.appimage ~/.local/bin
   sudo ln -s -f /usr/bin/batcat /usr/bin/bat
   sudo ln -s -f /usr/bin/fdfind /usr/bin/fd
   sudo ln -s -f /usr/bin/python3 /usr/bin/python
