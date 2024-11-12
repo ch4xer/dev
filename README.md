@@ -102,6 +102,7 @@ starship/starship.toml -> ~/.config/starship.toml
 |   tmux   |      M-n       |          create new session           |
 |  neovim  |       q        |          quit window/neovim           |
 |  neovim  |       Q        |             record macro              |
+|  neovim  |      C-a       |       select all (normal mode)        |
 |  neovim  |      H/L       |      go to the begin/end of line      |
 |  neovim  |      Tab       |         move to other window          |
 |  neovim  |       ;        |        enter commandline mode         |

@@ -16,6 +16,7 @@ local Base = {
         { "n",          "<Tab>", "<C-w>W",                                       { desc = "move to window" } },
     },
     edit = {
+        { "n", "<C-a>",       "ggVG",   { desc = "select all" } },
         { "i", "<C-BS>",      "<C-W>",  { desc = "delete word forward" } },
         { "v", "y",           '"*ygvy', { desc = "copy" } },
         { "n", "yw",          "yiw",    { desc = "copy the word where cursor locates" } },
