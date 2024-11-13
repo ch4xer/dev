@@ -4,9 +4,9 @@ return {
         dependencies = {
             "neovim/nvim-lspconfig",
             "L3MON4D3/LuaSnip",
-            "rafamadriz/friendly-snippets",
             "saadparwaiz1/cmp_luasnip",
             "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
             "onsails/lspkind-nvim",
         },
         event = "InsertEnter",
@@ -34,7 +34,6 @@ return {
                 region_check_events = { "CursorMoved", "CursorHold", "InsertEnter", "CursorMovedI" },
                 history = true,
             })
-            require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
                 completion = {
@@ -130,6 +129,7 @@ return {
                     { name = "luasnip" },
                 }, {
                     { name = "buffer" },
+                    { name = "path" }
                 }),
                 sorting = {
                     priority_weight = 1.0,
