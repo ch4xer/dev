@@ -34,7 +34,6 @@ tmux -> ~/.config/tmux
 lf -> ~/.config/lf
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
-starship/starship.toml -> ~/.config/starship.toml
 ```
 
 ## Noteable Info
