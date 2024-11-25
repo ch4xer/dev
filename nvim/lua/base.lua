@@ -6,6 +6,8 @@ vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.o.mouse = "a"
 vim.o.mousemodel = "extend"
+vim.o.cmdheight = 0
+vim.o.showmode = false
 
 -- split window setting
 vim.o.splitbelow = true

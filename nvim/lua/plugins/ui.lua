@@ -108,13 +108,16 @@ return {
                     enabled = false,
                 },
                 presets = {
-                    bottom_search = true, -- use a classic bottom cmdline for search
+                    bottom_search = true,   -- use a classic bottom cmdline for search
                     lsp_doc_border = false, -- add a border to hover docs and signature help
                 },
                 lsp = {
                     hover = {
                         enabled = false,
                     },
+                    signature = {
+                        enabled = false
+                    }
                 },
                 routes = {
                     {

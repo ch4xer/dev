@@ -17,19 +17,19 @@ return {
         event = "User Lazyest",
         config = true,
     },
-    {
-        "echasnovski/mini.hipatterns",
-        version = false,
-        event = "User Lazyest",
-        config = function()
-            local hipatterns = require("mini.hipatterns")
-            hipatterns.setup({
-                highlighters = {
-                    hex_color = hipatterns.gen_highlighter.hex_color(),
-                },
-            })
-        end,
-    },
+    -- {
+    --     "echasnovski/mini.hipatterns",
+    --     version = false,
+    --     event = "User Lazyest",
+    --     config = function()
+    --         local hipatterns = require("mini.hipatterns")
+    --         hipatterns.setup({
+    --             highlighters = {
+    --                 hex_color = hipatterns.gen_highlighter.hex_color(),
+    --             },
+    --         })
+    --     end,
+    -- },
     {
         -- ufo can prevent blocking nvim with treesitter fold method
         -- which is weird when switching to a buffer with large file
