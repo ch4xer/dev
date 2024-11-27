@@ -13,10 +13,10 @@ if [ -f /etc/debian_version ]; then
   echo "Detect Debian based system, installing packages with apt..."
   sudo apt update
   if [ "$(cat /etc/lsb-release | grep DISTRIB_ID | cut -d '=' -f 2)" = "Ubuntu" ]; then
-    sudo apt install -y git kitty tmux zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep clang nodejs npm golang python3-pip python3-venv silversearcher-ag
+    sudo apt install -y git kitty tmux zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep clang nodejs npm golang python3-pip python3-venv
     echo "Please install lf and lsd manually if you want"
   else
-    sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep clang nodejs npm golang python3-pip python3-venv silversearcher-ag
+    sudo apt install -y git kitty tmux zsh lf rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep clang nodejs npm golang python3-pip python3-venv
   fi
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim.appimage 
@@ -29,13 +29,13 @@ fi
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
   sudo pacman -Sy
-  sudo pacman -S --needed --noconfirm kitty git tmux zsh lf rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go the_silver_searcher
+  sudo pacman -S --needed --noconfirm kitty git tmux zsh lf rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
   echo "Detect macOS, installing packages with homebrew..."
   brew update
-  brew install git tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go the_silver_searcher
+  brew install git tmux zsh lf kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go
 fi
 
 # git submodule init

@@ -104,7 +104,8 @@ cmd fzf_select_file ${{
 }}
 
 cmd fzf_select_all ${{
-    res="$(ag --nobreak --nonumbers --noheading . | fzf --height=100% --layout=reverse --preview='~/.config/lf/fzf-scope.sh {} || tree -ahpCL 3 -I .git -I __pycache__')"
+    res="$(rg -u --no-heading --line-number --color=always "" | fzf --ansi --height=100% --layout=reverse --preview='~/.config/lf/fzf-scope.sh {} || tree -ahpCL 3 -I .git -I __pycache__')"
+    res=$(echo $res | cut -d ":" -f 1)
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
@@ -115,7 +116,7 @@ cmd fzf_select_all ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 
-map <enter> shell
+map <enter> open
 map <m-2> updir
 map gh cd ~
 map gd cd ~/Documents
