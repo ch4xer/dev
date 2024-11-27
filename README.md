@@ -84,7 +84,8 @@ zsh/zshrc -> ~/.zshrc
 |    lf    |       p        |                 paste                 |
 |    lf    |       D        |             move to trash             |
 |    lf    |     Delete     |                  rm                   |
-|    lf    |       f        |        fuzzy search using fzf         |
+|    lf    |       f        |       search filename with fzf        |
+|    lf    |       F        | search filename and contents with fzf |
 |   tmux   |      M-a       |              prefix key               |
 |   tmux   |   M-h/j/k/l    |           go to other pane            |
 |   tmux   |      M-q       |               kill pane               |

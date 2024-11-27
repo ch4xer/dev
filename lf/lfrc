@@ -91,8 +91,20 @@ cmd zip ${{
     rm -rf $1
 }}
 
-cmd fzf_select ${{
+cmd fzf_select_file ${{
     res="$(fd --exclude={.wine,.git,.idea,.vscode,.sass-cache,node_modules,build,.local,.steam,.m2,.rangerdir,.ssh,.ghidra,.mozilla,.cache} --follow | fzf --height=100% --layout=reverse --preview='~/.config/lf/fzf-scope.sh {} || tree -ahpCL 3 -I .git -I __pycache__')"
+    if [ -d "$res" ] ; then
+        cmd="cd"
+    elif [ -f "$res" ] ; then
+        cmd="select"
+    else
+        exit 0
+    fi
+    lf -remote "send $id $cmd \"$res\""
+}}
+
+cmd fzf_select_all ${{
+    res="$(ag --nobreak --nonumbers --noheading . | fzf --height=100% --layout=reverse --preview='~/.config/lf/fzf-scope.sh {} || tree -ahpCL 3 -I .git -I __pycache__')"
     if [ -d "$res" ] ; then
         cmd="cd"
     elif [ -f "$res" ] ; then
@@ -126,4 +138,5 @@ map p paste
 map D trash
 map <delete> delete
 
-map f fzf_select
+map f fzf_select_file
+map F fzf_select_all
