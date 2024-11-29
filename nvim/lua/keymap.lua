@@ -72,7 +72,7 @@ local Plugin = {
     -- more keymaps in utils.lua
     surround = {},
     -- more keymaps in neotree.lua
-    neotree = { { "n", "t", function() vim.cmd("Neotree focus last toggle") end, { desc = "toggle neotree" }, }, },
+    neotree = { { "n", "t", function() vim.cmd("Neotree reveal toggle") end, { desc = "toggle neotree" }, }, },
 }
 
 vim.g.register_keymap(Base)
