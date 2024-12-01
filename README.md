@@ -7,7 +7,7 @@ A comprehensive and user-friendly development toolkit to boost up your productiv
 - terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
 - shell: [zsh](https://www.zsh.org/)
 - editor: [neovim](https://github.com/neovim/neovim)
-- terminal filemanager: [lf](https://github.com/gokcehan/lf)
+- terminal filemanager: [yazi](https://github.com/sxyazi/yazi)
 - multiplexers: [tmux](https://github.com/tmux/tmux) or [kitty](https://github.com/kovidgoyal/kitty)
 
 ## Try
@@ -31,7 +31,7 @@ Alternatively (if you dont want to install all of them), you can copy the config
 nvim -> ~/.config/nvim
 kitty -> ~/.config/kitty
 tmux -> ~/.config/tmux
-lf -> ~/.config/lf
+yazi -> ~/.config/yazi
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
 ```
@@ -65,27 +65,24 @@ zsh/zshrc -> ~/.zshrc
 |  kitty   |     C-=/-      |           adjust font size            |
 |  kitty   |       f1       |            search content             |
 |  kitty   |      f11       |              toggle zoom              |
-|   zsh    |      C-r       |        execute lf filemanager         |
+|   zsh    |      C-r       |           call filemanager            |
 |   zsh    |      C-e       |         open filemanager-gui          |
 |   zsh    |  C-Backspace   |         delete word backward          |
-|    lf    |       gh       |            go to home (~)             |
-|    lf    |       gd       |           go to ~/Documents           |
-|    lf    |       gn       |           go to ~/Downloads           |
-|    lf    |   RightMouse   |        go to parent directory         |
-|    lf    |      H/L       | go to previous/next visited directory |
-|    lf    |       a        |                 mkdir                 |
-|    lf    |       t        |                 touch                 |
-|    lf    |       r        |       rename file or directory        |
-|    lf    |       o        |       open with custom software       |
-|    lf    |       .        |           show hidden file            |
-|    lf    |       ;        |         execute shell command         |
-|    lf    |       y        |                 copy                  |
-|    lf    |       d        |                  cut                  |
-|    lf    |       p        |                 paste                 |
-|    lf    |       D        |             move to trash             |
-|    lf    |     Delete     |                  rm                   |
-|    lf    |       f        |       search filename with fzf        |
-|    lf    |       F        | search filename and contents with fzf |
+|   yazi   |       gh       |            go to home (~)             |
+|   yazi   |       gd       |           go to ~/Documents           |
+|   yazi   |       gn       |           go to ~/Downloads           |
+|   yazi   |      H/L       | go to previous/next visited directory |
+|   yazi   |       a        |            create file/dir            |
+|   yazi   |       r        |       rename file or directory        |
+|   yazi   |       .        |           show hidden file            |
+|   yazi   |       ;        |         execute shell command         |
+|   yazi   |       y        |                 copy                  |
+|   yazi   |       d        |                  cut                  |
+|   yazi   |       p        |                 paste                 |
+|   yazi   |       D        |             move to trash             |
+|   yazi   |     Delete     |                  rm                   |
+|   yazi   |       f        |       search and jump with fzf        |
+|   yazi   |       z        |           jump with zoxide            |
 |   tmux   |      M-a       |              prefix key               |
 |   tmux   |   M-h/j/k/l    |           go to other pane            |
 |   tmux   |      M-q       |               kill pane               |
