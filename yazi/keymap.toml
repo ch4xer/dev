@@ -30,7 +30,7 @@ keymap = [
 	{ on = "h", run = "leave", desc = "Go back to the parent directory" },
 	{ on = "<Backspace>", run = "leave", desc = "Go back to the parent directory" },
     { on = "l", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-
+    { on = "<Enter>", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
 	{ on = "<Left>",  run = "leave",    desc = "Go back to the parent directory" },
     { on = "<Right>", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
 
@@ -40,12 +40,10 @@ keymap = [
 	# Selection
 	{ on = "<Space>", run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = "v",       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
-	{ on = "V",       run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
 	{ on = "<C-a>",   run = "select_all --state=true",            desc = "Select all files" },
 
 	# Operation
-    { on = "<Enter>", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-    { on  = "y", run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', "yank" ] },
+    { on = "y", run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', "yank" ] },
 	{ on = "d",         run = "yank --cut",                  desc = "Yank selected files (cut)" },
 	{ on = "p",         run = "paste",                       desc = "Paste yanked files" },
 	{ on = "D",         run = "remove",                      desc = "Trash selected files" },
@@ -57,8 +55,6 @@ keymap = [
 	{ on = "f",         run = "plugin fzf",                  desc = "Jump to a directory or reveal a file using fzf" },
 	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory using zoxide" },
 
-	# Copy
-	{ on = [ "c", "p" ], run = "copy path",             desc = "Copy the file path" },
 	{ on = [ "c", "n" ], run = "copy filename",         desc = "Copy the filename" },
 
 	# Find
@@ -69,7 +65,8 @@ keymap = [
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go to the home directory" },
 	{ on = [ "g", "n" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
-	{ on = [ "g", "d" ],       run = "cd ~/Documents",   desc = "Go to the downloads directory" },
+	{ on = [ "g", "d" ],       run = "cd ~/Documents",   desc = "Go to the documents directory" },
+	{ on = [ "g", "p" ],       run = "cd ~/Projects",   desc = "Go to the projects directory" },
 ]
 
 [select]

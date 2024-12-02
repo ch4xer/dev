@@ -22,7 +22,7 @@ redraw-prompt() {
 #     fi
 # }
 
-filemanager() {
+yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -48,6 +48,6 @@ empty() {
 # empty widget for ESC keybinding
 }
 
-zle -N filemanager
+zle -N yy
 zle -N filemanager_gui
 zle -N empty

@@ -2,7 +2,7 @@
 # disable vim mode
 bindkey -v
 bindkey -M viins '^[' empty
-bindkey '^R' filemanager
+bindkey -s '^R' "yy\n"
 bindkey '^E' filemanager_gui
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
