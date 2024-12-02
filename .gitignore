@@ -4,4 +4,5 @@ zsh/zsh/software/*
 zsh/zsh/plugins/*
 !.gitkeep
 !zoxide.zsh
+!fzf.zsh
 *.zwc
