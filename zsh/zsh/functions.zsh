@@ -27,8 +27,8 @@ yy() {
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
-        zoxide add "$cwd"
         redraw-prompt
+        zoxide add "$cwd"
 	fi
 	rm -f -- "$tmp"
 }
