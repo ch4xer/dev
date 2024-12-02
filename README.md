@@ -2,7 +2,7 @@
 
 A comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
 
-![Screenshot](https://ch3n9w.cpolar.cn/posts/tech-dev-2024/cover.png)
+![Screenshot](https://ch3n9w.github.io/posts/tech-dev-2024/cover.png)
 
 - terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
 - shell: [zsh](https://www.zsh.org/)
