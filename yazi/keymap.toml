@@ -28,6 +28,7 @@ keymap = [
 
 	# Navigation
 	{ on = "h", run = "leave", desc = "Go back to the parent directory" },
+	{ on = "<Backspace>", run = "leave", desc = "Go back to the parent directory" },
     { on = "l", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
 
 	{ on = "<Left>",  run = "leave",    desc = "Go back to the parent directory" },
@@ -44,7 +45,7 @@ keymap = [
 
 	# Operation
     { on = "<Enter>", run = "plugin --sync smart-enter", desc = "Enter the child directory, or open the file" },
-    { on  = "y", run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', "yank" ] }
+    { on  = "y", run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', "yank" ] },
 	{ on = "d",         run = "yank --cut",                  desc = "Yank selected files (cut)" },
 	{ on = "p",         run = "paste",                       desc = "Paste yanked files" },
 	{ on = "D",         run = "remove",                      desc = "Trash selected files" },

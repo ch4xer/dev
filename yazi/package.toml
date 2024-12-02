@@ -1,5 +1,2 @@
 [plugin]
 deps = [{ use = "yazi-rs/plugins:smart-enter", rev = "a53d544" }]
-
-[flavor]
-deps = [{ use = "yazi-rs/flavors:catppuccin-mocha", rev = "c686812" }]
