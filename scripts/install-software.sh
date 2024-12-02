@@ -36,12 +36,6 @@ if [ -f /etc/arch-release ]; then
   sudo pacman -S --needed --noconfirm kitty git tmux zsh rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go yazi ffmpegthumbnailer ffmpeg p7zip jq poppler imagemagick
 fi
 
-if [ $(uname -s) = "Darwin" ]; then
-  echo "Detect macOS, installing packages with homebrew..."
-  brew update
-  brew install git tmux zsh kitty rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang npm nodejs go yazi ffmpegthumbnailer ffmpeg sevenzip jq poppler fd imagemagick font-symbols-only-nerd-font
-fi
-
 # git submodule init
 # git submodule update
 git submodule update --init --recursive
