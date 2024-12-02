@@ -2,7 +2,7 @@
 cwd = { fg = "#94e2d5" }
 
 # Hovered
-hovered         = { fg = "#1e1e2e", bg = "#89b4fa" }
+hovered         = { fg = "#1e1e2e", bg = "#89b4fa", bold = true }
 preview_hovered = { fg = "#1e1e2e", bg = "#cdd6f4" }
 
 # Find
@@ -700,5 +700,4 @@ exts = [
 prepend_conds = [
 	{ if = "link", text = "" },  # Normal files (not directories or symlinks)
 	{ if = "dir",           text = "" },  # Directories
-	{ if = "exec", text = "" },  # Normal files (not directories or symlinks)
 ]

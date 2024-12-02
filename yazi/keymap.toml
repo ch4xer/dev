@@ -67,6 +67,14 @@ keymap = [
 	{ on = [ "g", "n" ],       run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
 	{ on = [ "g", "d" ],       run = "cd ~/Documents",   desc = "Go to the documents directory" },
 	{ on = [ "g", "p" ],       run = "cd ~/Projects",   desc = "Go to the projects directory" },
+
+    # Linemode
+	{ on = [ "m", "s" ], run = "linemode size",        desc = "mode: size" },
+	{ on = [ "m", "p" ], run = "linemode permissions", desc = "mode: permissions" },
+	{ on = [ "m", "c" ], run = "linemode ctime",       desc = "mode: ctime" },
+	{ on = [ "m", "m" ], run = "linemode mtime",       desc = "mode: mtime" },
+	{ on = [ "m", "o" ], run = "linemode owner",       desc = "mode: owner" },
+	{ on = [ "m", "n" ], run = "linemode none",        desc = "mode: none" },
 ]
 
 [select]
