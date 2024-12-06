@@ -55,6 +55,7 @@ zsh/zshrc -> ~/.zshrc
 
 | Software |      Key       |                Effect                 |
 | :------: | :------------: | :-----------------------------------: |
+|  kitty   |      C-n       |             new os window             |
 |  kitty   |      C-t       |                new tab                |
 |  kitty   |      C-CR      |              new window               |
 |  kitty   |      C-w       |             delete window             |
