@@ -66,7 +66,6 @@ local Plugin = {
         { "n", "ga", function() require("fzf-lua").lsp_code_actions() end, { desc = "code action" }, },
         { "n", "gr", function() require("fzf-lua").lsp_references() end,   { desc = "find reference" }, },
     },
-    flash = { { { "n" }, "f", function() require("flash").jump() end, { desc = "jump in screen" }, }, },
     -- more keymaps in cmp.lua
     cmp = {},
     -- more keymaps in utils.lua

@@ -84,12 +84,10 @@ zsh/zshrc -> ~/.zshrc
 |   yazi   |     Delete     |                  rm                   |
 |   yazi   |       f        |       search and jump with fzf        |
 |   yazi   |       z        |           jump with zoxide            |
-|   tmux   |      M-a       |              prefix key               |
 |   tmux   |   M-h/j/k/l    |           go to other pane            |
-|   tmux   |      M-q       |               kill pane               |
+|   tmux   |      M-w       |               kill pane               |
 |   tmux   |    M-C-j/k     |         swap with other panes         |
-|   tmux   |      M-x       |       split window horizontally       |
-|   tmux   |     M-C-x      |        split window vertically        |
+|   tmux   |   M-x/M-C-x    |             split window              |
 |   tmux   |      M-f       |              toggle zoom              |
 |   tmux   |      M-t       |           create new window           |
 |   tmux   |     M-C-t      |             rename window             |
@@ -116,6 +114,5 @@ zsh/zshrc -> ~/.zshrc
 |  neovim  |       gd       |        (lsp) go to definition         |
 |  neovim  |       gr       |         (lsp) find reference          |
 |  neovim  |      C-/       |             comment line              |
-|  neovim  |       f        |              flash jump               |
 |  neovim  |   Tab/S-Tab    |           code completions            |
 |  neovim  |       t        |               File Tree               |
