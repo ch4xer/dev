@@ -38,9 +38,9 @@ keymap = [
 	{ on = "L", run = "forward", desc = "Go forward to the next directory" },
 
 	# Selection
-	{ on = "<Space>", run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = "<Space>", run = [ "toggle --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = "v",       run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
-	{ on = "<C-a>",   run = "select_all --state=true",            desc = "Select all files" },
+	{ on = "<C-a>",   run = "toggle_all --state=true",            desc = "Select all files" },
 
 	# Operation
     { on = "y", run = [ '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', "yank" ] },
