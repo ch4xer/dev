@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins:smart-enter", rev = "a53d544" }, { use = "yazi-rs/plugins:no-status", rev = "a53d544" }]
+deps = [{ use = "yazi-rs/plugins:smart-enter", rev = "a53d544" }, { use = "yazi-rs/plugins:no-status", rev = "a53d544" }, { use = "yazi-rs/plugins:git", rev = "c7feb90" }]
 
 [flavor]
 deps = []

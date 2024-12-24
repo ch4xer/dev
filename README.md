@@ -1,6 +1,6 @@
 # Development Toolkit 📡
 
-A comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
+A simple, comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
 
 ![Screenshot](cover.png)
 

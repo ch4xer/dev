@@ -313,7 +313,6 @@ exts = [
   { name = "rss", text = "", fg_dark = "#fab387", fg_light = "#fab387" },
   { name = "hbs", text = "", fg_dark = "#fab387", fg_light = "#fab387" },
   { name = "godot", text = "", fg_dark = "#7f849c", fg_light = "#7f849c" },
-  { name = "eot", text = "", fg_dark = "#f5e0dc", fg_light = "#f5e0dc" },
   { name = "awk", text = "", fg_dark = "#585b70", fg_light = "#585b70" },
   { name = "fsx", text = "", fg_dark = "#74c7ec", fg_light = "#74c7ec" },
   { name = "a", text = "", fg_dark = "#f5e0dc", fg_light = "#f5e0dc" },
