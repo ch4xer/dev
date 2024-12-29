@@ -8,7 +8,6 @@ A simple, comprehensive and user-friendly development toolkit to boost up your p
 - shell: [zsh](https://www.zsh.org/)
 - editor: [neovim](https://github.com/neovim/neovim)
 - terminal filemanager: [yazi](https://github.com/sxyazi/yazi)
-- multiplexers: [tmux](https://github.com/tmux/tmux) or [kitty](https://github.com/kovidgoyal/kitty)
 
 ## Try
 
@@ -30,7 +29,6 @@ Alternatively (if you dont want to install all of them), you can copy the config
 ```
 nvim -> ~/.config/nvim
 kitty -> ~/.config/kitty
-tmux -> ~/.config/tmux
 yazi -> ~/.config/yazi
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
@@ -41,17 +39,15 @@ zsh/zshrc -> ~/.zshrc
 - Kitty
   - use `Ctrl` and `Shift` as modifier key for all shortcuts
   - use JetbrainMono Nerd Font and LXGW WenKai as font
-- Tmux
-  - use `Alt` and `Ctrl` as modifier key for all shortcuts
-  - set `Alt-a` as prefix key instead of `Ctrl-b`
-  - use tmux-continuum and resurrect to restore sessions.
 - Zsh
   - you can add software settings in `zsh/zsh/software`
   - disable vim mode.
 - Neovim
   - Only use ~30 plugins to make Neovim tiny and good enough for editing
 
-## Keymap
+## Critical Keymap
+
+Please check the configuration file for the complete key mapping. Here we only record some of the more frequently used ones.
 
 |   Software   |      Key       |                Effect                 |
 | :----------: | :------------: | :-----------------------------------: |
@@ -64,41 +60,21 @@ zsh/zshrc -> ~/.zshrc
 |    kitty     |  C-PgUp/PgDn   |            goto other tab             |
 |    kitty     | C-S-PgUp/PgDn  |               move tab                |
 |    kitty     |     C-=/-      |           adjust font size            |
-|    kitty     |       f1       |            search content             |
-|    kitty     |      f11       |              toggle zoom              |
 |     zsh      |      C-r       |           call filemanager            |
-|     zsh      |      C-e       |         open filemanager-gui          |
 |     zsh      |  C-Backspace   |         delete word backward          |
 |     yazi     |       gh       |            go to home (~)             |
-|     yazi     |       gd       |           go to ~/Documents           |
 |     yazi     |       gn       |           go to ~/Downloads           |
 |     yazi     |      H/L       | go to previous/next visited directory |
 |     yazi     |       a        |            create file/dir            |
 |     yazi     |       r        |       rename file or directory        |
 |     yazi     |       .        |           show hidden file            |
-|     yazi     |       ;        |         execute shell command         |
 |     yazi     |       y        |                 copy                  |
 |     yazi     |       d        |                  cut                  |
 |     yazi     |       p        |                 paste                 |
-|     yazi     |       D        |             move to trash             |
 |     yazi     |     Delete     |                  rm                   |
 |     yazi     |       f        |       search and jump with fzf        |
 |     yazi     |       z        |           jump with zoxide            |
-|     tmux     |   M-h/j/k/l    |           go to other pane            |
-|     tmux     |      M-w       |               kill pane               |
-|     tmux     |    M-C-j/k     |         swap with other panes         |
-|     tmux     |   M-x/M-C-x    |             split window              |
-|     tmux     |      M-f       |              toggle zoom              |
-|     tmux     |      M-t       |           create new window           |
-|     tmux     |     M-C-t      |             rename window             |
-|     tmux     |  M-PgUp/PgDn   |      go to previous/next window       |
-|     tmux     | M-C-PgUp/PgDn  |    swap with previous/next window     |
-|     tmux     |      M-s       |            choose session             |
-|     tmux     |     M-C-s      |            rename session             |
-|     tmux     |      M-n       |          create new session           |
 |    neovim    |       q        |          quit window/neovim           |
-|    neovim    |       Q        |             record macro              |
-|    neovim    |      C-a       |       select all (normal mode)        |
 |    neovim    |      H/L       |      go to the begin/end of line      |
 |    neovim    |       ;        |        enter commandline mode         |
 |    neovim    |       g=       |            format document            |
@@ -113,5 +89,4 @@ zsh/zshrc -> ~/.zshrc
 |    neovim    |       gd       |        (lsp) go to definition         |
 |    neovim    |       gr       |         (lsp) find reference          |
 |    neovim    |      C-/       |             comment line              |
-|    neovim    |   Tab/S-Tab    |           code completions            |
 |    neovim    |       t        |               File Tree               |
