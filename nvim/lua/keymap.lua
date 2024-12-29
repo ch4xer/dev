@@ -13,7 +13,11 @@ local Base = {
         { { "n", "v" }, "<C-d>", math.floor(vim.fn.winheight(0) / 2) .. "<C-d>", { desc = "scroll half page backward" }, },
 
         { "n",          "<C-i>", "<C-i>",                                        { desc = "fix conflict caused by <Tab> mapping, no need in vscode" }, },
-        { "n",          "<Tab>", "<C-w>W",                                       { desc = "move to window" } },
+        -- { "n",          "<Tab>", "<C-w>W",                                       { desc = "move to window" } },
+        { "n",          "<C-h>", require('smart-splits').move_cursor_left,       { desc = "focus leftside window" } },
+        { "n",          "<C-j>", require('smart-splits').move_cursor_down,       { desc = "focus downside window" } },
+        { "n",          "<C-k>", require('smart-splits').move_cursor_up,         { desc = "focus upside window" } },
+        { "n",          "<C-l>", require('smart-splits').move_cursor_right,      { desc = "focus rightside window" } },
     },
     edit = {
         { "n", "<C-a>",       "ggVG",   { desc = "select all" } },

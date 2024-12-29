@@ -122,9 +122,13 @@ return {
                 routes = {
                     {
                         filter = {
-                            event = "msg_show",
-                            kind = "",
-                            find = "written",
+                            event = 'msg_show',
+                            any = {
+                                { find = 'Agent service not initialized' },
+                                { find = 'Client network socket disconnected' },
+                                { find = 'written' },
+                                { find = 'api.github.com' },
+                            },
                         },
                         opts = { skip = true },
                     },
