@@ -66,9 +66,11 @@ return {
                         --     },
                         -- }
                     },
-                    lualine_c = {},
-                    lualine_x = {
+                    lualine_c = {
                         "diagnostics",
+                    },
+                    lualine_x = {
+                        "diff",
                         "branch",
                     },
                     lualine_y = {

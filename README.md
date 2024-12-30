@@ -84,9 +84,9 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |       z        |      fuzzy search opened buffers      |
 |    neovim    |       ga       |           (lsp) code action           |
 |    neovim    |       ge       |    (lsp) show diagnostics in line     |
-|    neovim    |       gh       |          (lsp) get document           |
 |    neovim    |       gn       |          (lsp) rename symbol          |
 |    neovim    |       gd       |        (lsp) go to definition         |
-|    neovim    |       gr       |         (lsp) find reference          |
+|    neovim    |  C-LeftMouse   |        (lsp) go to definition         |
+|    neovim    |  C-RightMouse  |        go to previous location        |
 |    neovim    |      C-/       |             comment line              |
 |    neovim    |       t        |               File Tree               |
