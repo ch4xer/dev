@@ -19,6 +19,9 @@ return {
                         Folded = { bg = colors.none },
                     }
                 end,
+                integrations = {
+                    blink_cmp = true,
+                }
             })
 
             vim.cmd.colorscheme("catppuccin")
@@ -138,8 +141,17 @@ return {
             })
         end,
     },
+    -- {
+    --     "nvim-tree/nvim-web-devicons",
+    --     config = true,
+    -- },
     {
-        "nvim-tree/nvim-web-devicons",
-        config = true,
+        "echasnovski/mini.icons",
+        init = function()
+            package.preload["nvim-web-devicons"] = function()
+                require("mini.icons").mock_nvim_web_devicons()
+                return package.loaded["nvim-web-devicons"]
+            end
+        end,
     },
 }
