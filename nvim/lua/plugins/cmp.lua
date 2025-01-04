@@ -161,7 +161,6 @@ return {
         'saghen/blink.cmp',
         dependencies = {
             'rafamadriz/friendly-snippets',
-            'echasnovski/mini.nvim',
         },
         version = '*',
         event = "InsertEnter",
