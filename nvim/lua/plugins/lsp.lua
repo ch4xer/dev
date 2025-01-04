@@ -2,7 +2,8 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
+            -- "hrsh7th/cmp-nvim-lsp",
+            "saghen/blink.cmp",
             "williamboman/mason.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
             "stevearc/conform.nvim",
@@ -29,7 +30,8 @@ return {
                 },
             })
             local lspconfig = require("lspconfig")
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
             lspconfig.clangd.setup({
                 capabilities = capabilities,
                 cmd = { "clangd", "--fallback-style=llvm", "--offset-encoding=utf-16" },
