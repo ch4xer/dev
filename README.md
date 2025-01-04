@@ -43,7 +43,7 @@ zsh/zshrc -> ~/.zshrc
   - you can add software settings in `zsh/zsh/software`
   - disable vim mode.
 - Neovim
-  - Only use ~30 plugins to make Neovim tiny and good enough for editing
+  - Only use <30 plugins to make Neovim tiny and good enough for editing
 
 ## Critical Keymap
 
