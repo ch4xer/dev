@@ -21,7 +21,9 @@ vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cursorline = true
 
-vim.o.clipboard = "unnamedplus"
+if os.getenv("SSH_TTY") == nil then
+    vim.o.clipboard = "unnamedplus"
+end
 
 vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99
