@@ -129,6 +129,7 @@ return {
                         filter = {
                             event = 'msg_show',
                             any = {
+                                { find = 'find typescript.js' },
                                 { find = 'Agent service not initialized' },
                                 { find = 'Not authenticated: NotSignedIn' },
                                 { find = 'Client network socket disconnected' },

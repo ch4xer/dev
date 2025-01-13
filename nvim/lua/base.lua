@@ -21,8 +21,19 @@ vim.o.smartcase = true
 vim.o.ignorecase = true
 vim.o.cursorline = true
 
-if os.getenv("SSH_TTY") == nil then
-    vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamedplus"
+if os.getenv("SSH_TTY") ~= nil then
+    vim.g.clipboard = {
+        name = 'OSC 52',
+        copy = {
+            ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+            ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+        },
+        paste = {
+            ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+            ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+        },
+    }
 end
 
 vim.o.foldcolumn = "0"
