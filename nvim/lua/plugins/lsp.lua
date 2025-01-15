@@ -2,7 +2,6 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            -- "hrsh7th/cmp-nvim-lsp",
             "saghen/blink.cmp",
             "williamboman/mason.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -29,6 +28,7 @@ return {
                     "prettierd",
                     "vue-language-server",
                     "typescript-language-server",
+                    "codeql",
                 },
             })
             local mason_registry = require('mason-registry')
@@ -36,7 +36,6 @@ return {
                 '/node_modules/@vue/language-server'
 
             local lspconfig = require("lspconfig")
-            -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local capabilities = require('blink.cmp').get_lsp_capabilities()
             lspconfig.clangd.setup({
                 capabilities = capabilities,
@@ -75,6 +74,7 @@ return {
                 "bashls",
                 "jsonls",
                 "marksman",
+                "codeqlls",
             }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
