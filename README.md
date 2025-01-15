@@ -44,6 +44,7 @@ zsh/zshrc -> ~/.zshrc
   - disable vim mode.
 - Neovim
   - Only use <30 plugins to make Neovim tiny and good enough for editing
+  - The config support language `golang`, `rust`, `c/c++`, `python`, `typescript/javascript`, `vue`, `lua`, `codeql`, `markdown`, `json`, `bash`, `docker`
 
 ## Critical Keymap
 
