@@ -28,7 +28,6 @@ return {
                     "prettierd",
                     "vue-language-server",
                     "typescript-language-server",
-                    "codeql",
                 },
             })
             local mason_registry = require('mason-registry')
@@ -74,7 +73,6 @@ return {
                 "bashls",
                 "jsonls",
                 "marksman",
-                "codeqlls",
             }
             for _, server in ipairs(other_servers) do
                 lspconfig[server].setup {
