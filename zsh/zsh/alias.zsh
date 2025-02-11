@@ -1,5 +1,4 @@
 alias c="clear"
-alias s="ssh"
 alias l="lsd"
 alias ls="lsd"
 alias ll="lsd --tree --depth 2"

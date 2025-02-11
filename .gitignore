@@ -5,4 +5,5 @@ zsh/zsh/plugins/*
 !.gitkeep
 !zoxide.zsh
 !fzf.zsh
+!kitty.zsh
 *.zwc
