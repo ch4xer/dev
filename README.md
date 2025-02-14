@@ -43,8 +43,7 @@ zsh/zshrc -> ~/.zshrc
   - you can add software settings in `zsh/zsh/software`
   - disable vim mode.
 - Neovim
-  - Only use <30 plugins to make Neovim tiny and good enough for editing
-  - The config support language `golang`, `rust`, `c/c++`, `python`, `typescript/javascript`, `vue`, `lua`, `markdown`, `json`, `bash`, `docker`
+  - Based on LazyVim, with some simplifications to make it more tiny and user-friendly
 
 ## Critical Keymap
 
@@ -78,7 +77,7 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |       q        |          quit window/neovim           |
 |    neovim    |      H/L       |      go to the begin/end of line      |
 |    neovim    |       ;        |        enter commandline mode         |
-|    neovim    |       g=       |            format document            |
+|    neovim    |      C-s       |            format and save            |
 |    neovim    | 2-LeftMouse/CR |              toggle fold              |
 |    neovim    |       sw       |           fuzzy search word           |
 |    neovim    |       sf       |         fuzzy search filename         |
