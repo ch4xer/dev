@@ -92,4 +92,8 @@ return {
     "echasnovski/mini.ai",
     enabled = false,
   },
+  {
+    "folke/ts-comments.nvim",
+    enabled = false,
+  },
 }
