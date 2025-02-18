@@ -1,6 +1,7 @@
 .luarc.json
 zsh/zsh/software/*
 zsh/zsh/plugins/*
+lazy-lock.json
 !.gitkeep
 !zoxide.zsh
 !fzf.zsh
