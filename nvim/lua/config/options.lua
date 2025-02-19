@@ -37,3 +37,4 @@ if os.getenv("SSH_TTY") ~= nil then
     },
   }
 end
+opt.conceallevel = 0
