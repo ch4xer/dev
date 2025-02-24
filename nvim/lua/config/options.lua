@@ -16,6 +16,7 @@ opt.statuscolumn = ""
 
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.linebreak = false
 opt.listchars = "tab:  ,trail:-,nbsp:+"
 
 -- visual selection mode
@@ -38,3 +39,4 @@ if os.getenv("SSH_TTY") ~= nil then
   }
 end
 opt.conceallevel = 0
+opt.wrap = true
