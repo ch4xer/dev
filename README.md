@@ -81,6 +81,7 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    | 2-LeftMouse/CR |              toggle fold              |
 |    neovim    |       sw       |           fuzzy search word           |
 |    neovim    |       sf       |         fuzzy search filename         |
+|    neovim    |       sd       |       fuzzy search diagnostics        |
 |    neovim    |       z        |      fuzzy search opened buffers      |
 |    neovim    |       ga       |           (lsp) code action           |
 |    neovim    |       ge       |    (lsp) show diagnostics in line     |

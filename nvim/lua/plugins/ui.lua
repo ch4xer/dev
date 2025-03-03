@@ -5,8 +5,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       quickfile = { enabled = true },
-      indent = { enabled = false },
-      terminal = { enabled = false },
+      indent = { enabled = true },
     },
   },
   {
@@ -148,13 +147,7 @@ return {
      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆    
       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃    ]],
           keys = {
-            {
-              icon = " ",
-              key = "c",
-              desc = "Config",
-              action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-            },
-            { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+            { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 },
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
           },
         },
