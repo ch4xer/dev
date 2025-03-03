@@ -108,12 +108,28 @@ return {
     keys = {
       { "sw", function() require("fzf-lua").live_grep() end,           desc = "search word" },
       { "sf", function() require("fzf-lua").files() end,               desc = "search file" },
+      { "sd", function() require("fzf-lua").diagnostics_workspace() end,               desc = "search diagnostics" },
       { "z",  function() require("fzf-lua").buffers() end,             desc = "search buffer" },
       { "ga", function() require("fzf-lua").lsp_code_actions() end,    desc = "code action" },
       { "gr", function() require("fzf-lua").lsp_references() end,      desc = "find reference" },
+      { "gs", function() require("fzf-lua").lsp_document_symbols() end,      desc = "find symbols" },
       { "gi", function() require("fzf-lua").lsp_implementations() end, desc = "find implementations" },
     },
   },
+  -- {
+  --   "snacks.nvim",
+  --   -- stylua: ignore
+  --   keys = {
+  --     { "z", function() Snacks.picker.buffers() end, desc = "Buffers" },
+  --     { "sf", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+  --     { "sw", function() Snacks.picker.grep() end, desc = "Grep" },
+  --     { "sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+  --     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
+  --     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
+  --     { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
+  --     { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+  --   },
+  -- },
   {
     "folke/todo-comments.nvim",
     keys = false,

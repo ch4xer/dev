@@ -39,4 +39,7 @@ if os.getenv("SSH_TTY") ~= nil then
   }
 end
 opt.conceallevel = 0
-opt.wrap = true
+
+vim.g.neovide_cursor_trail_size = 0
+vim.g.neovide_cursor_animate_command_line = false
+vim.g.neovide_cursor_animate_in_insert_mode = false
