@@ -44,6 +44,7 @@ zsh/zshrc -> ~/.zshrc
   - disable vim mode.
 - Neovim
   - Based on LazyVim, with some simplifications to make it more tiny and user-friendly
+  - Good support for Neovide (fixed gui color & keymap)
 
 ## Critical Keymap
 
@@ -82,12 +83,15 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |       sw       |           fuzzy search word           |
 |    neovim    |       sf       |         fuzzy search filename         |
 |    neovim    |       sd       |       fuzzy search diagnostics        |
+|    neovim    |       st       |       fuzzy search todo-comment       |
 |    neovim    |       z        |      fuzzy search opened buffers      |
 |    neovim    |       ga       |           (lsp) code action           |
 |    neovim    |       ge       |    (lsp) show diagnostics in line     |
 |    neovim    |       gn       |          (lsp) rename symbol          |
+|    neovim    |       gs       |           (lsp) goto symbol           |
 |    neovim    |       gd       |        (lsp) go to definition         |
 |    neovim    |  C-LeftMouse   |        (lsp) go to definition         |
 |    neovim    |  C-RightMouse  |        go to previous location        |
 |    neovim    |      C-/       |             comment line              |
 |    neovim    |       t        |               File Tree               |
+|    neovim    |       T        |      Terminal, perss ESC to hide      |

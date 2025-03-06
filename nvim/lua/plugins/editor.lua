@@ -116,6 +116,24 @@ return {
       { "gi", function() require("fzf-lua").lsp_implementations() end, desc = "find implementations" },
     },
   },
+  {
+    "snacks.nvim",
+    opts = {
+      styles = {
+        terminal = {
+          -- stylua: ignore
+          keys = {
+            -- override it
+            term_normal = { "<esc>", "<cmd>close<cr>", mode = "t", desc = "hide terminal" },
+          },
+        },
+      },
+    },
+    -- stylua: ignore
+    keys = {
+      { "T", function() Snacks.terminal("/bin/zsh") end, desc = "Terminal (cwd)" },
+    },
+  },
   -- {
   --   "snacks.nvim",
   --   -- stylua: ignore
@@ -132,11 +150,10 @@ return {
   -- },
   {
     "folke/todo-comments.nvim",
-    keys = false,
-  },
-  {
-    "folke/trouble.nvim",
-    enabled = false,
+      -- stylua: ignore
+    keys = {
+      { "st", function() require("todo-comments.fzf").todo() end, desc = "find todo-comment" },
+    },
   },
   {
     "MagicDuck/grug-far.nvim",
