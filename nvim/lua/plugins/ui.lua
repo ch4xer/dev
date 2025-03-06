@@ -1,14 +1,6 @@
 return {
   { "akinsho/bufferline.nvim", enabled = false },
   {
-    "snacks.nvim",
-    opts = {
-      bigfile = { enabled = true },
-      quickfile = { enabled = true },
-      indent = { enabled = true },
-    },
-  },
-  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
@@ -55,74 +47,64 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = function()
-      -- PERF: we don't need this lualine require madness 🤷
-      local lualine_require = require("lualine_require")
-      lualine_require.require = require
-
-      local icons = LazyVim.config.icons
-
-      vim.o.laststatus = vim.g.lualine_laststatus
-
-      local opts = {
-        options = {
-          theme = "auto",
-          globalstatus = vim.o.laststatus == 3,
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
-        },
-        sections = {
-          lualine_a = {
-            {
-              "mode",
-              icons_enabled = true,
-              fmt = function(str)
-                local indicator = str:sub(1, 1)
-                if indicator == "N" then
-                  return ""
-                end
-                if indicator == "I" then
-                  return ""
-                end
-                if indicator == "V" then
-                  return ""
-                end
+    opts = {
+      sections = {
+        lualine_a = {
+          {
+            "mode",
+            icons_enabled = true,
+            fmt = function(str)
+              local indicator = str:sub(1, 1)
+              if indicator == "N" then
                 return ""
-                -- return str:sub(1, 3)
-              end,
-            },
+              end
+              if indicator == "I" then
+                return ""
+              end
+              if indicator == "V" then
+                return ""
+              end
+              return ""
+              -- return str:sub(1, 3)
+            end,
           },
-
-          lualine_b = { "filename" },
-
-          lualine_c = {
-            {
-              "diagnostics",
-              symbols = {
-                error = icons.diagnostics.Error,
-                warn = icons.diagnostics.Warn,
-                info = icons.diagnostics.Info,
-                hint = icons.diagnostics.Hint,
-              },
-            },
-          },
-          lualine_x = {
-            "diff",
-            "branch",
-          },
-          lualine_y = {
-            {
-              "progress",
-              fmt = function(str)
-                local str1 = str:gsub(" ", "")
-                return " " .. str1
-              end,
-            },
-          },
-          lualine_z = {},
         },
-        extensions = { "neo-tree", "lazy", "fzf" },
-      }
-      return opts
+        lualine_b = {
+          "filename",
+        },
+        lualine_c = { "diagnostics" },
+        lualine_x = { "diff", "branch" },
+        lualine_y = {
+          {
+            "progress",
+            fmt = function(str)
+              local str1 = str:gsub(" ", "")
+              return " " .. str1
+            end,
+          },
+        },
+        lualine_z = {},
+      },
+    },
+    config = function(_, opts)
+      if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+        local trouble = require("trouble")
+        local symbols = trouble.statusline({
+          mode = "symbols",
+          groups = {},
+          title = false,
+          filter = { range = true },
+          format = "{kind_icon}{symbol.name:Normal}",
+          hl_group = "lualine_c_normal",
+        })
+        table.insert(opts.sections.lualine_c, {
+          symbols and symbols.get,
+          cond = function()
+            return vim.b.trouble_lualine ~= false and symbols.has()
+          end,
+        })
+      end
+      require("lualine").setup(opts)
     end,
   },
   {
