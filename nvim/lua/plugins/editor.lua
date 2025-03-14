@@ -150,11 +150,40 @@ return {
   -- },
   {
     "folke/todo-comments.nvim",
-      -- stylua: ignore
+    -- stylua: ignore
     keys = {
       { "st", function() require("todo-comments.fzf").todo() end, desc = "find todo-comment" },
     },
   },
+  -- {
+  --   "yetone/avante.nvim",
+  --   event = "VeryLazy",
+  --   version = false, -- update to the latest code changes.
+  --   opts = {
+  --     provider = "copilot",
+  --     file_selector = { provider = "snacks" },
+  --   },
+  --   build = "make",
+  --   dependencies = {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "stevearc/dressing.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     "zbirenbaum/copilot.lua", -- for providers='copilot'
+  --     {
+  --       -- Make sure to set this up properly if you have lazy=true
+  --       "MeanderingProgrammer/render-markdown.nvim",
+  --       opts = {
+  --         file_types = { "markdown", "Avante" },
+  --       },
+  --       ft = { "markdown", "Avante" },
+  --     },
+  --   },
+  --   -- stylua: ignore
+  --   keys = {
+  --     { "<C-a>", function() require("avante").toggle() end, desc = "toggle avante" },
+  --   },
+  -- },
   {
     "MagicDuck/grug-far.nvim",
     enabled = false,
