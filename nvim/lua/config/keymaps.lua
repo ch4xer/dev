@@ -53,4 +53,4 @@ set({ "i", "n", "s" }, "<esc>", function()
   vim.cmd("stopinsert")
 end, { expr = true, desc = "Escape and Clear hlsearch" })
 
-set("i", "<C-v>", "<C-r>*", { desc = "paste from system clipboard, this is for neovim gui" })
+set("i", "<C-v>", "<C-r>+", { desc = "paste from system clipboard, this is for neovim gui" })
