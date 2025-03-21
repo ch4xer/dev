@@ -33,7 +33,40 @@ set("x", "i", "I", { desc = "column insert" })
 set("x", "a", "A", { desc = "column append" })
 
 set({ "n", "v" }, ";", ":", { nowait = true, desc = "enter commandline" })
-set("n", "q", "<CMD>q!<CR>", { desc = "quit neovim" })
+
+local function is_file_window(win)
+  local buf = vim.api.nvim_win_get_buf(win)
+  if not vim.api.nvim_buf_is_valid(buf) then
+    return false
+  end
+  local buftype = vim.api.nvim_get_option_value("buftype", { buf = buf })
+  return buftype == ""
+end
+
+local function count_file_windows()
+  local count = 0
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if is_file_window(win) then
+      count = count + 1
+    end
+  end
+  return count
+end
+
+local function is_current_window_file()
+  local win = vim.api.nvim_get_current_win()
+  return is_file_window(win)
+end
+
+local function smart_quit()
+  if count_file_windows() == 1 and is_current_window_file() then
+    vim.cmd("qall!")
+  else
+    vim.cmd("q!")
+  end
+end
+
+set("n", "q", smart_quit, { desc = "smart quit window" })
 set("n", "Q", "q", { desc = "macro record" })
 
 set("n", "yw", "yiw", { desc = "copy the word where cursor locates" })
