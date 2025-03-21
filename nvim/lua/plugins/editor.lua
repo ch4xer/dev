@@ -117,37 +117,64 @@ return {
     },
   },
   {
-    "snacks.nvim",
-    opts = {
-      styles = {
-        terminal = {
-          -- stylua: ignore
-          keys = {
-            -- override it
-            term_normal = { "<esc>", "<cmd>close<cr>", mode = "t", desc = "hide terminal" },
-          },
-        },
-      },
-    },
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("toggleterm").setup()
+      local termNum = function()
+        local count = 0
+        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+          if vim.api.nvim_buf_is_valid(buf) then
+            local ft = vim.api.nvim_get_option_value("filetype", {
+              buf = buf,
+            })
+            if ft == "toggleterm" then
+              count = count + 1
+            end
+          end
+        end
+        return count
+      end
+
+      vim.api.nvim_create_user_command("Term", function()
+        local termBufNum = termNum() + 1
+        vim.cmd(termBufNum .. "ToggleTerm")
+      end, { desc = "New Terminal" })
+    end,
     -- stylua: ignore
     keys = {
-      { "T", function() Snacks.terminal("/bin/zsh") end, desc = "Terminal (cwd)" },
+      { "<esc>", mode = "t", "<C-\\><C-n>", desc = "Escape Terminal mode" },
+      { "<C-h>", mode = "t", "<cmd>wincmd h<cr>", desc = "move cursor" },
+      { "<C-j>", mode = "t", "<cmd>wincmd j<cr>", desc = "move cursor" },
+      { "<C-k>", mode = "t", "<cmd>wincmd k<cr>", desc = "move cursor" },
+      { "<C-l>", mode = "t", "<cmd>wincmd l<cr>", desc = "move cursor" },
+      { "<C-`>", mode = { "n","t" },
+        function ()
+          local termNum = function ()
+            local count = 0
+            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+              if vim.api.nvim_buf_is_valid(buf) then
+                local ft = vim.api.nvim_get_option_value("filetype", {
+                  buf = buf,
+                })
+                if ft == "toggleterm" then
+                  count = count + 1
+                end
+              end
+            end
+            return count
+          end
+
+          local termBufNum = termNum()
+          if termBufNum > 0 then
+            vim.api.nvim_input("<Esc>")
+            vim.cmd("ToggleTermToggleAll")
+          else
+            vim.cmd("ToggleTerm")
+          end
+        end, desc = "Toggle Terminal" },
     },
   },
-  -- {
-  --   "snacks.nvim",
-  --   -- stylua: ignore
-  --   keys = {
-  --     { "z", function() Snacks.picker.buffers() end, desc = "Buffers" },
-  --     { "sf", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-  --     { "sw", function() Snacks.picker.grep() end, desc = "Grep" },
-  --     { "sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-  --     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
-  --     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
-  --     { "gi", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
-  --     { "gs", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
-  --   },
-  -- },
   {
     "folke/todo-comments.nvim",
     -- stylua: ignore
@@ -155,35 +182,6 @@ return {
       { "st", function() require("todo-comments.fzf").todo() end, desc = "find todo-comment" },
     },
   },
-  -- {
-  --   "yetone/avante.nvim",
-  --   event = "VeryLazy",
-  --   version = false, -- update to the latest code changes.
-  --   opts = {
-  --     provider = "copilot",
-  --     file_selector = { provider = "snacks" },
-  --   },
-  --   build = "make",
-  --   dependencies = {
-  --     "nvim-treesitter/nvim-treesitter",
-  --     "stevearc/dressing.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --     "zbirenbaum/copilot.lua", -- for providers='copilot'
-  --     {
-  --       -- Make sure to set this up properly if you have lazy=true
-  --       "MeanderingProgrammer/render-markdown.nvim",
-  --       opts = {
-  --         file_types = { "markdown", "Avante" },
-  --       },
-  --       ft = { "markdown", "Avante" },
-  --     },
-  --   },
-  --   -- stylua: ignore
-  --   keys = {
-  --     { "<C-a>", function() require("avante").toggle() end, desc = "toggle avante" },
-  --   },
-  -- },
   {
     "MagicDuck/grug-far.nvim",
     enabled = false,
