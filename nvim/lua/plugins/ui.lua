@@ -59,10 +59,13 @@ return {
                 return ""
               end
               if indicator == "I" then
-                return ""
+                return ""
               end
               if indicator == "V" then
                 return ""
+              end
+              if indicator == "T" then
+                return ""
               end
               return ""
               -- return str:sub(1, 3)
@@ -73,7 +76,7 @@ return {
           "filename",
         },
         lualine_c = { "diagnostics" },
-        lualine_x = { "diff", "branch" },
+        lualine_x = { "diff", { "branch", icon = "" } },
         lualine_y = {
           {
             "progress",
