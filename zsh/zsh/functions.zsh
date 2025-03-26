@@ -8,7 +8,7 @@ redraw-prompt() {
 
 yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
+	yazi "$@" --cwd-file="$tmp" < /dev/tty
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
         redraw-prompt
