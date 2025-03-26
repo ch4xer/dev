@@ -28,16 +28,16 @@ return {
       completion = {
         menu = {
           min_width = 5,
-          border = "single",
+          -- border = "single",
           draw = {
-            padding = 0,
+            padding = 1,
             gap = 0,
             columns = { { "kind_icon" }, { "label", "kind", gap = 1 } },
           },
         },
-        documentation = {
-          window = { border = "rounded" },
-        },
+        -- documentation = {
+          -- window = { border = "rounded" },
+        -- },
       },
       keymap = {
         preset = "super-tab",
