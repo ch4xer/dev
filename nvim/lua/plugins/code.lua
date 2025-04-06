@@ -28,16 +28,12 @@ return {
       completion = {
         menu = {
           min_width = 5,
-          -- border = "single",
           draw = {
             padding = 1,
             gap = 0,
             columns = { { "kind_icon" }, { "label", "kind", gap = 1 } },
           },
         },
-        -- documentation = {
-          -- window = { border = "rounded" },
-        -- },
       },
       keymap = {
         preset = "super-tab",
@@ -59,6 +55,42 @@ return {
           "snippet_backward",
           "fallback",
         },
+      },
+    },
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      copilot_model = "gpt-4o-copilot",
+    },
+  },
+  {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    version = false,
+    opts = {
+      provider = "copilot",
+      behaviour = {
+        auto_apply_diff_after_generation = true,
+      },
+      hints = { enabled = true },
+      -- editor: ours = "co", theirs = "ct",
+      -- sidebar: apply_all = "A", apply = "a"
+    },
+    build = "make",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "ibhagwan/fzf-lua",
+      "zbirenbaum/copilot.lua",
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
       },
     },
   },
