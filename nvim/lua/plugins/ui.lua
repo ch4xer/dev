@@ -7,6 +7,9 @@ return {
     config = function()
       local colors = require("catppuccin.palettes").get_palette("mocha")
       require("incline").setup({
+        hide = {
+          cursorline = true,
+        },
         highlight = {
           groups = {
             InclineNormal = { guibg = colors.surface1, guifg = colors.text },
