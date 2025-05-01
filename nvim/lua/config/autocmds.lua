@@ -20,6 +20,20 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.mkview()
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.loadview()
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "yml", "yaml", "json", "html", "css", "javascript", "typescript", "sh", "sql", "vue", "markdown", "lua" },
   callback = function()
