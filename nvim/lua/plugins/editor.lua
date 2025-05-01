@@ -50,7 +50,8 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    cmd = "Neotree",
+    branch = "main",
+    lazy = false, -- neo-tree will lazily load itself
     -- stylua: ignore
     keys = {
       { "t", function() vim.cmd("Neotree reveal toggle") end, desc = "toggle neotree" },

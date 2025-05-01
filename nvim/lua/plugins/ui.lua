@@ -1,6 +1,28 @@
 return {
   { "akinsho/bufferline.nvim", enabled = false },
   {
+    "b0o/incline.nvim",
+    event = "BufReadPre",
+    enabled = true,
+    config = function()
+      local colors = require("catppuccin.palettes").get_palette("mocha")
+      require("incline").setup({
+        highlight = {
+          groups = {
+            InclineNormal = { guibg = colors.surface1, guifg = colors.text },
+            InclineNormalNC = { guibg = colors.crust, guifg = colors.text },
+          },
+        },
+        window = { margin = { vertical = 0, horizontal = 0 } },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+          return { { icon, guifg = color }, { " " }, { filename } }
+        end,
+      })
+    end,
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
@@ -73,7 +95,7 @@ return {
           },
         },
         lualine_b = {
-          "filename",
+          -- "filename",
         },
         lualine_c = { "diagnostics" },
         lualine_x = { "diff", { "branch", icon = "" } },
