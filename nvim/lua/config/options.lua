@@ -14,6 +14,11 @@ opt.relativenumber = false
 opt.signcolumn = "number"
 opt.statuscolumn = ""
 
+function _G.MyFoldText()
+  return vim.fn.getline(vim.v.foldstart) .. " "
+end
+opt.foldtext = "v:lua.MyFoldText()"
+
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.linebreak = false
