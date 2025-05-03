@@ -30,15 +30,16 @@ return {
         },
         custom_highlights = function(colors)
           return {
-            Folded = { bg = colors.none },
+            Folded = {
+              fg = colors.lavender,
+              bg = colors.none,
+            },
           }
         end,
         integrations = {
           blink_cmp = true,
         },
       })
-
-      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
