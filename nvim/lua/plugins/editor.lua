@@ -50,7 +50,7 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "main",
+    branch = "v3.x",
     lazy = false, -- neo-tree will lazily load itself
     -- stylua: ignore
     keys = {

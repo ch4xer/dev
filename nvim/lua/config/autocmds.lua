@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
   command = "silent! mkview",
 })
 
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+vim.api.nvim_create_autocmd({ "BufRead" }, {
   pattern = "*.*",
   command = "silent! loadview",
 })
