@@ -72,7 +72,7 @@ Please check the configuration file for the complete key mapping. Here we only r
 |     yazi     |       y        |                              copy                               |
 |     yazi     |       d        |                               cut                               |
 |     yazi     |       p        |                              paste                              |
-|     yazi     |     Delete     |                               rm                                |
+|     yazi     |     Delete     |                      move file to trashcan                      |
 |     yazi     |       f        |                    search and jump with fzf                     |
 |     yazi     |       z        |                        jump with zoxide                         |
 |    neovim    |       q        |                       quit window/neovim                        |
@@ -85,13 +85,12 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |       sd       |                    fuzzy search diagnostics                     |
 |    neovim    |       st       |                    fuzzy search todo-comment                    |
 |    neovim    |       z        |                   fuzzy search opened buffers                   |
+|    neovim    |   Tab/S-Tab    |                        Next/Prev buffer                         |
 |    neovim    |       ga       |                        (lsp) code action                        |
 |    neovim    |       ge       |                 (lsp) show diagnostics in line                  |
 |    neovim    |       gn       |                       (lsp) rename symbol                       |
 |    neovim    |       gs       |                        (lsp) goto symbol                        |
 |    neovim    |       gd       |                     (lsp) go to definition                      |
-|    neovim    |  C-LeftMouse   |                     (lsp) go to definition                      |
-|    neovim    |  C-RightMouse  |                     go to previous location                     |
 |    neovim    |      C-/       |                          comment line                           |
 |    neovim    |       t        |                            File Tree                            |
 |    neovim    |     <C-`>      | Toggle Terminal, use user comamnd `Term` to create new terminal |
