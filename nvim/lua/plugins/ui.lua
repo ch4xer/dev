@@ -99,6 +99,17 @@ return {
         },
         lualine_b = {
           -- "filename",
+          {
+            "buffers",
+            section_separators = { left = "", right = "" },
+            component_separators = { left = "", right = "" },
+            hide_filename_extension = true,
+            show_modified_status = false,
+            use_mode_colors = true,
+            symbols = {
+              alternate_file = "", -- Text to show to identify the alternate file
+            },
+          },
         },
         lualine_c = { "diagnostics" },
         lualine_x = { "diff", { "branch", icon = "" } },
