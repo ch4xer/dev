@@ -24,7 +24,10 @@ set("n", "s", "<NOP>", { desc = "disable s" })
 set({ "n", "v" }, "L", "g_", { desc = "go to end of line" })
 set({ "n", "v" }, "H", "^", { desc = "go to begin of line" })
 set("n", "<C-i>", "<C-i>", { desc = "fix conflict caused by <Tab> mapping" })
-set("n", "<Tab>", "<C-w>W", { desc = "move to other window" })
+-- tab navigation
+-- use :bw to really close the buffer
+set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+set("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 set({ "i", "t" }, "<C-BS>", "<C-W>", { desc = "delete word forward" })
 set("n", "<BS>", "ciw", { desc = "delete word and edit in normal mode" })
 set("v", "<BS>", "c", { desc = "delete and edit in visual mode" })
