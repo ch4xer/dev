@@ -4,6 +4,7 @@
 
 vim.g.snacks_animate = false
 vim.g.ai_cmp = false
+vim.g.lazyvim_python_lsp = "basedpyright"
 
 local opt = vim.opt
 
