@@ -77,6 +77,12 @@ set("n", "<C-S-v>", "<C-v>", { desc = "start visual mode blockwise" })
 
 set("n", "<CR>", "za", { desc = "toggle fold" })
 set("n", "<2-LeftMouse>", "za", { desc = "toggle fold" })
+set(
+  "n",
+  "<LeftMouse>",
+  ":let temp=&so<CR>:let &so=0<CR><LeftMouse>:let &so=temp<CR>",
+  { noremap = true, silent = true, desc = "click without scrolloff" }
+)
 
 set("n", "<C-/>", "gcc", { desc = "Comment", remap = true })
 set("n", "<C-_>", "gcc", { desc = "Comment", remap = true })
