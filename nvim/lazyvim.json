@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot",
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.python",
