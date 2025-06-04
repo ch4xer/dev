@@ -129,6 +129,15 @@ return {
   --   end,
   -- },
   {
+    "abecodes/tabout.nvim",
+    event = "InsertEnter",
+    config = true,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "Saghen/blink.cmp",
+    },
+  },
+  {
     "echasnovski/mini.ai",
     enabled = false,
   },
