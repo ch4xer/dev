@@ -19,7 +19,7 @@ if [ -f /etc/debian_version ]; then
     sudo apt install -y git kitty zsh rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep clang nodejs npm golang python3-pip python3-venv
   fi
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
-  wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim.appimage 
+  wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim-linux-x86_64.appimage
   mv nvim.appimage ~/.local/bin
   sudo ln -s -f /usr/bin/batcat /usr/bin/bat
   sudo ln -s -f /usr/bin/fdfind /usr/bin/fd
