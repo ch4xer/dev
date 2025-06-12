@@ -20,7 +20,8 @@ if [ -f /etc/debian_version ]; then
   fi
   curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
   wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim-linux-x86_64.appimage
-  mv nvim.appimage ~/.local/bin
+  mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
+  chmod +x ~/.local/bin/nvim
   sudo ln -s -f /usr/bin/batcat /usr/bin/bat
   sudo ln -s -f /usr/bin/fdfind /usr/bin/fd
   sudo ln -s -f /usr/bin/python3 /usr/bin/python
