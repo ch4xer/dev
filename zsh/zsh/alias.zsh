@@ -1,7 +1,8 @@
+# zim module: archive
+alias x="unarchive"
+alias z="archive"
+
 alias c="clear"
-alias l="lsd"
-alias ls="lsd"
-alias ll="lsd --tree --depth 2"
 alias checklog="journalctl -xefu"
 alias vi="nvim"
 

@@ -1,21 +1,21 @@
+# show powerlevel10k prompt first
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-PLUGIN_HOME=$XDG_CONFIG_HOME/zsh/plugins
-[[ -r $PLUGIN_HOME/znap/znap.zsh ]] ||
-    git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git $PLUGIN_HOME/znap
-source $PLUGIN_HOME/znap/znap.zsh
 
-# `znap source` starts plugins.
-znap source romkatv/powerlevel10k
-znap source zsh-users/zsh-syntax-highlighting
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-history-substring-search
-znap source MichaelAquilina/zsh-autoswitch-virtualenv
-znap source le0me55i/zsh-extract
+export ZIM_HOME=$HOME/.cache/zim
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+fi
 
-# `znap install` adds new commands and completions.
-znap install zsh-users/zsh-completions
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+
+source ${ZIM_HOME}/init.zsh
 
 # fix case error
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
