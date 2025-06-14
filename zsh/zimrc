@@ -1,0 +1,14 @@
+zmodule environment
+zmodule archive
+zmodule ssh
+zmodule utility
+
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+zmodule romkatv/powerlevel10k
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-history-substring-search
+zmodule MichaelAquilina/zsh-autoswitch-virtualenv -n autoswitch_virtualenv
+

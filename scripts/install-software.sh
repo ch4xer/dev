@@ -64,6 +64,7 @@ elif [ "$response" == "b" ]; then
   mv $BASEDIR/kitty $BASEDIR/kitty_bak || echo "$BASEDIR/kitty not found. Skip."
   cp -r ./zsh/zsh $BASEDIR/
   cp -r ./zsh/zshrc ~/.zshrc
+  cp -r ./zsh/zimrc ~/.zimrc
   cp -r ./yazi $BASEDIR/
   cp -r ./nvim $BASEDIR/
   cp -r ./kitty $BASEDIR/
@@ -72,5 +73,5 @@ else
   exit 1
 fi
 
-zsh -i -c "znap pull;echo 'zsh plugins installed!';exit"
+zsh -i -c "zimfw install"
 nvim --headless "+Lazy! sync" +qa

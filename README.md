@@ -32,6 +32,7 @@ kitty -> ~/.config/kitty
 yazi -> ~/.config/yazi
 zsh/zsh -> ~/.config/zsh
 zsh/zshrc -> ~/.zshrc
+zsh/zimrc -> ~/.zimrc
 ```
 
 ## Noteable Info
