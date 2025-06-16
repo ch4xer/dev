@@ -9,16 +9,10 @@ if [ $(uname -s) = "Linux" ]; then
   fi
 fi
 
-if [ -f /etc/debian_version ]; then
-  echo "Detect Debian based system, installing packages with apt..."
+if [ "$(cat /etc/lsb-release | grep DISTRIB_ID | cut -d '=' -f 2)" = "Ubuntu" ]; then
+  echo "Detect Ubuntu, installing packages with apt..."
   sudo apt update
-  if [ "$(cat /etc/lsb-release | grep DISTRIB_ID | cut -d '=' -f 2)" = "Ubuntu" ]; then
-    sudo apt install -y git kitty zsh rsync htop bat fzf python3 unzip fd-find wget ripgrep clang nodejs npm golang python3-pip python3-venv
-    echo "Please install lsd manually if you want"
-  else
-    sudo apt install -y git kitty zsh rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep clang nodejs npm golang python3-pip python3-venv
-  fi
-  curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+  sudo apt install -y git kitty zsh rsync htop bat fzf python3 unzip fd-find lsd wget ripgrep clang nodejs npm golang python3-pip python3-venv zoxide
   wget https://github.com/neovim/neovim-releases/releases/download/stable/nvim-linux-x86_64.appimage
   mv nvim-linux-x86_64.appimage ~/.local/bin/nvim
   chmod +x ~/.local/bin/nvim
