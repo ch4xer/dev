@@ -7,6 +7,7 @@ vim.g.ai_cmp = false
 
 local opt = vim.opt
 
+opt.swapfile = false
 opt.title = true
 opt.titlestring = 'nvim %{expand("%:p:h:t")}'
 
