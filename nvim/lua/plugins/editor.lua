@@ -58,6 +58,7 @@ return {
     },
     config = function()
       require("neo-tree").setup({
+        popup_border_style = "",
         sources = {
           "filesystem",
         },
@@ -111,7 +112,7 @@ return {
       { "sf", function() require("fzf-lua").files() end,               desc = "search file" },
       { "sd", function() require("fzf-lua").diagnostics_workspace() end,               desc = "search diagnostics" },
       { "z",  function() require("fzf-lua").buffers() end,             desc = "search buffer" },
-      { "ga", function() require("fzf-lua").lsp_code_actions() end,    desc = "code action" },
+      { "ga", function() require("fzf-lua").lsp_code_actions({silent=true}) end,    desc = "code action" },
       { "gr", function() require("fzf-lua").lsp_references() end,      desc = "find reference" },
       { "gs", function() require("fzf-lua").lsp_document_symbols() end,      desc = "find symbols" },
       { "gi", function() require("fzf-lua").lsp_implementations() end, desc = "find implementations" },
