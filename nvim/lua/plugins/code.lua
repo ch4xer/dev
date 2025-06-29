@@ -41,6 +41,13 @@ return {
         ["<CR>"] = { "accept", "fallback" },
         ["<Tab>"] = {
           "accept",
+          function()
+            if require("copilot.suggestion").is_visible() then
+              LazyVim.create_undo()
+              require("copilot.suggestion").accept()
+              return true
+            end
+          end,
           "snippet_forward",
           "fallback",
         },
@@ -52,38 +59,75 @@ return {
       },
     },
   },
-  -- {
-  --   "olimorris/codecompanion.nvim",
-  --   event = "BufRead",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-treesitter/nvim-treesitter",
-  --   },
-  --   config = function()
-  --     require("codecompanion").setup({
-  --       opts = {
-  --         language = "Chinese",
-  --       },
-  --       strategies = {
-  --         chat = {
-  --           adapter = "deepseek",
-  --         },
-  --       },
-  --       display = {
-  --         chat = {
-  --           -- Options to customize the UI of the chat buffer
-  --           window = {
-  --             layout = "float", -- float|vertical|horizontal|buffer
-  --             width = 0.8,
-  --           },
-  --         },
-  --       },
-  --     })
-  --   end,
-  --   keys = {
-  --     { "<C-a>", mode = "n", "<CMD>CodeCompanionChat Toggle<CR>", desc = "CodeCompanion" },
-  --   },
-  -- },
+  {
+    "olimorris/codecompanion.nvim",
+    event = "BufRead",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      {
+        "zbirenbaum/copilot.lua",
+        opts = {
+          copilot_model = "gpt-4o-copilot",
+        },
+      },
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        ft = { "markdown", "codecompanion" },
+        opts = {
+          render_modes = true,
+          file_types = { "markdown", "codecompanion" },
+          heading = {
+            width = "block",
+          },
+          code = {
+            style = "normal",
+            width = "block",
+          },
+        },
+      },
+      {
+        "echasnovski/mini.diff",
+        config = function()
+          local diff = require("mini.diff")
+          diff.setup({
+            -- Disabled by default
+            source = diff.gen_source.none(),
+            mappings = {
+              apply = "",
+            },
+          })
+        end,
+      },
+    },
+    config = function()
+      require("codecompanion").setup({
+        opts = {
+          language = "Chinese",
+        },
+        strategies = {
+          chat = {
+            adapter = "copilot",
+          },
+          inline = {
+            adapter = "copilot",
+          },
+        },
+        display = {
+          chat = {
+            -- Options to customize the UI of the chat buffer
+            window = {
+              layout = "float", -- float|vertical|horizontal|buffer
+              width = 0.8,
+            },
+          },
+        },
+      })
+    end,
+    keys = {
+      { "<C-a>", mode = "n", "<CMD>CodeCompanionChat Toggle<CR>", desc = "CodeCompanion" },
+    },
+  },
   {
     "abecodes/tabout.nvim",
     event = "InsertEnter",
