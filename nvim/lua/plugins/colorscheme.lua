@@ -20,8 +20,8 @@ return {
     lazy = false,
     config = function()
       require("catppuccin").setup({
-        transparent_background = true,
-        term_colors = false,
+        transparent_background = false,
+        term_colors = true,
         styles = {
           comments = { "italic" },
           conditionals = { "italic" },
