@@ -102,9 +102,9 @@ return {
     },
     config = function()
       require("codecompanion").setup({
-        opts = {
-          language = "Chinese",
-        },
+        -- opts = {
+        --   language = "Chinese",
+        -- },
         strategies = {
           chat = {
             adapter = "copilot",

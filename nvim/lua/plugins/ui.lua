@@ -148,7 +148,7 @@ return {
     end,
   },
   {
-    "snacks.nvim",
+    "folke/snacks.nvim",
     opts = {
       dashboard = {
         width = 30,
