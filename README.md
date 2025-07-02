@@ -51,47 +51,45 @@ zsh/zimrc -> ~/.zimrc
 
 Please check the configuration file for the complete key mapping. Here we only record some of the more frequently used ones.
 
-|   Software   |      Key       |                             Effect                              |
-| :----------: | :------------: | :-------------------------------------------------------------: |
-|    kitty     |      C-n       |                          new os window                          |
-|    kitty     |      C-t       |                             new tab                             |
-|    kitty     |      C-CR      |                           new window                            |
-|    kitty     |      C-w       |                          delete window                          |
-| kitty/neovim |   C-h/j/k/l    |                       focus other window                        |
-|    kitty     |  C-S-h/j/k/l   |                           move window                           |
-|    kitty     |  C-PgUp/PgDn   |                         goto other tab                          |
-|    kitty     | C-S-PgUp/PgDn  |                            move tab                             |
-|    kitty     |     C-=/-      |                        adjust font size                         |
-|     zsh      |      C-r       |                        call filemanager                         |
-|     zsh      |  C-Backspace   |                      delete word backward                       |
-|     yazi     |       gh       |                         go to home (~)                          |
-|     yazi     |       gn       |                        go to ~/Downloads                        |
-|     yazi     |      H/L       |              go to previous/next visited directory              |
-|     yazi     |       a        |                         create file/dir                         |
-|     yazi     |       r        |                    rename file or directory                     |
-|     yazi     |       .        |                        show hidden file                         |
-|     yazi     |       y        |                              copy                               |
-|     yazi     |       d        |                               cut                               |
-|     yazi     |       p        |                              paste                              |
-|     yazi     |     Delete     |                      move file to trashcan                      |
-|     yazi     |       f        |                    search and jump with fzf                     |
-|     yazi     |       z        |                        jump with zoxide                         |
-|    neovim    |       q        |                       quit window/neovim                        |
-|    neovim    |      H/L       |                   go to the begin/end of line                   |
-|    neovim    |       ;        |                     enter commandline mode                      |
-|    neovim    |      C-s       |                         format and save                         |
-|    neovim    | 2-LeftMouse/CR |                           toggle fold                           |
-|    neovim    |       sw       |                        fuzzy search word                        |
-|    neovim    |       sf       |                      fuzzy search filename                      |
-|    neovim    |       sd       |                    fuzzy search diagnostics                     |
-|    neovim    |       st       |                    fuzzy search todo-comment                    |
-|    neovim    |       z        |                   fuzzy search opened buffers                   |
-|    neovim    |   Tab/S-Tab    |                        Next/Prev buffer                         |
-|    neovim    |       ga       |                        (lsp) code action                        |
-|    neovim    |       ge       |                 (lsp) show diagnostics in line                  |
-|    neovim    |       gn       |                       (lsp) rename symbol                       |
-|    neovim    |       gs       |                        (lsp) goto symbol                        |
-|    neovim    |       gd       |                     (lsp) go to definition                      |
-|    neovim    |      C-/       |                          comment line                           |
-|    neovim    |       t        |                            File Tree                            |
-|    neovim    |     <C-`>      | Toggle Terminal, use user comamnd `Term` to create new terminal |
+|   Software   |      Key       |                Effect                 |
+| :----------: | :------------: | :-----------------------------------: |
+|    kitty     |      C-n       |             new os window             |
+|    kitty     |      C-t       |                new tab                |
+|    kitty     |      C-CR      |              new window               |
+|    kitty     |      C-w       |             delete window             |
+| kitty/neovim |   C-h/j/k/l    |          focus other window           |
+|    kitty     |  C-S-h/j/k/l   |              move window              |
+|    kitty     |  C-PgUp/PgDn   |            goto other tab             |
+|    kitty     | C-S-PgUp/PgDn  |               move tab                |
+|    kitty     |     C-=/-      |           adjust font size            |
+|     zsh      |      C-r       |           call filemanager            |
+|     zsh      |  C-Backspace   |         delete word backward          |
+|     yazi     |       gh       |            go to home (~)             |
+|     yazi     |       gn       |           go to ~/Downloads           |
+|     yazi     |      H/L       | go to previous/next visited directory |
+|     yazi     |       a        |            create file/dir            |
+|     yazi     |       r        |       rename file or directory        |
+|     yazi     |       .        |           show hidden file            |
+|     yazi     |       y        |                 copy                  |
+|     yazi     |       d        |                  cut                  |
+|     yazi     |       p        |                 paste                 |
+|     yazi     |     Delete     |         move file to trashcan         |
+|     yazi     |       f        |       search and jump with fzf        |
+|     yazi     |       z        |           jump with zoxide            |
+|    neovim    |       q        |          quit window/neovim           |
+|    neovim    |      H/L       |      go to the begin/end of line      |
+|    neovim    |       ;        |        enter commandline mode         |
+|    neovim    | 2-LeftMouse/CR |              toggle fold              |
+|    neovim    |    leader w    |           fuzzy search word           |
+|    neovim    |    leader d    |       fuzzy search diagnostics        |
+|    neovim    |    leader g    |                lazygit                |
+|    neovim    |    leader e    |             File Explorer             |
+|    neovim    |    leader s    |                Symbols                |
+|    neovim    |  leader space  |      fuzzy search opened buffers      |
+|    neovim    |   Tab/S-Tab    |           Next/Prev buffer            |
+|    neovim    |       ga       |           (lsp) code action           |
+|    neovim    |       ge       |    (lsp) show diagnostics in line     |
+|    neovim    |       gn       |          (lsp) rename symbol          |
+|    neovim    |       gd       |        (lsp) go to definition         |
+|    neovim    |      C-/       |             comment line              |
+|    neovim    |     <C-`>      |            Toggle Terminal            |
