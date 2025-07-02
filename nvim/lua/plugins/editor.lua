@@ -160,20 +160,8 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    opts_extend = { "spec" },
-    opts = function()
-      return {
-        preset = "helix",
-        defaults = {},
-        spec = {
-          -- {
-          --   mode = { "n", "v" },
-          --   { "<leader>d", group = "debug" },
-          --   { "<leader>f", group = "file/find" },
-          --   { "<leader>g", group = "git" },
-          -- },
-        },
-      }
+    opts = function(_, opts)
+      opts.spec = {}
     end,
   },
   {
