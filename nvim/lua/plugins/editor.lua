@@ -48,76 +48,6 @@ return {
     },
     keys = false,
   },
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v3.x",
-  --   lazy = false, -- neo-tree will lazily load itself
-  --   -- stylua: ignore
-  --   keys = {
-  --     { "t", function() vim.cmd("Neotree reveal toggle") end, desc = "toggle neotree" },
-  --   },
-  --   config = function()
-  --     require("neo-tree").setup({
-  --       popup_border_style = "",
-  --       sources = {
-  --         "filesystem",
-  --       },
-  --       hide_root_node = true,
-  --       auto_clean_after_session_restore = true,
-  --       close_if_last_window = true,
-  --       -- stylua: ignore
-  --       default_component_configs = {
-  --         indent = { padding = 0, },
-  --         type = { enabled = false, },
-  --         last_modified = { enabled = false, },
-  --       },
-  --       window = {
-  --         position = "float",
-  --         auto_expand_width = true,
-  --         mappings = {
-  --           ["t"] = "toggle_node",
-  --           ["<esc>"] = "cancel",
-  --           ["r"] = "rename",
-  --         },
-  --       },
-  --       filesystem = {
-  --         follow_current_file = {
-  --           enabled = true,
-  --           leave_dirs_open = true,
-  --         },
-  --         hijack_netrw_behavior = "open_default",
-  --         window = {
-  --           mappings = {
-  --             ["<2-LeftMouse>"] = "open",
-  --             ["<cr>"] = "open",
-  --             ["a"] = "add",
-  --             ["."] = "toggle_hidden",
-  --             ["y"] = "copy_to_clipboard",
-  --             ["s"] = "open_split",
-  --             ["v"] = "open_vsplit",
-  --             ["x"] = "cut_to_clipboard",
-  --             ["p"] = "paste_from_clipboard",
-  --             ["d"] = "delete",
-  --           },
-  --         },
-  --       },
-  --     })
-  --   end,
-  -- },
-  {
-    "ibhagwan/fzf-lua",
-    -- stylua: ignore
-    keys = {
-      { "sw", function() require("fzf-lua").live_grep() end,           desc = "search word" },
-      { "sf", function() require("fzf-lua").files() end,               desc = "search file" },
-      { "sd", function() require("fzf-lua").diagnostics_workspace() end,               desc = "search diagnostics" },
-      { "z",  function() require("fzf-lua").buffers() end,             desc = "search buffer" },
-      { "ga", function() require("fzf-lua").lsp_code_actions({silent=true}) end,    desc = "code action" },
-      { "gr", function() require("fzf-lua").lsp_references() end,      desc = "find reference" },
-      { "gs", function() require("fzf-lua").lsp_document_symbols() end,      desc = "find symbols" },
-      { "gi", function() require("fzf-lua").lsp_implementations() end, desc = "find implementations" },
-    },
-  },
   {
     "akinsho/toggleterm.nvim",
     version = "*",
@@ -178,30 +108,80 @@ return {
     },
   },
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts_extend = { "spec" },
-    opts = function(_, opts)
-      return {
-        preset = "helix",
-        defaults = {},
-        spec = {
-          {
-            mode = { "n", "v" },
-            { "<leader>d", group = "debug" },
-            { "<leader>f", group = "file/find" },
-            { "<leader>g", group = "git" },
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          explorer = {
+            auto_close = true,
+            layout = { preset = "default", preview = false },
+            win = {
+              list = {
+                keys = {
+                  ["<BS>"] = "explorer_up",
+                  ["a"] = "explorer_add",
+                  ["d"] = "explorer_del",
+                  ["r"] = "explorer_rename",
+                  ["y"] = { "explorer_yank", mode = { "n", "x" } },
+                  ["p"] = "explorer_paste",
+                  ["."] = "toggle_ignored",
+                  ["s"] = "edit_split",
+                  ["v"] = "edit_vsplit",
+                },
+              },
+            },
           },
         },
+      },
+    },
+    -- stylua: ignore
+    keys = function ()
+      return {
+          { "<leader>d", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+          { "<leader>w", function() Snacks.picker.grep() end, desc = "Grep" },
+          { "<leader>g", function() Snacks.lazygit() end, desc = "Lazygit" },
+          { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+          { "<leader>s", function() Snacks.picker.lsp_symbols() end, desc = "Symbols" },
+          { "<leader><space>", function() Snacks.picker.buffers() end, desc = "Buffers" },
       }
     end,
   },
   {
     "folke/todo-comments.nvim",
+    optional = true,
     -- stylua: ignore
-    keys = {
-      { "st", function() require("todo-comments.fzf").todo() end, desc = "find todo-comment" },
-    },
+    keys = function()
+      return {
+        { "<leader>t", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+      }
+    end
+,
+  },
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts_extend = { "spec" },
+    opts = function()
+      return {
+        preset = "helix",
+        defaults = {},
+        spec = {
+          -- {
+          --   mode = { "n", "v" },
+          --   { "<leader>d", group = "debug" },
+          --   { "<leader>f", group = "file/find" },
+          --   { "<leader>g", group = "git" },
+          -- },
+        },
+      }
+    end,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function(_, opts)
+      opts.on_attach = function() end
+      return opts
+    end,
   },
   {
     "MagicDuck/grug-far.nvim",
