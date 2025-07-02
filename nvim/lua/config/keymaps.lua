@@ -95,4 +95,16 @@ set({ "i", "n", "s" }, "<esc>", function()
   vim.cmd("stopinsert")
 end, { expr = true, desc = "Escape and Clear hlsearch" })
 
-set("i", "<C-v>", "<C-r>+", { desc = "paste from system clipboard, this is for neovim gui" })
+if vim.g.neovide then
+  set("i", "<C-v>", "<C-r>+", { desc = "paste from system clipboard, this is for neovim gui" })
+
+  function LaunchKittyInCurrentPath()
+    local current_dir_path = vim.fn.getcwd()
+    local cmd = { "kitty", "--working-directory", current_dir_path }
+    vim.fn.jobstart(cmd, {
+      detach = true,
+    })
+  end
+
+  set("n", "<C-n>", LaunchKittyInCurrentPath, { desc = "launch kitty with cwd, this is for neovim gui" })
+end
