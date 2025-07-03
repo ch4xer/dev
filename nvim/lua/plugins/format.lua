@@ -11,10 +11,15 @@ return {
         javascript = { "prettierd" },
         markdown = { "prettierd" },
       },
-      format_on_save = {
-        async = true,
-        lsp_format = "fallback",
-      },
     },
+    config = function ()
+      require("conform").setup({
+        -- can't set this in opts
+        format_on_save = {
+          async = true,
+          lsp_format = "fallback",
+        },
+      })
+    end
   },
 }
