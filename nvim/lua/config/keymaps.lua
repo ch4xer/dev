@@ -89,7 +89,7 @@ map({ "i", "n", "s" }, "<esc>", function()
 end, { expr = true, desc = "Escape and Clear hlsearch" })
 
 if vim.g.neovide then
-  map("i", "<C-v>", "<C-r>+", { desc = "paste from system clipboard, this is for neovim gui" })
+  map({ "n", "o", "x", "i", "c" }, "<C-v>", "<C-r>+", { desc = "paste from system clipboard, this is for neovim gui" })
 
   function LaunchKittyInCurrentPath()
     local current_dir_path = vim.fn.getcwd()
