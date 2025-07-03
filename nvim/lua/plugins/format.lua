@@ -11,6 +11,10 @@ return {
         javascript = { "prettierd" },
         markdown = { "prettierd" },
       },
+      format_on_save = {
+        async = true,
+        lsp_format = "fallback",
+      },
     },
   },
 }
