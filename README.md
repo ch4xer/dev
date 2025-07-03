@@ -80,12 +80,11 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |      H/L       |      go to the begin/end of line      |
 |    neovim    |       ;        |        enter commandline mode         |
 |    neovim    | 2-LeftMouse/CR |              toggle fold              |
-|    neovim    |    leader w    |           fuzzy search word           |
-|    neovim    |    leader d    |       fuzzy search diagnostics        |
-|    neovim    |    leader g    |                lazygit                |
-|    neovim    |    leader e    |             File Explorer             |
-|    neovim    |    leader s    |                Symbols                |
-|    neovim    |  leader space  |      fuzzy search opened buffers      |
+|    neovim    |    sw    |            search word           |
+|    neovim    |    sd    |        search diagnostics        |
+|    neovim    |    se    |             File Explorer             |
+|    neovim    |    ss    |                Symbols                |
+|    neovim    |  sb  |      search buffers      |
 |    neovim    |   Tab/S-Tab    |           Next/Prev buffer            |
 |    neovim    |       ga       |           (lsp) code action           |
 |    neovim    |       ge       |    (lsp) show diagnostics in line     |
