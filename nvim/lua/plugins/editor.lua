@@ -75,14 +75,16 @@ return {
     end,
     -- stylua: ignore
     keys = {
-      { "<esc>", mode = "t", "<C-\\><C-n>", desc = "Escape Terminal mode" },
+      { "<esc>", mode = "t", "<C-\\><C-n>",       desc = "Escape Terminal mode" },
       { "<C-h>", mode = "t", "<cmd>wincmd h<cr>", desc = "move cursor" },
       { "<C-j>", mode = "t", "<cmd>wincmd j<cr>", desc = "move cursor" },
       { "<C-k>", mode = "t", "<cmd>wincmd k<cr>", desc = "move cursor" },
       { "<C-l>", mode = "t", "<cmd>wincmd l<cr>", desc = "move cursor" },
-      { "<C-`>", mode = { "n","t" },
-        function ()
-          local termNum = function ()
+      {
+        "<C-`>",
+        mode = { "n", "t" },
+        function()
+          local termNum = function()
             local count = 0
             for _, buf in ipairs(vim.api.nvim_list_bufs()) do
               if vim.api.nvim_buf_is_valid(buf) then
@@ -104,7 +106,9 @@ return {
           else
             vim.cmd("ToggleTerm")
           end
-        end, desc = "Toggle Terminal" },
+        end,
+        desc = "Toggle Terminal"
+      },
     },
   },
   {
@@ -135,14 +139,13 @@ return {
       },
     },
     -- stylua: ignore
-    keys = function ()
+    keys = function()
       return {
-          { "<leader>d", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-          { "<leader>w", function() Snacks.picker.grep() end, desc = "Grep" },
-          { "<leader>g", function() Snacks.lazygit() end, desc = "Lazygit" },
-          { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
-          { "<leader>s", function() Snacks.picker.lsp_symbols() end, desc = "Symbols" },
-          { "<leader><space>", function() Snacks.picker.buffers() end, desc = "Buffers" },
+        { "sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics",   nowait = true },
+        { "sw", function() Snacks.picker.grep() end,        desc = "Grep",          nowait = true },
+        { "sf", function() Snacks.explorer() end,           desc = "File Explorer", nowait = true },
+        { "ss", function() Snacks.picker.lsp_symbols() end, desc = "Symbols",       nowait = true },
+        { "sb", function() Snacks.picker.buffers() end,     desc = "Buffers",       nowait = true },
       }
     end,
   },
@@ -152,10 +155,10 @@ return {
     -- stylua: ignore
     keys = function()
       return {
-        { "<leader>t", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+        { "st", function() Snacks.picker.todo_comments() end, desc = "Todo", nowait = true },
       }
     end
-,
+    ,
   },
   {
     "folke/which-key.nvim",
