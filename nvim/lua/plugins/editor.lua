@@ -175,6 +175,12 @@ return {
     end,
   },
   {
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    cmd = "Oil"
+  },
+  {
     "MagicDuck/grug-far.nvim",
     enabled = false,
   },
