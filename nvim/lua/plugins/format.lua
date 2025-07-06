@@ -4,6 +4,10 @@ return {
     dependencies = { "mason.nvim" },
     cmd = "ConformInfo",
     opts = {
+      default_format_opts = {
+        async = true,
+        quiet = true,
+      },
       formatters_by_ft = {
         lua = { "stylua" },
         sh = { "shfmt" },
@@ -11,14 +15,5 @@ return {
         markdown = { "prettierd" },
       },
     },
-    config = function()
-      require("conform").setup({
-        -- can't set this in opts
-        format_on_save = {
-          async = true,
-          lsp_format = "fallback",
-        },
-      })
-    end
   },
 }
