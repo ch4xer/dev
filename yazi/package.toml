@@ -1,17 +1,19 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "63f9650"
-hash = "a7ab702e1ef0c097defbc976ed34c186"
+rev = "de53d90"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "63f9650"
+rev = "de53d90"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "63f9650"
-hash = "bf6f074cd41ee33c3360341d168f9733"
+rev = "de53d90"
+hash = "63b6c222bf2103b3023389dde5e2ecfe"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-latte"
+rev = "d3fd3a5"
+hash = "a4d508772dc7b20d739a2f9a1d2d396f"

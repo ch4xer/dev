@@ -3,7 +3,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       defaults = {
-        keymaps = false
+        keymaps = false,
       },
       colorscheme = "catppuccin",
       icons = {
@@ -23,6 +23,8 @@ return {
     lazy = false,
     opts = {
       term_colors = true,
+      flavour = "latte",
+      transparent_background = true,
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -39,11 +41,6 @@ return {
       end,
     },
     config = function(_, opts)
-      if vim.g.neovide then
-        opts.flavour = "macchiato"
-      else
-        opts.flavour = "mocha"
-      end
       require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin")
     end,
