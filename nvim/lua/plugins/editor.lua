@@ -118,7 +118,7 @@ return {
         sources = {
           explorer = {
             auto_close = true,
-            layout = { preset = "default", preview = false },
+            layout = { preset = "default", layout = { backdrop = false, min_width = 10, }, preview = false },
             win = {
               list = {
                 keys = {
@@ -158,7 +158,7 @@ return {
         { "st", function() Snacks.picker.todo_comments() end, desc = "Todo", nowait = true },
       }
     end
-    ,
+,
   },
   {
     "folke/which-key.nvim",
@@ -175,10 +175,10 @@ return {
     end,
   },
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     opts = {},
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    cmd = "Oil"
+    cmd = "Oil",
   },
   {
     "MagicDuck/grug-far.nvim",

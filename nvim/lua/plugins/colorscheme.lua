@@ -24,7 +24,7 @@ return {
     opts = {
       term_colors = true,
       flavour = "latte",
-      transparent_background = true,
+      transparent_background = false,
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
