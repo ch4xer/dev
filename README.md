@@ -53,10 +53,10 @@ Please check the configuration file for the complete key mapping. Here we only r
 
 |   Software   |      Key       |                Effect                 |
 | :----------: | :------------: | :-----------------------------------: |
-|    kitty     |      C-n       |             new os window             |
 |    kitty     |      C-t       |                new tab                |
 |    kitty     |      C-CR      |              new window               |
 |    kitty     |      C-w       |             delete window             |
+| kitty/neovim |      C-n       |          new terminal window          |
 | kitty/neovim |   C-h/j/k/l    |          focus other window           |
 |    kitty     |  C-S-h/j/k/l   |              move window              |
 |    kitty     |  C-PgUp/PgDn   |            goto other tab             |
@@ -80,11 +80,11 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |      H/L       |      go to the begin/end of line      |
 |    neovim    |       ;        |        enter commandline mode         |
 |    neovim    | 2-LeftMouse/CR |              toggle fold              |
-|    neovim    |    sw    |            search word           |
-|    neovim    |    sd    |        search diagnostics        |
-|    neovim    |    se    |             File Explorer             |
-|    neovim    |    ss    |                Symbols                |
-|    neovim    |  sb  |      search buffers      |
+|    neovim    |       sw       |              search word              |
+|    neovim    |       sd       |          search diagnostics           |
+|    neovim    |       se       |             File Explorer             |
+|    neovim    |       ss       |                Symbols                |
+|    neovim    |       sb       |            search buffers             |
 |    neovim    |   Tab/S-Tab    |           Next/Prev buffer            |
 |    neovim    |       ga       |           (lsp) code action           |
 |    neovim    |       ge       |    (lsp) show diagnostics in line     |
