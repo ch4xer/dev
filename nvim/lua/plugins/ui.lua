@@ -5,7 +5,12 @@ return {
     event = "BufReadPre",
     enabled = true,
     config = function()
-      local colors = require("catppuccin.palettes").get_palette("mocha")
+      local colors
+      if vim.o.background == "light" then
+        colors = require("catppuccin.palettes").get_palette("latte")
+      else
+        colors = require("catppuccin.palettes").get_palette("mocha")
+      end
       require("incline").setup({
         hide = {
           cursorline = true,

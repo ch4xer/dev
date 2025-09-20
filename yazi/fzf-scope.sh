@@ -8,13 +8,11 @@ else
 fi
 
 if [ -d "$obj" ]; then
-  tree -ahpCL 3 -I .git -I __pycache__
+  tree -ahpCL 3 -I .git -I __pycache__ $obj
 else
   case "$obj" in
-    *.md) glow -s dark "$obj" ;;
-    *.zip) zipinfo "$obj" ;;
-    *.7z) 7z l "$obj" ;;
-    *.md) mdcat "$obj";;
-    *) bat --color=always --italic-text=always --style=numbers,changes,header --line-range :500 "$obj" ;;
+  *.zip) zipinfo "$obj" ;;
+  *.7z) 7z l "$obj" ;;
+  *) bat --color=always --italic-text=always --style=numbers,changes,header --line-range :500 "$obj" ;;
   esac
 fi

@@ -50,7 +50,7 @@ zsh/zimrc -> ~/.zimrc
 
 ## Theme
 
-The default theme of the toolkit is `catppuccin-latte`, if you want to change to dark theme:
+The default theme of the toolkit is light, if you want to change to dark theme:
 
 - modify `kitty/kitty.conf`, replace `include latte.conf` with `include mocha.conf`
 - modify `nvim/lua/plugins/colorscheme.lua`, replace `flavour = "latte"` with `flavour = "mocha"`.

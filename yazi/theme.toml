@@ -1,5 +1,6 @@
 [flavor]
 light = "catppuccin-latte"
+dark = "catppuccin-mocha"
 
 [icon]
 
