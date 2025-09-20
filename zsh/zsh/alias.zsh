@@ -8,4 +8,4 @@ alias vi="nvim"
 
 alias cat="bat --style=plain --paging=never"
 alias top="htop"
-alias cp="rsync -az"
+alias cp="rsync -az --info=progress2"
