@@ -93,7 +93,7 @@ return {
         },
       },
       {
-        "echasnovski/mini.diff",
+        "nvim-mini/mini.diff",
         config = function()
           local diff = require("mini.diff")
           diff.setup({
@@ -144,7 +144,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     enabled = false,
   },
   {
