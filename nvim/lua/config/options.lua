@@ -40,3 +40,9 @@ if os.getenv("SSH_TTY") ~= nil then
   }
 end
 opt.conceallevel = 0
+
+if vim.fn.executable("fcitx5-remote") == 1 then
+  vim.g.hasfcitx5 = 1
+else
+  vim.g.hasfcitx5 = 0
+end

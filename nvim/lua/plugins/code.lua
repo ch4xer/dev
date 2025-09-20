@@ -57,6 +57,12 @@ return {
           "fallback",
         },
       },
+      enabled = function()
+        if vim.g.hasfcitx5 == 1 then
+          return vim.trim(vim.fn.system("fcitx5-remote --check")) == "1"
+        end
+        return true
+      end,
     },
   },
   {
