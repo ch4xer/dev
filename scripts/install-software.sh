@@ -30,7 +30,7 @@ fi
 if [ -f /etc/arch-release ]; then
   echo "Detect Arch based system, installing packages with pacman..."
   sudo pacman -Sy
-  sudo pacman -S --needed --noconfirm kitty git zsh rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim glow clang nodejs npm go yazi ffmpegthumbnailer ffmpeg p7zip jq poppler imagemagick
+  sudo pacman -S --needed --noconfirm kitty git zsh rsync htop bat python fzf unzip zoxide lsd fd wget ripgrep neovim clang nodejs npm go yazi ffmpegthumbnailer ffmpeg p7zip jq poppler imagemagick
 fi
 
 # git submodule init
@@ -45,6 +45,7 @@ if [ "$response" == "o" ]; then
   yes | rm -r $BASEDIR/zsh
   yes | rm -r $BASEDIR/yazi
   yes | rm -r $BASEDIR/nvim
+  yes | rm -r $BASEDIR/kitty
 elif [ "$response" == "b" ]; then
   echo "Backup the configuration file..."
   mv $BASEDIR/zsh $BASEDIR/zsh_bak || echo "$BASEDIR/zsh not found. Skip."
