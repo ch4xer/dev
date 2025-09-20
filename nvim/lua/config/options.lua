@@ -40,20 +40,3 @@ if os.getenv("SSH_TTY") ~= nil then
   }
 end
 opt.conceallevel = 0
-
-if vim.g.neovide then
-  -- vim.o.guifont = "JetBrainsMono Nerd Font Mono,LXGW WenKai Medium:h22"
-  vim.g.neovide_cursor_trail_size = 0
-  vim.g.neovide_cursor_animate_command_line = false
-  vim.g.neovide_cursor_animate_in_insert_mode = false
-  vim.g.neovide_cursor_animation_length = 0
-  vim.g.neovide_cursor_short_animation_length = 0
-  vim.g.neovide_position_animation_length = 0
-  vim.g.neovide_scroll_animation_far_lines = 0
-  vim.g.neovide_scroll_animation_length = 0
-  vim.g.neovide_floating_shadow = false
-  vim.env.CGO_ENABLED = 1
-  vim.env.GOPATH = vim.fn.expand("$HOME/.go")
-  vim.env.GO111MODULE = "on"
-  vim.env.PATH = vim.fn.expand("$PATH") .. ":" .. vim.fn.expand("$GOPATH/bin") .. ":" .. vim.fn.expand("$GOROOT/bin")
-end
