@@ -61,15 +61,6 @@ Please check the configuration file for the complete key mapping. Here we only r
 
 |   Software   |      Key       |                Effect                 |
 | :----------: | :------------: | :-----------------------------------: |
-|    kitty     |      C-t       |                new tab                |
-|    kitty     |      C-CR      |              new window               |
-|    kitty     |      C-w       |             delete window             |
-| kitty/neovim |      C-n       |          new terminal window          |
-| kitty/neovim |   C-h/j/k/l    |          focus other window           |
-|    kitty     |  C-S-h/j/k/l   |              move window              |
-|    kitty     |  C-PgUp/PgDn   |            goto other tab             |
-|    kitty     | C-S-PgUp/PgDn  |               move tab                |
-|    kitty     |     C-=/-      |           adjust font size            |
 |     zsh      |      C-r       |           call filemanager            |
 |     zsh      |  C-Backspace   |         delete word backward          |
 |     yazi     |       gh       |            go to home (~)             |
@@ -84,6 +75,15 @@ Please check the configuration file for the complete key mapping. Here we only r
 |     yazi     |     Delete     |         move file to trashcan         |
 |     yazi     |       f        |       search and jump with fzf        |
 |     yazi     |       z        |           jump with zoxide            |
+|    kitty     |      C-t       |                new tab                |
+|    kitty     |      C-CR      |              new window               |
+|    kitty     |      C-w       |             delete window             |
+|    kitty     |      C-n       |          new terminal window          |
+|    kitty     |  C-S-h/j/k/l   |              move window              |
+|    kitty     |  C-PgUp/PgDn   |            goto other tab             |
+|    kitty     | C-S-PgUp/PgDn  |               move tab                |
+|    kitty     |     C-=/-      |           adjust font size            |
+| kitty/neovim |   C-h/j/k/l    |          focus other window           |
 |    neovim    |       q        |          quit window/neovim           |
 |    neovim    |      H/L       |      go to the begin/end of line      |
 |    neovim    |       ;        |        enter commandline mode         |
@@ -99,4 +99,3 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    neovim    |       gn       |          (lsp) rename symbol          |
 |    neovim    |       gd       |        (lsp) go to definition         |
 |    neovim    |      C-/       |             comment line              |
-|    neovim    |     <C-`>      |            Toggle Terminal            |

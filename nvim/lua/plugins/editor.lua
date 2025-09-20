@@ -49,76 +49,13 @@ return {
     keys = false,
   },
   {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = function()
-      require("toggleterm").setup()
-      local termNum = function()
-        local count = 0
-        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-          if vim.api.nvim_buf_is_valid(buf) then
-            local ft = vim.api.nvim_get_option_value("filetype", {
-              buf = buf,
-            })
-            if ft == "toggleterm" then
-              count = count + 1
-            end
-          end
-        end
-        return count
-      end
-
-      vim.api.nvim_create_user_command("Term", function()
-        local termBufNum = termNum() + 1
-        vim.cmd(termBufNum .. "ToggleTerm")
-      end, { desc = "New Terminal" })
-    end,
-    -- stylua: ignore
-    keys = {
-      { "<esc>", mode = "t", "<C-\\><C-n>",       desc = "Escape Terminal mode" },
-      { "<C-h>", mode = "t", "<cmd>wincmd h<cr>", desc = "move cursor" },
-      { "<C-j>", mode = "t", "<cmd>wincmd j<cr>", desc = "move cursor" },
-      { "<C-k>", mode = "t", "<cmd>wincmd k<cr>", desc = "move cursor" },
-      { "<C-l>", mode = "t", "<cmd>wincmd l<cr>", desc = "move cursor" },
-      {
-        "<C-`>",
-        mode = { "n", "t" },
-        function()
-          local termNum = function()
-            local count = 0
-            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-              if vim.api.nvim_buf_is_valid(buf) then
-                local ft = vim.api.nvim_get_option_value("filetype", {
-                  buf = buf,
-                })
-                if ft == "toggleterm" then
-                  count = count + 1
-                end
-              end
-            end
-            return count
-          end
-
-          local termBufNum = termNum()
-          if termBufNum > 0 then
-            vim.api.nvim_input("<Esc>")
-            vim.cmd("ToggleTermToggleAll")
-          else
-            vim.cmd("ToggleTerm")
-          end
-        end,
-        desc = "Toggle Terminal"
-      },
-    },
-  },
-  {
     "folke/snacks.nvim",
     opts = {
       picker = {
         sources = {
           explorer = {
             auto_close = true,
-            layout = { preset = "default", layout = { backdrop = false, min_width = 10, }, preview = false },
+            layout = { preset = "default", layout = { backdrop = false, min_width = 10 }, preview = false },
             win = {
               list = {
                 keys = {
