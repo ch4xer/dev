@@ -47,7 +47,6 @@ zsh/zimrc -> ~/.zimrc
   - disable vim mode.
 - Neovim
   - Based on LazyVim, with some simplifications to make it more tiny and user-friendly
-  - Good support for Neovide (fixed gui color & keymap)
 
 ## Theme
 

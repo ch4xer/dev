@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
 
 vim.api.nvim_create_autocmd({ "InsertLeave" }, {
   callback = function()
-    if vim.fn.executable("fcitx5-remote") == 1 then
+    if vim.g.hasfcitx5 == 1 then
       os.execute("fcitx5-remote -c")
     end
   end,
