@@ -87,6 +87,9 @@ return {
             width = "block",
           },
           code = {
+            border = "thin",
+            above = "━",
+            below = "━",
             style = "normal",
             width = "block",
           },

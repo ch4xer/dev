@@ -23,7 +23,7 @@ return {
     lazy = false,
     opts = {
       term_colors = true,
-      flavour = "latte",
+      flavour = "mocha",
       transparent_background = false,
       styles = {
         comments = { "italic" },

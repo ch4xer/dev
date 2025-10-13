@@ -2,9 +2,9 @@
 
 A simple, comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
 
-![Screenshot-light](cover-light.png)
-
 ![Screenshot-dark](cover-dark.png)
+
+![Screenshot-light](cover-light.png)
 
 - terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
 - shell: [zsh](https://www.zsh.org/)
@@ -50,10 +50,10 @@ zsh/zimrc -> ~/.zimrc
 
 ## Theme
 
-The default theme of the toolkit is light, if you want to change to dark theme:
+The default theme of the toolkit is dark, if you want to change to light theme:
 
-- modify `kitty/kitty.conf`, replace `include latte.conf` with `include mocha.conf`
-- modify `nvim/lua/plugins/colorscheme.lua`, replace `flavour = "latte"` with `flavour = "mocha"`.
+- modify `kitty/kitty.conf`, replace `include mocha.conf` with `include latte.conf`
+- modify `nvim/lua/plugins/colorscheme.lua`, replace `flavour = "mocha"` with `flavour = "latte"`.
 
 ## Critical Keymap
 
