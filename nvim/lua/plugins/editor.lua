@@ -87,6 +87,23 @@ return {
     end,
   },
   {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown", "codecompanion" },
+    opts = {
+      file_types = { "markdown", "codecompanion" },
+      heading = {
+        width = "block",
+      },
+      code = {
+        border = "thin",
+        above = "━",
+        below = "━",
+        style = "normal",
+        width = "block",
+      },
+    },
+  },
+  {
     "folke/todo-comments.nvim",
     optional = true,
     -- stylua: ignore

@@ -71,28 +71,11 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
+      "MeanderingProgrammer/render-markdown.nvim",
       {
         "zbirenbaum/copilot.lua",
         opts = {
           copilot_model = "gpt-4o-copilot",
-        },
-      },
-      {
-        "MeanderingProgrammer/render-markdown.nvim",
-        ft = { "markdown", "codecompanion" },
-        opts = {
-          render_modes = true,
-          file_types = { "markdown", "codecompanion" },
-          heading = {
-            width = "block",
-          },
-          code = {
-            border = "thin",
-            above = "━",
-            below = "━",
-            style = "normal",
-            width = "block",
-          },
         },
       },
       {
