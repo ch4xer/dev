@@ -23,8 +23,8 @@ return {
     lazy = false,
     opts = {
       term_colors = true,
-      flavour = "mocha",
-      transparent_background = false,
+      flavour = "latte",
+      transparent_background = true,
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },

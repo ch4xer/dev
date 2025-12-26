@@ -116,10 +116,7 @@ return {
   },
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      opts.spec = {}
-    end,
+    enabled = false,
   },
   {
     "lewis6991/gitsigns.nvim",

@@ -65,7 +65,7 @@ end
 map("n", "q", smart_quit, { desc = "smart quit window" })
 map("n", "Q", "q", { desc = "macro record" })
 
-map("n", "yw", "yiw", { desc = "copy the word where cursor locates" })
+map("n", "yw", "m`yiw``", { desc = "copy the word where cursor locates without moving cursor" })
 map("n", "<C-S-v>", "<C-v>", { desc = "start visual mode blockwise" })
 
 map("n", "<CR>", "za", { desc = "toggle fold" })
