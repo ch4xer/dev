@@ -79,6 +79,10 @@ return {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = {
+      options = {
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+      },
       sections = {
         lualine_a = {
           {
@@ -108,7 +112,6 @@ return {
           {
             "buffers",
             section_separators = { left = "", right = "" },
-            component_separators = { left = "", right = "" },
             hide_filename_extension = true,
             show_modified_status = false,
             use_mode_colors = true,
@@ -117,8 +120,26 @@ return {
             },
           },
         },
-        lualine_c = { "diagnostics" },
-        lualine_x = { "diff", { "branch", icon = "" } },
+        lualine_c = {},
+        lualine_x = {
+          "diagnostics",
+          {
+            "diff",
+            symbols = { modified = " " },
+            -- Merge Git changes to save space.
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = 0,
+                  modified = gitsigns.added + gitsigns.changed + gitsigns.removed,
+                  removed = 0,
+                }
+              end
+            end,
+          },
+          { "branch", icon = "" },
+        },
         lualine_y = {
           {
             "progress",
