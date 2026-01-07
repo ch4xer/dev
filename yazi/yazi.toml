@@ -31,25 +31,25 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = '${EDITOR:-vi} %s', desc = "$EDITOR", block = true, for = "unix" },
 ]
 open = [
-	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
+	{ run = 'xdg-open %s1',                desc = "Open", for = "linux" },
 ]
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
 ]
 extract = [
-	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+	{ run = 'ya pub extract --list %s', desc = "Extract here", for = "unix" },
 ]
 play = [
-	{ run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
+	{ run = 'mpv --force-window %s', orphan = true, for = "unix" },
 ]
 
 [open]
 rules = [
 	# Folder
-	{ name = "*/", use = [ "edit", "open", "reveal" ] },
+	{ url = "*/", use = [ "edit", "open", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
@@ -64,7 +64,7 @@ rules = [
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "open", "reveal" ] },
+	{ url = "*", use = [ "open", "reveal" ] },
 ]
 
 
@@ -72,7 +72,9 @@ rules = [
 
 fetchers = [
 	# Mimetype
-	{ id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
+    { id = "mime", url = "*/",         run = "mime.dir", prio = "high" },
+	{ id = "mime", url = "local://*",  run = "mime.local", prio = "high" },
+	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
 ]
 preloaders = [
 	# Image
@@ -87,7 +89,7 @@ preloaders = [
 	{ mime = "application/vnd.ms-opentype", run = "font" },
 ]
 previewers = [
-	{ name = "*/", run = "folder", sync = true },
+	{ url = "*/", run = "folder", sync = true },
 	# Code
 	{ mime = "text/*", run = "code" },
 	{ mime = "*/{xml,javascript,x-wine-extension-ini}", run = "code" },
@@ -109,7 +111,7 @@ previewers = [
 	# Empty file
 	{ mime = "inode/x-empty", run = "empty" },
 	# Fallback
-	{ name = "*", run = "file" },
+	{ url = "*", run = "file" },
 ]
 
 [input]
@@ -180,10 +182,10 @@ open_offset = [ 0, 1, 50, 7 ]
 
 [[plugin.prepend_fetchers]]
 id   = "git"
-name = "*"
+url = "*"
 run  = "git"
 
 [[plugin.prepend_fetchers]]
-id   = "git"
-name = "*/"
-run  = "git"
+id  = "git"
+url = "*/"
+run = "git"

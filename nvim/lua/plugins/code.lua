@@ -97,7 +97,7 @@ return {
         -- opts = {
         --   language = "Chinese",
         -- },
-        strategies = {
+        interactions = {
           chat = {
             adapter = "copilot",
           },

@@ -5,6 +5,7 @@
 [mgr]
 cwd = { fg = "#179299" }
 
+# TODO: remove
 # Hovered
 hovered         = { reversed = true }
 preview_hovered = { underline = true }
@@ -18,11 +19,6 @@ marker_copied   = { fg = "#40a02b", bg = "#40a02b" }
 marker_cut      = { fg = "#d20f39", bg = "#d20f39" }
 marker_marked   = { fg = "#179299", bg = "#179299" }
 marker_selected = { fg = "#df8e1d", bg = "#df8e1d" }
-
-# Tab
-tab_active   = { reversed = true }
-tab_inactive = {}
-tab_width    = 1
 
 # Count
 count_copied   = { fg = "#eff1f5", bg = "#40a02b" }
@@ -75,8 +71,8 @@ perm_exec  = { fg = "#40a02b" }
 
 # Progress
 progress_label  = { fg = "#ffffff", bold = true }
-progress_normal = { fg = "#1e66f5", bg = "#bcc0cc" }
-progress_error  = { fg = "#d20f39", bg = "#bcc0cc" }
+progress_normal = { fg = "#40a02b", bg = "#bcc0cc" }
+progress_error  = { fg = "#df8e1d", bg = "#d20f39" }
 
 # : }}}
 
@@ -115,7 +111,7 @@ border = { fg = "#1e66f5" }
 [tasks]
 border  = { fg = "#1e66f5" }
 title   = {}
-hovered = { fg = "#ea76cb", underline = true }
+hovered = { fg = "#ea76cb", bold = true }
 
 # : }}}
 
@@ -144,7 +140,18 @@ footer  = { fg = "#ccd0da", bg = "#4c4f69" }
 # : }}}
 
 
-# : Notify {{{
+# : Spotter {{{
+
+[spot]
+border   = { fg = "#1e66f5" }
+title    = { fg = "#1e66f5" }
+tbl_col  = { fg = "#179299" }
+tbl_cell = { fg = "#ea76cb", bg = "#bcc0cc" }
+
+# : }}}
+
+
+# : Notification {{{
 
 [notify]
 title_info  = { fg = "#40a02b" }
@@ -159,19 +166,20 @@ title_error = { fg = "#d20f39" }
 [filetype]
 
 rules = [
-	# Images
+	# Image
 	{ mime = "image/*", fg = "#179299" },
-
 	# Media
 	{ mime = "{audio,video}/*", fg = "#df8e1d" },
-
-	# Archives
+	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#ea76cb" },
-
-	# Documents
+	# Document
 	{ mime = "application/{pdf,doc,rtf}", fg = "#40a02b" },
-
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#7c7f93" },
 	# Fallback
+	{ url = "*", fg = "#4c4f69" },
+	{ url = "*/", fg = "#1e66f5" },
+	# TODO: remove
 	{ name = "*", fg = "#4c4f69" },
 	{ name = "*/", fg = "#1e66f5" }
 ]
