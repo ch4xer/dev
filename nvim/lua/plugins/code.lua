@@ -76,7 +76,7 @@ return {
         "zbirenbaum/copilot.lua",
         opts = {
           copilot_model = "gpt-4o-copilot",
-          disable_limit_reached_message = true
+          disable_limit_reached_message = true,
         },
       },
       {
@@ -122,13 +122,9 @@ return {
     },
   },
   {
-    "abecodes/tabout.nvim",
+    "kawre/neotab.nvim",
     event = "InsertEnter",
     config = true,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "Saghen/blink.cmp",
-    },
   },
   {
     "nvim-mini/mini.ai",
