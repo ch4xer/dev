@@ -130,12 +130,15 @@ return {
             source = function()
               local gitsigns = vim.b.gitsigns_status_dict
               if gitsigns then
-                return {
-                  added = 0,
-                  modified = gitsigns.added + gitsigns.changed + gitsigns.removed,
-                  removed = 0,
-                }
+                if gitsigns.added then
+                  return {
+                    added = 0,
+                    modified = gitsigns.added + gitsigns.changed + gitsigns.removed,
+                    removed = 0,
+                  }
+                end
               end
+              return { added = 0, modified = 0, removed = 0 }
             end,
           },
           { "branch", icon = "" },
