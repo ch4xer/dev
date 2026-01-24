@@ -49,3 +49,24 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end,
 })
+
+-- watch external file changes every 2 seconds
+-- useful when files are changed by AI agents
+local interval_ms = 2000
+
+local timer = vim.uv.new_timer()
+timer:start(
+  interval_ms,
+  interval_ms,
+  vim.schedule_wrap(function()
+    -- only trigger in normal mode
+    if vim.fn.mode() ~= "n" then
+      return
+    end
+    -- avoid nofile / terminal and other special buffers
+    if vim.bo.buftype ~= "" then
+      return
+    end
+    vim.cmd("checktime")
+  end)
+)
