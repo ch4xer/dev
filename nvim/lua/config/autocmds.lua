@@ -70,3 +70,20 @@ timer:start(
     vim.cmd("checktime")
   end)
 )
+
+-- control cursor shape and blinking
+vim.api.nvim_create_autocmd({ "VimEnter", "VimResume" }, {
+  callback = function()
+    vim.opt.guicursor = "n-v-c:block-blinkon0," -- normal/visual/cmd: Block, no blink
+      .. "i-ci-ve:ver25-blinkon0," -- insert: Beam, no blink
+      .. "r-cr:hor20-blinkon0," -- replace: underline, no blink
+      .. "o:hor50-blinkon0," -- operator: half block, no blink
+      .. "sm:block-blinkon0" -- showmatch: block, no blink
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
+  callback = function()
+    vim.opt.guicursor = "a:ver25-blinkwait700-blinkoff400-blinkon250"
+  end,
+})
