@@ -88,9 +88,9 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    ft = { "markdown", "codecompanion" },
+    ft = { "markdown" },
     opts = {
-      file_types = { "markdown", "codecompanion" },
+      file_types = { "markdown" },
       heading = {
         width = "block",
       },

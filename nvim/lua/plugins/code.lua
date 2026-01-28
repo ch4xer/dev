@@ -66,62 +66,6 @@ return {
     },
   },
   {
-    "olimorris/codecompanion.nvim",
-    event = "BufRead",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "MeanderingProgrammer/render-markdown.nvim",
-      {
-        "zbirenbaum/copilot.lua",
-        opts = {
-          copilot_model = "gpt-4o-copilot",
-          disable_limit_reached_message = true,
-        },
-      },
-      {
-        "nvim-mini/mini.diff",
-        config = function()
-          local diff = require("mini.diff")
-          diff.setup({
-            -- Disabled by default
-            source = diff.gen_source.none(),
-            mappings = {
-              apply = "",
-            },
-          })
-        end,
-      },
-    },
-    config = function()
-      require("codecompanion").setup({
-        -- opts = {
-        --   language = "Chinese",
-        -- },
-        interactions = {
-          chat = {
-            adapter = "copilot",
-          },
-          inline = {
-            adapter = "copilot",
-          },
-        },
-        display = {
-          chat = {
-            -- Options to customize the UI of the chat buffer
-            window = {
-              layout = "float", -- float|vertical|horizontal|buffer
-              width = 0.8,
-            },
-          },
-        },
-      })
-    end,
-    keys = {
-      { "<C-a>", mode = "n", "<CMD>CodeCompanionChat Toggle<CR>", desc = "CodeCompanion" },
-    },
-  },
-  {
     "kawre/neotab.nvim",
     event = "InsertEnter",
     config = true,
