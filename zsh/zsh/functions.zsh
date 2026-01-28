@@ -6,9 +6,14 @@ redraw-prompt() {
   p10k display -r
 }
 
+function reset-cursor() {
+  echo -ne '\e[5 q'
+}
+
 yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp" < /dev/tty
+    reset-cursor
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
         redraw-prompt
