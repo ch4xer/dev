@@ -2,10 +2,9 @@
 
 A simple, comprehensive and user-friendly development toolkit to boost up your productivity 🚀.
 
-![Screenshot-light](cover-light.png)
-
 ![Screenshot-dark](cover-dark.png)
 
+![Screenshot-light](cover-light.png)
 
 - terminal emulator: [kitty](https://github.com/kovidgoyal/kitty)
 - shell: [zsh](https://www.zsh.org/)
@@ -48,13 +47,6 @@ zsh/zimrc -> ~/.zimrc
   - disable vim mode.
 - Neovim
   - Based on LazyVim, with some simplifications to make it more tiny and user-friendly
-
-## Theme
-
-The default theme of the toolkit is light, if you want to change to dark theme:
-
-- modify `kitty/kitty.conf`, replace `include latte.conf` with `include mocha.conf`
-- modify `nvim/lua/plugins/colorscheme.lua`, replace `flavour = "latte"` with `flavour = "mocha"`.
 
 ## Critical Keymap
 
