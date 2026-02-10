@@ -25,6 +25,14 @@ return {
   {
     "Saghen/blink.cmp",
     event = "InsertEnter",
+    dependencies = {
+      {
+        "zbirenbaum/copilot.lua",
+        opts = {
+          disable_limit_reached_message = true,
+        },
+      },
+    },
     opts = {
       completion = {
         menu = {
