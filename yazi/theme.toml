@@ -4,6 +4,13 @@ dark = "catppuccin-mocha"
 
 [icon]
 
+prepend_dirs = [
+  { name = "Projects", text = "" },
+  { name = "Media", text = "" },
+  { name = "Tools", text = "" },
+  { name = "Games", text = "" },
+]
+
 prepend_conds = [
   { if = "link", text = "" },  # Normal files (not directories or symlinks)
   { if = "dir",           text = "" },  # Directories
