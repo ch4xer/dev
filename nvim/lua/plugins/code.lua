@@ -2,25 +2,7 @@ return {
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        keymaps = {
-          visual = "s",
-          normal = "ys",
-          delete = "ds",
-          change = "cs",
-        },
-        surrounds = {
-          ["("] = false,
-          ["["] = false,
-        },
-        -- remove leading and trailing whitespace
-        aliases = {
-          ["("] = ")",
-          ["["] = "]",
-        },
-      })
-    end,
+    config = true,
   },
   {
     "Saghen/blink.cmp",
