@@ -42,6 +42,7 @@ zsh/zimrc -> ~/.zimrc
 - Kitty
   - use `Ctrl` and `Shift` as modifier key for all shortcuts
   - use JetbrainMono Nerd Font and LXGW WenKai as font
+  - you can set session name for different window
 - Zsh
   - you can add software settings in `zsh/zsh/software`
   - disable vim mode.
@@ -72,6 +73,7 @@ Please check the configuration file for the complete key mapping. Here we only r
 |    kitty     |      C-CR      |              new window               |
 |    kitty     |      C-w       |             delete window             |
 |    kitty     |      C-n       |          new terminal window          |
+|    kitty     |      C-S-s       |          Set session name          |
 |    kitty     |  C-S-h/j/k/l   |              move window              |
 |    kitty     |  C-PgUp/PgDn   |            goto other tab             |
 |    kitty     | C-S-PgUp/PgDn  |               move tab                |
