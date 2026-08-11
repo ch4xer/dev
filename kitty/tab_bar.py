@@ -29,6 +29,9 @@ TITLE_ICONS = (
 )
 
 
+SSH_ICON = ""
+
+
 def draw_title(data: dict) -> str:
     """Prepend a nerd font icon matched from the tab title text."""
     title = data["title"]
@@ -36,11 +39,17 @@ def draw_title(data: dict) -> str:
         if title.startswith(prefix):
             title = title.replace(prefix, "").strip()
             return f"{icon} {title}" if icon else title
-    title = title[title.rfind("/") + 1 :]
+    title_parts = title.split(":")
+    if len(title_parts) > 1:
+        path = title_parts[1]
+        dir_name = path[path.rfind("/") + 1 :]
+        title = f"{SSH_ICON} {dir_name}"
+    else:
+        title = title[title.rfind("/") + 1 :]
     return title
 
 
-SESSION_ICON = ""  # nf-fa-laptop — verified in JetBrainsMono NF
+SESSION_ICON = ""
 
 
 def _session_file(os_window_id: int) -> str:
