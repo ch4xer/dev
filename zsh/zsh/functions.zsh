@@ -16,9 +16,9 @@ yy() {
     reset-cursor
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
-        redraw-prompt
         zoxide add "$cwd"
 	fi
+    redraw-prompt
 	rm -f -- "$tmp"
 }
 
