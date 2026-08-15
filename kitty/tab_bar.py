@@ -6,6 +6,7 @@
 
 import glob
 import os
+from pathlib import Path
 
 from kitty.fast_data_types import Screen, get_boss, get_options, wcswidth
 from kitty.tab_bar import (
@@ -19,33 +20,43 @@ from kitty.tab_bar import (
 # title prefix -> nerd font icon (all verified in JetBrainsMono NF)
 # Longer, more specific prefixes first — first match wins.
 TITLE_ICONS = (
-    ("yazi", ""),
-    ("nvim", ""),
-    ("lazygit", ""),
-    ("lg", ""),
-    ("git", ""),
-    ("yay", ""),
-    ("top", ""),
+    ("yazi", "", ""),
+    ("nvim", "", ""),
+    ("claude", "", "Agent"),
+    ("codex", "", "Agent"),
+    ("lazygit", "", "Git"),
+    ("lg", "", "Git"),
+    ("git", "", "Git"),
+    ("yay", "", ""),
+    ("top", "", "Top"),
 )
 
-
+TITLE_COLON_ICONS = (("IPython", ""),)
 SSH_ICON = ""
 
 
 def draw_title(data: dict) -> str:
     """Prepend a nerd font icon matched from the tab title text."""
     title = data["title"]
-    for prefix, icon in TITLE_ICONS:
+    for prefix, icon, alias in TITLE_ICONS:
         if title.startswith(prefix):
-            title = title.replace(prefix, "").strip()
-            return f"{icon} {title}" if icon else title
+            title = title.replace(prefix, alias).strip()
+            # return f"{icon} {title}" if title else f"{icon}"
+            return f"{icon} {title}"
+
     title_parts = title.split(":")
     if len(title_parts) > 1:
-        path = title_parts[1]
-        dir_name = path[path.rfind("/") + 1 :]
-        title = f"{SSH_ICON} {dir_name}"
-    else:
-        title = title[title.rfind("/") + 1 :]
+        exec = title_parts[0].strip()
+        path = title_parts[1].strip()
+        if Path.home() == Path(path):
+            dir_name = "~"
+        else:
+            dir_name = Path(path).name
+        for prefix, icon in TITLE_COLON_ICONS:
+            if prefix == exec:
+                return f"{icon} {dir_name}"
+        return f"{SSH_ICON} {dir_name}"
+    title = title[title.rfind("/") + 1 :]
     return title
 
 
