@@ -1,7 +1,13 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    opts = { inlay_hints = { enabled = false } },
+    opts = {
+      inlay_hints = { enabled = false },
+      diagnostics = {
+        signs = false,
+        virtual_text = false,
+      },
+    },
     -- stylua: ignore
     keys = {
       { "gn", vim.lsp.buf.rename,         desc = "rename symbol" },
