@@ -42,6 +42,9 @@ return {
         signature = {
           enabled = false,
         },
+        progress = {
+          enabled = false,
+        },
       },
       cmdline = {
         view = "cmdline",
