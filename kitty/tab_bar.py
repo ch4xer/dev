@@ -22,16 +22,17 @@ from kitty.tab_bar import (
 TITLE_ICONS = (
     ("yazi", "", ""),
     ("nvim", "", ""),
-    ("claude", "", "Agent"),
-    ("codex", "", "Agent"),
+    ("claude", "󰯉", "Agent"),
+    ("codex", "󰯉", "Agent"),
     ("lazygit", "", "Git"),
     ("lg", "", "Git"),
     ("git", "", "Git"),
     ("yay", "", ""),
-    ("top", "", "Top"),
+    ("top", "", "Top"),
+    ("py", "", ""),
 )
 
-TITLE_COLON_ICONS = (("IPython", ""),)
+TITLE_COLON_ICONS = ("IPython", "")
 SSH_ICON = ""
 
 
@@ -44,8 +45,8 @@ def draw_title(data: dict) -> str:
             # return f"{icon} {title}" if title else f"{icon}"
             return f"{icon} {title}"
 
-    title_parts = title.split(":")
-    if len(title_parts) > 1:
+    title_parts = title.split(" ")
+    if len(title_parts[0].split(":")) > 1:
         exec = title_parts[0].strip()
         path = title_parts[1].strip()
         if Path.home() == Path(path):
