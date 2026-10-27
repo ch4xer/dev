@@ -101,6 +101,9 @@ return {
         style = "normal",
         width = "block",
       },
+      pipe_table = {
+        enabled = false,
+      },
     },
   },
   {
