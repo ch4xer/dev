@@ -87,3 +87,17 @@ vim.api.nvim_create_autocmd({ "VimLeave", "VimSuspend" }, {
     vim.opt.guicursor = "a:ver25-blinkwait700-blinkoff400-blinkon250"
   end,
 })
+
+-- copy visual selection to primary selection automatically, for convinience
+local function update_primary_selection()
+  local mode = vim.fn.mode()
+  if mode ~= "v" and mode ~= "V" then
+    return
+  end
+  local lines = vim.fn.getregion(vim.fn.getpos("v"), vim.fn.getpos("."), { type = mode })
+  vim.fn.setreg("*", lines, mode)
+end
+
+vim.api.nvim_create_autocmd({ "ModeChanged", "CursorMoved" }, {
+  callback = update_primary_selection,
+})
