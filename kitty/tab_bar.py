@@ -22,41 +22,44 @@ from kitty.tab_bar import (
 TITLE_ICONS = (
     ("yazi", "", ""),
     ("nvim", "", ""),
-    ("claude", "󰯉", "Agent"),
-    ("codex", "󰯉", "Agent"),
+    ("claude", "󰯉", "Claude"),
+    ("codex", "󰯉", "Codex"),
     ("lazygit", "", "Git"),
     ("lg", "", "Git"),
     ("git", "", "Git"),
     ("yay", "", ""),
-    ("top", "", "Top"),
+    ("top", "󰨝", "Top"),
+    ("IPython", "", ""),
     ("py", "", ""),
 )
 
-TITLE_COLON_ICONS = ("IPython", "")
 SSH_ICON = ""
 
 
 def draw_title(data: dict) -> str:
     """Prepend a nerd font icon matched from the tab title text."""
     title = data["title"]
-    for prefix, icon, alias in TITLE_ICONS:
-        if title.startswith(prefix):
-            title = title.replace(prefix, alias).strip()
-            # return f"{icon} {title}" if title else f"{icon}"
-            return f"{icon} {title}"
+    if "zmx " in title:
+        return f"󰺕 {title.split()[-1]}"
 
-    title_parts = title.split(" ")
-    if len(title_parts[0].split(":")) > 1:
-        exec = title_parts[0].strip()
-        path = title_parts[1].strip()
-        if Path.home() == Path(path):
+    prefix, separator, path = title.partition(":")
+    path = path.strip()
+    # A URL in the title is the only exception to colon-based title handling.
+    if separator and path and "://" not in title:
+        app_icon = next((icon for name, icon, _ in TITLE_ICONS if prefix == name), None)
+        # Some applications report /home/user as home/user.
+        if path == "~" or path.strip("/") == str(Path.home()).strip("/"):
             dir_name = "~"
         else:
             dir_name = Path(path).name
-        for prefix, icon in TITLE_COLON_ICONS:
-            if prefix == exec:
-                return f"{icon} {dir_name}"
-        return f"{SSH_ICON} {dir_name}"
+        return f"{app_icon or SSH_ICON} {dir_name}"
+
+    for name, icon, alias in TITLE_ICONS:
+        if title.startswith(name):
+            title = title.replace(name, alias, 1).strip()
+            return f"{icon} {title}"
+    if separator:
+        return title
     title = title[title.rfind("/") + 1 :]
     return title
 
